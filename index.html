@@ -3,229 +3,232 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HEWP Excel Addins – Ultimate Automation Toolkit</title>
-<meta name="description" content="Complete automation toolkit for Haryana Engineering Works Portal (HEWP). Excel Add-ins, Templates, Auto-upload, Chrome Extension & More." />
+<title>HEWP Excel Addins – The Complete Automation Toolkit</title>
+<meta name="description" content="HEWP Excel Addins for Haryana Engineering Works Portal – automatic templates, uploads, calculators, and more. Boost productivity effortlessly." />
 
 <!-- Google Fonts & Font Awesome -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
-  * { margin:0; padding:0; box-sizing: border-box; }
+  /* Reset & Base */
+  * {margin:0; padding:0; box-sizing: border-box;}
   body {
-    font-family: 'Inter', sans-serif; background: #f5f7fa; color:#333; line-height:1.6; overflow-x:hidden;
+    font-family:'Inter',sans-serif; background:#f0f4f8; color:#222; line-height:1.6; overflow-x:hidden;
   }
 
-  /* Hero section style */
+  /* Header and Hero styles */
   .hero {
-    min-height:100vh; display:flex; flex-direction:column;
-    justify-content:center; align-items:center; padding:2rem;
-    background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    text-align:center; position:relative;
-    padding-top: 80px;
+    min-height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:3rem;
+    background: linear-gradient(135deg, #fbceac, #ff7e5f); color:#333; text-align:center; position:relative; overflow:hidden;
+    overflow: hidden;
   }
   .hero h1 {
-    font-size:3.2rem; font-weight:900; margin-bottom:1rem;
-    color:#222; text-shadow:1px 1px 4px rgba(0,0,0,0.2);
+    font-size:4rem; font-weight:900; margin-bottom:0.8rem; color:#222; letter-spacing:1px; text-shadow:1px 1px 8px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease forwards;
   }
-  .hero p {
-    font-size:1.2rem; max-width:700px; margin:auto; margin-bottom:2rem; opacity:0.8;
+  .hero p.subtitle {
+    font-size:1.5rem; max-width:720px; margin:auto; margin-bottom:2rem; font-weight:600; opacity:0.85;
+    animation: fadeInUp 1.4s ease forwards;
   }
-  .cta-buttons {
-    display:flex; gap:20px; justify-content:center; flex-wrap:wrap;
+  .buttons {
+    display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin-top:20px;
   }
   .btn {
-    padding:15px 40px; font-size:1.2rem; font-weight:600;
-    border:none; border-radius:50px; cursor:pointer; transition: all 0.3s ease;
-    display:inline-flex; align-items:center; gap:10px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    padding:15px 35px; font-size:1.2rem; font-weight:700; border:none; border-radius:50px;
+    cursor:pointer; transition: all 0.3s ease; display:inline-flex; align-items:center; gap:10px;
+    text-decoration: none; box-shadow:0 10px 20px rgba(0,0,0,0.2);
   }
-  .btn-primary {
-    background: linear-gradient(45deg, #ff6f61, #ffb347); color:#fff;
-  }
-  .btn-primary:hover {
-    transform:scale(1.05); box-shadow:0 12px 25px rgba(255,111,108,0.4);
-  }
-  .btn-secondary {
-    background: rgba(255,255,255,0.3); color:#fff; backdrop-filter:blur(8px);
-  }
-  .btn-secondary:hover { background: rgba(255,255,255,0.4); }
+  .btn-primary { background:linear-gradient(135deg, #43cea2, #185a9d); color:#fff; }
+  .btn-primary:hover { transform:scale(1.05); box-shadow:0 15px 25px rgba(24,90,157,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.2); color:#fff; backdrop-filter:blur(8px);}
+  .btn-secondary:hover { background: rgba(255,255,255,0.3); transform:scale(1.05); }
 
-  /* Features & showcase section */
-  .section {
-    padding: 6rem 20px;
-    max-width: 1300px; margin:auto;
+  /* Wave / Background Animation */
+  .wave {
+    position: absolute; bottom: -20px; width: 100%; height: 160px; background:url('https://d1cx9d8fmy83r9.cloudfront.net/waves.svg') repeat-x; background-size: cover; animation: waveMovement 20s linear infinite;
+  }
+  @keyframes waveMovement {
+    0% {background-position-x:0;}
+    100% {background-position-x:1000px;}
+  }
+
+  /* Sectiosn styling */
+  section {
+    padding: 60px 20px; max-width: 1200px; margin:auto;
   }
   .section-title {
-    font-size:2.8rem; font-weight:900; margin-bottom:50px; text-align:center; color:#4a3c97; position:relative;
+    font-size:2.8rem; font-weight:900; margin-bottom:40px; text-align:center; color:#3f51b5; position:relative;
   }
   .section-title::after {
-    content:""; display:block; height:4px; width:120px; background:linear-gradient(90deg, #f5576c, #f093fb);
-    margin:10px auto 0 auto; border-radius:2px;
+    content: ""; display:block; height:4px; width:130px; margin:8px auto 0 auto; background:linear-gradient(90deg, #f5576c, #f093fb); border-radius:2px;
   }
+  
+  /* Feature grid */
   .features-grid {
-    display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:30px;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;
   }
   .feature-card {
-    background:#fff; padding:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease; cursor:pointer;
+    background:#fff; padding:20px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.4s ease; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.07);
   }
-  .feature-card:hover { box-shadow:0 10px 20px rgba(0,0,0,0.2); transform:translateY(-5px); }
-  .feature-icon { font-size:3rem; color:#f093fb; margin-bottom:15px; }
-  .feature-title { font-size:1.4rem; font-weight:700; margin-bottom:10px; color:#222; }
+  .feature-card:hover { box-shadow:0 8px 20px rgba(0,0,0,0.1); transform:translateY(-5px); }
+  .feature-icon { font-size:3.5rem; margin-bottom:15px; color:#3f51b5; }
+  .feature-title { font-size:1.4rem; font-weight:700; margin-bottom:10px; }
   .feature-desc { font-size:1rem; color:#555; }
 
-  /* Tools & service section */
+  /* Tools Showcase */
   .tools {
-    background:#e0f7fa; padding:50px 20px; border-radius:15px; margin-top:50px;
+    background:#e0f2f1; padding:50px 20px; border-radius:15px; margin-top:50px;
   }
-  .tools h3 { text-align:Center; font-size:2.2rem; margin-bottom:30px; }
-  .tools-row {
-    display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:20px;
-  }
+  .tools h3 { font-size:2.2rem; font-weight:900; text-align:center; margin-bottom:30px; color:#009688; }
+  .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
   .tool-box {
-    background:#fff; padding:15px; border-radius:12px; display:flex; align-items:center; gap:15px; box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    cursor:pointer; transition:all 0.3s ease;
+    background:#fff; padding:15px; border-radius:12px; display:flex; align-items:center; gap:15px; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,0.05); transition: all 0.3s ease;
   }
-  .tool-box:hover { box-shadow:0 8px 20px rgba(0,0,0,0.15); transform:translateY(-3px); }
-  .tool-icon { font-size:2.5rem; color:#ff0080; }
+  .tool-box:hover { box-shadow:0 10px 20px rgba(0,0,0,0.15); transform:translateY(-3px); }
+  .tool-icon { font-size:2.7rem; color:#009688; }
   .tool-name { font-weight:600; }
 
-  /* Download section */
+  /* Download Container */
   .download-section {
-    background:#fff; padding:70px 20px; margin-top:50px; border-radius:15px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.15);
-    max-width: 700px; margin:auto; text-align:center;
+    background:#fff; padding:60px 20px; margin-top:60px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    max-width:700px; margin:auto; text-align:center;
   }
   .download-btn {
-    background: linear-gradient(135deg, #f093fb, #f5576c); padding:15px 40px; font-size:1.4rem; font-weight:700;
-    border:none; border-radius:50px; cursor:pointer; transition: all 0.3s ease; box-shadow:0 8px 20px rgba(245,87,108,0.3);
+    padding:15px 40px; background:linear-gradient(135deg, #009688, #4caf50); font-size:1.4rem; font-weight:700; border:none; border-radius:50px; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.2); transition: all 0.3s ease;
   }
-  .download-btn:hover { transform:scale(1.05); box-shadow:0 12px 30px rgba(245,87,108,0.5); }
-  #statusMessage { margin-top:20px; display:none; padding:15px; border-radius:12px; }
-
-  .errorMsg { background:#ffe6e6; color:#cc0000; border:1px solid #cc0000; }
-  .successMsg { background:#e6ffe6; color:#006600; border:1px solid #006600; }
+  .download-btn:hover { transform:scale(1.05); box-shadow:0 12px 25px rgba(0,128,128,0.4); }
+  #statusMessage { margin-top:20px; display:none; }
 
   /* Footer */
   footer {
-    background:#111; color:#888; padding:3rem 20px; text-align:center;
+    padding:2rem; text-align:center; background:#111; color:#ddd; font-size:0.9rem;
   }
-  footer a { color:#f093fb; text-decoration:none; }
+  footer a { color:#f5576c; text-decoration:none; }
   footer a:hover { text-decoration:underline; }
 
-  /* Animations */
-  @keyframes fadeInUp {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+  /* Responsive adjustments */
+  @media(max-width:768px){
+    body { font-size:0.9rem; }
+    section { padding:30px 10px; }
   }
-  
+
+  /* Animations for fade-in and section */
+  @keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+  }
 </style>
 </head>
 <body>
 
-<!-- Hero Banner -->
+<!-- Hero -->
 <section class="hero">
-  <h1 style="animation: fadeInUp 1s;">🚀 HEWP Excel Addins</h1>
-  <p style="animation: fadeInUp 1.2s; font-size:1.2rem;">Complete Automation Toolkit for Haryana Engineering Works Portal with Stunning Features</p>
-  <div class="cta-buttons" style="animation: fadeInUp 1.4s;">
+  <h1 style="animation: fadeIn 1s;">🚀 HEWP Excel Addins</h1>
+  <p style="animation: fadeIn 1.2s; font-size:1.3rem;">Complete Automation Toolkit for Haryana Engineering Works Portal. Templates, auto upload, calculators & more.</p>
+  <div class="cta-buttons" style="animation: fadeIn 1.4s;">
     <a class="btn btn-primary" href="#download"><i class="fas fa-download"></i> Download Now</a>
-    <a class="btn btn-secondary" href="#features"><i class="fas fa-info"></i> Learn Features</a>
+    <a class="btn btn-secondary" href="#features"><i class="fas fa-info-circle"></i> Discover Features</a>
   </div>
   <div class="wave"></div>
 </section>
 
-<!-- Features & Benefits -->
-<section class="section" id="features">
-  <h2 class="section-title fade-in">Why Use HEWP Excel Addins?</h2>
+<!-- Features -->
+<section id="features">
+  <h2 class="section-title" style="animation: fadeIn 1s;">Why Choose HEWP?</h2>
   <div class="features-grid">
-    <div class="feature-card" onclick="showDetail('detail1')">
+    <div class="feature-card" onclick="showDetail('errorFree')">
       <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-      <div class="feature-title">Error-Free Automation</div>
-      <div class="feature-desc" id="detail1" style="display:none;">Automatically fills complex data with zero errors. Enhance accuracy and save time.</div>
+      <div class="feature-title">Error Free Automation</div>
+      <div class="feature-desc" id="errorFree" style="display:none;">Automatically fills complex data with perfect accuracy, minimizing human error and saving valuable time.</div>
     </div>
-    <div class="feature-card" onclick="showDetail('detail2')">
+    <div class="feature-card" onclick="showDetail('hsrSearch')">
       <div class="feature-icon"><i class="fas fa-search"></i></div>
       <div class="feature-title">Instant HSR Search</div>
-      <div class="feature-desc" id="detail2" style="display:none;">Find item info instantly. Fetch rates, descriptions, units with a click.</div>
+      <div class="feature-desc" id="hsrSearch" style="display:none;">Find HSR items instantly by number or description, and auto-fetch rates and units fast.</div>
     </div>
-    <div class="feature-card" onclick="showDetail('detail3')">
-      <div class="feature-icon"><i class="fas fa-file"></i></div>
-      <div class="feature-title">Templates & Upload</div>
-      <div class="feature-desc" id="detail3" style="display:none;">Predefined Excel templates. Upload directly to portal, save hours.</div>
+    <div class="feature-card" onclick="showDetail('templates')">
+      <div class="feature-icon"><i class="fas fa-file-excel"></i></div>
+      <div class="feature-title">Templates & Uploads</div>
+      <div class="feature-desc" id="templates" style="display:none;">Preloaded Excel templates with latest amendments, ready for one-click upload and reporting.</div>
     </div>
   </div>
 </section>
 
-<!-- Tools & Features -->
-<section class="section" style="background:#eef2f3; padding-top:50px;">
-<h2 class="section-title fade-in">Powerful Excel Tools & Features</h2>
+<!-- Features details toggle -->
+<script>
+function showDetail(id) {
+  const elem = document.getElementById(id);
+  const allDetails = document.querySelectorAll('.feature-desc');
+  allDetails.forEach(d => d.style.display='none'); // Close all others
+  if (elem.style.display === 'block') {
+    elem.style.display='none';
+  } else {
+    elem.style.display='block';
+  }
+}
+</script>
+
+<!-- Tools & Features showcase -->
+<section style="background:#e0f2f1; padding:50px 20px; margin-top:50px; border-radius:15px;">
+<h2 class="section-title" style="color:#00695c;">20+ Powerful Tools & Automation</h2>
 <div class="tools">
   <div class="tools-row">
     <div class="tool-box" onclick="showToolDetail('tool1')">
       <div class="tool-icon"><i class="fas fa-ruler"></i></div>
-      <div class="tool-name">Feet ⇄ Meter Converter</div>
+      <div class="tool-name">Feet ⇄ Meter</div>
     </div>
     <div class="tool-box" onclick="showToolDetail('tool2')">
       <div class="tool-icon"><i class="fas fa-balance-scale"></i></div>
-      <div class="tool-name">Meter ⇄ Kg Converter</div>
+      <div class="tool-name">Meter ⇄ Kg</div>
     </div>
     <div class="tool-box" onclick="showToolDetail('tool3')">
       <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-      <div class="tool-name">Amount & Quantity Calculator</div>
+      <div class="tool-name">Amount & Quantity</div>
     </div>
   </div>
-  <div id="toolsDetails" style="margin-top:30px;text-align:left; padding:10px; font-size:1rem; display:none; background:#fff; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-    <!-- Dynamic content gets filled here -->
+  <div id="toolDetails" style="display:none; margin-top:20px; font-size:1rem; background:#fff; padding:15px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+    <!-- Dynamic tool info here -->
   </div>
 </div>
 </section>
 
-<!-- Download Section -->
-<section class="section" id="download" style="background:#fff;">
-  <h2 class="section-title fade-in">Get Started Today</h2>
-  <p style="text-align:center;">Download the latest version, just one click away!</p>
-  <div style="text-align:center; margin-top:30px;">
-    <button class="download-btn" onclick="startDownload()">🚀 Download Installer (450MB)</button>
-  </div>
-  <div id="statusMessage"></div>
+<!-- Tools info -->
+<script>
+function showToolDetail(id) {
+  const infoDiv = document.getElementById('toolDetails');
+  const infoMap = {
+    'tool1': 'Convert feet to meters and vice versa with a single click.',
+    'tool2': 'Quickly convert weights and measurements for your project.',
+    'tool3': 'Calculate amounts, quantities with auto formulas.'
+  };
+  infoDiv.innerHTML = infoMap[id] || 'More info coming soon!';
+  infoDiv.style.display='block';
+  infoDiv.scrollIntoView({behavior: "smooth"});
+}
+</script>
+
+<!-- Download Latest -->
+<section id="download" style="text-align:center; padding:50px 20px; background:#fff; margin-top:50px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.2); max-width:700px; margin:auto;">
+<h2 style="font-size:2.3rem; margin-bottom:20px;"><i class="fas fa-download"></i> Download & Get Started</h2>
+<button class="btn btn-primary" onclick="startDownload()">🚀 Download Installer (450MB)</button>
+<div id="statusMessage" style="margin-top:20px; display:none;"></div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2025 MRGARGSIR | <a href="https://github.com/mrgargsir/HEWP-Excel-Addins" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a></p>
+  <p>&copy; 2025 MRGARGSIR | <a href="https://github.com/mrgargsir/HEWP-Excel-Addins" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
 </footer>
 
 <script>
-  // Show feature detail
-  function showDetail(id) {
-    const el = document.getElementById(id);
-    if (el.style.display === 'block') { el.style.display='none'; }
-    else { 
-      document.querySelectorAll('.feature-desc').forEach(d => d.style.display='none');
-      el.style.display='block'; 
-    }
-  }
-  // Show tool description
-  function showToolDetail(id) {
-    const detailBox = document.getElementById('toolsDetails');
-    const contentMap = {
-      'tool1': 'Convert feet to meters and vice versa with ease.',
-      'tool2': 'Quickly convert between meters and kilograms for your project.',
-      'tool3': 'Calculate amounts and quantities with automatic formulas.',
-    };
-    detailBox.innerHTML = contentMap[id] || 'More info coming soon!';
-    detailBox.style.display='block';
-  }
-
-  // Download setup
   function startDownload() {
-    const msgDiv = document.getElementById('statusMessage');
-    msgDiv.innerHTML = '<p style="color:#006400;">🚀 Download starting...</p>';
-    msgDiv.style.display='block';
-    // simulate download - replace with actual download logic
+    const messageDiv = document.getElementById('statusMessage');
+    messageDiv.style.display='block';
+    messageDiv.innerHTML='Starting download...';
+    // simulate download delay
     setTimeout(() => {
-      msgDiv.innerHTML = '<p style="color:#004080;">✅ Download started! If it doesn\'t start, <a href="https://github.com/mrgargsir/HEWP-Excel-Addins/releases/latest/download/OnlineInstaller.exe" target="_blank" style="color:#f5576c;">click here to download offline installer</a></p>';
+      messageDiv.innerHTML='Download failed? <a href="https://github.com/mrgargsir/HEWP-Excel-Addins/releases/latest/download/OnlineInstaller.exe" target="_blank" style="color:#f5576c;">Click here for offline installer</a>.';
     }, 2000);
   }
 </script>
