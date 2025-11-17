@@ -1,236 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HEWP Excel Addins – The Complete Automation Toolkit</title>
-<meta name="description" content="HEWP Excel Addins for Haryana Engineering Works Portal – automatic templates, uploads, calculators, and more. Boost productivity effortlessly." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEWP Excel Addins — MRGARGSIR Tools</title>
+    <meta name="description" content="HEWP Excel Addins: Complete automation toolkit for Haryana Engineering Works Portal — templates, HSR search, auto-upload, calculators and free Chrome extension.">
 
-<!-- Google Fonts & Font Awesome -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-  /* Reset & Base */
-  * {margin:0; padding:0; box-sizing: border-box;}
-  body {
-    font-family:'Inter',sans-serif; background:#f0f4f8; color:#222; line-height:1.6; overflow-x:hidden;
-  }
+    <style>
+        :root{
+            --bg1:#0f172a; /* deep */
+            --accent1:#7c3aed; /* purple */
+            --accent2:#06b6d4; /* cyan */
+            --glass: rgba(255,255,255,0.06);
+            --card:#0b1220;
+            --muted: #9aa4b2;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+            background: radial-gradient(1000px 500px at 10% 10%, rgba(124,58,237,0.12), transparent),
+                        linear-gradient(180deg, #081028 0%, #071021 100%);
+            color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+        }
+        a{color:inherit}
+        .wrap{max-width:1150px;margin:0 auto;padding:36px}
 
-  /* Header and Hero styles */
-  .hero {
-    min-height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:3rem;
-    background: linear-gradient(135deg, #fbceac, #ff7e5f); color:#333; text-align:center; position:relative; overflow:hidden;
-    overflow: hidden;
-  }
-  .hero h1 {
-    font-size:4rem; font-weight:900; margin-bottom:0.8rem; color:#222; letter-spacing:1px; text-shadow:1px 1px 8px rgba(0,0,0,0.1);
-    animation: fadeInUp 1s ease forwards;
-  }
-  .hero p.subtitle {
-    font-size:1.5rem; max-width:720px; margin:auto; margin-bottom:2rem; font-weight:600; opacity:0.85;
-    animation: fadeInUp 1.4s ease forwards;
-  }
-  .buttons {
-    display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin-top:20px;
-  }
-  .btn {
-    padding:15px 35px; font-size:1.2rem; font-weight:700; border:none; border-radius:50px;
-    cursor:pointer; transition: all 0.3s ease; display:inline-flex; align-items:center; gap:10px;
-    text-decoration: none; box-shadow:0 10px 20px rgba(0,0,0,0.2);
-  }
-  .btn-primary { background:linear-gradient(135deg, #43cea2, #185a9d); color:#fff; }
-  .btn-primary:hover { transform:scale(1.05); box-shadow:0 15px 25px rgba(24,90,157,0.4); }
-  .btn-secondary { background: rgba(255,255,255,0.2); color:#fff; backdrop-filter:blur(8px);}
-  .btn-secondary:hover { background: rgba(255,255,255,0.3); transform:scale(1.05); }
+        /* Header */
+        header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),#f97316);display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 6px 30px rgba(124,58,237,0.18)}
+        .logo i{font-size:20px}
+        .brand h1{font-size:18px;margin:0}
+        .brand p{margin:0;font-size:12px;color:var(--muted)}
+        nav{display:flex;gap:14px;align-items:center}
+        .nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:600}
+        .nav-btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:0}
 
-  /* Wave / Background Animation */
-  .wave {
-    position: absolute; bottom: -20px; width: 100%; height: 160px; background:url('https://d1cx9d8fmy83r9.cloudfront.net/waves.svg') repeat-x; background-size: cover; animation: waveMovement 20s linear infinite;
-  }
-  @keyframes waveMovement {
-    0% {background-position-x:0;}
-    100% {background-position-x:1000px;}
-  }
+        /* Hero */
+        .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 0}
+        .hero-left h2{font-size:38px;margin:0 0 12px}
+        .hero-left p.lead{color:#cfe8ff;margin:0 0 24px;font-size:16px;max-width:65%}
+        .ctas{display:flex;gap:14px}
+        .cta{padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none}
+        .cta.primary{background:linear-gradient(90deg,var(--accent1),#fb7185);color:white}
+        .cta.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 
-  /* Sectiosn styling */
-  section {
-    padding: 60px 20px; max-width: 1200px; margin:auto;
-  }
-  .section-title {
-    font-size:2.8rem; font-weight:900; margin-bottom:40px; text-align:center; color:#3f51b5; position:relative;
-  }
-  .section-title::after {
-    content: ""; display:block; height:4px; width:130px; margin:8px auto 0 auto; background:linear-gradient(90deg, #f5576c, #f093fb); border-radius:2px;
-  }
-  
-  /* Feature grid */
-  .features-grid {
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;
-  }
-  .feature-card {
-    background:#fff; padding:20px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    transition: all 0.4s ease; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.07);
-  }
-  .feature-card:hover { box-shadow:0 8px 20px rgba(0,0,0,0.1); transform:translateY(-5px); }
-  .feature-icon { font-size:3.5rem; margin-bottom:15px; color:#3f51b5; }
-  .feature-title { font-size:1.4rem; font-weight:700; margin-bottom:10px; }
-  .feature-desc { font-size:1rem; color:#555; }
+        .card-hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.08));padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+        .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700;color:var(--accent1);font-size:13px}
+        .meta{display:flex;gap:12px;margin-top:12px;color:var(--muted);font-size:13px}
 
-  /* Tools Showcase */
-  .tools {
-    background:#e0f2f1; padding:50px 20px; border-radius:15px; margin-top:50px;
-  }
-  .tools h3 { font-size:2.2rem; font-weight:900; text-align:center; margin-bottom:30px; color:#009688; }
-  .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-  .tool-box {
-    background:#fff; padding:15px; border-radius:12px; display:flex; align-items:center; gap:15px; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,0.05); transition: all 0.3s ease;
-  }
-  .tool-box:hover { box-shadow:0 10px 20px rgba(0,0,0,0.15); transform:translateY(-3px); }
-  .tool-icon { font-size:2.7rem; color:#009688; }
-  .tool-name { font-weight:600; }
+        /* Feature tiles */
+        section{margin:48px 0}
+        .grid{display:grid;gap:18px}
+        .features-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+        .feature{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        .feature h4{margin:8px 0 6px}
+        .feature p{margin:0;color:var(--muted);font-size:13px}
 
-  /* Download Container */
-  .download-section {
-    background:#fff; padding:60px 20px; margin-top:60px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1);
-    max-width:700px; margin:auto; text-align:center;
-  }
-  .download-btn {
-    padding:15px 40px; background:linear-gradient(135deg, #009688, #4caf50); font-size:1.4rem; font-weight:700; border:none; border-radius:50px; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.2); transition: all 0.3s ease;
-  }
-  .download-btn:hover { transform:scale(1.05); box-shadow:0 12px 25px rgba(0,128,128,0.4); }
-  #statusMessage { margin-top:20px; display:none; }
+        /* Detailed feature area */
+        .two-col{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+        .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        .accordion .item{border-top:1px dashed rgba(255,255,255,0.03)}
+        .item button{width:100%;background:none;border:0;padding:14px 0;color:#eaf4ff;text-align:left;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+        .item p{color:var(--muted);margin:6px 0 16px}
 
-  /* Footer */
-  footer {
-    padding:2rem; text-align:center; background:#111; color:#ddd; font-size:0.9rem;
-  }
-  footer a { color:#f5576c; text-decoration:none; }
-  footer a:hover { text-decoration:underline; }
+        /* Slider */
+        .carousel{position:relative;overflow:hidden;border-radius:12px}
+        .slides{display:flex;transition:transform .6s cubic-bezier(.2,.9,.3,1)}
+        .slide{min-width:100%;padding:28px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.04))}
+        .dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+        .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.08)}
+        .dot.active{background:linear-gradient(90deg,var(--accent1),var(--accent2))}
 
-  /* Responsive adjustments */
-  @media(max-width:768px){
-    body { font-size:0.9rem; }
-    section { padding:30px 10px; }
-  }
+        /* Download box */
+        .download{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(124,58,237,0.09), rgba(6,182,212,0.04));border:1px solid rgba(255,255,255,0.03)}
+        .download .left{flex:1}
+        .download .right{display:flex;gap:12px;align-items:center}
+        .small{font-size:13px;color:var(--muted)}
+        .pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700}
 
-  /* Animations for fade-in and section */
-  @keyframes fadeIn {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1; transform: translateY(0);}
-  }
-</style>
+        /* Footer */
+        footer{padding:30px 0;color:var(--muted);text-align:center}
+
+        /* Responsive */
+        @media (max-width:980px){.hero,.two-col{grid-template-columns:1fr}.hero-left p.lead{max-width:100%}.hero{gap:22px}.wrap{padding:20px}}
+
+        /* subtle animations */
+        .fadeInUp{opacity:0;transform:translateY(10px);animation:fadeUp .7s ease forwards}
+        @keyframes fadeUp{to{opacity:1;transform:none}}
+    </style>
 </head>
 <body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo"><i class="fas fa-cogs"></i></div>
+                <div>
+                    <h1>HEWP Excel Addins</h1>
+                    <p>MRGARGSIR Tools — Automation for HEWP</p>
+                </div>
+            </div>
+            <nav>
+                <a class="nav-btn" href="#features">Features</a>
+                <a class="nav-btn" href="#how">How it works</a>
+                <a class="nav-btn" href="#extension">Chrome Extension</a>
+                <a class="nav-btn primary" href="#download">Download</a>
+            </nav>
+        </header>
 
-<!-- Hero -->
-<section class="hero">
-  <h1 style="animation: fadeIn 1s;">🚀 HEWP Excel Addins</h1>
-  <p style="animation: fadeIn 1.2s; font-size:1.3rem;">Complete Automation Toolkit for Haryana Engineering Works Portal. Templates, auto upload, calculators & more.</p>
-  <div class="cta-buttons" style="animation: fadeIn 1.4s;">
-    <a class="btn btn-primary" href="#download"><i class="fas fa-download"></i> Download Now</a>
-    <a class="btn btn-secondary" href="#features"><i class="fas fa-info-circle"></i> Discover Features</a>
-  </div>
-  <div class="wave"></div>
-</section>
+        <main>
+            <section class="hero">
+                <div class="hero-left fadeInUp">
+                    <span class="badge">HEWP • HSR 2023 • Templates</span>
+                    <h2>Speed up HEWP work — Templates, Auto‑upload, HSR Search & More</h2>
+                    <p class="lead">HEWPExcelADDins bundles prebuilt Estimate & Measurement Book templates, real‑time HSR search, intelligent copy‑paste to templates, one‑click uploader and a free Chrome extension — designed for both Contractors and Employees.</p>
 
-<!-- Features -->
-<section id="features">
-  <h2 class="section-title" style="animation: fadeIn 1s;">Why Choose HEWP?</h2>
-  <div class="features-grid">
-    <div class="feature-card" onclick="showDetail('errorFree')">
-      <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-      <div class="feature-title">Error Free Automation</div>
-      <div class="feature-desc" id="errorFree" style="display:none;">Automatically fills complex data with perfect accuracy, minimizing human error and saving valuable time.</div>
+                    <div class="ctas">
+                        <a class="cta primary" href="#download" id="heroDownload"><i class="fas fa-download"></i>&nbsp;Download Installer</a>
+                        <a class="cta ghost" href="#how"><i class="fas fa-book-open"></i>&nbsp;View Docs</a>
+                    </div>
+
+                    <div class="meta">
+                        <div class="pill">One-click installer</div>
+                        <div class="pill">Auto Updates</div>
+                        <div class="pill">Chrome Extension included</div>
+                    </div>
+                </div>
+
+                <aside class="card-hero fadeInUp" aria-hidden>
+                    <h3 style="margin:0 0 8px">Quick snapshot</h3>
+                    <p class="small">Preloaded templates, HSR rate fetcher, unit converters, steel calculator, auto upload to HEWP, and website scrapers — everything bundled into an easy installer.</p>
+
+                    <div style="margin-top:18px">
+                        <div class="download">
+                            <div class="left">
+                                <strong>Installer</strong>
+                                <div class="small">OnlineInstaller.exe — approx 450 MB</div>
+                            </div>
+                            <div class="right">
+                                <a class="cta primary" href="#download" id="miniDownload">Download</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:14px;font-size:13px;color:var(--muted)">
+                        <strong>Latest:</strong> HSR 2023 amendments integrated • Stable release
+                    </div>
+                </aside>
+            </section>
+
+            <!-- Features overview -->
+            <section id="features">
+                <h3 style="margin-bottom:12px">Core features</h3>
+                <div class="grid features-grid">
+                    <div class="feature">
+                        <div style="font-size:20px;color:var(--accent1)"><i class="fas fa-file-excel"></i></div>
+                        <h4>Professional Templates</h4>
+                        <p>Estimate & Measurement Book templates ready with HSR 2023 structure and latest amendments.</p>
+                    </div>
+                    <div class="feature">
+                        <div style="font-size:20px;color:var(--accent2)"><i class="fas fa-search"></i></div>
+                        <h4>Real‑time HSR Search</h4>
+                        <p>Search by item number or description and auto fetch Unit, Rate, Rate Type and Description.</p>
+                    </div>
+                    <div class="feature">
+                        <div style="font-size:20px;color:#f97316"><i class="fas fa-robot"></i></div>
+                        <h4>Auto Upload & Auto Login</h4>
+                        <p>Upload templates or input data directly to the HEWP portal with saved credentials & one‑click flows.</p>
+                    </div>
+                    <div class="feature">
+                        <div style="font-size:20px;color:#f43f5e"><i class="fas fa-calculator"></i></div>
+                        <h4>Advanced Calculators</h4>
+                        <p>Steel weight, amount calcs with GST, unit converters and rounding utilities at a click.</p>
+                    </div>
+                    <div class="feature">
+                        <div style="font-size:20px;color:#60a5fa"><i class="fas fa-copy"></i></div>
+                        <h4>Smart Copy‑Paste</h4>
+                        <p>Automatically arrange data into templates with minimal user edits and near‑zero alignment errors.</p>
+                    </div>
+                    <div class="feature">
+                        <div style="font-size:20px;color:#a78bfa"><i class="fab fa-chrome"></i></div>
+                        <h4>Free Chrome Extension</h4>
+                        <p>Enhances HEWP UX — tender search, dark mode, enter‑fix, toggle checkboxes and more.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed features and how it works -->
+            <section id="how" class="two-col">
+                <div class="panel">
+                    <h3>All features (detailed)</h3>
+                    <p class="small">Below are the grouped tools available in the Excel ribbon tabs: <strong>E. TOOLS</strong> and <strong>WebManual</strong>.</p>
+
+                    <div class="accordion">
+                        <div class="item">
+                            <button type="button">E. TOOLS — Excel utilities <i class="fas fa-chevron-down"></i></button>
+                            <p class="small">Jump between sheets, insert rows, converters (Feet⇄Meter, Meter⇄Kg), Toggle Sign, Formulas→Constants, Multiply & Quantity, Total quantity + unit conversion, Rate & Description Fetcher, Amount Calculator, Steel Weight Calculator, Auto Round Off, Steel Summary Generator and Bill Summary tools.</p>
+                        </div>
+
+                        <div class="item">
+                            <button type="button">WebManual — Portal integration <i class="fas fa-chevron-down"></i></button>
+                            <p class="small">Auto Login to HEWP, Copy Data to Template (unit conversions applied), Item Number Selector, PDF generator & upload, Upload Template to portal, Direct data entry, Website data scraper, Delete bill data and Auto upload full bill. Works for both contractor and employee workflows.</p>
+                        </div>
+
+                        <div class="item">
+                            <button type="button">Chrome Extension features <i class="fas fa-chevron-down"></i></button>
+                            <p class="small">Smart Tender Search, Toggle All Checkbox, Enter button behavior fixes, Volume increase tweaks, and Dark Mode for portal readability.</p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top:18px">Why use HEWPExcelADDins?</h4>
+                    <p class="small">Saves hours on template prep, removes manual mapping errors, reduces rework and supports full bill scraping and comparisons. Built for low‑skill install and day‑to‑day automation.</p>
+
+                </div>
+
+                <aside class="panel">
+                    <h4 style="margin:0 0 8px">Interactive demo</h4>
+                    <div class="carousel" id="carousel">
+                        <div class="slides">
+                            <div class="slide">
+                                <h4>HSR Lookup</h4>
+                                <p class="small">Type an HSR number or description and get unit, rate and rate type instantly.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Auto Upload</h4>
+                                <p class="small">One‑click upload with auto login and field mapping — saves repetitive portal clicks.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Steel Summary</h4>
+                                <p class="small">Generate detailed steel usage and put values into bill with correct unit conversions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dots" id="dots"></div>
+                </aside>
+            </section>
+
+            <!-- Tools list condensed -->
+            <section>
+                <h3>20+ Tools included</h3>
+                <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));margin-top:12px">
+                    <div class="feature"><i class="fas fa-ruler"></i><h4 style="font-size:14px">Feet ⇄ Meter</h4></div>
+                    <div class="feature"><i class="fas fa-balance-scale"></i><h4 style="font-size:14px">Meter ⇄ Kg</h4></div>
+                    <div class="feature"><i class="fas fa-calculator"></i><h4 style="font-size:14px">Multiply & Quantity</h4></div>
+                    <div class="feature"><i class="fas fa-coins"></i><h4 style="font-size:14px">Amount Calculator</h4></div>
+                    <div class="feature"><i class="fas fa-chart-bar"></i><h4 style="font-size:14px">Steel Weight</h4></div>
+                    <div class="feature"><i class="fas fa-file-invoice"></i><h4 style="font-size:14px">Bill Summary</h4></div>
+                    <div class="feature"><i class="fas fa-cubes"></i><h4 style="font-size:14px">Material Summary</h4></div>
+                    <div class="feature"><i class="fas fa-tag"></i><h4 style="font-size:14px">Rate & Description Fetcher</h4></div>
+                    <div class="feature"><i class="fas fa-upload"></i><h4 style="font-size:14px">Auto Upload</h4></div>
+                    <div class="feature"><i class="fas fa-download"></i><h4 style="font-size:14px">Website Scraper</h4></div>
+                </div>
+            </section>
+
+            <!-- Extension -->
+            <section id="extension">
+                <h3>MRGARGSIR Chrome Extension (free)</h3>
+                <div class="panel">
+                    <p class="small">Included with the installer at no extra cost. Improves portal interaction with small but meaningful UX fixes: tender search, enter‑key fixes, dark mode and toggle all checkboxes. Easily enable/disable from extension toolbar.</p>
+                    <p class="small"><strong>Note:</strong> The extension is optional — add it during installer setup or get it separately from the release page.</p>
+                </div>
+            </section>
+
+            <!-- Download -->
+            <section id="download">
+                <h3>Download</h3>
+                <div class="panel">
+                    <div style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+                        <div style="flex:1;min-width:260px">
+                            <strong>HEWP Excel Addins — OnlineInstaller.exe</strong>
+                            <div class="small" style="margin-top:6px">Approx size: 450 MB. Latest release includes HSR 2023 amendments and Chrome extension.</div>
+                            <ul class="small" style="margin-top:8px;color:var(--muted)">
+                                <li>One‑click install (no technical skills required)</li>
+                                <li>Auto update checks enabled by default</li>
+                                <li>Installer bundles Excel Addin + Chrome extension</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <button id="downloadBtnTop" class="cta primary" style="padding:12px 18px;font-size:15px"><i class="fas fa-download"></i>&nbsp;Download Now</button>
+                        </div>
+                    </div>
+
+                    <div id="dlStatus" style="margin-top:18px;display:none;padding:12px;border-radius:10px"></div>
+                </div>
+            </section>
+
+            <!-- Before/After -->
+            <section>
+                <h3>Before vs After</h3>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+                    <div class="panel" style="flex:1;min-width:260px">
+                        <h4 style="margin-top:0">Before</h4>
+                        <ul class="small" style="color:var(--muted)">
+                            <li>Manual HSR lookup and copying</li>
+                            <li>Time consuming portal clicks</li>
+                            <li>Prone to alignment & rounding errors</li>
+                        </ul>
+                    </div>
+                    <div class="panel" style="flex:1;min-width:260px">
+                        <h4 style="margin-top:0">After</h4>
+                        <ul class="small" style="color:var(--muted)">
+                            <li>Instant HSR fetch & auto‑fill</li>
+                            <li>One‑click upload & auto login</li>
+                            <li>Cleaner bills, automatic summaries & steel reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div style="max-width:900px;margin:0 auto">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                    <div style="text-align:left">
+                        <strong>HEWP Excel Addins</strong> by <a href="https://aratt.ai/@mrgargsir_tools" target="_blank" rel="noreferrer">MRGARGSIR</a>
+                        <div class="small" style="margin-top:6px">© 2025 — All rights reserved</div>
+                    </div>
+                    <div style="text-align:right">
+                        <a href="https://github.com/mrgargsir/HEWP-Excel-Addins" target="_blank" class="small">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="feature-card" onclick="showDetail('hsrSearch')">
-      <div class="feature-icon"><i class="fas fa-search"></i></div>
-      <div class="feature-title">Instant HSR Search</div>
-      <div class="feature-desc" id="hsrSearch" style="display:none;">Find HSR items instantly by number or description, and auto-fetch rates and units fast.</div>
-    </div>
-    <div class="feature-card" onclick="showDetail('templates')">
-      <div class="feature-icon"><i class="fas fa-file-excel"></i></div>
-      <div class="feature-title">Templates & Uploads</div>
-      <div class="feature-desc" id="templates" style="display:none;">Preloaded Excel templates with latest amendments, ready for one-click upload and reporting.</div>
-    </div>
-  </div>
-</section>
 
-<!-- Features details toggle -->
-<script>
-function showDetail(id) {
-  const elem = document.getElementById(id);
-  const allDetails = document.querySelectorAll('.feature-desc');
-  allDetails.forEach(d => d.style.display='none'); // Close all others
-  if (elem.style.display === 'block') {
-    elem.style.display='none';
-  } else {
-    elem.style.display='block';
-  }
-}
-</script>
+    <script>
+        // Carousel logic
+        (function(){
+            const slides = document.querySelector('#carousel .slides');
+            const dots = document.getElementById('dots');
+            const total = slides.children.length;
+            let idx = 0;
+            for(let i=0;i<total;i++){ const d=document.createElement('div'); d.className='dot'; if(i===0) d.classList.add('active'); dots.appendChild(d); d.addEventListener('click',()=>{ idx=i; update(); }); }
+            function update(){ slides.style.transform = `translateX(-${idx*100}%)`; Array.from(dots.children).forEach((x,i)=> x.classList.toggle('active', i===idx)); }
+            setInterval(()=>{ idx = (idx+1)%total; update(); }, 5000);
+        })();
 
-<!-- Tools & Features showcase -->
-<section style="background:#e0f2f1; padding:50px 20px; margin-top:50px; border-radius:15px;">
-<h2 class="section-title" style="color:#00695c;">20+ Powerful Tools & Automation</h2>
-<div class="tools">
-  <div class="tools-row">
-    <div class="tool-box" onclick="showToolDetail('tool1')">
-      <div class="tool-icon"><i class="fas fa-ruler"></i></div>
-      <div class="tool-name">Feet ⇄ Meter</div>
-    </div>
-    <div class="tool-box" onclick="showToolDetail('tool2')">
-      <div class="tool-icon"><i class="fas fa-balance-scale"></i></div>
-      <div class="tool-name">Meter ⇄ Kg</div>
-    </div>
-    <div class="tool-box" onclick="showToolDetail('tool3')">
-      <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-      <div class="tool-name">Amount & Quantity</div>
-    </div>
-  </div>
-  <div id="toolDetails" style="display:none; margin-top:20px; font-size:1rem; background:#fff; padding:15px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-    <!-- Dynamic tool info here -->
-  </div>
-</div>
-</section>
+        // Download logic with clear UX and fallback
+        const primaryURL = 'https://github.com/mrgargsir/HEWP-Excel-Addins/releases/download/latest/OnlineInstaller.exe';
+        const fallbackURL = 'https://www.dropbox.com/scl/fi/4qipmycacrpmua8qm58x1/Installer.exe?rlkey=6jm8kz0cv9ao365l4k8sjzm6g&st=28q80546&dl=1';
 
-<!-- Tools info -->
-<script>
-function showToolDetail(id) {
-  const infoDiv = document.getElementById('toolDetails');
-  const infoMap = {
-    'tool1': 'Convert feet to meters and vice versa with a single click.',
-    'tool2': 'Quickly convert weights and measurements for your project.',
-    'tool3': 'Calculate amounts, quantities with auto formulas.'
-  };
-  infoDiv.innerHTML = infoMap[id] || 'More info coming soon!';
-  infoDiv.style.display='block';
-  infoDiv.scrollIntoView({behavior: "smooth"});
-}
-</script>
+        function startDownload(button){
+            const status = document.getElementById('dlStatus');
+            button = button || document.getElementById('downloadBtnTop');
+            button.disabled = true; button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing download...';
 
-<!-- Download Latest -->
-<section id="download" style="text-align:center; padding:50px 20px; background:#fff; margin-top:50px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.2); max-width:700px; margin:auto;">
-<h2 style="font-size:2.3rem; margin-bottom:20px;"><i class="fas fa-download"></i> Download & Get Started</h2>
-<button class="btn btn-primary" onclick="startDownload()">🚀 Download Installer (450MB)</button>
-<div id="statusMessage" style="margin-top:20px; display:none;"></div>
-</section>
+            // Start primary download
+            const a = document.createElement('a'); a.href = primaryURL; a.download = 'HEWP_OnlineInstaller.exe'; a.style.display='none'; document.body.appendChild(a);
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 MRGARGSIR | <a href="https://github.com/mrgargsir/HEWP-Excel-Addins" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
-</footer>
+            // Attempt to open the link — browsers will handle download.
+            a.click(); setTimeout(()=>{ document.body.removeChild(a); }, 1000);
 
-<script>
-  function startDownload() {
-    const messageDiv = document.getElementById('statusMessage');
-    messageDiv.style.display='block';
-    messageDiv.innerHTML='Starting download...';
-    // simulate download delay
-    setTimeout(() => {
-      messageDiv.innerHTML='Download failed? <a href="https://github.com/mrgargsir/HEWP-Excel-Addins/releases/latest/download/OnlineInstaller.exe" target="_blank" style="color:#f5576c;">Click here for offline installer</a>.';
-    }, 2000);
-  }
-</script>
+            // Show status with fallback link (typical pattern used by installers)
+            setTimeout(()=>{
+                status.style.display = 'block'; status.style.background = 'rgba(16,185,129,0.06)'; status.style.border = '1px solid rgba(16,185,129,0.12)'; status.style.color = '#b7f3df';
+                status.innerHTML = `<strong>Download started.</strong> If the download does not start automatically, <a href="${fallbackURL}" style="color: #fbcfe8; text-decoration:underline" target="_blank" rel="noreferrer">click here to download the offline installer</a> (direct link).`;
+                button.disabled = false; button.innerHTML = '<i class="fas fa-download"></i> Download Again';
+            }, 2200);
+        }
+
+        // Hook buttons
+        document.getElementById('downloadBtnTop').addEventListener('click', function(){ startDownload(this); });
+        document.getElementById('miniDownload').addEventListener('click', function(e){ e.preventDefault(); startDownload(this); });
+        document.getElementById('heroDownload').addEventListener('click', function(e){ e.preventDefault(); document.getElementById('downloadBtnTop').click(); });
+
+    </script>
 </body>
 </html>
