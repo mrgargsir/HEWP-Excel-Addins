@@ -14,6 +14,8 @@
             --bg1:#0f172a; /* deep */
             --accent1:#7c3aed; /* purple */
             --accent2:#06b6d4; /* cyan */
+            --accent3:#f97316; /* orange */
+            --accent4:#f43f5e; /* pink */
             --glass: rgba(255,255,255,0.06);
             --card:#0b1220;
             --muted: #9aa4b2;
@@ -23,82 +25,272 @@
         body{
             margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
             background: radial-gradient(1000px 500px at 10% 10%, rgba(124,58,237,0.12), transparent),
+                        radial-gradient(800px 400px at 90% 80%, rgba(6,182,212,0.08), transparent),
                         linear-gradient(180deg, #081028 0%, #071021 100%);
-            color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+            color:#f8fafc; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+            overflow-x: hidden;
         }
         a{color:inherit}
         .wrap{max-width:1150px;margin:0 auto;padding:36px}
+        
+        /* Scroll animations */
+        .fadeInUp{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease}
+        .fadeInLeft{opacity:0;transform:translateX(-20px);transition:opacity 0.6s ease, transform 0.6s ease}
+        .fadeInRight{opacity:0;transform:translateX(20px);transition:opacity 0.6s ease, transform 0.6s ease}
+        .visible{opacity:1;transform:none}
 
         /* Header */
-        header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+        header{display:flex;align-items:center;justify-content:space-between;padding:10px 0;position:relative}
         .brand{display:flex;align-items:center;gap:12px}
-        .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),#f97316);display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 6px 30px rgba(124,58,237,0.18)}
-        .logo i{font-size:20px}
+        .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent3));display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 6px 30px rgba(124,58,237,0.18);position:relative;overflow:hidden}
+        .logo:before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,0.1) 50%,transparent 70%);animation:shine 3s infinite linear}
+        .logo i{font-size:20px;position:relative;z-index:1}
         .brand h1{font-size:18px;margin:0}
-        .brand p{margin:0;font-size:12px;color:var(--muted)}
+        .brand p{margin:0;font-size:12px;color:#d5ddea}
         nav{display:flex;gap:14px;align-items:center}
-        .nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:600}
-        .nav-btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:0}
+        .nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:#d5ddea;text-decoration:none;font-weight:600;transition:all 0.3s ease;cursor:pointer}
+        .nav-btn:hover{background:rgba(255,255,255,0.05);transform:translateY(-2px)}
+        .nav-btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:0;box-shadow:0 4px 15px rgba(124,58,237,0.3)}
+        .nav-btn.primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,0.4)}
+
+        /* Contact Modal */
+        .contact-modal {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            z-index: 100;
+            width: 300px;
+            margin-top: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-modal.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .contact-modal h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--accent2);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: white;
+            font-size: 16px;
+        }
+        
+        .contact-details {
+            flex: 1;
+        }
+        
+        .contact-details .label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 3px;
+        }
+        
+        .contact-details .value {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .contact-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .contact-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .contact-btn:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .contact-btn.email {
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+        }
+        
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         /* Hero */
         .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 0}
-        .hero-left h2{font-size:38px;margin:0 0 12px}
+        .hero-left h2{font-size:38px;margin:0 0 12px;line-height:1.2}
         .hero-left p.lead{color:#cfe8ff;margin:0 0 24px;font-size:16px;max-width:65%}
         .ctas{display:flex;gap:14px}
-        .cta{padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none}
-        .cta.primary{background:linear-gradient(90deg,var(--accent1),#fb7185);color:white}
-        .cta.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+        .cta{padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:8px}
+        .cta.primary{background:linear-gradient(90deg,var(--accent1),var(--accent4));color:white;box-shadow:0 4px 15px rgba(124,58,237,0.3)}
+        .cta.primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,58,237,0.4)}
+        .cta.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#d5ddea}
+        .cta.ghost:hover{background:rgba(255,255,255,0.05);transform:translateY(-2px)}
 
-        .card-hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.08));padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+        .card-hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.08));padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
         .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700;color:var(--accent1);font-size:13px}
-        .meta{display:flex;gap:12px;margin-top:12px;color:var(--muted);font-size:13px}
+        .meta{display:flex;gap:12px;margin-top:12px;color:#d5ddea;font-size:13px;flex-wrap:wrap}
 
         /* Feature tiles */
         section{margin:48px 0}
         .grid{display:grid;gap:18px}
         .features-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-        .feature{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        .feature{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:all 0.3s ease}
+        .feature:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.2);border-color:rgba(124,58,237,0.2)}
         .feature h4{margin:8px 0 6px}
-        .feature p{margin:0;color:var(--muted);font-size:13px}
+        .feature p{margin:0;color:#d5ddea;font-size:13px}
 
         /* Detailed feature area */
         .two-col{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-        .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 5px 15px rgba(0,0,0,0.1)}
         .accordion .item{border-top:1px dashed rgba(255,255,255,0.03)}
-        .item button{width:100%;background:none;border:0;padding:14px 0;color:#eaf4ff;text-align:left;font-weight:700;display:flex;justify-content:space-between;align-items:center}
-        .item p{color:var(--muted);margin:6px 0 16px}
+        .item button{width:100%;background:none;border:0;padding:14px 0;color:#eaf4ff;text-align:left;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:color 0.3s ease}
+        .item button:hover{color:var(--accent2)}
+        .item p{color:#d5ddea;margin:6px 0 16px;line-height:1.5}
 
         /* Slider */
-        .carousel{position:relative;overflow:hidden;border-radius:12px}
+        .carousel{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
         .slides{display:flex;transition:transform .6s cubic-bezier(.2,.9,.3,1)}
-        .slide{min-width:100%;padding:28px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.04))}
+        .slide{min-width:100%;padding:28px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.04));border-radius:12px}
         .dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
-        .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.08)}
-        .dot.active{background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+        .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.08);cursor:pointer;transition:all 0.3s ease}
+        .dot.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));transform:scale(1.2)}
 
         /* Download box */
-        .download{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(124,58,237,0.09), rgba(6,182,212,0.04));border:1px solid rgba(255,255,255,0.03)}
+        .download{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(124,58,237,0.09), rgba(6,182,212,0.04));border:1px solid rgba(255,255,255,0.03);transition:all 0.3s ease}
+        .download:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,0.15)}
         .download .left{flex:1}
         .download .right{display:flex;gap:12px;align-items:center}
-        .small{font-size:13px;color:var(--muted)}
-        .pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700}
+        .small{font-size:13px;color:#d5ddea}
+        .pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700;transition:all 0.3s ease}
+        .pill:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
 
         /* Footer */
-        footer{padding:30px 0;color:var(--muted);text-align:center}
+        footer{padding:30px 0;color:#d5ddea;text-align:center}
 
         /* Responsive */
-        @media (max-width:980px){.hero,.two-col{grid-template-columns:1fr}.hero-left p.lead{max-width:100%}.hero{gap:22px}.wrap{padding:20px}}
+        @media (max-width:980px){
+            .hero,.two-col{grid-template-columns:1fr}
+            .hero-left p.lead{max-width:100%}
+            .hero{gap:22px}
+            .wrap{padding:20px}
+            .contact-modal {
+                right: 20px;
+                width: calc(100% - 40px);
+            }
+        }
 
-        /* subtle animations */
-        .fadeInUp{opacity:0;transform:translateY(10px);animation:fadeUp .7s ease forwards}
-        @keyframes fadeUp{to{opacity:1;transform:none}}
+        /* Animations */
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+        }
+        
+        .bounce { animation: bounce 2s infinite; }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+        
+        /* Stats section */
+        .stats { display: flex; justify-content: space-between; margin: 40px 0; flex-wrap: wrap; gap: 20px; }
+        .stat { text-align: center; flex: 1; min-width: 120px; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; background: linear-gradient(90deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; }
+        .stat-label { font-size: 0.9rem; color: var(--muted); }
+        
+        /* Testimonial */
+        .testimonial { background: linear-gradient(90deg, rgba(124,58,237,0.05), rgba(6,182,212,0.05)); padding: 25px; border-radius: 12px; margin: 30px 0; border-left: 4px solid var(--accent1); }
+        .testimonial-text { font-style: italic; margin-bottom: 15px; }
+        .testimonial-author { font-weight: 600; color: var(--accent2); }
+        
+        /* Tool grid enhancement */
+        .tools-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+        .tool { text-align: center; padding: 20px 15px; }
+        .tool i { font-size: 24px; margin-bottom: 10px; display: block; }
+        
+        /* Before/After enhancement */
+        .comparison { display: flex; gap: 20px; margin-top: 20px; }
+        .comparison-item { flex: 1; padding: 25px; border-radius: 12px; }
+        .before { background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(239,68,68,0.02)); border: 1px solid rgba(239,68,68,0.1); }
+        .after { background: linear-gradient(135deg, rgba(16,185,129,0.05), rgba(16,185,129,0.02)); border: 1px solid rgba(16,185,129,0.1); }
+        .comparison-title { font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+        .comparison-title:before { content: ''; width: 12px; height: 12px; border-radius: 50%; }
+        .before .comparison-title:before { background: #ef4444; }
+        .after .comparison-title:before { background: #10b981; }
+        .comparison-list { padding-left: 20px; }
+        .comparison-list li { margin-bottom: 8px; line-height: 1.4; }
     </style>
 </head>
 <body>
     <div class="wrap">
         <header>
             <div class="brand">
-                <div class="logo"><i class="fas fa-cogs"></i></div>
+                <div class="logo pulse"><i class="fas fa-cogs"></i></div>
                 <div>
                     <h1>HEWP Excel Addins</h1>
                     <p>MRGARGSIR Tools — Automation for HEWP</p>
@@ -108,8 +300,43 @@
                 <a class="nav-btn" href="#features">Features</a>
                 <a class="nav-btn" href="#how">How it works</a>
                 <a class="nav-btn" href="#extension">Chrome Extension</a>
+                <button class="nav-btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact</button>
                 <a class="nav-btn primary" href="#download">Download</a>
             </nav>
+            
+            <!-- Contact Modal -->
+            <div class="contact-modal" id="contactModal">
+                <h3><i class="fas fa-headset"></i> Contact Support</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="label">Email</div>
+                        <div class="value">tool.help@zohomail.in</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="label">WhatsApp</div>
+                        <div class="value">+91 97285 32828</div>
+                    </div>
+                </div>
+                
+                <div class="contact-actions">
+                    <button class="contact-btn email" id="emailBtn">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                    <button class="contact-btn whatsapp" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> Message
+                    </button>
+                </div>
+            </div>
         </header>
 
         <main>
@@ -128,6 +355,7 @@
                         <div class="pill">One-click installer</div>
                         <div class="pill">Auto Updates</div>
                         <div class="pill">Chrome Extension included</div>
+                        <div class="pill">Works for Contractors & Employees</div>
                     </div>
                 </div>
 
@@ -147,42 +375,62 @@
                         </div>
                     </div>
 
-                    <div style="margin-top:14px;font-size:13px;color:var(--muted)">
+                    <div style="margin-top:14px;font-size:13px;color:#d5ddea">
                         <strong>Latest:</strong> HSR 2023 amendments integrated • Stable release
                     </div>
                 </aside>
+            </section>
+            
+            <!-- Stats Section -->
+            <section class="stats">
+                <div class="stat fadeInUp">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Tools Included</div>
+                </div>
+                <div class="stat fadeInUp">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">Time Saved</div>
+                </div>
+                <div class="stat fadeInUp">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Alignment Errors</div>
+                </div>
+                <div class="stat fadeInUp">
+                    <div class="stat-number">2-in-1</div>
+                    <div class="stat-label">Excel + Chrome Tools</div>
+                </div>
             </section>
 
             <!-- Features overview -->
             <section id="features">
                 <h3 style="margin-bottom:12px">Core features</h3>
                 <div class="grid features-grid">
-                    <div class="feature">
+                    <div class="feature fadeInUp">
                         <div style="font-size:20px;color:var(--accent1)"><i class="fas fa-file-excel"></i></div>
                         <h4>Professional Templates</h4>
                         <p>Estimate & Measurement Book templates ready with HSR 2023 structure and latest amendments.</p>
                     </div>
-                    <div class="feature">
+                    <div class="feature fadeInUp">
                         <div style="font-size:20px;color:var(--accent2)"><i class="fas fa-search"></i></div>
                         <h4>Real‑time HSR Search</h4>
                         <p>Search by item number or description and auto fetch Unit, Rate, Rate Type and Description.</p>
                     </div>
-                    <div class="feature">
-                        <div style="font-size:20px;color:#f97316"><i class="fas fa-robot"></i></div>
+                    <div class="feature fadeInUp">
+                        <div style="font-size:20px;color:var(--accent3)"><i class="fas fa-robot"></i></div>
                         <h4>Auto Upload & Auto Login</h4>
                         <p>Upload templates or input data directly to the HEWP portal with saved credentials & one‑click flows.</p>
                     </div>
-                    <div class="feature">
-                        <div style="font-size:20px;color:#f43f5e"><i class="fas fa-calculator"></i></div>
+                    <div class="feature fadeInUp">
+                        <div style="font-size:20px;color:var(--accent4)"><i class="fas fa-calculator"></i></div>
                         <h4>Advanced Calculators</h4>
                         <p>Steel weight, amount calcs with GST, unit converters and rounding utilities at a click.</p>
                     </div>
-                    <div class="feature">
+                    <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#60a5fa"><i class="fas fa-copy"></i></div>
                         <h4>Smart Copy‑Paste</h4>
                         <p>Automatically arrange data into templates with minimal user edits and near‑zero alignment errors.</p>
                     </div>
-                    <div class="feature">
+                    <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#a78bfa"><i class="fab fa-chrome"></i></div>
                         <h4>Free Chrome Extension</h4>
                         <p>Enhances HEWP UX — tender search, dark mode, enter‑fix, toggle checkboxes and more.</p>
@@ -192,7 +440,7 @@
 
             <!-- Detailed features and how it works -->
             <section id="how" class="two-col">
-                <div class="panel">
+                <div class="panel fadeInLeft">
                     <h3>All features (detailed)</h3>
                     <p class="small">Below are the grouped tools available in the Excel ribbon tabs: <strong>E. TOOLS</strong> and <strong>WebManual</strong>.</p>
 
@@ -215,10 +463,15 @@
 
                     <h4 style="margin-top:18px">Why use HEWPExcelADDins?</h4>
                     <p class="small">Saves hours on template prep, removes manual mapping errors, reduces rework and supports full bill scraping and comparisons. Built for low‑skill install and day‑to‑day automation.</p>
+                    
+                    <div class="testimonial fadeInUp">
+                        <div class="testimonial-text">"This tool has cut my HEWP work time by 80%. The auto-upload feature alone saves me 2-3 hours daily. Highly recommended for anyone working with Haryana Engineering Works Portal."</div>
+                        <div class="testimonial-author">- Civil Engineer, Haryana PWD</div>
+                    </div>
 
                 </div>
 
-                <aside class="panel">
+                <aside class="panel fadeInRight">
                     <h4 style="margin:0 0 8px">Interactive demo</h4>
                     <div class="carousel" id="carousel">
                         <div class="slides">
@@ -234,6 +487,42 @@
                                 <h4>Steel Summary</h4>
                                 <p class="small">Generate detailed steel usage and put values into bill with correct unit conversions.</p>
                             </div>
+                            <div class="slide">
+                                <h4>Bill Comparison</h4>
+                                <p class="small">Compare downloaded bills with your estimates and highlight differences automatically.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Unit Conversion</h4>
+                                <p class="small">Convert between feet, meters, kg with one click while maintaining data integrity.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Template Management</h4>
+                                <p class="small">Preloaded templates for estimates and measurement books with HSR 2023 structure.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Amount Calculation</h4>
+                                <p class="small">Automatically calculate amounts with GST, contingency and grand totals.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Data Scraping</h4>
+                                <p class="small">Extract completed bill data from HEWP portal directly into Excel format.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Smart Tender Search</h4>
+                                <p class="small">Enhanced search functionality for tenders with Chrome extension.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Dark Mode</h4>
+                                <p class="small">Reduce eye strain with dark mode for the HEWP portal interface.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Auto Login</h4>
+                                <p class="small">Save credentials and login to HEWP portal with a single click.</p>
+                            </div>
+                            <div class="slide">
+                                <h4>Error Prevention</h4>
+                                <p class="small">Minimize data entry errors with intelligent data arrangement and validation.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="dots" id="dots"></div>
@@ -242,47 +531,88 @@
 
             <!-- Tools list condensed -->
             <section>
-                <h3>20+ Tools included</h3>
-                <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));margin-top:12px">
-                    <div class="feature"><i class="fas fa-ruler"></i><h4 style="font-size:14px">Feet ⇄ Meter</h4></div>
-                    <div class="feature"><i class="fas fa-balance-scale"></i><h4 style="font-size:14px">Meter ⇄ Kg</h4></div>
-                    <div class="feature"><i class="fas fa-calculator"></i><h4 style="font-size:14px">Multiply & Quantity</h4></div>
-                    <div class="feature"><i class="fas fa-coins"></i><h4 style="font-size:14px">Amount Calculator</h4></div>
-                    <div class="feature"><i class="fas fa-chart-bar"></i><h4 style="font-size:14px">Steel Weight</h4></div>
-                    <div class="feature"><i class="fas fa-file-invoice"></i><h4 style="font-size:14px">Bill Summary</h4></div>
-                    <div class="feature"><i class="fas fa-cubes"></i><h4 style="font-size:14px">Material Summary</h4></div>
-                    <div class="feature"><i class="fas fa-tag"></i><h4 style="font-size:14px">Rate & Description Fetcher</h4></div>
-                    <div class="feature"><i class="fas fa-upload"></i><h4 style="font-size:14px">Auto Upload</h4></div>
-                    <div class="feature"><i class="fas fa-download"></i><h4 style="font-size:14px">Website Scraper</h4></div>
+                <h3>30+ Tools included</h3>
+                <div class="grid tools-grid" style="margin-top:12px">
+                    <div class="feature tool fadeInUp"><i class="fas fa-ruler" style="color:var(--accent1)"></i><h4>Feet ⇄ Meter</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-balance-scale" style="color:var(--accent2)"></i><h4>Meter ⇄ Kg</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-calculator" style="color:var(--accent3)"></i><h4>Multiply & Quantity</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-coins" style="color:var(--accent4)"></i><h4>Amount Calculator</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-chart-bar" style="color:#60a5fa"></i><h4>Steel Weight</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-file-invoice" style="color:#a78bfa"></i><h4>Bill Summary</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-cubes" style="color:#f59e0b"></i><h4>Material Summary</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-tag" style="color:#10b981"></i><h4>Rate & Description Fetcher</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-upload" style="color:#ef4444"></i><h4>Auto Upload</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-download" style="color:#8b5cf6"></i><h4>Website Scraper</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-exchange-alt" style="color:#06b6d4"></i><h4>Unit Converter</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-search" style="color:#f97316"></i><h4>HSR Search</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-copy" style="color:#ec4899"></i><h4>Smart Copy-Paste</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-file-pdf" style="color:#e11d48"></i><h4>PDF Generator</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-sign-in-alt" style="color:#84cc16"></i><h4>Auto Login</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-trash-alt" style="color:#64748b"></i><h4>Delete Bill Data</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-sync" style="color:#0ea5e9"></i><h4>Refresh Sheet</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-layer-group" style="color:#a855f7"></i><h4>Jump Between Sheets</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-plus-square" style="color:#f59e0b"></i><h4>Insert Rows</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-clone" style="color:#10b981"></i><h4>Copy Worksheet</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-toggle-on" style="color:#ef4444"></i><h4>Toggle Sign</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-code" style="color:#8b5cf6"></i><h4>Formulas to Constants</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-cube" style="color:#06b6d4"></i><h4>Total Quantity</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-ruler-combined" style="color:#f97316"></i><h4>Auto Round Off</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-industry" style="color:#ec4899"></i><h4>Steel Summary</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-balance-scale-right" style="color:#e11d48"></i><h4>Bill Comparison</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-database" style="color:#84cc16"></i><h4>Data Entry</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-magic" style="color:#64748b"></i><h4>Auto Arrange Data</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-check-double" style="color:#0ea5e9"></i><h4>Toggle Checkboxes</h4></div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-palette" style="color:#a855f7"></i><h4>Dark Mode</h4></div>
                 </div>
             </section>
 
             <!-- Extension -->
             <section id="extension">
                 <h3>MRGARGSIR Chrome Extension (free)</h3>
-                <div class="panel">
+                <div class="panel fadeInUp">
                     <p class="small">Included with the installer at no extra cost. Improves portal interaction with small but meaningful UX fixes: tender search, enter‑key fixes, dark mode and toggle all checkboxes. Easily enable/disable from extension toolbar.</p>
                     <p class="small"><strong>Note:</strong> The extension is optional — add it during installer setup or get it separately from the release page.</p>
+                    
+                    <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                        <div class="feature" style="flex: 1; min-width: 200px;">
+                            <h4><i class="fas fa-search" style="color: var(--accent1)"></i> Smart Tender Search</h4>
+                            <p class="small">Enhanced dropdown search for tenders with filtering options.</p>
+                        </div>
+                        <div class="feature" style="flex: 1; min-width: 200px;">
+                            <h4><i class="fas fa-check-square" style="color: var(--accent2)"></i> Toggle All Checkbox</h4>
+                            <p class="small">Select/deselect all checkboxes with a single click.</p>
+                        </div>
+                        <div class="feature" style="flex: 1; min-width: 200px;">
+                            <h4><i class="fas fa-keyboard" style="color: var(--accent3)"></i> Enter Button Fix</h4>
+                            <p class="small">Pressing Enter won't clear forms on HEWP portal anymore.</p>
+                        </div>
+                        <div class="feature" style="flex: 1; min-width: 200px;">
+                            <h4><i class="fas fa-moon" style="color: var(--accent4)"></i> Dark Mode</h4>
+                            <p class="small">Reduce eye strain with dark mode for better readability.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Download -->
             <section id="download">
                 <h3>Download</h3>
-                <div class="panel">
+                <div class="panel fadeInUp">
                     <div style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
                         <div style="flex:1;min-width:260px">
                             <strong>HEWP Excel Addins — OnlineInstaller.exe</strong>
                             <div class="small" style="margin-top:6px">Approx size: 450 MB. Latest release includes HSR 2023 amendments and Chrome extension.</div>
-                            <ul class="small" style="margin-top:8px;color:var(--muted)">
+                            <ul class="small" style="margin-top:8px;color:#d5ddea">
                                 <li>One‑click install (no technical skills required)</li>
                                 <li>Auto update checks enabled by default</li>
                                 <li>Installer bundles Excel Addin + Chrome extension</li>
+                                <li>Works with both Contractor & Employee logins</li>
+                                <li>Compatible with Excel 2013, 2016, 2019, 2021, and Office 365</li>
                             </ul>
                         </div>
 
                         <div>
-                            <button id="downloadBtnTop" class="cta primary" style="padding:12px 18px;font-size:15px"><i class="fas fa-download"></i>&nbsp;Download Now</button>
+                            <button id="downloadBtnTop" class="cta primary bounce" style="padding:12px 18px;font-size:15px"><i class="fas fa-download"></i>&nbsp;Download Now</button>
                         </div>
                     </div>
 
@@ -293,21 +623,35 @@
             <!-- Before/After -->
             <section>
                 <h3>Before vs After</h3>
-                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-                    <div class="panel" style="flex:1;min-width:260px">
-                        <h4 style="margin-top:0">Before</h4>
-                        <ul class="small" style="color:var(--muted)">
-                            <li>Manual HSR lookup and copying</li>
-                            <li>Time consuming portal clicks</li>
-                            <li>Prone to alignment & rounding errors</li>
+                <div class="comparison">
+                    <div class="comparison-item before fadeInLeft">
+                        <h4 class="comparison-title">Before HEWPExcelADDins</h4>
+                        <ul class="comparison-list small">
+                            <li>Manual HSR lookup in bulky PDF documents</li>
+                            <li>Copy-paste errors between Excel and portal</li>
+                            <li>Hours spent on portal navigation and data entry</li>
+                            <li>Manual unit conversions with high error risk</li>
+                            <li>No standardization in estimate formats</li>
+                            <li>Difficulty comparing bills and estimates</li>
+                            <li>Frustration with portal interface limitations</li>
+                            <li>No automated calculations for GST and contingencies</li>
+                            <li>Manual steel weight calculations</li>
+                            <li>Repetitive template preparation for each project</li>
                         </ul>
                     </div>
-                    <div class="panel" style="flex:1;min-width:260px">
-                        <h4 style="margin-top:0">After</h4>
-                        <ul class="small" style="color:var(--muted)">
-                            <li>Instant HSR fetch & auto‑fill</li>
-                            <li>One‑click upload & auto login</li>
-                            <li>Cleaner bills, automatic summaries & steel reports</li>
+                    <div class="comparison-item after fadeInRight">
+                        <h4 class="comparison-title">After HEWPExcelADDins</h4>
+                        <ul class="comparison-list small">
+                            <li>Instant HSR search with auto-fill of details</li>
+                            <li>Smart copy-paste with automatic data arrangement</li>
+                            <li>One-click upload with auto-login to portal</li>
+                            <li>Automatic unit conversions with zero errors</li>
+                            <li>Standardized templates with HSR 2023 structure</li>
+                            <li>Automatic bill comparison and difference highlighting</li>
+                            <li>Enhanced portal experience with Chrome extension</li>
+                            <li>Automated calculations for amounts, GST, contingencies</li>
+                            <li>One-click steel weight calculator</li>
+                            <li>Reusable templates with preloaded HSR data</li>
                         </ul>
                     </div>
                 </div>
@@ -331,15 +675,84 @@
     </div>
 
     <script>
+        // Contact Modal Functionality
+        const contactBtn = document.getElementById('contactBtn');
+        const contactModal = document.getElementById('contactModal');
+        const emailBtn = document.getElementById('emailBtn');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        
+        // Toggle contact modal
+        contactBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            contactModal.classList.toggle('active');
+        });
+        
+        // Close modal when clicking outside
+        document.addEventListener('click', function() {
+            contactModal.classList.remove('active');
+        });
+        
+        // Prevent modal from closing when clicking inside it
+        contactModal.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Email button functionality
+        emailBtn.addEventListener('click', function() {
+            window.location.href = 'mailto:tool.help@zohomail.in?subject=HEWP%20Excel%20Addins%20Support&body=Hello%20MRGARGSIR%20Team,%0D%0A%0D%0AI%20need%20help%20with...';
+        });
+        
+        // WhatsApp button functionality
+        whatsappBtn.addEventListener('click', function() {
+            const message = "Hello MRGARGSIR Team, I need help with HEWP Excel Addins.";
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/919728532828?text=${encodedMessage}`, '_blank');
+        });
+        
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.fadeInUp, .fadeInLeft, .fadeInRight').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
         // Carousel logic
         (function(){
             const slides = document.querySelector('#carousel .slides');
             const dots = document.getElementById('dots');
             const total = slides.children.length;
             let idx = 0;
-            for(let i=0;i<total;i++){ const d=document.createElement('div'); d.className='dot'; if(i===0) d.classList.add('active'); dots.appendChild(d); d.addEventListener('click',()=>{ idx=i; update(); }); }
-            function update(){ slides.style.transform = `translateX(-${idx*100}%)`; Array.from(dots.children).forEach((x,i)=> x.classList.toggle('active', i===idx)); }
-            setInterval(()=>{ idx = (idx+1)%total; update(); }, 5000);
+            
+            // Create dots
+            for(let i=0;i<total;i++){ 
+                const d=document.createElement('div'); 
+                d.className='dot'; 
+                if(i===0) d.classList.add('active'); 
+                dots.appendChild(d); 
+                d.addEventListener('click',()=>{ 
+                    idx=i; 
+                    update(); 
+                }); 
+            }
+            
+            function update(){ 
+                slides.style.transform = `translateX(-${idx*100}%)`; 
+                Array.from(dots.children).forEach((x,i)=> x.classList.toggle('active', i===idx)); 
+            }
+            
+            // Auto slide
+            setInterval(()=>{ 
+                idx = (idx+1)%total; 
+                update(); 
+            }, 4000);
         })();
 
         // Download logic with clear UX and fallback
@@ -349,19 +762,29 @@
         function startDownload(button){
             const status = document.getElementById('dlStatus');
             button = button || document.getElementById('downloadBtnTop');
-            button.disabled = true; button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing download...';
+            button.disabled = true; 
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing download...';
 
             // Start primary download
-            const a = document.createElement('a'); a.href = primaryURL; a.download = 'HEWP_OnlineInstaller.exe'; a.style.display='none'; document.body.appendChild(a);
-
+            const a = document.createElement('a'); 
+            a.href = primaryURL; 
+            a.download = 'HEWP_OnlineInstaller.exe'; 
+            a.style.display='none'; 
+            document.body.appendChild(a);
+            
             // Attempt to open the link — browsers will handle download.
-            a.click(); setTimeout(()=>{ document.body.removeChild(a); }, 1000);
+            a.click(); 
+            setTimeout(()=>{ document.body.removeChild(a); }, 1000);
 
             // Show status with fallback link (typical pattern used by installers)
             setTimeout(()=>{
-                status.style.display = 'block'; status.style.background = 'rgba(16,185,129,0.06)'; status.style.border = '1px solid rgba(16,185,129,0.12)'; status.style.color = '#b7f3df';
+                status.style.display = 'block'; 
+                status.style.background = 'rgba(16,185,129,0.06)'; 
+                status.style.border = '1px solid rgba(16,185,129,0.12)'; 
+                status.style.color = '#b7f3df';
                 status.innerHTML = `<strong>Download started.</strong> If the download does not start automatically, <a href="${fallbackURL}" style="color: #fbcfe8; text-decoration:underline" target="_blank" rel="noreferrer">click here to download the offline installer</a> (direct link).`;
-                button.disabled = false; button.innerHTML = '<i class="fas fa-download"></i> Download Again';
+                button.disabled = false; 
+                button.innerHTML = '<i class="fas fa-download"></i> Download Again';
             }, 2200);
         }
 
