@@ -425,11 +425,14 @@
         .feature p{margin:0;color:#d5ddea;font-size:13px}
 
         /* Detailed feature area */
-        .two-col{
-            display:grid;
-            grid-template-columns:1fr 420px;
-            gap:28px;
-            align-items:start;
+        .two-col{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+
+        /* 👉 Mobile fix for two-col layout */
+        @media (max-width:768px){
+            .two-col{
+                grid-template-columns:1fr;
+                gap:20px;
+            }
         }
         /* 👉 Enhanced panel */
         .panel{
@@ -820,6 +823,56 @@
             .hero-left h2{font-size:28px}
             .stat-number{font-size:2rem !important}
             .comparison{flex-direction:column}
+            
+            /* 👉 Add these new rules for accordion and carousel */
+            .panel{
+                padding:16px;
+            }
+            .accordion .item button{
+                font-size:14px;
+                padding:12px 0;
+            }
+            .carousel{
+                margin:0 -10px;
+            }
+            .slide{
+                padding:20px 16px;
+            }
+            .slide h4{
+                font-size:16px;
+            }
+        }
+
+        /* 👉 Extra small devices */
+        @media (max-width:480px){
+            .hero-left h2{
+                font-size:24px;
+            }
+            .ctas{
+                flex-direction:column;
+            }
+            .cta{
+                width:100%;
+                justify-content:center;
+            }
+            .feature h4{
+                font-size:14px;
+            }
+            .feature p{
+                font-size:12px;
+            }
+            .tools-grid{
+                grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+            }
+            .install-step{
+                padding-left:60px;
+            }
+            .install-step:before{
+                width:30px;
+                height:30px;
+                font-size:14px;
+                left:15px;
+            }
         }
     </style>
 </head>
