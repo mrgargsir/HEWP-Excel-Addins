@@ -95,6 +95,44 @@ Just Download and install onlineinstaller.exe and follow on screen instructions.
 **🆕 Volume Increase** (Volume increase features when low volume media is problem)  
 **✅ Dark Mode** (Enable Dark mode on all websites)
 
+MRGARGSIR SUITE - INSTALLATION GUIDE
+
+SYSTEM REQUIREMENTS:
+- Windows 10 or Windows 11
+- Microsoft Excel 2016 or later
+- Google Chrome browser
+- 500 MB free disk space
+
+📋 BEFORE YOU INSTALL:
+1. Close all Microsoft Excel windows
+2. Close Google Chrome browser
+3. You need administrator rights
+
+📦 INSTALLATION:
+1. Extract all files to a folder
+2. Right-click "Installer.exe"
+3. Choose "Run as administrator"
+4. If Windows shows security warning, click "More info" → "Run anyway"
+5. Enter install key when prompted
+6. Click Next → Next → Install
+7. Wait for completion (1-2 minutes)
+
+🔑 YOUR INSTALL KEY:
+[PROVIDED UNIQUE KEY TO EACH USER]
+
+⚠️ TROUBLESHOOTING:
+- "Invalid install key" → Check you entered key correctly
+- Excel add-in not loading → Restart Excel after installation
+- Chrome extension not working → Restart Chrome
+- Expired Installer → Contact MRGARGSIR for updated version
+
+📞 SUPPORT:
+Email: tool.help@zohomail.com
+Get Updates: https://aratt.ai/@mrgargsir_tools
+
+```
+
+
 
 
 **Thank you for using MRGARGSIR Tools!** 🚀
