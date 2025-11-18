@@ -1,4 +1,4 @@
-# HEWP Excel ADDins by mrgargsir
+# HEWP Tools (Excel ADDins and Chrome Extension) by mrgargsir
 Disclaimer : We are not official HEWP or Not authorized by Government by any means.
 
 Haryana Engineering Works Portal 
