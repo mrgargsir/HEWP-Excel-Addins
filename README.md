@@ -57,21 +57,21 @@ Just Download and install onlineinstaller.exe and follow on screen instructions.
 
 ---
 
-### #### 🌐 Web Enhancements Features in (Second Tab: **`WebManual`**)
+### #### 🌐 Web Automation Features (Second Tab: **`Web`**)
 
 **📤 One-Click Uploader** – Interact directly with the HEWP Portal from Excel.
 
 1. **Auto Login to HEWP Portal** – Securely log in with saved credentials and Keep Login details for future fast login, login data is completely saved in your hard drive excel file. You can verify it anytime.
 2. **Close Chrome & Clean Resources** – Closes browser sessions and frees memory.
 3. **Copy Data to HEWP Templates** – Automatically convert unit to Meter if required and transfers data into the HEWP Excel template.
-4. **HSR Item Number Selector** – Select HSR item numbers on HEWP Portal for filling or uploading bill or estimate data.
+4. **HSR Item Number Selector** – Select HSR item numbers on HEWP Portal for filling and uploading bills or estimates data.
 5. **Pdf** – it will Make Pdf of Selected cells, attach and Upload With Manual Entry.
-6. **Upload Template to Portal** – Upload your completed template directly.
-7. **Direct Data Entry** – Skip the template; enter data directly into the portal Table.
-8. **Emp Item Number Selector** – Select item numbers and Rate Type for Employ id on Portal for filling or uploading.
-9. **Website Data Scraper** – Download completed bill data from the portal in Excel Format, including a summary sheet.
-10. **Delete Bill Data** – Remove all previously filled bill data items in one click on portal.
-11. **Auto Upload Full Bill/Template** – Automatically upload The Whole Bill for all Users at one click.
+6. **Upload Template to Portal** – Upload your completed filled template directly to the HEWP Portal.
+7. **Direct Data Entry** – Skip the template; Enter data directly into the hewp portal Table.
+8. **Emp Item Number Selector** – Select item numbers and Rate Type for Employee id on HEWP Portal for filling and uploading estimates and variations.
+9. **Website Data Scraper** – Download completed bill data from the HEWP portal in Excel Format from contractor id, including a summary sheet.
+10. **Delete Bill Data** – Remove all previously filled bill data items in one click on HEWP portal in Contractor Login.
+11. **Auto Upload Full Bill/Template** – Automatically upload The Whole Bill for all Users at one click in HEWP Portal.
 ---
 
 #### 🚀 Additional Highlights:
@@ -89,8 +89,9 @@ Just Download and install onlineinstaller.exe and follow on screen instructions.
 
 ## **🔧 Main Features of ChromeExtension**  
 
-**Smart Tender Search** – Enhanced dropdown search for tenders.
-**Toggle All Checkbox.**  
+**🔗 Add Important Bookmarks** – Add Advance Bookmarks which will make easy use of HEWP Portal.
+**🔍 Smart Tender Search** – Enhanced dropdown search for tenders.
+**☑️ Toggle All Checkbox.**  
 **🎯 Enter Button Fixes** (Pressing Enter button will not clear the form on hewp portal anymore)  
 **🆕 Volume Increase** (Volume increase features when low volume media is problem)  
 **✅ Dark Mode** (Enable Dark mode on all websites)
@@ -98,10 +99,10 @@ Just Download and install onlineinstaller.exe and follow on screen instructions.
 MRGARGSIR SUITE - INSTALLATION GUIDE
 
 SYSTEM REQUIREMENTS:
-- Windows 10 or Windows 11
+- Windows 7 To Windows 11
 - Microsoft Excel 2016 or later
 - Google Chrome browser
-- 500 MB free disk space
+- 800 MB free disk space
 
 📋 BEFORE YOU INSTALL:
 1. Close all Microsoft Excel windows
@@ -109,11 +110,11 @@ SYSTEM REQUIREMENTS:
 3. You need administrator rights
 
 📦 INSTALLATION:
-1. Extract all files to a folder
+1. Extract all files to a folder (if zip.)
 2. Right-click "Installer.exe"
 3. Choose "Run as administrator"
 4. If Windows shows security warning, click "More info" → "Run anyway"
-5. Enter install key when prompted
+5. Enter install key when prompted (if not already prefilled)
 6. Click Next → Next → Install
 7. Wait for completion (1-2 minutes)
 
@@ -128,11 +129,10 @@ SYSTEM REQUIREMENTS:
 
 📞 SUPPORT:
 Email: tool.help@zohomail.com
-Get Updates: https://aratt.ai/@mrgargsir_tools
+Get Updates: https://mrgargsir.github.io/HEWP-Excel-Addins/
+
+**Thank you for using MRGARGSIR Tools!** 🚀
 
 ```
 
 
-
-
-**Thank you for using MRGARGSIR Tools!** 🚀
