@@ -1280,6 +1280,8 @@
                     <div class="ctas">
                         <a class="cta primary" href="#download" id="heroDownload"><i
                                 class="fas fa-download"></i>&nbsp;Download Installer</a>
+                        <a class="cta primary" href="edgeextension" id="edgeExtensionBtn"><i
+                                class="fab fa-edge"></i>&nbsp;Edge Extension</a>
                         <a class="cta ghost" href="#how"><i class="fas fa-book-open"></i>&nbsp;View Docs</a>
                     </div>
 
@@ -2261,10 +2263,15 @@
             }, 2200);
         }
 
+        function DownloadedgeExtension() {
+            window.open('https://microsoftedge.microsoft.com/addons/search/hewp%20tools', '_blank');
+        }
+
         // Hook buttons
         document.getElementById('downloadBtnTop').addEventListener('click', function () { startDownload(this); });
-        // document.getElementById('miniDownload').addEventListener('click', function (e) { e.preventDefault(); startDownload(this); });
-        //document.getElementById('heroDownload').addEventListener('click', function (e) { e.preventDefault(); document.getElementById('downloadBtnTop').click(); });
+        document.getElementById('edgeExtensionBtn').addEventListener('click', function () { DownloadedgeExtension(); });    
+
+                //document.getElementById('heroDownload').addEventListener('click', function (e) { e.preventDefault(); document.getElementById('downloadBtnTop').click(); });
 
         // 👉 Smooth scroll for navigation with header offset
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
