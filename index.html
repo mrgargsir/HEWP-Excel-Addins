@@ -1319,7 +1319,7 @@
                     <div style="margin-top:18px">
                         <div class="download">
                             <div class="left">
-                                <strong>Coming Soon....</strong>
+                                <strong>Learn about The Tool...</strong>
                             </div>
                             <div class="right">
                                 <a class="cta primary" href="#tutorials" id="videoTutorialsBtn">Video Tutorials</a>
@@ -2325,6 +2325,37 @@
                 }
             });
         });
+
+        // 👉 Fix fullscreen exit scroll issue for videos
+        (function() {
+            const videoContainer = document.querySelector('.video-container');
+            let videoPosition = null;
+            
+            // Track fullscreen changes
+            document.addEventListener('fullscreenchange', handleFullscreenChange);
+            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+            
+            function handleFullscreenChange() {
+                if (document.fullscreenElement || document.webkitFullscreenElement || 
+                    document.mozFullScreenElement || document.msFullscreenElement) {
+                    // Entering fullscreen - save current position
+                    videoPosition = videoContainer.getBoundingClientRect().top + window.scrollY;
+                } else {
+                    // Exiting fullscreen - restore scroll position
+                    if (videoPosition !== null) {
+                        setTimeout(() => {
+                            window.scrollTo({
+                                top: videoPosition - 100, // 100px offset for header
+                                behavior: 'smooth'
+                            });
+                            videoPosition = null;
+                        }, 100);
+                    }
+                }
+            }
+        })();
 
         // 👉 Video card click handler
         document.addEventListener('DOMContentLoaded', function () {
