@@ -805,7 +805,7 @@
             display: flex;
             justify-content: space-between;
             margin: 40px 0;
-            margin-top:-20px;
+            margin-top: -20px;
             flex-wrap: wrap;
             gap: 20px;
         }
@@ -1035,6 +1035,43 @@
             color: #d5ddea;
             font-size: 14px;
         }
+
+        /* 👉 Scrollable video list */
+        .video-list-container {
+            display: block;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 350px;
+            /* Adjust height as needed */
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+        }
+
+        .video-list-container>* {
+            margin-bottom: 12px;
+            /* 👉 Gap between items */
+        }
+
+        /* Custom scrollbar styling */
+        .video-list-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .video-list-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .video-list-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent1), var(--accent2));
+            border-radius: 10px;
+        }
+
+        .video-list-container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--accent2), var(--accent1));
+        }
+
 
         /* 👉 Video section */
         .video-container {
@@ -1780,8 +1817,8 @@
                 <div class="two-col">
                     <div class="fadeInLeft">
                         <div class="video-container">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KojwX-swQHY"
-                                title="Complete Installation Walkthrough" frameborder="0"
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/AUGClE_q9IY"
+                                title="E. Tools Promo" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen style="border-radius:12px">
                             </iframe>
@@ -1795,7 +1832,7 @@
 
                     <div class="fadeInRight">
                         <h4 style="margin-top:0">📚 Available Tutorials</h4>
-                        <div style="display:flex;flex-direction:column;gap:12px">
+                        <div class="video-list-container">
                             <!-- Video 1 -->
                             <div class="feature video-card" data-video-id="KojwX-swQHY" style="cursor:pointer">
                                 <div style="display:flex;align-items:center;gap:10px">
@@ -1848,6 +1885,21 @@
                                     <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
                                 </div>
                             </div>
+
+                            <!-- Video 5 -->
+                            <div class="feature video-card" data-video-id="AUGClE_q9IY" style="cursor:pointer">
+                                <div style="display:flex;align-items:center;gap:10px">
+                                    <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                    <div style="flex:1">
+                                        <h4 style="margin:0">E. Tools Tab Features Promo (HEWP Tools Excel Add-ins)
+                                        </h4>
+                                        <p class="small" style="margin:3px 0 0">Everything with Just One Click</p>
+                                    </div>
+                                    <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
