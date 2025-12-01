@@ -1046,6 +1046,7 @@
             overflow-y: auto;
             overflow-x: hidden;
             padding-right: 8px;
+
         }
 
         .video-list-container>* {
@@ -1254,6 +1255,73 @@
                 /* Add this for better mobile readability */
             }
 
+            /* 👉 Video section responsive fixes */
+            .video-container {
+                min-height: 200px;
+                aspect-ratio: 16/9;
+            }
+
+            .video-list-container {
+                max-height: 300px;
+                padding-right: 5px;
+            }
+
+            .video-card {
+                padding: 12px;
+            }
+
+            .video-card h4 {
+                font-size: 13px;
+                line-height: 1.3;
+            }
+
+            .video-card .small {
+                font-size: 11px;
+            }
+
+            .video-card .contact-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
+            }
+
+            /* 👉 Tutorial section layout fix for mobile */
+            #tutorials .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            #tutorials .fadeInLeft,
+            #tutorials .fadeInRight {
+                order: 0;
+            }
+
+            /* 👉 Show video on top on mobile */
+            #tutorials .fadeInLeft {
+                order: 1;
+            }
+
+            #tutorials .fadeInRight {
+                order: 2;
+            }
+        }
+
+        /* 👉 Extra small screens */
+        @media (max-width: 640px) {
+            .video-card {
+                padding: 10px;
+            }
+
+            .video-card h4 {
+                font-size: 12px;
+            }
+
+            .video-card .small {
+                font-size: 10px;
+            }
+
+            .video-list-container {
+                max-height: 250px;
+            }
         }
     </style>
 </head>
@@ -1437,7 +1505,7 @@
                 <div class="panel fadeInLeft">
                     <h3>All features Name</h3>
                     <p class="small">Below are the grouped tools available in the Excel ribbon tabs: <strong>E.
-                            TOOLS</strong> and <strong>WebManual</strong>.</p>
+                            TOOLS</strong> and <strong>WebAuto</strong>.</p>
 
                     <div class="accordion">
                         <div class="item">
@@ -1450,7 +1518,7 @@
                         </div>
 
                         <div class="item">
-                            <button type="button">WebManual – Portal integration <i
+                            <button type="button">WebAuto – Portal integration <i
                                     class="fas fa-chevron-down"></i></button>
                             <p class="small">Auto Login to HEWP, Copy Data to Template (unit conversions applied), Item
                                 Number Selector, PDF generator & upload, Upload Template to portal, Direct data entry,
@@ -1460,7 +1528,8 @@
 
                         <div class="item">
                             <button type="button">Chrome Extension features <i class="fas fa-chevron-down"></i></button>
-                            <p class="small">Smart Tender Search, Important HEWP Shortcuts Bookmarks, Toggle All
+                            <p class="small">Smart Tender/Item/anything Search, Important HEWP Shortcuts Bookmarks,
+                                Toggle All
                                 Checkbox, Enter button behavior fixes, Volume increase tweaks, and Dark Mode for portal
                                 readability.</p>
                         </div>
@@ -1915,9 +1984,11 @@
                                 <div style="display:flex;align-items:center;gap:10px">
                                     <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
                                     <div style="flex:1">
-                                        <h4 style="margin:0">Web Tools Tab Features Detailed Promo (HEWP Tools Excel Add-ins)
+                                        <h4 style="margin:0">Web Tools Tab Features Detailed (HEWP Tools Excel
+                                            Add-ins)
                                         </h4>
-                                        <p class="small" style="margin:3px 0 0">Everything with Just One Click and Semi auto if Error.</p>
+                                        <p class="small" style="margin:3px 0 0">Everything with Just One Click and Semi
+                                            auto if Error.</p>
                                     </div>
                                     <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
                                 </div>
