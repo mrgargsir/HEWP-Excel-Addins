@@ -1806,7 +1806,7 @@
                     <div>
                         <button id="downloadBtnTop" class="cta primary" style="padding:12px 18px;font-size:15px"><i
                                 class="fas fa-download"></i>&nbsp;Download Online Installer</button>
-                    <button id="downloadBtnStandalone" href = 'https://www.dropbox.com/scl/fi/4qipmycacrpmua8qm58x1/Installer.exe?rlkey=6jm8kz0cv9ao365l4k8sjzm6g&st=28q80546&dl=1' class="cta primary" style="padding:10px 15px;font-size:14px"><i
+                    <button id="downloadBtnStandalone" class="cta primary" style="padding:10px 15px;font-size:14px"><i
                                 class="fas fa-download"></i>&nbsp;Download Offline Installer</button>
                     
                     </div>
@@ -2465,14 +2465,30 @@
 
         function startDownload(button) {
             const status = document.getElementById('dlStatus');
-            button = button || document.getElementById('downloadBtnTop');
+            button = button || document.getElementById('downloadBtnTop') || document.getElementById('downloadBtnStandalone');
+            // 👉 Determine which URL to use based on button ID
+    let downloadURL;
+    let installerName;
+    
+    if (button.id === 'downloadBtnStandalone') {
+        // 👉 Use fallback URL for standalone button
+        downloadURL = fallbackURL;
+        secondURL = primaryURL;
+        installerName = 'HEWP_StandaloneInstaller.exe';
+    } else {
+        // 👉 Use primary URL for top button (default)
+        downloadURL = primaryURL;
+        secondURL = fallbackURL;
+        installerName = 'HEWP_OnlineInstaller.exe';
+    }
+            
             button.disabled = true;
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing download...';
 
             // Start primary download
             const a = document.createElement('a');
-            a.href = primaryURL;
-            a.download = 'HEWP_OnlineInstaller.exe';
+            a.href = downloadURL;
+            a.download = installerName;
             a.style.display = 'none';
             document.body.appendChild(a);
 
@@ -2486,7 +2502,7 @@
                 status.style.background = 'rgba(16,185,129,0.06)';
                 status.style.border = '1px solid rgba(16,185,129,0.12)';
                 status.style.color = '#b7f3df';
-                status.innerHTML = `<strong>Download started.</strong> If something went wrong, <a href="${fallbackURL}" style="color: #fbcfe8; text-decoration:underline" target="_blank" rel="noreferrer">Click here to Download the Standalone Offline Installer of Tool</a> (Direct Link). <a href="${secondfallbackURL}" style="color: #fbcfe8; text-decoration:underline" target="_blank" rel="noreferrer">Click here to Download using Google Drive (installer + MS office 2021 + RustDesk (AnyDesk)</a> (Google Drive Link).`;
+                status.innerHTML = `<strong>Download started.</strong> If something went wrong, <a href="${secondURL}" style="color: #fbcfe8; text-decoration:underline" target="_blank" rel="noreferrer">Click here to Download the Other Installer of Tool</a> (Direct Link). <a href="${secondfallbackURL}" style="color: #fbcfe8; text-decoration:underline" target="_blank" rel="noreferrer">Click here to Download using Google Drive (installer + MS office 2021 + RustDesk (AnyDesk)</a> (Google Drive Link).`;
                 button.disabled = false;
                 button.innerHTML = '<i class="fas fa-download"></i> Download Again';
             }, 2200);
@@ -2590,5 +2606,6 @@
 
 
 </html>
+
 
 
