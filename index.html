@@ -1221,9 +1221,12 @@
             }
 
             .contact-modal {
-                right: 20px;
-                width: calc(100% - 400px);
-            }
+    /* 👉 Fix mobile cutoff - changed from calc(100% - 400px) to calc(100% - 40px) */
+    right: 20px;
+    left: 20px;
+    width: auto;
+    max-width: 350px;
+}
 
             nav {
                 gap: 8px
@@ -2608,6 +2611,7 @@ document.getElementById('downloadBtnStandalone').addEventListener('click', funct
 
 
 </html>
+
 
 
 
