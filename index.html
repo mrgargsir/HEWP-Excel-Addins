@@ -619,6 +619,14 @@
         .floating-social-btn.whatsapp-channel {
             background: linear-gradient(135deg, #00A884, #008069);
         }
+
+        /* 👉 Hide floating social when contact modal is active */
+        .contact-modal.active ~ .floating-social,
+        body:has(.contact-modal.active) .floating-social {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
         
         /* Hero Section */
         .hero {
@@ -2910,6 +2918,7 @@ document.getElementById('downloadBtnStandalone').addEventListener('click', funct
 
 
 </html>
+
 
 
 
