@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
+    <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
     <title>Estimation & Billing Tools by MRGARGSIR (HEWP Tools) (BOQ Tools)</title>
     <meta name="description"
         content="Official Estimation, BOQ & Billing Tools by MRGARGSIR (HEWP Tools) (Excel Addins): Complete automation toolkit for Haryana Engineering Works Portal – BOQ, Templates, HSR search, auto-upload, calculators and free Chrome extension. Access the main website, video tutorials, YouTube channel, WhatsApp support and community in one place.">
@@ -405,12 +405,14 @@
             background: linear-gradient(135deg, #25D366, #128C7E);
         }
 
-/* 👉 Remove underline from all social links */
-        a.social-btn, a.social-link-footer, a.floating-social-btn {
+        /* 👉 Remove underline from all social links */
+        a.social-btn,
+        a.social-link-footer,
+        a.floating-social-btn {
             text-decoration: none !important;
         }
-        
-/* 👉 Social links in contact modal */
+
+        /* 👉 Social links in contact modal */
         .social-divider {
             margin: 20px 0 15px;
             padding-top: 15px;
@@ -621,13 +623,13 @@
         }
 
         /* 👉 Hide floating social when contact modal is active */
-        .contact-modal.active ~ .floating-social,
+        .contact-modal.active~.floating-social,
         body:has(.contact-modal.active) .floating-social {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
-        
+
         /* Hero Section */
         .hero {
             display: grid;
@@ -1446,16 +1448,16 @@
             .contact-modal {
                 /* 👉 Fix mobile cutoff - changed from calc(100% - 400px) to calc(100% - 40px) */
                 right: 40px;
-              /*  left: 20px; */
+                /*  left: 20px; */
                 width: auto;
                 max-width: 350px;
             }
 
-/* 👉 Hide floating social on mobile */
+            /* 👉 Hide floating social on mobile */
             .floating-social {
                 display: none;
             }
-            
+
             nav {
                 gap: 8px
             }
@@ -1587,36 +1589,43 @@
 </head>
 
 <body>
-<!-- 👉 Floating Social Sidebar -->
+    <!-- 👉 Floating Social Sidebar -->
     <div class="floating-social">
-        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="floating-social-btn facebook" title="Facebook">
+        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+            class="floating-social-btn facebook" title="Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://instagram.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="floating-social-btn instagram" title="Instagram">
+        <a href="https://instagram.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+            class="floating-social-btn instagram" title="Instagram">
             <i class="fab fa-instagram"></i>
         </a>
-       <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="floating-social-btn twitter" title="X (Twitter)">
+        <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="floating-social-btn twitter"
+            title="X (Twitter)">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/>
+                <path
+                    d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" />
             </svg>
         </a>
-        <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer" class="floating-social-btn youtube" title="YouTube">
+        <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer"
+            class="floating-social-btn youtube" title="YouTube">
             <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer" class="floating-social-btn whatsapp-group" title="WhatsApp Group">
+        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer"
+            class="floating-social-btn whatsapp-group" title="WhatsApp Group">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank" rel="noopener noreferrer" class="floating-social-btn whatsapp-channel" title="WhatsApp Channel">
+        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank" rel="noopener noreferrer"
+            class="floating-social-btn whatsapp-channel" title="WhatsApp Channel">
             <i class="fas fa-bullhorn"></i>
         </a>
     </div>
-    
+
     <div class="wrap">
         <header>
             <div class="brand">
                 <div class="logo pulse">
-                    <img src="/logo.png"
-                        alt="MRGARGSIR Logo" style="width:100%;height:100%;object-fit:contain;padding:0px;">
+                    <img src="/logo.png" alt="MRGARGSIR Logo"
+                        style="width:100%;height:100%;object-fit:contain;padding:0px;">
                 </div>
                 <div>
                     <h1>Estimation & BOQ Billing Tools</h1>
@@ -1669,24 +1678,31 @@
                 <div class="social-divider">
                     <h4><i class="fas fa-share-nodes"></i> Follow Us</h4>
                     <div class="social-links-modal">
-                        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="social-btn facebook" title="Facebook">
+                        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-btn facebook" title="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="social-btn instagram" title="Instagram">
+                        <a href="https://instagram.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-btn instagram" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="social-btn twitter" title="X (Twitter)">
+                        <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-btn twitter" title="X (Twitter)">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/>
+                                <path
+                                    d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" />
                             </svg>
                         </a>
-                        <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer" class="social-btn youtube" title="YouTube">
+                        <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-btn youtube" title="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-group" title="WhatsApp Group">
+                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank"
+                            rel="noopener noreferrer" class="social-btn whatsapp-group" title="WhatsApp Group">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-channel" title="WhatsApp Channel">
+                        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank"
+                            rel="noopener noreferrer" class="social-btn whatsapp-channel" title="WhatsApp Channel">
                             <i class="fas fa-bullhorn"></i>
                         </a>
                     </div>
@@ -1698,9 +1714,13 @@
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-left fadeInUp">
-                    <span class="badge">HEWP • HSR 2023 • Templates</span>
-                    <h2>Speed up Estimate Preparation, Material Consumption, BOQ & HEWP work with MRGARGSIR TOOLS (HEWP Tools)</h2>
-                    <p class="lead">Estimation & Bill of Quantity Excel ADDins bundles will build Estimate, Variation, Material Consumption, 
+                    <span class="badge">HEWP • HSR 2023 With amendments • Templates • Materials Quantity</span>
+                    <h2>Speed up Estimate Preparation, Material Quantity (Consumption) Preparation, BOQ Preparation &
+                        Online HEWP work with MRGARGSIR HEWP
+                        Tools</h2>
+                    <p class="lead">Estimation & Bill of Quantity Excel ADDins bundles with Built in Templates. It will
+                        do Estimation, Variation,
+                        Material Consumption Preparation,
                         Bill & Measurement Book, Templates,
                         with real-time HSR search, intelligent copy-paste to templates, one-click uploader, free
                         Chrome/Edge extension & More – designed for both Contractors and Employees.</p>
@@ -1710,25 +1730,28 @@
                                 class="fas fa-download"></i>&nbsp;Download Tool Installer</a>
                         <a class="cta primary" href="#extension" id="edgeExtensionBtn"><i
                                 class="fab fa-edge"></i>&nbsp;Edge Extension</a>
-                        <a class="cta primary" href="https://github.com/rustdesk/rustdesk/releases/download/1.4.4/rustdesk-1.4.4-x86_64.exe" id="RustDesk"><i
-                                class="fab fa-edge"></i>&nbsp;RustDesk for Windows (AnyDesk)</a>
-                        <a class="cta primary" href="https://github.com/rustdesk/rustdesk/releases/download/1.4.4/rustdesk-1.4.4-universal-signed.apk" id="RustDesk"><i
-                                class="fab fa-edge"></i>&nbsp;RustDesk for Android (AnyDesk)</a>
+                        <a class="cta primary"
+                            href="https://github.com/rustdesk/rustdesk/releases/download/1.4.4/rustdesk-1.4.4-x86_64.exe"
+                            id="RustDesk"><i class="fab fa-edge"></i>&nbsp;RustDesk for Windows (AnyDesk)</a>
+                        <a class="cta primary"
+                            href="https://github.com/rustdesk/rustdesk/releases/download/1.4.4/rustdesk-1.4.4-universal-signed.apk"
+                            id="RustDesk"><i class="fab fa-edge"></i>&nbsp;RustDesk for Android (AnyDesk)</a>
                         <a class="cta ghost" href="#how"><i class="fas fa-book-open"></i>&nbsp;View Docs</a>
                     </div>
 
                     <div class="meta">
                         <div class="pill">One-click installer</div>
                         <div class="pill">Auto Updates</div>
-                        <div class="pill">Chrome Extension included</div>
+                        <div class="pill">Chrome/Edge Extension included</div>
                         <div class="pill">Works for Contractors & Employees</div>
                     </div>
                 </div>
 
                 <aside class="card-hero fadeInUp" aria-hidden>
                     <h3 style="margin:0 0 8px">Quick snapshot</h3>
-                    <p class="small">Preloaded MB Template, HSR Rate fetcher, unit converters, steel calculator, auto
-                        upload to HEWP, and download from hewp – everything bundled into an easy installer.</p>
+                    <p class="small">Preloaded MB Templates, HSR Rate fetcher, Material Quantity Finder, unit
+                        converters, steel calculator, auto
+                        uploader to HEWP, and downloader from hewp – everything bundled into an easy installer.</p>
 
                     <div style="margin-top:18px">
                         <div class="download">
@@ -1762,7 +1785,7 @@
                 </div>
                 <div class="stat fadeInUp">
                     <div class="stat-number">3-in-1</div>
-                    <div class="stat-label">Excel + Web + Chrome Tools</div>
+                    <div class="stat-label">Offline Excel + Online Web + Chrome Tools (Portal Error Fixer)</div>
                 </div>
             </section>
 
@@ -1789,29 +1812,32 @@
                     </div>
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:var(--accent4)"><i class="fas fa-calculator"></i></div>
-                        <h4>Advanced Calculators</h4>
-                        <p>Steel weight, amount calcs with GST, unit converters and rounding utilities at a click.</p>
+                        <h4>Auto Advanced Calculations</h4>
+                        <p>Steel weight, amount calcs with GST, Materials, Quantity, unit converters and rounding
+                            utilities at a click.</p>
                     </div>
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#60a5fa"><i class="fas fa-copy"></i></div>
-                        <h4>Smart Copy-Paste</h4>
+                        <h4>Smart Data Arrange</h4>
                         <p>Automatically arrange data into templates with minimal user edits and near-zero alignment
                             errors.</p>
                     </div>
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#a78bfa"><i class="fab fa-chrome"></i></div>
-                        <h4>Free Chrome Extension</h4>
-                        <p>Enhances HEWP UX – Tender search, Dark mode, Enter-fix, Toggle All Checkboxes and more.</p>
+                        <h4>Chrome/Edge Extension</h4>
+                        <p>Enhances HEWP UX – Tender search, Dark mode, Portal Enter button Glitch- Fix, Toggle All
+                            Checkboxes and more.</p>
                     </div>
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#f59e0b"><i class="fas fa-industry"></i></div>
-                        <h4>Auto Material Quantity Generator</h4>
+                        <h4>Auto Material Quantity Preparation</h4>
                         <p>Instantly get Material Consumption table with accurate calculations.</p>
                     </div>
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#10b981"><i class="fas fa-download"></i></div>
                         <h4>Download Prefilled Bill Data</h4>
-                        <p>Download data from HEWP Portal and create comparison summary with your Excel bill (BOQ).</p>
+                        <p>Download data from HEWP Portal and create comparison summary with your Excel Bill (BOQ)
+                            Instant.</p>
                     </div>
                 </div>
             </section>
@@ -1825,44 +1851,60 @@
 
                     <div class="accordion">
                         <div class="item">
-                            <button type="button">E. TOOLS – Excel utilities <i
+                            <button type="button">E. TOOLS Tab - Complete Breakdown <i
                                     class="fas fa-chevron-down"></i></button>
-                            <p class="small">Jump between sheets, insert rows, converters (Feet⇄Meter, Meter⇄Kg), Toggle
-                                Sign, Formulas→Constants, Multiply & Quantity, Total quantity + unit conversion, Rate &
-                                Description , Amount Calculator, Steel Weight Calculator, Auto Round Off, Steel Summary
-                                Generator, Material Summary and Bill Summary Tools.</p>
+                            <p class="small">
+                                <strong>Powerful Utilities:</strong><br>
+                                1. Jump to any Sheet • 2. Refresh Sheet • 3. Insert Row • 4. Copy Worksheet<br>
+                                5. Feet ⇄ Meter Converter • 6. Meter ⇄ Feet Converter • 7. Meter ⇄ Kg Converter<br>
+                                8. Toggle Sign • 9. Formulas To Constant • 10. Multiply and Get Quantity<br>
+                                11. Total Quantity with Unit Converter • 12. Auto Rate & Description Fetcher<br>
+                                13. Amount Calculator • 14. Steel Weight Calculator • 15. Auto Round Off<br>
+                                16. Steel Summary Generator • 17. Abstract Bill Summary • 18. Bill Comparison<br>
+                                19. Material Quantity Generator
+                            </p>
+                        </div>
+
+                        <div class="item">
+                            <button type="button">Template Tab <i class="fas fa-chevron-down"></i></button>
+                            <p class="small">
+                                1. Web Templates • 2. My Templates • 3. Add Templates • 4. Edit Template<br>
+                                5. Delete Template.
+                            </p>
                         </div>
 
                         <div class="item">
                             <button type="button">WebAuto – Portal integration <i
                                     class="fas fa-chevron-down"></i></button>
-                            <p class="small">Auto Login to HEWP, Copy Data to Template (unit conversions applied), Item
-                                Number Selector, PDF generator & upload, Upload Template to portal, Direct data entry,
-                                Website data scraper, Delete bill data and Auto upload full bill. Works for both
-                                contractor and employee workflows.</p>
+                            <p class="small">Auto Login to HEWP, Copy Data to Template (Smart unit conversions applied),
+                                Item Number Selector, PDF generator & upload, Upload Template to portal, Direct data
+                                entry,
+                                Bill Downloader in Excel from Portal, Delete bill data and Auto upload full bill. Works
+                                for both contractor and Engineers Employee's workflows.</p>
                         </div>
 
                         <div class="item">
-                            <button type="button">Chrome Extension features <i class="fas fa-chevron-down"></i></button>
+                            <button type="button">Chrome/Edge Extension features <i
+                                    class="fas fa-chevron-down"></i></button>
                             <p class="small">Smart Tender/Item/anything Search, Important HEWP Shortcuts Bookmarks,
                                 Toggle All
-                                Checkbox, Enter button behavior fixes, Volume increase tweaks, and Dark Mode for portal
+                                Checkbox, Enter button behavior fixes for Hew Portal, Volume increase tweaks and Dark
+                                Mode for portal
                                 readability.</p>
                         </div>
                     </div>
 
                     <h4 style="margin-top:18px">Why use Estimation & Billing Tool Excel ADDins?</h4>
-                    <p class="small">Saves hours on template prep, removes manual mapping errors, reduces rework and
-                        supports full bill scraping and comparisons. Built for low-skill install and day-to-day
+                    <p class="small">Saves hours on template preparation, removes manual mapping errors, reduces rework
+                        and
+                        supports full bill scraping and comparisons. This tool cuts Estimation & Billing work time by
+                        80%. The
+                        auto-upload & Material Quantity preparation
+                        feature alone saves 4-5 hours daily. Highly recommended for anyone working as Engineer,
+                        J.E and Contractors with Haryana
+                        Engineering Works Portal or Direct Tenders. Built for day-to-day
                         automation.</p>
 
-                    <div class="testimonial fadeInUp">
-                        <div class="testimonial-text">"This tool has cut my Estimation & Billing work time by 80%. The
-                            auto-upload
-                            feature alone saves me 2-3 hours daily. Highly recommended for anyone working with Haryana
-                            Engineering Works Portal."</div>
-                        <div class="testimonial-author">- Civil Engineer, Haryana PWD</div>
-                    </div>
                 </div>
 
                 <aside class="panel fadeInRight">
@@ -1929,6 +1971,16 @@
                         </div>
                     </div>
                     <div class="dots" id="dots"></div>
+
+                    <!-- 👉 ADDED SECTION BELOW INTERACTIVE DEMO -->
+
+
+                    <div class="testimonial fadeInUp">
+                        <div class="testimonial-text">"Really Saves my time by 80%. All the features are very useful.
+                            Best for All Engineer,J.E and Contractors"</div>
+                        <div class="testimonial-author">- Civil Engineer, Haryana PWD</div>
+                    </div>
+
                 </aside>
             </section>
             <!-- Tools list condensed -->
@@ -2028,17 +2080,19 @@
 
             <!-- Extension -->
             <section id="extension">
-                <h3>MRGARGSIR Chrome Extension (Free)</h3>
+                <h3>MRGARGSIR Chrome/Edge Extension (Free)</h3>
                 <div class="panel fadeInUp">
                     <p class="small">Included with the installer at no extra cost. Improves portal interaction with
-                        small but meaningful UX fixes: Useful Bookmarks, Tender search, Enter-key fixes, Dark mode and
-                        Toggle all checkboxes. Easily enable/disable from extension toolbar.</p>
+                        small but meaningful UX fixes: Useful Bookmarks, Tender & All Other Dropdown search bar,
+                        Enter-key Glitch fixes for Portal, Dark mode and
+                        Toggle all checkboxes at Once Feature. Easily enable/disable from extension toolbar.</p>
                     <p class="small"><strong>Note:</strong> The Extension is optional – add it during installer setup.
                     </p>
 
                     <div style="display:flex;gap:15px;margin-top:20px;flex-wrap:wrap;">
                         <div class="feature" style="flex:1;min-width:200px;">
-                            <h4><i class="fas fa-search" style="color:var(--accent1)"></i> Smart Tender Search</h4>
+                            <h4><i class="fas fa-search" style="color:var(--accent1)"></i> Smart Tender & All Other
+                                Dropdown Search</h4>
                             <p class="small">Enhanced Search for tenders Dropdown with filtering options.</p>
                         </div>
                         <div class="feature" style="flex:1;min-width:200px;">
@@ -2047,7 +2101,8 @@
                             <p class="small">Select/deselect all checkboxes with a single click.</p>
                         </div>
                         <div class="feature" style="flex:1;min-width:200px;">
-                            <h4><i class="fas fa-keyboard" style="color:var(--accent3)"></i> Enter Button Fix</h4>
+                            <h4><i class="fas fa-keyboard" style="color:var(--accent3)"></i> Enter Button Glitch fixes
+                                for Portal</h4>
                             <p class="small">Pressing Enter won't clear forms on HEWP portal anymore.</p>
                         </div>
                         <div class="feature" style="flex:1;min-width:200px;">
@@ -2059,7 +2114,7 @@
                             <p class="small">Add advance bookmarks for easy navigation on HEWP portal.</p>
                         </div>
                         <div class="feature" style="flex:1;min-width:200px;">
-                            <h4><i class="fas fa-volume-up" style="color:#10b981"></i> Volume Increase</h4>
+                            <h4><i class="fas fa-volume-up" style="color:#10b981"></i> Volume Increase (For Fun)</h4>
                             <p class="small">Boost volume for low volume media on any Website.</p>
                         </div>
                     </div>
@@ -2075,7 +2130,7 @@
                 <div style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
                     <div style="flex:1;min-width:260px">
                         <strong>Estimation & Billing Tools (Excel Addins + Chrome Extension) – Installer.exe</strong>
-                        <div class="small" style="margin-top:6px">Approx size: 130 MB for Standalone installer. Latest
+                        <div class="small" style="margin-top:6px">Latest
                             release includes HSR 2023 amendments and Chrome extension.</div>
                         <ul class="small" style="margin-top:8px;color:#d5ddea">
                             <li>One-click install (no technical skills required)</li>
@@ -2086,12 +2141,22 @@
                         </ul>
                     </div>
 
-                    <div>
-                        <button id="downloadBtnTop" class="cta primary" style="padding:12px 18px;font-size:15px"><i
-                                class="fas fa-download"></i>&nbsp;Download Online Installer</button>
-                    <button id="downloadBtnStandalone" class="cta primary" style="padding:10px 15px;font-size:14px"><i
-                                class="fas fa-download"></i>&nbsp;Download Offline Installer</button>
-                    
+                                       <div>
+                        <button id="downloadBtnTop" class="cta primary" style="padding:12px 18px;font-size:15px;width:100%;margin-bottom:5px">
+                            <div style="display:flex;justify-content:space-between;align-items:center">
+                                <span><i class="fas fa-download"></i>&nbsp;Download Online Installer</span>
+                                <span class="small" style="font-size:12px;opacity:0.8">~2 MB</span>
+                            </div>
+                        </button>
+                        <div class="small" style="margin-bottom:15px;color:var(--muted)">Auto-updates included | Best for most users</div>
+                        
+                        <button id="downloadBtnStandalone" class="cta primary" style="padding:10px 15px;font-size:14px;width:100%;margin-bottom:5px">
+                            <div style="display:flex;justify-content:space-between;align-items:center">
+                                <span><i class="fas fa-download"></i>&nbsp;Download Offline Installer</span>
+                                <span class="small" style="font-size:12px;opacity:0.8">~130 MB</span>
+                            </div>
+                        </button>
+                        <div class="small" style="color:var(--muted)">Complete standalone package</div>
                     </div>
                 </div>
 
@@ -2107,6 +2172,7 @@
                         <ul class="comparison-list small">
                             <li>Manual HSR lookup in bulky PDF documents</li>
                             <li>Copy-paste errors between Excel and portal</li>
+                            <li>Material Quantity Factors</li>
                             <li>Hours spent on portal navigation and data entry</li>
                             <li>Manual unit conversions with high error risk</li>
                             <li>No standardization in estimate formats</li>
@@ -2122,6 +2188,7 @@
                         <ul class="comparison-list small">
                             <li>Instant HSR search with auto-fill of details</li>
                             <li>Smart copy-paste with automatic data arrangement</li>
+                            <li>One-Click Material Quantity Table Preparation</li>
                             <li>One-click upload with auto-login to portal</li>
                             <li>Automatic unit conversions with zero errors</li>
                             <li>Standardized templates with HSR 2023 structure</li>
@@ -2158,15 +2225,15 @@
                         </div>
 
                         <div class="install-step fadeInUp">
-                            <h4>Enable Excel Add-in</h4>
-                            <p>Open Excel and check the ribbon. You'll see New tabs: "E. TOOLS", "WebManual", "Settings"
+                            <h4>Enable Excel Add-in if required</h4>
+                            <p>Open Excel and check the ribbon. You'll see New tabs: "E. TOOLS", "Template" "HEWP Auto", "Tool Help", "Tool Settings"
                                 etc. with all the features ready to use.</p>
                         </div>
 
                         <div class="install-step fadeInUp">
-                            <h4>Install Chrome Extension (Optional)</h4>
+                            <h4>Install Chrome/Edge Extension (Optional)</h4>
                             <p>During installation, you'll be prompted to add the Chrome extension. Click "Add to
-                                Chrome" when prompted for enhanced portal features.</p>
+                                Chrome" when prompted for enhanced portal features. For Edge Extension, Search hewp extension in edge store</p>
                         </div>
 
                         <div class="install-step fadeInUp">
@@ -2177,25 +2244,39 @@
                     </div>
 
                     <div
-                        style="margin-top:25px;padding:15px;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.2);border-radius:10px;">
-                        <strong style="color:#10b981">✓ System Requirements:</strong>
-                        <ul class="small" style="margin:10px 0 0 20px;color:#d5ddea">
-                            <li>Windows 7/8/10/11</li>
-                            <li>Microsoft Excel 2016 or newer versions (including Office 365)</li>
-                            <li>Google Chrome browser OR Edge (for extension features)</li>
-                            <li>Minimum 4GB RAM (8GB recommended)</li>
-                            <li>500MB free disk space</li>
-                        </ul>
-                    </div>
-
-                    <div
                         style="margin-top:25px;padding:15px;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
                         <strong style="color:#ef4444">⚠️ Before You Install:</strong>
                         <ul class="small" style="margin:10px 0 0 20px;color:#d5ddea">
-                            <li>Close all Microsoft Excel windows</li>
-                            <li>Close Google Chrome browser</li>
-                            <li>You need administrator rights</li>
-                            <li>If Windows shows security warning, click "More info" → "Run anyway"</li>
+                            <li>✅ Save & Close all Microsoft Excel windows</li>
+                            <li>✅ Have your unique install key ready</li>
+                            <li>✅ During Installation, If Windows shows security warning, click "More info" → "Run
+                                anyway"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="requirements">
+                <h3>📋 System Requirements</h3>
+                <div class="comparison">
+                    <div class="comparison-item before fadeInLeft">
+                        <h4 class="comparison-title">Minimum Requirements</h4>
+                        <ul class="comparison-list small">
+                            <li>Windows 7 / 8 / 10 / 11</li>
+                            <li>Microsoft Excel 2016 or later</li>
+                            <li>Google Chrome browser OR Edge</li>
+                            <li>4GB RAM</li>
+                            <li>500MB free disk space</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item after fadeInRight">
+                        <h4 class="comparison-title">Recommended</h4>
+                        <ul class="comparison-list small">
+                            <li>Windows 10 / 11</li>
+                            <li>Microsoft Excel 2019 / 365</li>
+                            <li>Latest Chrome/Edge browser</li>
+                            <li>8GB RAM</li>
+                            <li>1GB free disk space</li>
                         </ul>
                     </div>
                 </div>
@@ -2382,7 +2463,7 @@
                         <div class="faq-answer">
                             <p>Auto-updates are enabled by default. The add-in will automatically check for updates and
                                 do update. Also Notify you when a Major new version is available. You can also manually
-                                check for updates from Tool's Setting tab.</p>
+                                check for updates from Tool's Setting tab. Use Online Downloader for easy installation of Installer Updates.</p>
                         </div>
                     </div>
 
@@ -2404,9 +2485,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Try running the installer as Administrator (right-click → Run as Administrator). Try
+                            <p>Try
                                 Downloading Offline installer. If issues persist, contact support via email at
-                                advancetool.help@zohomail.in or WhatsApp at +91 97285 32828.</p>
+                                help@mrgargsir.store or WhatsApp at +91 97285 32828.</p>
                         </div>
                     </div>
 
@@ -2459,9 +2540,25 @@
                 </div>
             </section>
 
+            <section id="updates">
+                <h3>🔄 Version Updates</h3>
+                <div class="panel fadeInUp">
+                    <div class="feature">
+                        <h4><i class="fas fa-sync-alt" style="color:var(--accent1)"></i> Auto Updates</h4>
+                        <p class="small">The add-in automatically checks for updates. You'll be notified when new
+                            versions are available.</p>
+                    </div>
+                    <div class="feature" style="margin-top:15px">
+                        <h4><i class="fas fa-exclamation-triangle" style="color:#f59e0b"></i> Expired Installer</h4>
+                        <p class="small">If you see "Expired Installer" message, download the latest version from this
+                            page or contact support.</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- 👉 NEW: Pricing Section (Free) -->
             <section id="pricing">
-                <h3>💰 Pricing</h3>
+                <h3>Trial</h3>
                 <div class="panel fadeInUp" style="max-width:600px;margin:0 auto;text-align:center">
                     <div style="padding:30px">
                         <div
@@ -2479,7 +2576,7 @@
                             </div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
                                 <i class="fas fa-check-circle" style="color:var(--accent5);font-size:20px"></i>
-                                <span>Chrome extension at no extra cost</span>
+                                <span>Chrome/Edge extension at no extra cost</span>
                             </div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
                                 <i class="fas fa-check-circle" style="color:var(--accent5);font-size:20px"></i>
@@ -2487,11 +2584,11 @@
                             </div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
                                 <i class="fas fa-check-circle" style="color:var(--accent5);font-size:20px"></i>
-                                <span>Unlimited downloads and installations</span>
+                                <span>Easy Tech Support for downloads and installations</span>
                             </div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
                                 <i class="fas fa-check-circle" style="color:var(--accent5);font-size:20px"></i>
-                                <span>Free updates forever</span>
+                                <span>Free Updates...</span>
                             </div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
                                 <i class="fas fa-check-circle" style="color:var(--accent5);font-size:20px"></i>
@@ -2543,44 +2640,58 @@
                 <div class="footer-social">
                     <h3>Stay Connected</h3>
                     <div class="social-links-footer">
-                        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="social-link-footer facebook" title="Facebook">
+                        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-link-footer facebook" title="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="social-link-footer instagram" title="Instagram">
+                        <a href="https://instagram.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-link-footer instagram" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                       <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="social-link-footer twitter" title="X (Twitter)">
+                        <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-link-footer twitter" title="X (Twitter)">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-                                <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/>
+                                <path
+                                    d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" />
                             </svg>
                         </a>
-                        <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer" class="social-link-footer youtube" title="YouTube">
+                        <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-link-footer youtube" title="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer" class="social-link-footer whatsapp-group" title="WhatsApp Group">
+                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank"
+                            rel="noopener noreferrer" class="social-link-footer whatsapp-group" title="WhatsApp Group">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank" rel="noopener noreferrer" class="social-link-footer whatsapp-channel" title="WhatsApp Channel">
+                        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank"
+                            rel="noopener noreferrer" class="social-link-footer whatsapp-channel"
+                            title="WhatsApp Channel">
                             <i class="fas fa-bullhorn"></i>
                         </a>
                     </div>
                 </div>
 
-            <div style="max-width:900px;margin:0 auto">
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-                    <div style="text-align:left">
-                        <strong>Estimation & Billing Tools</strong> By <a href="https://wa.me/919728532828"
-                            target="_blank" rel="noreferrer">MRGARGSIR</a>
-                        <div class="small" style="margin-top:6px">© MRGARGSIR 2025 – All rights reserved </div>
-                        <div class="small" style="margin-top:6px">IMPORTANT DISCLAIMER: This is an independent Website
-                            and Third-party tool and is NOT affiliated with, endorsed by, or connected to the HEWP
-                            portal or any government department. </div>
+                <div style="max-width:900px;margin:0 auto">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                        <div style="text-align:left">
+                            <strong>Estimation & Billing Tools</strong> By <a href="https://wa.me/919728532828"
+                                target="_blank" rel="noreferrer">MRGARGSIR</a>
+                            <div class="small" style="margin-top:6px">© MRGARGSIR 2025 – All rights reserved </div>
+                            <div class="small"
+                                style="margin-top:6px;padding:10px;background:rgba(239,68,68,0.05);border-radius:8px">
+                                <strong style="color:#ef4444">⚠️ IMPORTANT DISCLAIMER:</strong>
+                                This is an independent third-party tool NOT affiliated with, endorsed by, or connected
+                                to
+                                the HEWP portal or any government department. We are not an official HEWP and are not
+                                authorized by the Government in any way.
+                            </div>
+                            <div style="text-align:right">
+                                <a href="https://github.com/mrgargsir" target="_blank" class="small">"I need, I build."
+                                    —
+                                    MRGARGSIR</a>
+                            </div>
+                        </div>
                     </div>
-                    <div style="text-align:right">
-                        <a href="https://github.com/mrgargsir" target="_blank" class="small">"I need, I build." — MRGARGSIR</a>
-                    </div>
-                </div>
-            </div>
         </footer>
     </div>
 
@@ -2778,21 +2889,21 @@
             const status = document.getElementById('dlStatus');
             button = button || document.getElementById('downloadBtnTop') || document.getElementById('downloadBtnStandalone');
             // 👉 Determine which URL to use based on button ID
-    let downloadURL;
-    let installerName;
-    
-    if (button.id === 'downloadBtnStandalone') {
-        // 👉 Use fallback URL for standalone button
-        downloadURL = fallbackURL;
-        secondURL = primaryURL;
-        installerName = 'HEWP_StandaloneInstaller.exe';
-    } else {
-        // 👉 Use primary URL for top button (default)
-        downloadURL = primaryURL;
-        secondURL = fallbackURL;
-        installerName = 'HEWP_OnlineInstaller.exe';
-    }
-            
+            let downloadURL;
+            let installerName;
+
+            if (button.id === 'downloadBtnStandalone') {
+                // 👉 Use fallback URL for standalone button
+                downloadURL = fallbackURL;
+                secondURL = primaryURL;
+                installerName = 'HEWP_StandaloneInstaller.exe';
+            } else {
+                // 👉 Use primary URL for top button (default)
+                downloadURL = primaryURL;
+                secondURL = fallbackURL;
+                installerName = 'HEWP_OnlineInstaller.exe';
+            }
+
             button.disabled = true;
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing download...';
 
@@ -2826,8 +2937,8 @@
         // Hook buttons
         document.getElementById('downloadBtnTop').addEventListener('click', function () { startDownload(this); });
         document.getElementById('edgeExtensionBtn').addEventListener('click', function () { DownloadedgeExtension(); });
-document.getElementById('downloadBtnStandalone').addEventListener('click', function () { startDownload(this); });
-        
+        document.getElementById('downloadBtnStandalone').addEventListener('click', function () { startDownload(this); });
+
         //document.getElementById('heroDownload').addEventListener('click', function (e) { e.preventDefault(); document.getElementById('downloadBtnTop').click(); });
 
         // 👉 Smooth scroll for navigation with header offset
@@ -2918,18 +3029,3 @@ document.getElementById('downloadBtnStandalone').addEventListener('click', funct
 
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
