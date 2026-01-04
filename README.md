@@ -34,10 +34,11 @@ Estimation & Billing Tool is a comprehensive automation toolkit designed specifi
 
 #### ✅ Core Features (in Excel Ribbon):
 
-* **📊 Professional Templates**
+### **📊 Professional Templates**
 - Estimate & Measurement Book templates ready with HSR 2023 structure and latest amendments
 - Preloaded MB Templates with HSR Rate fetcher
 - Material Quantity Finder with accurate calculations
+  
 ### 🔍 Real-time HSR Search
 - Search by HSR item number and auto-fetch Unit, Rate, Rate Type and Description
 - HSR 2023 with latest amendments fully integrated
@@ -59,7 +60,7 @@ Estimation & Billing Tool is a comprehensive automation toolkit designed specifi
 * **👍 Special Log Window For Excel Error to fix** - Your Data will be With 0% Error.
 ---
 
-### #### 🌐 Excel Enhancements Features in (First Tab: **`E. TOOLS`**)
+### 🌐 Excel Enhancements Features in (First Tab: **`E. TOOLS`**)
 
 **📤 One-Click TOOLS** – A comprehensive Excel utility tab for generating bills, estimates, and engineering documents.
 
@@ -92,7 +93,7 @@ Estimation & Billing Tool is a comprehensive automation toolkit designed specifi
 - Delete Templates
 
 ---
-### #### 🌐 Web Automation Features (Second Tab: **`WebAuto`**)
+### 🌐 Web Automation Features (Second Tab: **`WebAuto`**)
 
 **📤 One-Click Uploader** – Interact directly with the HEWP Portal from Excel.
 
@@ -125,10 +126,15 @@ Estimation & Billing Tool is a comprehensive automation toolkit designed specifi
 ## **🔧 Main Features of ChromeExtension**  
 
 **🔗 Add Important Bookmarks** – Add Advanced Bookmarks which will make easy use of the HEWP Portal.
+
 **🔍 Smart Tender Search** – Enhanced dropdown search for tenders.
+
 **☑️ Toggle All Checkbox.**  
+
 **🎯 Enter Button Fixes** (Pressing the Enter button will not clear the form on the HEWP portal anymore)  
+
 **🆕 Volume Increase** (Volume increase features when low volume media is a problem)  
+
 **✅ Dark Mode** (Enable Dark mode on all websites)
 
 MRGARGSIR SUITE - INSTALLATION GUIDE
@@ -149,11 +155,11 @@ MRGARGSIR SUITE - INSTALLATION GUIDE
 - 8GB RAM
 - 1GB free disk space
   
-📋 BEFORE YOU INSTALL:
+### 📋 BEFORE YOU INSTALL:
 1. Close all Microsoft Excel windows
 
 
-📦 INSTALLATION:
+### 📦 INSTALLATION:
 1. Extract all files to a folder (if zip.)
 2. Double-click "Installer.exe"
 3. If Windows shows a security warning, click "More info" → "Run anyway"
@@ -176,7 +182,7 @@ Complete video tutorials available on our YouTube channel:
 4. **E. Tools Tab Features Part 3** – Steel Function, Custom Function, Steel Summary
 5. **Web Tools Tab Features** – Portal integration and automation
 
-⚠️ TROUBLESHOOTING:
+## ⚠️ TROUBLESHOOTING:
 - "Invalid install key" → Check you entered the key correctly
 - Excel add-in not loading → Restart Excel after installation
 - Chrome extension not working → Restart Chrome
