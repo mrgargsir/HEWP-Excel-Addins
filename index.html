@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
     <title>Estimation & Billing Tools by MRGARGSIR (HEWP Tools) (BOQ Tools)</title>
     <meta name="description"
-        content="Official Estimation, BOQ & Billing Tools by MRGARGSIR (HEWP Tools) (Excel Addins): Complete automation toolkit for Haryana Engineering Works Portal – BOQ, Templates, HSR search, auto-upload, calculators and free Chrome extension. Access the main website, video tutorials, YouTube channel, WhatsApp support and community in one place.">
+        content="Official Estimation, BOQ & Billing Tools by MRGARGSIR (HEWP Tools) (Excel Addins): Complete automation toolkit for Haryana Engineering Works Portal – BOQ, Templates, HSR search, auto-upload, calculators and free Chrome/Edge extension. Access the main website, video tutorials, YouTube channel, WhatsApp support and community in one place.">
     <meta name="keywords"
         content="HEWP Excel Addins, HEWP tools, Excel addins, HEWP tutorials, HEWP WhatsApp, HEWP YouTube, Estimate, Estimation, billing, bill, boq, tools, boq tool, boq tools, boq mrgargsir, mrgargsir, tool by mrgargsir, tools by mrgargsir, estimates, excel addins, Add-ins, construction estimation software, building cost estimator, quantity surveyor tools, construction billing software, BOQ preparation tool, material estimation, construction project management, Excel automation tools, estimating software India, construction calculator Excel, rate analysis tool, construction costing software, building estimation tool, contractor billing software, civil engineering Excel tools, construction takeoff software, budget estimation tool, construction management Excel, project costing software, residential estimation, commercial estimation, construction quote generator, measurement sheet tool, cost analysis Excel addin, construction database tools, HSR database, QTY tracking, Excel VSTO addins, third party Excel tools, construction industry software, estimator tools, building quantity surveyor, construction documentation tools, Excel plugins for construction, automated estimation software, mrgargsir tools, hewp tool, hewp tools, hewptools,hewptool, mrgargsir store, billing tools, mrgargsir, construction reporting tools" />
 
@@ -1585,10 +1585,110 @@
                 max-height: 250px;
             }
         }
+
+        /* 👉 Weather Effects Container */
+        #weather-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        /* 👉 Weather Info Display (Optional) */
+        .weather-info {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 10px;
+            padding: 10px 15px;
+            color: white;
+            font-size: 12px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 👉 Snowflake Particles */
+        .snowflake {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 50;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+        }
+
+        /* 👉 Raindrop Particles */
+        .raindrop {
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(6, 182, 212, 0.8), rgba(124, 58, 237, 0.6));
+            width: 2px;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* 👉 Sun Rays Effect */
+        .sun-ray {
+            position: absolute;
+            background: linear-gradient(to right, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.3));
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(5px);
+            animation: pulseRay 3s ease-in-out infinite;
+            z-index: 998;
+        }
+
+        @keyframes pulseRay {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
+        }
+
+        /* 👉 Cloud Effect */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(10px);
+            pointer-events: none;
+            animation: floatCloud 20s linear infinite;
+            z-index: 998;
+        }
+
+        @keyframes floatCloud {
+            0% {
+                transform: translateX(-100px);
+            }
+
+            100% {
+                transform: translateX(calc(100vw + 100px));
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- 👉 Weather Effects Container -->
+    <div id="weather-effects"></div>
+
     <!-- 👉 Floating Social Sidebar -->
     <div class="floating-social">
         <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer"
@@ -1624,18 +1724,19 @@
         <header>
             <div class="brand">
                 <div class="logo pulse">
-                    <img src="/logo.png" alt="MRGARGSIR Logo"
+                    <img src="/logo.png" alt="MRGARGSIR Tools"
                         style="width:100%;height:100%;object-fit:contain;padding:0px;">
                 </div>
                 <div>
-                    <h1>Estimation & BOQ Billing Tools</h1>
+                    <h1>Estimation & BOQ Billing Tools </h1>
+                    <p>(MRGARGSIR HEWP Tools)</p>
                     <p>By MRGARGSIR</p>
                 </div>
             </div>
             <nav>
                 <a class="nav-btn" href="#features">Features</a>
                 <a class="nav-btn" href="#how">How it works</a>
-                <a class="nav-btn" href="#extension">Chrome Extension</a>
+                <a class="nav-btn" href="#extension">Chrome/Edge Extension</a>
                 <a class="nav-btn" href="#installation">Installation</a>
                 <button class="nav-btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact</button>
                 <a class="nav-btn primary" href="#download">Download</a>
@@ -1747,27 +1848,75 @@
                     </div>
                 </div>
 
-                <aside class="card-hero fadeInUp" aria-hidden>
-                    <h3 style="margin:0 0 8px">Quick snapshot</h3>
-                    <p class="small">Preloaded MB Templates, HSR Rate fetcher, Material Quantity Finder, unit
-                        converters, steel calculator, auto
-                        uploader to HEWP, and downloader from hewp – everything bundled into an easy installer.</p>
+                <div>
 
-                    <div style="margin-top:18px">
-                        <div class="download">
-                            <div class="left">
-                                <strong>Learn about The Tool...</strong>
-                            </div>
-                            <div class="right">
-                                <a class="cta primary" href="#tutorials" id="videoTutorialsBtn">Video Tutorials</a>
+                    <aside class="card-hero fadeInUp" aria-hidden style="margin-bottom: 20px;">
+                        <!-- 👉 Weather Display ABOVE Quick Snapshot -->
+
+                        <div class="weather-info-card" id="weather-info" style="display: block; margin-bottom: 5px;">
+
+                            <div
+                                style="display: flex; align-items: center; gap: 15px; background: linear-gradient(90deg, rgba(124, 58, 237, 0.15), rgba(6, 182, 212, 0.1)); padding: 15px; border-radius: 12px; border: 1px solid rgba(124, 58, 237, 0.2); position: relative;">
+                                <!-- Weather icon badge -->
+                                <div class="weather-icon-badge">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+
+                                <div style="flex: 1;">
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                        <div>
+                                            <div style="font-size: 22px; font-weight: 900; color: var(--accent2);">--°C
+                                            </div>
+                                            <div
+                                                style="font-size: 12px; color: var(--muted); margin-top: 2px; margin-bottom: 2px;">
+                                                Detecting
+                                                weather...</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; font-weight: 600; color: #d5ddea;">Your
+                                                Location</div>
+                                            <div
+                                                style="font-size: 11px; color: var(--muted); margin-top: 2px; margin-bottom: 2px;">
+                                                <i class="fas fa-map-marker-alt"></i> Seasonal Mode
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        style="margin-top: 8px; margin-bottom: 2px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Weather effects active in background</span>
+                                        <button onclick="toggleWeatherEffects()"
+                                            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--accent2); cursor: pointer; font-size: 11px; padding: 4px 10px; border-radius: 6px; display: flex; align-items: center; gap: 4px;">
+                                            <i class="fas fa-eye-slash"></i> Hide Effects
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </aside>
 
-                    <div style="margin-top:14px;font-size:13px;color:#d5ddea">
-                        <strong>Latest:</strong> HSR 2023 amendments integrated • Stable release
-                    </div>
-                </aside>
+                    <aside class="card-hero fadeInUp" aria-hidden style="margin-bottom: 150px;">
+                        <h3 style="margin:0 0 8px">Quick snapshot</h3>
+                        <p class="small">Preloaded MB Templates, HSR Rate fetcher, Material Quantity Finder, unit
+                            converters, steel calculator, auto uploader to HEWP, and downloader from hewp – everything
+                            bundled into an easy installer.</p>
+
+                        <div style="margin-top:18px">
+                            <div class="download">
+                                <div class="left">
+                                    <strong>Learn about The Tool...</strong>
+                                </div>
+                                <div class="right">
+                                    <a class="cta primary" href="#tutorials" id="videoTutorialsBtn">Video Tutorials</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:14px;font-size:13px;color:#d5ddea">
+                            <strong>Latest:</strong> HSR 2023 amendments integrated • Stable release
+                        </div>
+                    </aside>
+                </div>
             </section>
             <!-- Stats Section -->
             <section class="stats">
@@ -1952,7 +2101,7 @@
                             </div>
                             <div class="slide">
                                 <h4>Smart Tender Search</h4>
-                                <p class="small">Enhanced search functionality for tenders with Chrome extension.</p>
+                                <p class="small">Enhanced search functionality for tenders with Chrome/Edge extension.</p>
                             </div>
                             <div class="slide">
                                 <h4>Dark Mode</h4>
@@ -2129,7 +2278,7 @@
             <div class="panel fadeInUp">
                 <div style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
                     <div style="flex:1;min-width:260px">
-                        <strong>Estimation & Billing Tools (Excel Addins + Chrome Extension) – Installer.exe</strong>
+                        <strong>Estimation & Billing Tools (Excel Addins + Chrome/Edge Extension) – Installer.exe</strong>
                         <div class="small" style="margin-top:6px">Latest
                             release includes HSR 2023 Amendments and Chrome/Edge extension.</div>
                         <ul class="small" style="margin-top:8px;color:#d5ddea">
@@ -2141,16 +2290,19 @@
                         </ul>
                     </div>
 
-                                       <div>
-                        <button id="downloadBtnTop" class="cta primary" style="padding:12px 18px;font-size:15px;width:100%;margin-bottom:5px">
+                    <div>
+                        <button id="downloadBtnTop" class="cta primary"
+                            style="padding:12px 18px;font-size:15px;width:100%;margin-bottom:5px">
                             <div style="display:flex;justify-content:space-between;align-items:center">
                                 <span><i class="fas fa-download"></i>&nbsp;Download Online Installer</span>
                                 <span class="small" style="font-size:12px;opacity:0.8">~2 MB</span>
                             </div>
                         </button>
-                        <div class="small" style="margin-bottom:15px;color:var(--muted)">Auto-updates included | Best for most users</div>
-                        
-                        <button id="downloadBtnStandalone" class="cta primary" style="padding:12px 18px;font-size:15px;width:100%;margin-bottom:5px">
+                        <div class="small" style="margin-bottom:15px;color:var(--muted)">Auto-updates included | Best
+                            for most users</div>
+
+                        <button id="downloadBtnStandalone" class="cta primary"
+                            style="padding:12px 18px;font-size:15px;width:100%;margin-bottom:5px">
                             <div style="display:flex;justify-content:space-between;align-items:center">
                                 <span><i class="fas fa-download"></i>&nbsp;Download Offline Installer</span>
                                 <span class="small" style="font-size:12px;opacity:0.8">~125 MB</span>
@@ -2193,7 +2345,7 @@
                             <li>Automatic unit conversions with zero errors</li>
                             <li>Standardized templates with HSR 2023 structure</li>
                             <li>Automatic bill comparison and difference highlighting</li>
-                            <li>Enhanced portal experience with Chrome extension</li>
+                            <li>Enhanced portal experience with Chrome/Edge extension</li>
                             <li>Automated calculations for amounts, GST, contingencies</li>
                             <li>One-click steel weight calculator</li>
                             <li>Reusable templates with preloaded HSR data</li>
@@ -2215,7 +2367,7 @@
                         <div class="install-step fadeInUp">
                             <h4>Download the Installer</h4>
                             <p>Click the download button to get Installer.exe. The installer
-                                includes both Excel Add-in and Chrome Extension.</p>
+                                includes Excel Add-in and Chrome/Edge Extension.</p>
                         </div>
 
                         <div class="install-step fadeInUp">
@@ -2226,14 +2378,16 @@
 
                         <div class="install-step fadeInUp">
                             <h4>Enable Excel Add-in if required</h4>
-                            <p>Open Excel and check the ribbon. You'll see New tabs: "E. TOOLS", "Template" "HEWP Auto", "Tool Help", "Tool Settings"
+                            <p>Open Excel and check the ribbon. You'll see New tabs: "E. TOOLS", "Template" "HEWP Auto",
+                                "Tool Help", "Tool Settings"
                                 etc. with all the features ready to use.</p>
                         </div>
 
                         <div class="install-step fadeInUp">
                             <h4>Install Chrome/Edge Extension (Optional)</h4>
-                            <p>During installation, you'll be prompted to add the Chrome extension. Click "Add to
-                                Chrome" when prompted for enhanced portal features. For Edge Extension, Search hewp extension in edge store</p>
+                            <p>During installation, you'll be prompted to add the Chrome/Edge extension. Click "Add to
+                                Chrome" when prompted for enhanced portal features. For Edge Extension, Search hewp
+                                extension in edge store</p>
                         </div>
 
                         <div class="install-step fadeInUp">
@@ -2295,8 +2449,8 @@
                             </iframe>
                         </div>
                         <p class="small" style="margin-top:15px;text-align:center;color:var(--accent2)">
-                            <i class="fas fa-youtube"></i> More tutorials available on our <a
-                                href="https://www.youtube.com/@HEWPTools" target="_blank"
+                            <i class="fas fa-youtube"></i> All tutorials available on our <a
+                                href="https://www.youtube.com/watch?v=yj-vEuf-Ye8&list=PLCbMlKNK4S80cjerEh8_Fy19SYs13wGXq" target="_blank"
                                 style="color:var(--accent1);text-decoration:underline">YouTube Channel</a>
                         </p>
                     </div>
@@ -2305,7 +2459,7 @@
                         <h4 style="margin-top:0">📚 Available Tutorials</h4>
                         <div class="video-list-container">
                             <!-- Video 1 -->
-                            <div class="feature video-card" data-video-id="yj-vEuf-Ye8" style="cursor:pointer">
+                            <div class="feature video-card" data-video-id="TGxCEfOi9oo" style="cursor:pointer">
                                 <div style="display:flex;align-items:center;gap:10px">
                                     <i class="fas fa-play-circle" style="color:var(--accent1);font-size:24px"></i>
                                     <div style="flex:1">
@@ -2402,6 +2556,42 @@
                                     <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
                                 </div>
                             </div>
+                            <!-- Video 8 -->
+                            <div class="feature video-card" data-video-id="ChAsdEFmwww" style="cursor:pointer">
+                                <div style="display:flex;align-items:center;gap:10px">
+                                    <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                    <div style="flex:1">
+                                        <h4 style="margin:0">Bill Est Compare and Portal Bill Download Functions use (Estimation and Billing mrgargsir hewp Tool)
+                                        </h4>
+                                        <p class="small" style="margin:3px 0 0">Everything with Just One Click </p>
+                                    </div>
+                                    <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                                </div>
+                            </div>
+                            <!-- Video 9 -->
+                            <div class="feature video-card" data-video-id="saAwyBmC3G0" style="cursor:pointer">
+                                <div style="display:flex;align-items:center;gap:10px">
+                                    <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                    <div style="flex:1">
+                                        <h4 style="margin:0">Auto Upload Bill in Contractor id (Estimation and Billing mrgargsir hewp Tool)
+                                        </h4>
+                                        <p class="small" style="margin:3px 0 0">Everything with Just One Click </p>
+                                    </div>
+                                    <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                                </div>
+                            </div>
+                            <!-- Video 10 -->
+                            <div class="feature video-card" data-video-id="eBoGeBiaTrE" style="cursor:pointer">
+                                <div style="display:flex;align-items:center;gap:10px">
+                                    <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                    <div style="flex:1">
+                                        <h4 style="margin:0">Auto Delete Bill in Contractor id (Estimation and Billing mrgargsir hewp Tool)
+                                        </h4>
+                                        <p class="small" style="margin:3px 0 0">Everything with Just One Click </p>
+                                    </div>
+                                    <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                                </div>
+                            </div>
 
 
                         </div>
@@ -2426,9 +2616,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Estimation & Billing Excel Addins offers a 7-day free trial with full access to all
+                            <p>Estimation & Billing Excel Addins offers a 15-day free trial with full access to all
                                 features. After the
-                                trial period, premium features require a license. The Chrome extension remains free.</p>
+                                trial period, premium features require a license. The Chrome/Edge extension remains free.</p>
                         </div>
                     </div>
 
@@ -2463,19 +2653,20 @@
                         <div class="faq-answer">
                             <p>Auto-updates are enabled by default. The add-in will automatically check for updates and
                                 do update. Also Notify you when a Major new version is available. You can also manually
-                                check for updates from Tool's Setting tab. Use Online Downloader for easy installation of Installer Updates.</p>
+                                check for updates from Tool's Setting tab. Use Online Downloader for easy installation
+                                of Installer Updates.</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>Does the Chrome extension work with other browsers?</span>
+                            <span>Does the Chrome/Edge extension work with other browsers?</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Currently, the extension is only available for Google Chrome. However, it may work with
-                                Chromium-based browsers like Microsoft Edge and Brave. But Web Automation will only work
-                                for Chrome Browser</p>
+                            <p>Currently, the extension is only available for Google Chrome and Microsoft Edge. However, it may work with
+                                Chromium-based browsers like Brave. But Web Automation will only work
+                                for Chrome and Edge Browser</p>
                         </div>
                     </div>
 
@@ -3020,6 +3211,581 @@
                 });
             });
         });
+
+        // 👉 Weather-based Effects System
+        function initWeatherEffects() {
+            const effectsContainer = document.getElementById('weather-effects');
+            const weatherInfo = document.getElementById('weather-info');
+
+            // Default effect (if weather API fails or user denies location)
+            const defaultEffect = getSeasonalEffect();
+
+            // Show weather info
+            weatherInfo.style.display = 'block';
+
+            // Get user's location and weather
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        fetchWeatherData(position.coords.latitude, position.coords.longitude);
+                    },
+                    (error) => {
+                        // User denied location or error
+                        applyWeatherEffect(defaultEffect);
+                        weatherInfo.innerHTML = `<i class="fas fa-map-marker-alt"></i> <span>${defaultEffect.name} Mode</span>`;
+                    }
+                );
+            } else {
+                // Geolocation not supported
+                applyWeatherEffect(defaultEffect);
+                weatherInfo.innerHTML = `<i class="fas fa-map-marker-alt-slash"></i> <span>${defaultEffect.name} Mode</span>`;
+            }
+
+            function fetchWeatherData(lat, lon) {
+                // Using a free weather API (OpenWeatherMap - you'll need to sign up for a free API key)
+                const apiKey = '3d88e02248e33e857a68f0d1b2a1c296'; // Replace with your API key
+                const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+                // Fallback if API fails
+                const fallback = setTimeout(() => {
+                    const seasonalEffect = getSeasonalEffect();
+                    applyWeatherEffect(seasonalEffect);
+                    weatherInfo.innerHTML = `<i class="fas fa-calendar-alt"></i> <span>${seasonalEffect.name} Mode</span>`;
+                }, 5000);
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        clearTimeout(fallback);
+                        const weatherEffect = determineWeatherEffect(data);
+                        applyWeatherEffect(weatherEffect);
+
+                        // Update weather info display
+                        const temp = Math.round(data.main.temp);
+                        const description = data.weather[0].description;
+                        weatherInfo.innerHTML = `
+                    <i class="${weatherEffect.icon}"></i>
+                    <div>
+                        <div>${temp}°C • ${description}</div>
+                        <div style="font-size:10px;color:#d5ddea">${weatherEffect.name} Mode</div>
+                    </div>
+                `;
+                    })
+                    .catch(error => {
+                        clearTimeout(fallback);
+                        const seasonalEffect = getSeasonalEffect();
+                        applyWeatherEffect(seasonalEffect);
+                        weatherInfo.innerHTML = `<i class="fas fa-calendar-alt"></i> <span>${seasonalEffect.name} Mode</span>`;
+                    });
+            }
+
+            function determineWeatherEffect(weatherData) {
+                const condition = weatherData.weather[0].main.toLowerCase();
+                const temp = weatherData.main.temp;
+
+                if (condition.includes('snow') || temp < 15) {
+                    return {
+                        type: 'snow',
+                        name: 'Winter Snow',
+                        icon: 'fas fa-snowflake',
+                        intensity: temp < -5 ? 'heavy' : 'light'
+                    };
+                } else if (condition.includes('rain') || condition.includes('drizzle')) {
+                    return {
+                        type: 'rain',
+                        name: 'Rainy',
+                        icon: 'fas fa-cloud-rain',
+                        intensity: condition.includes('heavy') ? 'heavy' : 'light'
+                    };
+                } else if (condition.includes('clear') || condition.includes('sun')) {
+                    return {
+                        type: 'sun',
+                        name: 'Sunny',
+                        icon: 'fas fa-sun',
+                        intensity: 'medium'
+                    };
+                } else if (condition.includes('cloud')) {
+                    return {
+                        type: 'clouds',
+                        name: 'Cloudy',
+                        icon: 'fas fa-cloud',
+                        intensity: 'light'
+                    };
+                } else {
+                    return getSeasonalEffect();
+                }
+            }
+
+            function getSeasonalEffect() {
+                const month = new Date().getMonth();
+
+                // Winter months
+                if (month >= 11 || month <= 1) {
+                    return {
+                        type: 'snow',
+                        name: 'Winter Snow',
+                        icon: 'fas fa-snowflake',
+                        intensity: 'light'
+                    };
+                }
+                // Spring months (more likely to rain)
+                else if (month >= 2 && month <= 4) {
+                    return {
+                        type: 'rain',
+                        name: 'Spring Showers',
+                        icon: 'fas fa-cloud-rain',
+                        intensity: 'light'
+                    };
+                }
+                // Summer months
+                else if (month >= 5 && month <= 7) {
+                    return {
+                        type: 'sun',
+                        name: 'Summer Sun',
+                        icon: 'fas fa-sun',
+                        intensity: 'medium'
+                    };
+                }
+                // Autumn/Fall months
+                else {
+                    return {
+                        type: 'clouds',
+                        name: 'Autumn Breeze',
+                        icon: 'fas fa-wind',
+                        intensity: 'light'
+                    };
+                }
+            }
+
+            function applyWeatherEffect(effect) {
+                effectsContainer.innerHTML = '';
+
+                switch (effect.type) {
+                    case 'snow':
+                    case 'flower':
+                        createSnowEffect(effect.intensity);
+
+                        createFloralSnowflakes(effect.intensity);
+
+                       // createFlowerSnow(effect.intensity);
+                        break;
+                    case 'rain':
+                        createRainEffect(effect.intensity);
+                        break;
+                    case 'sun':
+                        createSunEffect();
+                        break;
+                    case 'clouds':
+                        createCloudEffect(effect.intensity);
+                        break;
+                }
+            }
+
+            //new
+            function createFloralSnowflakes(intensity) {
+                const container = document.getElementById('weather-effects');
+                const count = intensity === 'heavy' ? 80 : 40;
+
+                container.innerHTML = '';
+
+                // Add CSS for star shapes
+                const style = document.createElement('style');
+                style.textContent = `
+        .floral-flake {
+            position: fixed !important;
+            pointer-events: none !important;
+            z-index: 9999 !important;
+            background: white !important;
+            box-shadow: 
+                0 0 10px white,
+                0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 30px rgba(200, 220, 255, 0.3) !important;
+        }
+        
+        /* 6-pointed star (snowflake) using clip-path */
+        .flake-6 {
+            width: 16px;
+            height: 16px;
+            clip-path: polygon(
+                50% 0%, 61% 35%, 98% 35%, 68% 57%,
+                79% 91%, 50% 70%, 21% 91%, 32% 57%,
+                2% 35%, 39% 35%
+            );
+            background: radial-gradient(circle at center, white, #e6f2ff) !important;
+        }
+        
+        /* 8-pointed star */
+        .flake-8 {
+            width: 14px;
+            height: 14px;
+            clip-path: polygon(
+                50% 0%, 61% 23%, 77% 10%, 77% 27%,
+                100% 50%, 77% 73%, 77% 90%, 61% 77%,
+                50% 100%, 39% 77%, 23% 90%, 23% 73%,
+                0% 50%, 23% 27%, 23% 10%, 39% 23%
+            );
+            background: radial-gradient(circle at center, white, #f0f8ff) !important;
+        }
+        
+        /* Flower-like shape */
+        .flake-flower {
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(
+                50% 0%, 60% 20%, 80% 20%, 65% 35%,
+                75% 55%, 50% 45%, 25% 55%, 35% 35%,
+                20% 20%, 40% 20%
+            );
+            background: radial-gradient(circle at center, white, #fff0f5) !important;
+        }
+        
+        /* Crystal shape */
+        .flake-crystal {
+            width: 18px;
+            height: 18px;
+            clip-path: polygon(
+                50% 0%, 70% 25%, 100% 25%, 75% 50%,
+                100% 75%, 70% 75%, 50% 100%, 30% 75%,
+                0% 75%, 25% 50%, 0% 25%, 30% 25%
+            );
+            background: radial-gradient(circle at center, white, #f0f8ff) !important;
+        }
+        
+        @keyframes flakeFall {
+            0% {
+                transform: translateY(-30px) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) translateX(40px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes flakeTwinkle {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+    `;
+                document.head.appendChild(style);
+
+                // Create snowflakes
+                for (let i = 0; i < count; i++) {
+                    const flake = document.createElement('div');
+
+                    const types = ['flake-6', 'flake-8', 'flake-flower', 'flake-crystal'];
+                    const type = types[Math.floor(Math.random() * types.length)];
+
+                    flake.className = `floral-flake ${type}`;
+
+                    // Position
+                    flake.style.cssText = `
+            left: ${Math.random() * 100}% !important;
+            top: -40px !important;
+            opacity: ${Math.random() * 0.7 + 0.3} !important;
+        `;
+
+                    // Animation
+                    const duration = Math.random() * 7 + 5;
+                    const delay = Math.random() * 5;
+
+                    flake.style.animation = `
+            flakeFall ${duration}s linear ${delay}s infinite,
+            flakeTwinkle ${Math.random() * 2 + 1.5}s ease-in-out ${delay}s infinite
+        `;
+
+                    // Random rotation
+                    flake.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+                    // Add color tint for some flakes
+                    if (Math.random() > 0.7) {
+                        flake.style.filter = 'hue-rotate(45deg)';
+                    }
+
+                    container.appendChild(flake);
+                }
+
+                console.log(`Created ${count} floral snowflakes`);
+            }
+
+
+            // Floral Snow Effect
+            function createFlowerSnow() {
+                console.log("Creating flower snow...");
+
+                const container = document.getElementById('weather-effects');
+                container.innerHTML = '';
+
+                // Make sure container is visible
+                container.style.cssText = `
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: none !important;
+        z-index: 9999 !important;
+        display: block !important;
+    `;
+
+                // Add animations
+                const style = document.createElement('style');
+                style.textContent = `
+        @keyframes simpleFall {
+            to { transform: translateY(100vh); }
+        }
+        
+        @keyframes simpleRotate {
+            to { transform: rotate(360deg); }
+        }
+    `;
+                document.head.appendChild(style);
+
+                // Create 50 flowers
+                for (let i = 0; i < 50; i++) {
+                    const flower = document.createElement('div');
+
+                    // Simple flower emoji
+                    const flowers = ['🌸', '🌺', '🌼', '🌷', '💮', '🏵️'];
+                    const randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
+
+                    flower.textContent = randomFlower;
+
+                    flower.style.cssText = `
+            position: fixed !important;
+            font-size: ${Math.random() * 20 + 20}px !important;
+            left: ${Math.random() * 100}% !important;
+            top: -30px !important;
+            opacity: ${Math.random() * 0.7 + 0.3} !important;
+            pointer-events: none !important;
+            z-index: 9999 !important;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)) !important;
+            animation: 
+                simpleFall ${Math.random() * 10 + 5}s linear ${Math.random() * 5}s infinite,
+                simpleRotate ${Math.random() * 20 + 10}s linear ${Math.random() * 5}s infinite !important;
+        `;
+
+                    container.appendChild(flower);
+                }
+
+                console.log("Flower snow created!");
+            }
+
+            // Snow Effect
+
+            function createSnowEffect(intensity) {
+                const effectsContainer = document.getElementById('weather-effects');
+                const count = intensity === 'heavy' ? 120 : 60;
+
+                // Clear container first
+                effectsContainer.innerHTML = '';
+
+                // Add snow animation styles
+                if (!document.getElementById('snow-styles')) {
+                    const style = document.createElement('style');
+                    style.id = 'snow-styles';
+                    style.textContent = `
+            @keyframes snowFall {
+                0% {
+                    transform: translateY(-10px) translateX(0) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(calc(100vh + 20px)) translateX(30px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes snowSway {
+                0%, 100% {
+                    margin-left: 0;
+                }
+                50% {
+                    margin-left: 15px;
+                }
+            }
+        `;
+                    document.head.appendChild(style);
+                }
+
+                // Create snowflakes
+                for (let i = 0; i < count; i++) {
+                    const snowflake = document.createElement('div');
+
+                    // Random size between 4px and 10px
+                    const size = Math.random() * 6 + 4;
+                    snowflake.style.width = `${size}px`;
+                    snowflake.style.height = `${size}px`;
+
+                    // Bright white with some transparency
+                    snowflake.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    snowflake.style.borderRadius = '50%';
+                    snowflake.style.position = 'fixed';
+                    snowflake.style.pointerEvents = 'none';
+                    snowflake.style.zIndex = '9999';
+
+                    // Add glow effect
+                    snowflake.style.boxShadow = '0 0 8px rgba(255, 255, 255, 0.9)';
+                    snowflake.style.filter = 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.7))';
+
+                    // Random starting position
+                    snowflake.style.left = `${Math.random() * 100}%`;
+                    snowflake.style.top = `-20px`;
+
+                    // Random opacity for variation
+                    snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+
+                    // Random animation durations
+                    const fallDuration = Math.random() * 8 + 5; // 5-13 seconds
+                    const swayDuration = fallDuration * 1.5;
+                    const delay = Math.random() * 5;
+
+                    // Apply animations
+                    snowflake.style.animation = `
+            snowFall ${fallDuration}s linear ${delay}s infinite,
+            snowSway ${swayDuration}s ease-in-out ${delay}s infinite
+        `;
+
+                    effectsContainer.appendChild(snowflake);
+                }
+
+                console.log(`Created ${count} snowflakes`);
+            }
+
+
+            function createRainEffect(intensity) {
+                const count = intensity === 'heavy' ? 200 : 100;
+
+                for (let i = 0; i < count; i++) {
+                    const raindrop = document.createElement('div');
+                    raindrop.className = 'raindrop';
+
+                    // Random height between 10px and 20px
+                    const height = Math.random() * 10 + 10;
+                    raindrop.style.height = `${height}px`;
+
+                    // Random starting position
+                    raindrop.style.left = `${Math.random() * 100}vw`;
+                    raindrop.style.top = `-20px`;
+
+                    // Random opacity
+                    raindrop.style.opacity = Math.random() * 0.6 + 0.3;
+
+                    // Animation
+                    const duration = Math.random() * 1 + 0.5;
+                    const delay = Math.random() * 2;
+
+                    raindrop.style.animation = `raindropFall ${duration}s linear ${delay}s infinite`;
+
+                    effectsContainer.appendChild(raindrop);
+                }
+
+                // Add CSS for rain animation
+                const style = document.createElement('style');
+                style.textContent = `
+            @keyframes raindropFall {
+                to { transform: translateY(100vh); }
+            }
+        `;
+                document.head.appendChild(style);
+            }
+
+            function createSunEffect() {
+                // Create sun rays
+                for (let i = 0; i < 8; i++) {
+                    const ray = document.createElement('div');
+                    ray.className = 'sun-ray';
+
+                    const angle = (i / 8) * 360;
+                    const distance = 200;
+                    const x = 50 + Math.cos(angle * Math.PI / 180) * distance;
+                    const y = 30 + Math.sin(angle * Math.PI / 180) * distance;
+
+                    ray.style.width = '100px';
+                    ray.style.height = '100px';
+                    ray.style.left = `calc(${x}% - 50px)`;
+                    ray.style.top = `calc(${y}% - 50px)`;
+
+                    effectsContainer.appendChild(ray);
+                }
+
+                // Add some floating particles
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'absolute';
+                    particle.style.width = '3px';
+                    particle.style.height = '3px';
+                    particle.style.background = 'rgba(251, 191, 36, 0.3)';
+                    particle.style.borderRadius = '50%';
+                    particle.style.left = `${Math.random() * 100}vw`;
+                    particle.style.top = `${Math.random() * 100}vh`;
+                    particle.style.animation = `floatParticle ${Math.random() * 10 + 10}s linear infinite`;
+
+                    effectsContainer.appendChild(particle);
+                }
+
+                const style = document.createElement('style');
+                style.textContent = `
+            @keyframes floatParticle {
+                0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+                50% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+            }
+        `;
+                document.head.appendChild(style);
+            }
+
+            function createCloudEffect(intensity) {
+                const count = intensity === 'heavy' ? 6 : 3;
+
+                for (let i = 0; i < count; i++) {
+                    const cloud = document.createElement('div');
+                    cloud.className = 'cloud';
+
+                    const size = Math.random() * 100 + 50;
+                    cloud.style.width = `${size}px`;
+                    cloud.style.height = `${size / 2}px`;
+                    cloud.style.top = `${Math.random() * 50}%`;
+                    cloud.style.animationDelay = `${Math.random() * 10}s`;
+
+                    effectsContainer.appendChild(cloud);
+                }
+            }
+
+            function toggleWeatherEffects() {
+                const container = document.getElementById('weather-effects');
+                const button = event.target.closest('button');
+                if (container.style.display === 'none') {
+                    container.style.display = 'block';
+                    button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Effects';
+                } else {
+                    container.style.display = 'none';
+                    button.innerHTML = '<i class="fas fa-eye"></i> Show Effects';
+                }
+            }
+
+            // 👆 Make toggle function available globally
+            window.toggleWeatherEffects = toggleWeatherEffects;
+
+        }
+
+        // Initialize weather effects when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(initWeatherEffects, 1000); // Delay to let page load first
+        });
+
+
 
     </script>
 </body>
