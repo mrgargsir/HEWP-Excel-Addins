@@ -1823,7 +1823,8 @@
                         do Estimation, Variation,
                         Material Consumption Preparation,
                         Bill & Measurement Book, Templates,
-                        with real-time HSR search, District wise Materials Rates, intelligent copy-paste to templates, one-click uploader, free
+                        with real-time HSR search, District wise Materials Rates, intelligent copy-paste to templates,
+                        one-click uploader, free
                         Chrome/Edge extension & More – designed for both Contractors and Employees.</p>
 
                     <div class="ctas">
@@ -1895,9 +1896,69 @@
                         </div>
                     </aside>
 
+                    <!-- 👉 NEW: Referral Code Banner (Hidden by default, shown when ?ref= parameter exists) -->
+                    <aside id="refSection" class="card-hero fadeInUp"
+                        style="display:none; margin-bottom: 20px; border: 2px solid var(--accent1); box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: 10px;">🎉</div>
+                            <h3
+                                style="margin: 0 0 10px; background: linear-gradient(90deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                You've Been Referred!
+                            </h3>
+                            <p class="small" style="margin-bottom: 15px;">Your friend has shared MRGARGSIR Tools with
+                                you!</p>
+
+                            <!-- Referral Code Display -->
+                            <div
+                                style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid rgba(124, 58, 237, 0.3);">
+                                <div class="small" style="color: var(--muted); margin-bottom: 8px;">📋 Your Referral
+                                    Code:</div>
+                                <div style="font-size: 20px; font-family: 'Courier New', monospace; font-weight: 900; color: var(--accent2); letter-spacing: 1px; margin-bottom: 10px;"
+                                    id="refCode">
+                                    <!-- Code will be inserted here by JavaScript -->
+                                </div>
+                                <button onclick="copyRefCode()"
+                                    style="background: linear-gradient(90deg, var(--accent1), var(--accent2)); color: white; border: none; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px;">
+                                    <i class="fas fa-copy"></i> Copy Code
+                                </button>
+                                <div id="copyStatus"
+                                    style="color: var(--accent5); font-weight: 600; margin-top: 8px; font-size: 13px; min-height: 20px;">
+                                </div>
+                            </div>
+
+                            <!-- How to Use Instructions -->
+                            <div
+                                style="text-align: left; background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 8px; margin-top: 15px;">
+                                <h4 style="margin: 0 0 10px; font-size: 15px; color: var(--accent2);">
+                                    <i class="fas fa-gift"></i> How to Claim Your Benefit:
+                                </h4>
+                                <ol
+                                    style="margin: 0; padding-left: 20px; font-size: 13px; color: #d5ddea; line-height: 1.8;">
+                                    <li>Download and install MRGARGSIR Tools (button below)</li>
+                                    <li>Open Excel → Go to <strong>Tools Tab → Help</strong></li>
+                                    <li>Click <strong>"Collect Referral Benefit"</strong></li>
+                                    <li>Enter the referral code shown above</li>
+                                    <li>Fill the simple form and submit</li>
+                                    <li><strong style="color: var(--accent5);">Both you and your referrer get extended
+                                            license validity! 🎁</strong></li>
+                                </ol>
+                            </div>
+
+                            <!-- Download Button -->
+                            <div style="margin-top: 20px;">
+                                <a href="#download" class="cta primary"
+                                    style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px;">
+                                    <i class="fas fa-download"></i> Download MRGARGSIR Tools Now
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+
+
                     <aside class="card-hero fadeInUp" aria-hidden style="margin-bottom: 150px;">
                         <h3 style="margin:0 0 8px">Quick snapshot</h3>
-                        <p class="small">Preloaded MB Templates, HSR Rate fetcher, Material Quantity Finder, District wise Materials Rates, unit
+                        <p class="small">Preloaded MB Templates, HSR Rate fetcher, Material Quantity Finder, District
+                            wise Materials Rates, unit
                             converters, steel calculator, auto uploader to HEWP, and downloader from hewp – everything
                             bundled into an easy installer.</p>
 
@@ -1980,7 +2041,8 @@
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#f59e0b"><i class="fas fa-industry"></i></div>
                         <h4>Auto Material Quantity Preparation</h4>
-                        <p>Instantly get Material Consumption Table with District wise Materials Rates with accurate calculations.</p>
+                        <p>Instantly get Material Consumption Table with District wise Materials Rates with accurate
+                            calculations.</p>
                     </div>
                     <div class="feature fadeInUp">
                         <div style="font-size:20px;color:#10b981"><i class="fas fa-download"></i></div>
@@ -2025,19 +2087,25 @@
                         <div class="item">
                             <button type="button">WebAuto – Portal integration <i
                                     class="fas fa-chevron-down"></i></button>
-                            <p class="small">1. Auto Login to HEWP, 2. Copy Data to Template (Smart unit conversions applied),
-                                3. Item Number Selector, 4. PDF generator & upload, 5. Upload Template to portal, Direct data
+                            <p class="small">1. Auto Login to HEWP, 2. Copy Data to Template (Smart unit conversions
+                                applied),
+                                3. Item Number Selector, 4. PDF generator & upload, 5. Upload Template to portal, Direct
+                                data
                                 entry,
-                                6. Bill Downloader in Excel from Portal, 7. Delete bill data and Auto upload full bill. Works
-                                for both contractor and Engineers Employee's workflows. 8. Semi auto upload 9. Full auto upload</p>
+                                6. Bill Downloader in Excel from Portal, 7. Delete bill data and Auto upload full bill.
+                                Works
+                                for both contractor and Engineers Employee's workflows. 8. Semi auto upload 9. Full auto
+                                upload</p>
                         </div>
 
                         <div class="item">
                             <button type="button">Chrome/Edge Extension features <i
                                     class="fas fa-chevron-down"></i></button>
-                            <p class="small">1. Smart Tender. 2. Item/anything Search, 3. Important HEWP Shortcuts Bookmarks,
+                            <p class="small">1. Smart Tender. 2. Item/anything Search, 3. Important HEWP Shortcuts
+                                Bookmarks,
                                 4. Toggle All
-                                Checkbox, 5. Enter button behavior fixes for Hew Portal, 6. Volume increase tweaks and 7. Dark
+                                Checkbox, 5. Enter button behavior fixes for Hew Portal, 6. Volume increase tweaks and
+                                7. Dark
                                 Mode for portal
                                 readability.</p>
                         </div>
@@ -2077,7 +2145,8 @@
                             </div>
                             <div class="slide">
                                 <h4>Material Consumption</h4>
-                                <p class="small">Generate Materials Quantity Summary with District wise Material Rates. Also Easy to Update Rates.</p>
+                                <p class="small">Generate Materials Quantity Summary with District wise Material Rates.
+                                    Also Easy to Update Rates.</p>
                             </div>
                             <div class="slide">
                                 <h4>Bill Comparison</h4>
@@ -2389,7 +2458,8 @@
 
                         <div class="install-step fadeInUp">
                             <h4>Enable Excel Tool if required</h4>
-                            <p>Open Excel and check the ribbon. You'll see New tabs: "E. TOOLS", "Templates" "HEWP Auto", "Extra Tools",
+                            <p>Open Excel and check the ribbon. You'll see New tabs: "E. TOOLS", "Templates" "HEWP
+                                Auto", "Extra Tools",
                                 "Tool Help", "Tool Settings"
                                 etc. with all the features ready to use.</p>
                         </div>
@@ -2403,7 +2473,8 @@
 
                         <div class="install-step fadeInUp">
                             <h4>Tool Settings:</h4>
-                            <p>Activate the Tool if ask. Then First Set the Unit , Browser & District as per you Choice.</p>
+                            <p>Activate the Tool if ask. Then First Set the Unit , Browser & District as per you Choice.
+                            </p>
                         </div>
                         <div class="install-step fadeInUp">
                             <h4>Start Working!</h4>
@@ -3318,7 +3389,7 @@
                 const condition = weatherData.weather[0].main.toLowerCase();
                 const temp = weatherData.main.temp;
 
-                if (condition.includes('snow') || temp < 15) {
+                if (condition.includes('snow') || temp < 10) {
                     return {
                         type: 'snow',
                         name: 'Winter Snow',
@@ -3974,7 +4045,7 @@
                     effectsContainer.appendChild(sparkle);
                 }
             }
-            
+
             function createCloudEffect(intensity) {
                 const count = intensity === 'heavy' ? 30 : 6;
 
@@ -4139,6 +4210,98 @@
             setTimeout(initWeatherEffects, 2000); // Delay to let page load first
         });
 
+        // ============================================
+        // 👉 REFERRAL CODE DETECTION & AUTO-COPY
+        // ============================================
+        function initReferralDetection() {
+            // Check for referral code in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const refCode = urlParams.get('ref');
+
+            if (refCode) {
+                // Show referral section
+                const refSection = document.getElementById('refSection');
+                const refCodeDisplay = document.getElementById('refCode');
+                const copyStatus = document.getElementById('copyStatus');
+
+                if (refSection && refCodeDisplay) {
+                    // Display the code
+                    refCodeDisplay.textContent = refCode;
+                    refSection.style.display = 'block';
+
+                    // Auto-copy to clipboard with modern API
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(refCode)
+                            .then(() => {
+                                copyStatus.innerHTML = '<i class="fas fa-check-circle"></i> Code auto-copied to clipboard!';
+
+                                // Clear status after 5 seconds
+                                setTimeout(() => {
+                                    copyStatus.innerHTML = '';
+                                }, 5000);
+                            })
+                            .catch(() => {
+                                copyStatus.innerHTML = '<i class="fas fa-info-circle"></i> Click "Copy Code" button above';
+                            });
+                    } else {
+                        // Fallback for older browsers
+                        copyStatus.innerHTML = '<i class="fas fa-info-circle"></i> Click "Copy Code" button to copy';
+                    }
+
+                    // Smooth scroll to referral section after a short delay
+                    setTimeout(() => {
+                        refSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500);
+                }
+            }
+        }
+
+        // Manual copy function
+        function copyRefCode() {
+            const refCode = document.getElementById('refCode').textContent;
+            const copyStatus = document.getElementById('copyStatus');
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(refCode)
+                    .then(() => {
+                        copyStatus.innerHTML = '<i class="fas fa-check-circle"></i> Copied successfully!';
+                        setTimeout(() => {
+                            copyStatus.innerHTML = '';
+                        }, 3000);
+                    })
+                    .catch(() => {
+                        // Fallback for older browsers
+                        fallbackCopy(refCode);
+                    });
+            } else {
+                fallbackCopy(refCode);
+            }
+        }
+
+        // Fallback copy method for older browsers
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand('copy');
+                document.getElementById('copyStatus').innerHTML = '<i class="fas fa-check-circle"></i> Copied!';
+                setTimeout(() => {
+                    document.getElementById('copyStatus').innerHTML = '';
+                }, 3000);
+            } catch (err) {
+                document.getElementById('copyStatus').innerHTML = '<i class="fas fa-times-circle"></i> Copy failed. Please copy manually.';
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initReferralDetection);
 
 
     </script>
