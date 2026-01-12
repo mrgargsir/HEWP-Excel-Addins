@@ -3391,7 +3391,7 @@
                 const condition = weatherData.weather[0].main.toLowerCase();
                 const temp = weatherData.main.temp;
 
-                if (condition.includes('snow') || temp < 10) {
+                if (condition.includes('snow') || temp < 13) {
                     return {
                         type: 'snow',
                         name: 'Winter Snow',
@@ -3428,7 +3428,7 @@
                 const month = new Date().getMonth();
 
                 // Winter months
-                if (month >= 11 || month <= 1) {
+                if (month >= 12 || month <= 2) {
                     return {
                         type: 'snow',
                         name: 'Winter Snow',
@@ -3437,7 +3437,7 @@
                     };
                 }
                 // Spring months (more likely to rain)
-                else if (month >= 2 && month <= 4) {
+                else if (month >= 3 && month <= 4) {
                     return {
                         type: 'rain',
                         name: 'Spring Showers',
@@ -3446,7 +3446,7 @@
                     };
                 }
                 // Summer months
-                else if (month >= 5 && month <= 7) {
+                else if (month >= 5 && month <= 8) {
                     return {
                         type: 'sun',
                         name: 'Summer Sun',
@@ -3887,7 +3887,7 @@
                 0 0 80px rgba(255, 200, 80, 0.6),
                 0 0 120px rgba(255, 180, 60, 0.4);
             top: 10%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 1;
@@ -4209,7 +4209,7 @@
 
         // Initialize weather effects when page loads
         document.addEventListener('DOMContentLoaded', function () {
-            setTimeout(initWeatherEffects, 2000); // Delay to let page load first
+            setTimeout(initWeatherEffects, 5000); // Delay to let page load first
         });
 
         // ============================================
@@ -4308,6 +4308,7 @@
 
     </script>
 </body>
+
 
 
 
