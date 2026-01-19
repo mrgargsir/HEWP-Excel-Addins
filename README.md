@@ -107,6 +107,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 17. **Abstract Bill Summary** - Generate a complete abstract Bill or estimate summary in a new worksheet, next to the active sheet.
 18. **Bill Summary** – Generate a detailed summary in a new worksheet and if a portal-downloaded summary is opened, it will auto fetch, compare and highlight differences. It also works for Variation with DNIT QTY.
 19. **Quantity of Materials Summary** – Generate a complete Material Consumption Summary at the bottom of the Bill/Estimate. A Detailed Material Quantity Table.
+20. **Bill Compare** - Generate a comparison of Portal Bill Data with your Excel Bill and get to know final verdict of comparison.
+21. **Bill Variation** - Generate a Variation of Portal Bill Data and Previously Executed Qty if any, with your Excel Bill or Final Bill and get status of data. also it will be used to upload Variation on HEW Portal via Web Tools.
 
 ---
 ### 📑 Template Management (Second Tab: **`Template`**)
@@ -133,6 +135,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 9. **Website Data Scraper** – Download completed bill data from the HEWP portal in Excel Format from contractor ID, including a summary sheet.
 10. **Delete Bill Data** – Remove all previously filled bill data items in one click on the HEWP portal in Contractor Login.
 11. **Auto Upload Full Bill/Template** – Automatically upload The Whole Bill for all Users at one click in the HEWP Portal.
+12. **Auto Upload Variation** - Automatically upload Full Variation (Add item, add Quantity, Remove item, remove quantity) to HEW Portal.
 ---
 
 #### 🚀 Additional Highlights:
@@ -226,6 +229,7 @@ Complete step-by-step video tutorials available on our YouTube channel:
 - 📧 **Email:** help@mrgargsir.store
 - 📱 **WhatsApp:** +91 97285 32828
 - 🌐 **Website:** [https://mrgargsir.github.io/HEWP-Excel-Addins/](https://mrgargsir.github.io/HEWP-Excel-Addins/)
+[https://mrgargsir.store](https://mrgargsir.store)
 
 ### 🌍 Social Media & Community:
 
