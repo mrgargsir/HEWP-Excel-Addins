@@ -4,6 +4,7 @@
 <div align="center">
 
 [![Website](https://img.shields.io/badge/Website-Visit-blue?style=for-the-badge)](https://mrgargsir.github.io/HEWP-Excel-Addins/)
+[![Documents](https://img.shields.io/badge/Documents-Open-orange?style=for-the-badge)](#-documents)
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HEWPTools)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Contact-green?style=for-the-badge&logo=whatsapp)](https://wa.me/919728532828)
 
@@ -230,6 +231,15 @@ Complete step-by-step video tutorials available on our YouTube channel:
 
 🎬 **[Watch Full Playlist Here @HEWPTools](https://www.youtube.com/watch?v=AUGClE_q9IY&list=PLCbMlKNK4S80cjerEh8_Fy19SYs13wGXq&index=1)**
 
+## 📄 Documents
+
+- [Latest Intro](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc5.pdf)
+- [2. Intro](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/README.md)
+- [3. Intro](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc6.pdf)
+- [4. Intro](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc7.pdf)
+- [5. Intro](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc8.pdf)
+- [6. Intro](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc9.pdf)
+- 
 ---
 
 ## 📞 Contact & Support
