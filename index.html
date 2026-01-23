@@ -479,6 +479,127 @@
             background: linear-gradient(135deg, #00A884, #008069);
         }
 
+        /* 👉 Documents Modal Styling */
+.documents-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1001;
+    width: 90%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+}
+
+.documents-modal.active {
+    display: block;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.documents-modal h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--accent3);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.documents-modal .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.documents-modal .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.document-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.document-item {
+    margin-bottom: 12px;
+}
+
+.document-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.document-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: var(--accent3);
+}
+
+.document-link i {
+    color: var(--accent3);
+    font-size: 18px;
+}
+
+.document-link span {
+    flex: 1;
+    font-weight: 500;
+}
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-backdrop.active {
+    display: block;
+}
+        
         /* 👉 Footer social section */
         .footer-social {
             text-align: center;
@@ -1567,6 +1688,10 @@
             #tutorials .fadeInRight {
                 order: 2;
             }
+            /* 👉 Stack FAQ and Pricing on mobile */
+.grid[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+}
         }
 
         /* 👉 Extra small screens */
@@ -1586,6 +1711,25 @@
             .video-list-container {
                 max-height: 250px;
             }
+            /* 👉 Responsive Documents Modal for mobile */
+.documents-modal {
+    width: 95%;
+    padding: 20px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.documents-modal h3 {
+    font-size: 18px;
+}
+
+.document-link {
+    padding: 10px 12px;
+}
+
+.document-link span {
+    font-size: 14px;
+}
         }
 
         /* 👉 Weather Effects Container */
@@ -1740,8 +1884,9 @@
                 <a class="nav-btn" href="#how">How it works</a>
                 <a class="nav-btn" href="#extension">Chrome/Edge Extension</a>
                 <a class="nav-btn" href="#installation">Installation</a>
-                <button class="nav-btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact</button>
-                <a class="nav-btn primary" href="#download">Download</a>
+                <button class="nav-btn" id="documentsBtn"><i class="fas fa-file-alt"></i> Documents</button>
+<button class="nav-btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact</button>
+<a class="nav-btn primary" href="#download">Download</a>
             </nav>
 
             <!-- Contact Modal -->
@@ -1817,9 +1962,80 @@
                     </div>
                 </div>
             </div>
-        </header>
+    </header>
 
-        <main>
+    <!-- 👉 Documents Modal -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="documents-modal" id="documentsModal">
+        <button class="close-btn" id="closeDocumentsModal">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3><i class="fas fa-file-alt"></i> Documentation</h3>
+        <ul class="document-list">
+            <li class="document-item">
+                <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc5.pdf" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="document-link">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Latest Intro</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                </a>
+            </li>
+            <li class="document-item">
+                <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/README.md" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="document-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>2. Intro</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                </a>
+            </li>
+            <li class="document-item">
+                <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc6.pdf" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="document-link">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>3. Intro</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                </a>
+            </li>
+            <li class="document-item">
+                <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc7.pdf" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="document-link">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>4. Intro</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                </a>
+            </li>
+            <li class="document-item">
+                <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc8.pdf" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="document-link">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>5. Intro</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                </a>
+            </li>
+            <li class="document-item">
+                <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc9.pdf" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="document-link">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>6. Intro</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <main>
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-left fadeInUp">
@@ -2726,10 +2942,12 @@
             </div>  -->
 
             </section>
-            <!-- 👉 NEW: FAQ Section -->
-            <section id="faq">
-                <h3>❓ Frequently Asked Questions</h3>
-                <div class="faq-container fadeInUp">
+            <!-- 👉 Two Column Layout: FAQ + Pricing -->
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+                <!-- 👉 Left Column: FAQ Section -->
+                <section id="faq">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <div class="faq-container fadeInUp">
                     <div class="faq-item">
                         <button class="faq-question">
                             <span>Is Estimation & Billing Excel Addins free to use?</span>
@@ -2869,10 +3087,10 @@
                 </div>
             </section>
 
-            <!-- 👉 NEW: Pricing Section (Free) -->
-            <section id="pricing">
-                <h3>Trial</h3>
-                <div class="panel fadeInUp" style="max-width:600px;margin:0 auto;text-align:center">
+            <!-- 👉 Right Column: Pricing Section -->
+                <section id="pricing">
+                    <h3>💰 Trial</h3>
+                    <div class="panel fadeInUp" style="text-align:center">
                     <div style="padding:30px">
                         <div
                             style="font-size:48px;font-weight:900;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px">
@@ -2921,6 +3139,7 @@
                     </div>
                 </div>
             </section>
+            </div>
 
             <!-- 👉 NEW: User Testimonials Section -->
             <section>
@@ -3053,6 +3272,31 @@
             window.open(`https://wa.me/919728532828?text=${encodedMessage}`, '_blank');
         });
 
+        // 👉 Documents Modal Functionality
+const documentsBtn = document.getElementById('documentsBtn');
+const documentsModal = document.getElementById('documentsModal');
+const closeDocumentsModal = document.getElementById('closeDocumentsModal');
+const modalBackdrop = document.getElementById('modalBackdrop');
+
+// Open documents modal
+documentsBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    documentsModal.classList.add('active');
+    modalBackdrop.classList.add('active');
+});
+
+// Close documents modal
+closeDocumentsModal.addEventListener('click', function () {
+    documentsModal.classList.remove('active');
+    modalBackdrop.classList.remove('active');
+});
+
+// Close modal when clicking backdrop
+modalBackdrop.addEventListener('click', function () {
+    documentsModal.classList.remove('active');
+    modalBackdrop.classList.remove('active');
+});
+        
         // 👉 Enhanced scroll animation with Intersection Observer
         document.addEventListener('DOMContentLoaded', function () {
             const observer = new IntersectionObserver((entries) => {
@@ -4330,6 +4574,7 @@
 
 
 </html>
+
 
 
 
