@@ -85,44 +85,33 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 **📞 Support:** WhatsApp: +91 97285 32828 | Email: help@mrgargsir.store
 
+### 🌐 Estimate Preparation Features (First Tab: **`Auto E. TOOLS`**)
 
-### 🌐 Estimate Preparation Features (First Tab: **`E. TOOLS`**)
-
-1. **Jump to any Sheet** – Quickly navigate between All worksheets in a workbook with many sheets. So Useful When you have lots of worksheets. 
-2. **Refresh Sheet** – Instantly refresh the Excel in case Excel becomes unresponsive sometimes.
-3. **Insert Row** – Insert any number of Entire rows at the selected cell with ease.
-4. **Copy Current Worksheet** – Create duplicates of the active worksheet next to the Original Worksheet and Auto Select the Duplicate sheet quickly.
-5. **Feet ⇄ Meter Converter** – Convert  imperial to metric unit in all Selected Cells with one click.
-6. **Meter ⇄ Feet Converter** – Convert  metric to imperial unit in all selected cells with one click.
-7. **Meter ⇄ Kg Converter** – Convert  Meter to Kilogram unit for all selected cells with One click. It's for Manual Comparison if you want sometimes.
-8. **Toggle Sign** – Instantly switch selected values between positive and negative. Useable When You want Deduction Data.
-9. **Formulas To Constant** – Convert formulas to static values in all selected cells.
-10. **Multiply and Get Quantity** – Multiply dimensions (Nos. x length × breadth × depth) with advance formula.
-11. **Total Quantity with intelligent Unit Converter** – It will do auto Total of One item number's quantities and put in row below, then auto convert to metric units where required and put in row below of total. Also, auto convert to steel kg if required.
-12. **Auto Rate & Description Fetcher** – Automatically pull Unit, Rates, Rate Type, and Descriptions from Latest HSR 2023 (Haryana Schedule of Rates) and Amendments and insert for Each item.
-13. **Amount Calculator** – Compute amounts by multiplying rate × quantity. Also auto-calculates GST, contingency, and grand total with full sheet formatting. Apply the SR number to each item. Prepare Bill or Estimate in Good Format.
-14. **Steel Weight Calculator** – Manually Convert running meters Rebar Length to kilograms based on entered diameter and put this value below of selected total row cell.
-15. **Auto Round Off** – Dynamically apply round-off formula to each selected cell. Existing Round off auto-update on apply.
-16. **Steel Summary Generator** – Create a Dia Wise Steel Consumption summary in Kg. at the bottom of the Bill/Estimate.
-17. **Abstract Bill Summary** - Generate a complete abstract Bill or estimate summary in a new worksheet, next to the active sheet.
-18. **Bill Summary** – Generate a detailed summary in a new worksheet and if a portal-downloaded summary is opened, it will auto fetch, compare and highlight differences. It also works for Variation with DNIT QTY.
-19. **Quantity of Materials Summary** – Generate a complete Material Consumption Summary at the bottom of the Bill/Estimate. A Detailed Material Quantity Table.
-20. **Bill Compare** - Generate a comparison of Portal Bill Data with your Excel Bill and get to know final verdict of comparison.
-21. **Bill Variation** - Generate a Variation of Portal Bill Data and Previously Executed Qty if any, with your Excel Bill or Final Bill and get status of data. also it will be used to upload Variation on HEW Portal via Web Tools.
+1. **Multiply and Get Quantity** – Multiply dimensions (Nos. x length × breadth × depth) with advance formula.
+2. **Total Quantity with intelligent Unit Converter** – It will do auto Total of One item number's quantities and put in row below, then auto convert to metric units where required and put in row below of total. Also, auto convert to steel kg if required.
+3. **Auto Rate & Description Fetcher** – Automatically pull Unit, Rates, Rate Type, and Descriptions from Latest HSR 2023 (Haryana Schedule of Rates) and Amendments and insert for Each item.
+4. **Amount Calculator** – Compute amounts by multiplying rate × quantity. Also auto-calculates GST, contingency, and grand total with full sheet formatting. Apply the SR number to each item. Prepare Bill or Estimate in Good Format.
+5. **Steel Summary Generator** – Create a Dia Wise Steel Consumption summary in Kg. at the bottom of the Bill/Estimate.
+6. **Abstract Bill Summary** - Generate a complete abstract Bill or estimate summary in a new worksheet, next to the active sheet.
+7. **Quantity of Materials Summary** – Generate a complete Material Consumption Summary at the bottom of the Bill/Estimate. A Detailed Material Quantity Table.
+8. **Bill Compare** - Generate a comparison of Portal Bill Data with your Excel Bill and get to know final verdict of comparison.
+9. **Bill Variation** - Generate a Variation of Portal Bill Data and Previously Executed Qty if any, with your Excel Bill or Final Bill and get status of data. also it will be used to upload Variation on HEW Portal via Web Tools.
 
 ---
 ### 📑 Template Management (Second Tab: **`Template`**)
 
-- **Web Templates** – Access pre-built templates
+- **Blank Format** – Generate Blank Format for manual entry.
+- **Server Templates** – Access pre-built templates
 - **My Templates** – Manage your custom templates
 - **Add Template** – Create new templates
 - **Edit Template** – Modify existing templates
 - **Delete Templates** – Remove unwanted templates
+- **Refresh Server Template** - Fetch latest Template from server. You won't need it because it will be done Auto while you start Excel.
 
 ---
 ### 🌐 Web Automation Features (Third Tab: **`WebAuto`**)
 
-**📤 One-Click Uploader** – Interact directly with the HEWP Portal from Excel.
+**📤 With One-Click ease** 
 
 1. **Auto Login to HEWP Portal** – Securely log in with saved credentials and Keep Login details for future fast login. Login data is completely saved in your hard drive Excel file. You can verify it anytime.
 2. **Close Chrome & Clean Resources** – Closes browser sessions and frees memory.
@@ -136,8 +125,57 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 10. **Delete Bill Data** – Remove all previously filled bill data items in one click on the HEWP portal in Contractor Login.
 11. **Auto Upload Full Bill/Template** – Automatically upload The Whole Bill for all Users at one click in the HEWP Portal.
 12. **Auto Upload Variation** - Automatically upload Full Variation (Add item, add Quantity, Remove item, remove quantity) to HEW Portal.
+
 ---
 
+### 🌐 Estimate Preparation Features (4th Tab: **`Extra TOOLS`**)
+
+1. **Jump to any Sheet** – Quickly navigate between All worksheets in a workbook with many sheets. So Useful When you have lots of worksheets. 
+2. **Refresh Sheet** – Instantly refresh the Excel in case Excel becomes unresponsive sometimes.
+3. **Feet ⇄ Meter Converter** – Convert  imperial to metric unit in all Selected Cells with one click.
+4. **Meter ⇄ Feet Converter** – Convert  metric to imperial unit in all selected cells with one click.
+5. **Meter ⇄ Kg Converter** – Convert  Meter to Kilogram unit for all selected cells with One click. It's for Manual Comparison if you want sometimes.
+6. **Toggle Sign** – Instantly switch selected values between positive and negative. Useable When You want Deduction Data.
+7. **Formulas To Constant** – Convert formulas to static values in all selected cells.
+8. **Insert Row** – Insert any number of Entire rows at the selected cell with ease.
+9. **Copy Current Worksheet** – Create duplicates of the active worksheet next to the Original Worksheet and Auto Select the Duplicate sheet quickly.
+10. **Steel Weight Calculator** – Manually Convert running meters Rebar Length to kilograms based on entered diameter and put this value below of selected total row cell.
+11. **Auto Round Off** – Dynamically apply round-off formula to each selected cell. Existing Round off auto-update on apply.
+12. **HSR 2023/201** - Open HSR 2023 and 2021 PDF in your system.
+
+---
+
+### 🌐 Technical Features (5th Tab: **`Tool Help`**)
+
+1. **Feedback** – Quickly Provide feedback, suggestion, bug reports, feature requests, enquiry, all in one under single function.
+2. **Check for Updates** - Check for installer updates from this.
+3. **Request** - Ask for new features.
+4. **Install RustDesk** - for Remote Support, install open source Rust Desk.
+5. **Join WhatsApp Group** - Join MRGARGSIR Tools community for all official updates in WhatsApp.
+6. **YouTube Videos** - Watch Tutorial Videos on Official YouTube Channel [@HEWPTools](https://www.youtube.com/@HEWPTools)
+7. **Get License** - Raise a request to get a License.
+8. **Share Referral Code** - Share this tool with your friends and co workers and get Benefits .
+9. **Update Material Rate/Gst** - Update Material Rates and Gst from your Consumption table.
+10. **Material Rate Editor** - Update Material Rates from all Material Table.
+
+---
+
+### 🌐 Setup Features (6th Tab: **`Tool Setting`**)
+
+1. **Unit System** – Set Your unit system, you are working in (Imperial or metric).
+2. **Browser** - Choose your browser for Web Automation (Chrome or Microsoft Edge).
+3. **Details** - See your Filed Detail as Name, District, Mobile Number.
+4. **Reset Templates** - If Web Auto uploading Templates have any error then reset them with one click. but it will never happened.
+5. **Reset Rates** - Reset Rates if you have done something wrong.
+6. **Activate Licence** - New users can activate there licence from this.
+7. **License info** - Check your a active Licence Info.
+8. **Reverify Licence** - if licence do not sync with server Auto then use this feature to sync in real time.
+9. **Change Licence Key** - Use this to Change your Licence Key.
+10. **Uninstaller** - Delete Licence and Disable Tool from Excel.
+11. **Tool Information** - Check Tool Info like Internal installed Version, Installer installed version, Tool name, visit website.
+
+---
+   
 #### 🚀 Additional Highlights:
 
 * **Available for both Contractor & Employee**
