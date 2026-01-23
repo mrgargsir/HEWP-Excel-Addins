@@ -85,6 +85,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 **📞 Support:** WhatsApp: +91 97285 32828 | Email: help@mrgargsir.store
 
+![E. Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/etools.png)
+
 ### 🌐 Estimate Preparation Features (First Tab: **`Auto E. TOOLS`**)
 
 1. **Multiply and Get Quantity** – Multiply dimensions (Nos. x length × breadth × depth) with advance formula.
@@ -98,6 +100,9 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 9. **Bill Variation** - Generate a Variation of Portal Bill Data and Previously Executed Qty if any, with your Excel Bill or Final Bill and get status of data. also it will be used to upload Variation on HEW Portal via Web Tools.
 
 ---
+
+![Templates](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/templates.png)
+
 ### 📑 Template Management (Second Tab: **`Template`**)
 
 - **Blank Format** – Generate Blank Format for manual entry.
@@ -109,7 +114,11 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 - **Refresh Server Template** - Fetch latest Template from server. You won't need it because it will be done Auto while you start Excel.
 
 ---
-### 🌐 Web Automation Features (Third Tab: **`WebAuto`**)
+
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtools.png)
+
+
+### 🌐 Web Automation Features (Third Tab: **`HEWP WebAuto`**)
 
 **📤 With One-Click ease** 
 
@@ -128,6 +137,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
 
+![Extra Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/extra.png)
+
 ### 🌐 Estimate Preparation Features (4th Tab: **`Extra TOOLS`**)
 
 1. **Jump to any Sheet** – Quickly navigate between All worksheets in a workbook with many sheets. So Useful When you have lots of worksheets. 
@@ -145,6 +156,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
 
+![Tool Help](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/help.png)
+
 ### 🌐 Technical Features (5th Tab: **`Tool Help`**)
 
 1. **Feedback** – Quickly Provide feedback, suggestion, bug reports, feature requests, enquiry, all in one under single function.
@@ -159,6 +172,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 10. **Material Rate Editor** - Update Material Rates from all Material Table.
 
 ---
+
+![Tool Setting](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/settings.png)
 
 ### 🌐 Setup Features (6th Tab: **`Tool Setting`**)
 
