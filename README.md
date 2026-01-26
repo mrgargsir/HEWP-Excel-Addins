@@ -9,7 +9,7 @@
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Contact-green?style=for-the-badge&logo=whatsapp)](https://wa.me/919728532828)
 
 **Speed up Estimate Preparation by 90%** with built-in templates, automation, and portal-compatible workflows.  
-Designed for **Engineers, Contractors, and Department Employees**.
+Designed for **Engineers, Contractors and Department Employees**.
 
 </div>
 
@@ -26,7 +26,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ## 📋 Tools will help you in many ways but Major Points are:
 
-1. **📊 Preparation of Estimates/Bills** - Create professional Estimates/Bills with HSR 2023 rates and latest amendments
+1. **📊 Preparation of Estimates/Bills** - Create new professional Estimates/Bills or Import Pdf Estimates from Portal to Excel with HSR 2023 rates and latest amendments.
 2. **🧱 Preparation of Material Consumption** - Generate accurate material quantity tables with District wise Material Rates instantly
 3. **🔄 Do the Variation with Portal Data** - Compare and highlight differences between your data and HEWP portal data
 4. **📤 Upload Estimate/Bill to HEWP Portal** - One-click upload to HEWP portal with auto-login
@@ -50,9 +50,10 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 
 
-![E. Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/etools.png)
 
 ### 🌐 Estimate Preparation Features (First Tab: **`Auto E. TOOLS`**)
+
+![E. Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/etools.png)
 
 1. **Multiply and Get Quantity** – Multiply dimensions (Nos. x length × breadth × depth) with advance formula.
 2. **Total Quantity with intelligent Unit Converter** – It will do auto Total of One item number's quantities and put in row below, then auto convert to metric units where required and put in row below of total. Also, auto convert to steel kg if required.
@@ -66,11 +67,13 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
 
-![Templates](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/templates.png)
 
 ### 📑 Template Management (Second Tab: **`Template`**)
 
+![Templates](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/templates.png)
+
 - **Blank Format** – Generate Blank Format for manual entry.
+- **Import Estimates** – Import Downloaded Detailed Estimates Pdf to Excel.
 - **Server Templates** – Access pre-built templates
 - **My Templates** – Manage your custom templates
 - **Add Template** – Create new templates
@@ -80,10 +83,10 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
 
-![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtools.png)
-
-
 ### 🌐 Web Automation Features (Third Tab: **`HEWP WebAuto`**)
+
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtools.png)
+![HEWP Web Manual](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsm.png)
 
 **📤 With One-Click ease** 
 
@@ -97,14 +100,16 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 8. **Emp Item Number Selector** – Select item numbers and Rate Type for Employee ID on HEWP Portal for filling and uploading estimates and variations.
 9. **Website Data Scraper** – Download completed bill data from the HEWP portal in Excel Format from contractor ID, including a summary sheet.
 10. **Delete Bill Data** – Remove all previously filled bill data items in one click on the HEWP portal in Contractor Login.
-11. **Auto Upload Full Bill/Template** – Automatically upload The Whole Bill for all Users at one click in the HEWP Portal.
-12. **Auto Upload Variation** - Automatically upload Full Variation (Add item, add Quantity, Remove item, remove quantity) to HEW Portal.
+11. **Download Detailed Estimate** – Download Detailed Estimate Pdf in two clicks from the HEWP portal in Employee Login.
+12. **Auto Upload Full Bill/Template** – Automatically upload The Whole Bill for all Users at one click in the HEWP Portal.
+13. **Auto Upload Variation** - Automatically upload Full Variation (Add item, add Quantity, Remove item, remove quantity) to HEW Portal.
 
 ---
 
-![Extra Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/extra.png)
 
 ### 🌐 Estimate Preparation Features (4th Tab: **`Extra TOOLS`**)
+
+![Extra Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/extra.png)
 
 1. **Jump to any Sheet** – Quickly navigate between All worksheets in a workbook with many sheets. So Useful When you have lots of worksheets. 
 2. **Refresh Sheet** – Instantly refresh the Excel in case Excel becomes unresponsive sometimes.
@@ -118,12 +123,14 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 10. **Steel Weight Calculator** – Manually Convert running meters Rebar Length to kilograms based on entered diameter and put this value below of selected total row cell.
 11. **Auto Round Off** – Dynamically apply round-off formula to each selected cell. Existing Round off auto-update on apply.
 12. **HSR 2023/2021** - Open HSR 2023 and 2021 PDF in your system.
+13. **Unit Adjust** - Set and Convert whole bill/Estimate's unit system.
 
 ---
 
-![Tool Help](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/help.png)
 
 ### 🌐 Technical Features (5th Tab: **`Tool Help`**)
+
+![Tool Help](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/help.png)
 
 1. **Feedback** – Quickly Provide feedback, suggestion, bug reports, feature requests, enquiry, all in one under single function.
 2. **Check for Updates** - Check for installer updates from this.
@@ -138,9 +145,10 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
 
-![Tool Setting](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/settings.png)
 
 ### 🌐 Setup Features (6th Tab: **`Tool Setting`**)
+
+![Tool Setting](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/settings.png)
 
 1. **Unit System** – Set Your unit system, you are working in (Imperial or metric).
 2. **Browser** - Choose your browser for Web Automation (Chrome or Microsoft Edge).
