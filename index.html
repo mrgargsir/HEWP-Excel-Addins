@@ -1832,8 +1832,8 @@
 </head>
 
 <body>
-    <!-- 👉 Weather Effects Container -->
-    <div id="weather-effects"></div>
+    <!-- 👉 Weather Effects Container 
+    <div id="weather-effects"></div> -->
 
     <!-- 👉 Floating Social Sidebar -->
     <div class="floating-social">
@@ -2074,15 +2074,15 @@
                 </div>
 
                 <div>
-
+                    <!--
                     <aside class="card-hero fadeInUp" aria-hidden style="margin-bottom: 20px;">
-                        <!-- 👉 Weather Display ABOVE Quick Snapshot -->
+                        👉 Weather Display ABOVE Quick Snapshot 
 
                         <div class="weather-info-card" id="weather-info" style="display: block; margin-bottom: 5px;">
 
                             <div
                                 style="display: flex; align-items: center; gap: 15px; background: linear-gradient(90deg, rgba(124, 58, 237, 0.15), rgba(6, 182, 212, 0.1)); padding: 15px; border-radius: 12px; border: 1px solid rgba(124, 58, 237, 0.2); position: relative;">
-                                <!-- Weather icon badge -->
+                                
                                 <div class="weather-icon-badge">
                                     <i class="fas fa-cloud"></i>
                                 </div>
@@ -2119,6 +2119,7 @@
                             </div>
                         </div>
                     </aside>
+                        -->
 
                     <!-- 👉 NEW: Referral Code Banner (Hidden by default, shown when ?ref= parameter exists) -->
                     <aside id="refSection" class="card-hero fadeInUp"
@@ -3596,24 +3597,25 @@ modalBackdrop.addEventListener('click', function () {
 
             // Show weather info
             weatherInfo.style.display = 'block';
-
+            
             // Get user's location and weather
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        fetchWeatherData(position.coords.latitude, position.coords.longitude);
-                    },
-                    (error) => {
+          //  if (navigator.geolocation) {
+             //   navigator.geolocation.getCurrentPosition(
+            //        (position) => {
+             //           fetchWeatherData(position.coords.latitude, position.coords.longitude);
+             //       },
+             //       (error) => {
                         // User denied location or error
-                        applyWeatherEffect(defaultEffect);
-                        weatherInfo.innerHTML = `<i class="fas fa-map-marker-alt"></i> <span>${defaultEffect.name} Mode</span>`;
-                    }
-                );
-            } else {
+              //          applyWeatherEffect(defaultEffect);
+              //          weatherInfo.innerHTML = `<i class="fas fa-map-marker-alt"></i> <span>${defaultEffect.name} Mode</span>`;
+              //      }
+             //   );
+         //   } else { 
+                
                 // Geolocation not supported
                 applyWeatherEffect(defaultEffect);
                 weatherInfo.innerHTML = `<i class="fas fa-map-marker-alt-slash"></i> <span>${defaultEffect.name} Mode</span>`;
-            }
+           // }
 
             function fetchWeatherData(lat, lon) {
                 // Using a free weather API (OpenWeatherMap - you'll need to sign up for a free API key)
