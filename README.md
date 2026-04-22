@@ -11,6 +11,9 @@
 **Speed up Estimate Preparation by 90%** with built-in templates, automation, and portal-compatible workflows.  
 Designed for **Engineers, Contractors and Department Employees**.
 
+<!-- 👆 Added version info from index.html -->
+> 🟢 **Latest Release:** HSR 2023 Amendments **(22-04-2026)** integrated • Stable Release
+
 </div>
 
 ---
@@ -183,7 +186,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 **🔗 Added Important Bookmarks** – Added Advanced Bookmarks, which will make easy use of the HEWP Portal.
 
-**🔍 Smart Tender Search** – Enhanced dropdown search for tenders.
+**🔍 Smart Dropdown Search** – Enhanced dropdown search for tenders.
 
 **☑️ Toggle All Checkbox.**  – Select/deselect all items at once
 
@@ -192,6 +195,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 **🆕 Volume Increase** (Volume increase features when low volume media is a problem)  
 
 **✅ Dark Mode** (Enable Dark mode on all websites)
+
+**💬 Whatsapp Message sender** (Auto send message to multiple numbers)
 
 ---
 
@@ -261,7 +266,7 @@ Complete step-by-step video tutorials available on our YouTube channel:
 ### 🆘 Get Help:
 
 - 📧 **Email:** help@mrgargsir.store
-- 📱 **WhatsApp:** +91 97285 32828
+- 📱 **WhatsApp:** +91 9728532828
 - 🌐 **Website:** [https://mrgargsir.github.io/HEWP-Excel-Addins/](https://mrgargsir.github.io/HEWP-Excel-Addins/)
  
 [https://mrgargsir.store](https://mrgargsir.store)
