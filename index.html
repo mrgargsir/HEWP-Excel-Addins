@@ -3395,6 +3395,12 @@ body { opacity: 1 !important; }
                 <input id="buyerMobile" type="tel" placeholder="e.g. 9876543210" maxlength="10" style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
             </div>
 
+            <!-- 👇 Email field added for auto confirmation -->
+            <div>
+                <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Email Address <span style="color:var(--accent4)">*</span></label>
+                <input id="buyerEmail" type="email" placeholder="e.g. yourname@gmail.com" style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+            </div>
+
             <div>
                 <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">District <span style="color:var(--accent4)">*</span></label>
                 <input id="buyerDistrict" type="text" placeholder="e.g. Rohtak" style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
@@ -4881,6 +4887,7 @@ modalBackdrop.addEventListener('click', function () {
 const FORM_ACTION    = 'https://docs.google.com/forms/d/e/1FAIpQLSccpAdkty6BM2pfGCueWiNVaK6TmhUXzhReFiQB8GsbZ_cDmw/formResponse';
 const ENTRY_NAME     = 'entry.420184449'; // 👇 Full Name
 const ENTRY_MOBILE   = 'entry.92219779'; // 👇 Mobile Number
+const ENTRY_EMAIL    = 'entry.241056737'; // 👇 Email (if needed)
 const ENTRY_DISTRICT = 'entry.885222640'; // 👇 District
 const ENTRY_PLAN     = 'entry.911084064'; // 👇 Plan
 const ENTRY_REF      = 'entry.625804941'; // 👇 Referral Code
@@ -4892,7 +4899,7 @@ function openQR(amount, plan) {
     document.getElementById('qrModal').dataset.plan = plan;
     document.getElementById('qrModal').dataset.amount = amount;
     // 👇 Clear all fields including UTR on open
-    ['buyerName','buyerMobile','buyerDistrict','buyerUTR','buyerRef'].forEach(id => document.getElementById(id).value = '');
+    ['buyerName','buyerMobile','buyerEmail','buyerDistrict','buyerUTR','buyerRef'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('qrFormError').style.display = 'none';
     const modal = document.getElementById('qrModal');
     modal.scrollTop = 0;
@@ -4908,6 +4915,7 @@ function closeQR() {
 async function sendWhatsApp() {
     const name     = document.getElementById('buyerName').value.trim();
     const mobile   = document.getElementById('buyerMobile').value.trim();
+    const email    = document.getElementById('buyerEmail').value.trim();
     const district = document.getElementById('buyerDistrict').value.trim();
     const utr      = document.getElementById('buyerUTR').value.trim();
     const ref      = document.getElementById('buyerRef').value.trim() || 'N/A';
@@ -4916,7 +4924,7 @@ async function sendWhatsApp() {
     const errorEl  = document.getElementById('qrFormError');
 
     // 👇 Validate required fields including UTR
-    if (!name || !mobile || !district || !utr) {
+    if (!name || !mobile || !email || !district || !utr) {
         errorEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill all required fields before sending.';
         errorEl.style.display = 'block';
         return;
@@ -4936,6 +4944,7 @@ async function sendWhatsApp() {
         const params = new URLSearchParams();
         params.append(ENTRY_NAME,     name);
         params.append(ENTRY_MOBILE,   mobile);
+        params.append(ENTRY_EMAIL,    email);
         params.append(ENTRY_DISTRICT, district);
         params.append(ENTRY_PLAN,     plan + ' — ₹' + Number(amount).toLocaleString('en-IN'));
         params.append(ENTRY_UTR,      utr);
@@ -4959,6 +4968,7 @@ async function sendWhatsApp() {
 - Plan       : ${plan} (₹${Number(amount).toLocaleString('en-IN')})
 - Name       : ${name}
 - Mobile     : ${mobile}
+- Email      : ${email}
 - District   : ${district}
 - UTR No.    : ${utr}
 - Ref Code   : ${ref}`;
