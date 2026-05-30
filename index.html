@@ -60,13 +60,13 @@
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "INR",
-    "lowPrice": "699",
-    "highPrice": "7699",
+    "lowPrice": "649",
+    "highPrice": "6599",
     "offerCount": "3",
     "offers": [
-      { "@type": "Offer", "name": "30 Days", "price": "699", "priceCurrency": "INR" },
-      { "@type": "Offer", "name": "180 Days", "price": "3999", "priceCurrency": "INR" },
-      { "@type": "Offer", "name": "365 Days", "price": "7699", "priceCurrency": "INR" }
+      { "@type": "Offer", "name": "30 Days", "price": "649", "priceCurrency": "INR" },
+      { "@type": "Offer", "name": "180 Days", "price": "3599", "priceCurrency": "INR" },
+      { "@type": "Offer", "name": "365 Days", "price": "6599", "priceCurrency": "INR" }
     ]
   },
   "featureList": [
@@ -120,13 +120,13 @@
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "INR",
-    "lowPrice": "699",
-    "highPrice": "7699",
+    "lowPrice": "649",
+    "highPrice": "6599",
     "offerCount": "3",
     "offers": [
-      { "@type": "Offer", "name": "30 Days", "price": "699", "priceCurrency": "INR" },
-      { "@type": "Offer", "name": "180 Days", "price": "3999", "priceCurrency": "INR" },
-      { "@type": "Offer", "name": "365 Days", "price": "7699", "priceCurrency": "INR" }
+      { "@type": "Offer", "name": "30 Days", "price": "649", "priceCurrency": "INR" },
+      { "@type": "Offer", "name": "180 Days", "price": "3599", "priceCurrency": "INR" },
+      { "@type": "Offer", "name": "365 Days", "price": "6599", "priceCurrency": "INR" }
     ]
   },
   "potentialAction": {
@@ -3257,56 +3257,80 @@
         </div>
     </div>
 
-    <!-- 👇 Paid plan cards -->
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <!-- 👇 Paid plan cards — UPDATED with 10% discount -->
+                    <div style="display:flex;flex-direction:column;gap:14px">
 
-        <!-- 👇 Plan 1: 30 Days -->
-        <div class="panel fadeInUp" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(124,58,237,0.25)">
-            <div>
-                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i class="fas fa-calendar-day" style="color:var(--accent1);margin-right:8px"></i>30 Days</div>
-                <div style="font-size:12px;color:var(--muted)">Full access · All tools included</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px">
-                <div style="font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹699</div>
-                <!-- 👇 Buy Now button opens QR modal -->
-                <button onclick="openQR('699','30 Days')" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <i class="fas fa-qrcode"></i> Buy Now
-                </button>
-            </div>
-        </div>
+                        <!-- 👇 Plan 1: 30 Days -->
+                        <div class="panel fadeInUp" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(124,58,237,0.25)">
+                            <div>
+                                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i class="fas fa-calendar-day" style="color:var(--accent1);margin-right:8px"></i>30 Days</div>
+                                <div style="font-size:12px;color:var(--muted)">Full access · All tools included</div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:14px">
+                                <div style="text-align:right">
+                                    <!-- 👇 10% off badge + strikethrough original price -->
+                                    <div style="font-size:11px;margin-bottom:2px">
+                                        <span style="background:#ef4444;color:white;padding:1px 6px;border-radius:4px;font-weight:700;font-size:10px">10% OFF</span>
+                                        <span style="color:var(--muted);text-decoration:line-through;margin-left:5px">₹649</span>
+                                    </div>
+                                    <!-- 👇 Discounted price -->
+                                    <div style="font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹584</div>
+                                </div>
+                                <!-- 👇 updated amount to 649 -->
+                                <button onclick="openQR('584','30 Days')" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    <i class="fas fa-qrcode"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
 
-        <!-- 👇 Plan 2: 180 Days — POPULAR -->
-        <div class="panel fadeInUp" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(249,115,22,0.4);position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;right:0;background:var(--accent3);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:0 0 0 10px">POPULAR</div>
-            <div>
-                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i class="fas fa-calendar-week" style="color:var(--accent3);margin-right:8px"></i>180 Days</div>
-                <div style="font-size:12px;color:var(--muted)">Full access · Best value for 6 months</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px">
-                <div style="font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--accent3),var(--accent4));-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹3,999</div>
-                <!-- 👇 Buy Now button opens QR modal -->
-                <button onclick="openQR('3999','180 Days')" style="background:linear-gradient(90deg,var(--accent3),var(--accent4));border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <i class="fas fa-qrcode"></i> Buy Now
-                </button>
-            </div>
-        </div>
+                        <!-- 👇 Plan 2: 180 Days — POPULAR -->
+                        <div class="panel fadeInUp" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(249,115,22,0.4);position:relative;overflow:hidden">
+                            <div style="position:absolute;top:0;right:0;background:var(--accent3);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:0 0 0 10px">POPULAR</div>
+                            <div>
+                                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i class="fas fa-calendar-week" style="color:var(--accent3);margin-right:8px"></i>180 Days</div>
+                                <div style="font-size:12px;color:var(--muted)">Full access · Best value</div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:14px">
+                                <div style="text-align:right">
+                                    <!-- 👇 10% off badge + strikethrough original price -->
+                                    <div style="font-size:11px;margin-bottom:2px">
+                                        <span style="background:#ef4444;color:white;padding:1px 6px;border-radius:4px;font-weight:700;font-size:10px">10% OFF</span>
+                                        <span style="color:var(--muted);text-decoration:line-through;margin-left:5px">₹3,599</span>
+                                    </div>
+                                    <!-- 👇 Discounted price -->
+                                    <div style="font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--accent3),var(--accent4));-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹3,239</div>
+                                </div>
+                                <!-- 👇 updated amount to 3239 -->
+                                <button onclick="openQR('3239','180 Days')" style="background:linear-gradient(90deg,var(--accent3),var(--accent4));border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    <i class="fas fa-qrcode"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
 
-        <!-- 👇 Plan 3: 365 Days -->
-        <div class="panel fadeInUp" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(6,182,212,0.25)">
-            <div>
-                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i class="fas fa-calendar-alt" style="color:var(--accent2);margin-right:8px"></i>365 Days</div>
-                <div style="font-size:12px;color:var(--muted)">Full access · Full year coverage</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:14px">
-                <div style="font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--accent2),var(--accent5));-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹7,699</div>
-                <!-- 👇 Buy Now button opens QR modal -->
-                <button onclick="openQR('7699','365 Days')" style="background:linear-gradient(90deg,var(--accent2),var(--accent5));border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <i class="fas fa-qrcode"></i> Buy Now
-                </button>
-            </div>
-        </div>
+                        <!-- 👇 Plan 3: 365 Days -->
+                        <div class="panel fadeInUp" style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(6,182,212,0.25)">
+                            <div>
+                                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i class="fas fa-calendar-alt" style="color:var(--accent2);margin-right:8px"></i>365 Days</div>
+                                <div style="font-size:12px;color:var(--muted)">Full access · Full year coverage</div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:14px">
+                                <div style="text-align:right">
+                                    <!-- 👇 10% off badge + strikethrough original price -->
+                                    <div style="font-size:11px;margin-bottom:2px">
+                                        <span style="background:#ef4444;color:white;padding:1px 6px;border-radius:4px;font-weight:700;font-size:10px">10% OFF</span>
+                                        <span style="color:var(--muted);text-decoration:line-through;margin-left:5px">₹6,599</span>
+                                    </div>
+                                    <!-- 👇 Discounted price -->
+                                    <div style="font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--accent2),var(--accent5));-webkit-background-clip:text;-webkit-text-fill-color:transparent">₹5,939</div>
+                                </div>
+                                <!-- 👇 updated amount to 5939 -->
+                                <button onclick="openQR('5939','365 Days')" style="background:linear-gradient(90deg,var(--accent2),var(--accent5));border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    <i class="fas fa-qrcode"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
 
-    </div>
+                    </div>
 
     <p class="small" style="margin-top:14px;text-align:center;color:var(--muted)">
         <i class="fas fa-heart" style="color:#f43f5e"></i> Made with Dedication for HEWP users
@@ -3352,6 +3376,12 @@
                 <input id="buyerDistrict" type="text" placeholder="e.g. Rohtak" style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
             </div>
 
+           <!-- 👇 UTR Number field added -->
+            <div>
+                <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">UTR Number <span style="color:var(--accent4)">*</span> <span style="color:var(--muted);font-size:11px">(12-digit UPI transaction ID)</span></label>
+                <input id="buyerUTR" type="tel" placeholder="e.g. 123456789012" maxlength="12" style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+            </div>
+
             <div>
                 <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Referral Code <span style="color:var(--muted);font-size:11px">(optional)</span></label>
                 <input id="buyerRef" type="text" placeholder="e.g. REF123" style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
@@ -3366,7 +3396,7 @@
 
         <!-- 👇 WhatsApp button — builds message from form fields -->
         <button onclick="sendWhatsApp()" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#25D366,#128C7E);color:white;padding:10px 22px;border-radius:10px;font-weight:700;font-size:14px;border:none;cursor:pointer;width:100%;justify-content:center;transition:all 0.3s ease" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fab fa-whatsapp" style="font-size:18px"></i> Send Payment Proof on WhatsApp
+            <i class="fab fa-whatsapp" style="font-size:18px"></i> Submit & Send Payment Proof on WhatsApp
         </button>
 
         <p style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:0">
@@ -4812,20 +4842,28 @@ modalBackdrop.addEventListener('click', function () {
 
     </script>
 
-    <!-- 👇 QR Modal JS — UPDATED with form validation & dynamic WhatsApp message -->
+<!-- 👇 QR Modal JS — UPDATED with UTR + Google Form auto-submit + WhatsApp -->
 <script>
+// 👇 Replace these with your actual Google Form entry IDs
+const FORM_ACTION    = 'https://docs.google.com/forms/d/e/1FAIpQLSccpAdkty6BM2pfGCueWiNVaK6TmhUXzhReFiQB8GsbZ_cDmw/formResponse';
+const ENTRY_NAME     = 'entry.420184449'; // 👇 Full Name
+const ENTRY_MOBILE   = 'entry.92219779'; // 👇 Mobile Number
+const ENTRY_DISTRICT = 'entry.885222640'; // 👇 District
+const ENTRY_PLAN     = 'entry.911084064'; // 👇 Plan
+const ENTRY_REF      = 'entry.625804941'; // 👇 Referral Code
+const ENTRY_UTR      = 'entry.1377540696'; // 👇 UTR Number
+
 function openQR(amount, plan) {
     document.getElementById('qrPlanLabel').textContent = plan + ' — ₹' + Number(amount).toLocaleString('en-IN');
     document.getElementById('qrImage').src = 'assets/qr/' + amount + '.jpeg';
-    // 👇 Store current plan info for WhatsApp message
     document.getElementById('qrModal').dataset.plan = plan;
     document.getElementById('qrModal').dataset.amount = amount;
-    // 👇 Clear form fields & error on open
-    ['buyerName','buyerMobile','buyerDistrict','buyerRef'].forEach(id => document.getElementById(id).value = '');
+    // 👇 Clear all fields including UTR on open
+    ['buyerName','buyerMobile','buyerDistrict','buyerUTR','buyerRef'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('qrFormError').style.display = 'none';
     const modal = document.getElementById('qrModal');
+    modal.scrollTop = 0;
     modal.style.display = 'flex';
-    modal.scrollTop = 0; // 👇 always reset scroll to top on open
     document.body.style.overflow = 'hidden';
 }
 
@@ -4834,30 +4872,63 @@ function closeQR() {
     document.body.style.overflow = '';
 }
 
-function sendWhatsApp() {
+async function sendWhatsApp() {
     const name     = document.getElementById('buyerName').value.trim();
     const mobile   = document.getElementById('buyerMobile').value.trim();
     const district = document.getElementById('buyerDistrict').value.trim();
-    const ref      = document.getElementById('buyerRef').value.trim();
+    const utr      = document.getElementById('buyerUTR').value.trim();
+    const ref      = document.getElementById('buyerRef').value.trim() || 'N/A';
     const plan     = document.getElementById('qrModal').dataset.plan;
     const amount   = document.getElementById('qrModal').dataset.amount;
+    const errorEl  = document.getElementById('qrFormError');
 
-    // 👇 Validate required fields
-    if (!name || !mobile || !district) {
-        document.getElementById('qrFormError').style.display = 'block';
+    // 👇 Validate required fields including UTR
+    if (!name || !mobile || !district || !utr) {
+        errorEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill all required fields before sending.';
+        errorEl.style.display = 'block';
         return;
     }
-    document.getElementById('qrFormError').style.display = 'none';
 
-    // 👇 Build WhatsApp message with all details
-    const msg = `Hi, I have completed payment for HEWP Tools license. Please find my payment screenshot attached.
+    // 👇 Validate UTR is exactly 12 digits
+    if (!/^\d{12}$/.test(utr)) {
+        errorEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> UTR Number must be exactly 12 digits.';
+        errorEl.style.display = 'block';
+        return;
+    }
+
+    errorEl.style.display = 'none';
+
+    // 👇 Auto submit to Google Form silently
+    try {
+        const params = new URLSearchParams();
+        params.append(ENTRY_NAME,     name);
+        params.append(ENTRY_MOBILE,   mobile);
+        params.append(ENTRY_DISTRICT, district);
+        params.append(ENTRY_PLAN,     plan + ' — ₹' + Number(amount).toLocaleString('en-IN'));
+        params.append(ENTRY_UTR,      utr);
+        params.append(ENTRY_REF,      ref);
+
+        await fetch(FORM_ACTION, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: params.toString()
+        });
+    } catch (e) {
+        // no-cors always throws — submission still goes through
+    }
+
+    // 👇 Build WhatsApp message with all details including UTR
+    const msg =
+`Hi, I have completed payment for HEWP Tools license.
 
 🧾 *Purchase Details*
 - Plan       : ${plan} (₹${Number(amount).toLocaleString('en-IN')})
 - Name       : ${name}
 - Mobile     : ${mobile}
 - District   : ${district}
-- Ref Code   : ${ref ? ref : 'N/A'}`;
+- UTR No.    : ${utr}
+- Ref Code   : ${ref}`;
 
     window.open('https://wa.me/919728532828?text=' + encodeURIComponent(msg), '_blank');
 }
