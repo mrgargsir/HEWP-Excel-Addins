@@ -1976,6 +1976,23 @@
                 transform: translateX(calc(100vw + 100px));
             }
         }
+
+        /* 👇 Ensure content is visible immediately on load — no animation delay on first paint */
+body { opacity: 1 !important; }
+
+/* 👇 Make panels visible instantly — animate only after page is ready */
+.fadeInUp {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* 👇 Re-enable animation only for elements not yet in viewport */
+.fadeInUp.animate {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards !important;
+}
+
     </style>
 </head>
 
@@ -3573,15 +3590,28 @@ modalBackdrop.addEventListener('click', function () {
         
         // 👉 Enhanced scroll animation with Intersection Observer
         document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, index * 50); // Stagger effect
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            // 👇 Only animate elements NOT visible on first load — instant render for anchor links
+const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            obs.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+// 👇 Skip animation for elements already in viewport on page load
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fadeInUp').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const inViewport = rect.top < window.innerHeight && rect.bottom >= 0;
+        if (inViewport) {
+            el.classList.remove('fadeInUp'); // 👇 instant visible, no animation
+        } else {
+            observer.observe(el); // 👇 animate only off-screen elements
+        }
+    });
+});
 
             document.querySelectorAll('.fadeInUp, .fadeInLeft, .fadeInRight').forEach(el => {
                 observer.observe(el);
@@ -4855,7 +4885,7 @@ const ENTRY_UTR      = 'entry.1377540696'; // 👇 UTR Number
 
 function openQR(amount, plan) {
     document.getElementById('qrPlanLabel').textContent = plan + ' — ₹' + Number(amount).toLocaleString('en-IN');
-    document.getElementById('qrImage').src = 'assets/qr/' + amount + '.jpeg';
+    document.getElementById('qrImage').src = 'assets/qr/' + amount + '.PNG';
     document.getElementById('qrModal').dataset.plan = plan;
     document.getElementById('qrModal').dataset.amount = amount;
     // 👇 Clear all fields including UTR on open
