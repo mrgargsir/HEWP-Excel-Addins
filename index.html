@@ -2334,11 +2334,11 @@ body { opacity: 1 !important; }
                                 </h4>
                                 <ol
                                     style="margin: 0; padding-left: 20px; font-size: 13px; color: #d5ddea; line-height: 1.8;">
-                                    <li>Download and install MRGARGSIR HEWP Tools (button below)</li>
-                                    <li>Open Excel → Go to <strong> Tab → Tool Help</strong></li>
-                                    <li>Click <strong>"Get License"</strong></li>
-                                    <li>Enter the referral code shown above</li>
-                                    <li>Fill the simple form and submit</li>
+                                    <li>Click Copy code</li>
+                                    <li>Click Purchase License button</li>
+                                    <li>Click <strong>"any Plans"</strong></li>
+                                    <li>Enter the referral code in the provided field</li>
+                                    <li>Do Payment and Fill the simple form and submit</li>
                                     <li><strong style="color: var(--accent5);">Both you and your referrer get extended
                                             license validity! 🎁</strong></li>
                                 </ol>
@@ -2346,9 +2346,9 @@ body { opacity: 1 !important; }
 
                             <!-- Download Button -->
                             <div style="margin-top: 20px;">
-                                <a href="#download" class="cta primary"
+                                <a href="#pricing" class="cta primary"
                                     style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px;">
-                                    <i class="fas fa-download"></i> Download MRGARGSIR HEWP Tools Now
+                                    <i class="fas fa-shopping-cart"></i> Purchase License Now
                                 </a>
                             </div>
                         </div>
@@ -4787,10 +4787,13 @@ modalBackdrop.addEventListener('click', function () {
         // ============================================
         // 👉 REFERRAL CODE DETECTION & AUTO-COPY
         // ============================================
+        // 👇 Global referral code — accessible by openQR for any plan
+        window._autoRefCode = '';
+
         function initReferralDetection() {
-            // Check for referral code in URL
             const urlParams = new URLSearchParams(window.location.search);
             const refCode = urlParams.get('ref');
+            if (refCode) window._autoRefCode = refCode; // 👇 save globally
 
             if (refCode) {
                 // Show referral section
@@ -4899,7 +4902,20 @@ function openQR(amount, plan) {
     document.getElementById('qrModal').dataset.plan = plan;
     document.getElementById('qrModal').dataset.amount = amount;
     // 👇 Clear all fields including UTR on open
-    ['buyerName','buyerMobile','buyerEmail','buyerDistrict','buyerUTR','buyerRef'].forEach(id => document.getElementById(id).value = '');
+    ['buyerName','buyerMobile','buyerEmail','buyerDistrict','buyerUTR'].forEach(id => document.getElementById(id).value = '');
+    // 👇 Prefill referral code from URL if available, else clear
+    const refInput = document.getElementById('buyerRef');
+    if (refInput) {
+        refInput.value = window._autoRefCode || '';
+        // 👇 Highlight green if auto-filled from referral link
+        if (window._autoRefCode) {
+            refInput.style.border = '1px solid rgba(16,185,129,0.6)';
+            refInput.style.background = 'rgba(16,185,129,0.08)';
+        } else {
+            refInput.style.border = '1px solid rgba(255,255,255,0.12)';
+            refInput.style.background = 'rgba(255,255,255,0.06)';
+        }
+    }
     document.getElementById('qrFormError').style.display = 'none';
     const modal = document.getElementById('qrModal');
     modal.scrollTop = 0;
