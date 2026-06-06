@@ -3148,12 +3148,12 @@
                     </h3>
                     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
 
-                        <!-- Basic -->
-                        <div class="panel fadeInUp" style="border:1px solid rgba(16,185,129,0.3);padding:22px">
-                            <div style="font-size:15px;font-weight:800;color:#10b981;margin-bottom:4px">🟢 Basic
+                        <!-- Regular -->
+                        <div class="panel fadeInUp" style="border:1px solid rgba(249,115,22,0.35);padding:22px">
+                            <div style="font-size:15px;font-weight:800;color:#f97316;margin-bottom:4px">🔵 Regular
                                 Plan</div>
                             <div style="font-size:11px;color:var(--muted);margin-bottom:14px;font-style:italic">
-                                Estimation & Bill Preparation Features</div>
+                                Estimation, Bill Preparation + Analysis Features</div>
                             <ul
                                 style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:#d5ddea">
                                 <li><span style="color:#10b981;margin-right:6px">✔</span>Calculators</li>
@@ -3163,18 +3163,6 @@
                                 <li style="color:var(--muted);font-size:12px;padding-left:18px">Quantity, Sum,
                                     Convert Qty, HSR Rate, Description, Amount Total, Blank Format</li>
                                 <li><span style="color:#10b981;margin-right:6px">✔</span>Extra Tab Tools</li>
-                            </ul>
-                        </div>
-
-                        <!-- Regular -->
-                        <div class="panel fadeInUp" style="border:1px solid rgba(249,115,22,0.35);padding:22px">
-                            <div style="font-size:15px;font-weight:800;color:#f97316;margin-bottom:4px">🔵 Regular
-                                Plan</div>
-                            <div style="font-size:11px;color:var(--muted);margin-bottom:14px;font-style:italic">
-                                Estimation, Bill Preparation + Analysis Features</div>
-                            <ul
-                                style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:#d5ddea">
-                                <li><span style="color:#f97316;margin-right:6px">✔</span>All Basic Features</li>
                                 <li><span style="color:#f97316;margin-right:6px">✔</span>Steel Summary</li>
                                 <li><span style="color:#f97316;margin-right:6px">✔</span>Abstract Bill / Estimate
                                 </li>
@@ -3248,15 +3236,11 @@
                                 <i class="fas fa-exclamation-triangle"
                                     style="color:#f43f5e;margin-top:2px;flex-shrink:0"></i>
                                 <span>
-                                    <strong style="color:#f43f5e">Existing users are not eligible for this
-                                        trial.</strong>
-                                    <br>
-                                    If you have previously purchased Trial, this offer does not apply to
-                                    you.
+                                    <strong style="color:#f43f5e">Trial Purchasae is only applicable once per computer</strong>
+                                  
                                     <br><span style="color:var(--muted);font-size:11px;margin-top:4px;display:block">⚠️
                                         Payments once made are non-refundable for this trial. Please confirm your
-                                        eligibility before
-                                        purchasing.</span>
+                                        eligibility before purchasing.</span>
                                 </span>
                             </div>
                         </div>
@@ -3264,10 +3248,7 @@
 
                     <!-- 🖐️ PLAN SELECTOR TABS — new -->
                     <div style="display:flex;justify-content:center;gap:10px;margin-bottom:20px;flex-wrap:wrap">
-                        <button onclick="switchPlan('basic')" id="tab-basic"
-                            style="padding:9px 22px;border-radius:20px;border:1.5px solid rgba(16,185,129,0.5);background:rgba(16,185,129,0.15);color:#10b981;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s">
-                            🟢 Basic
-                        </button>
+                        
                         <button onclick="switchPlan('regular')" id="tab-regular"
                             style="padding:9px 22px;border-radius:20px;border:1.5px solid rgba(249,115,22,0.5);background:rgba(249,115,22,0.12);color:#f97316;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s">
                             🔵 Regular
@@ -3278,103 +3259,6 @@
                         </button>
                     </div>
 
-                    <!-- 🖐️ BASIC PLAN CARDS -->
-                    <div id="plan-basic" style="display:none;flex-direction:column;gap:14px">
-                        <!-- Basic 30 Days -->
-                        <div class="panel fadeInUp"
-                            style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(16,185,129,0.3)">
-                            <div>
-                                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i
-                                        class="fas fa-calendar-day" style="color:#10b981;margin-right:8px"></i>30 Days —
-                                    Basic</div>
-                                <div style="font-size:12px;color:var(--muted)">Estimation & Bill Preparation tools</div>
-                            </div>
-                            <div style="display:flex;align-items:center;gap:14px">
-                                <div style="text-align:right">
-                                    <!-- 🖐️ Extra 20% OFF for Basic -->
-                                    <div style="font-size:11px;margin-bottom:2px">
-                                        <span
-                                            style="background:#10b981;color:white;padding:1px 6px;border-radius:4px;font-weight:700;font-size:10px">20%
-                                            OFF</span>
-                                        <span
-                                            style="color:var(--muted);text-decoration:line-through;margin-left:5px">₹249</span>
-                                    </div>
-                                    <div
-                                        style="font-size:26px;font-weight:900;background:linear-gradient(90deg,#10b981,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">
-                                        ₹199</div>
-                                </div>
-                                <button onclick="openQR('199','30 Days - Basic')"
-                                    style="background:linear-gradient(90deg,#10b981,#06b6d4);border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease"
-                                    onmouseover="this.style.transform='scale(1.05)'"
-                                    onmouseout="this.style.transform='scale(1)'">
-                                    <i class="fas fa-qrcode"></i> Buy Now
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Basic 180 Days -->
-                        <div class="panel fadeInUp"
-                            style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(16,185,129,0.4);position:relative;overflow:hidden">
-                            <div
-                                style="position:absolute;top:0;right:0;background:#10b981;color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:0 0 0 10px">
-                                POPULAR</div>
-                            <div>
-                                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i
-                                        class="fas fa-calendar-week" style="color:#10b981;margin-right:8px"></i>180 Days
-                                    — Basic</div>
-                                <div style="font-size:12px;color:var(--muted)">Best value · Save more</div>
-                            </div>
-                            <div style="display:flex;align-items:center;gap:14px">
-                                <div style="text-align:right">
-                                    <div style="font-size:11px;margin-bottom:2px">
-                                        <span
-                                            style="background:#10b981;color:white;padding:1px 6px;border-radius:4px;font-weight:700;font-size:10px">20%
-                                            OFF</span>
-                                        <span
-                                            style="color:var(--muted);text-decoration:line-through;margin-left:5px">₹1,599</span>
-                                    </div>
-                                    <div
-                                        style="font-size:26px;font-weight:900;background:linear-gradient(90deg,#10b981,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">
-                                        ₹1,279</div>
-                                </div>
-                                <button onclick="openQR('1279','180 Days - Basic')"
-                                    style="background:linear-gradient(90deg,#10b981,#06b6d4);border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease"
-                                    onmouseover="this.style.transform='scale(1.05)'"
-                                    onmouseout="this.style.transform='scale(1)'">
-                                    <i class="fas fa-qrcode"></i> Buy Now
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Basic 365 Days -->
-                        <div class="panel fadeInUp"
-                            style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid rgba(16,185,129,0.3)">
-                            <div>
-                                <div style="font-size:16px;font-weight:700;margin-bottom:4px"><i
-                                        class="fas fa-calendar-alt" style="color:#10b981;margin-right:8px"></i>365 Days
-                                    — Basic</div>
-                                <div style="font-size:12px;color:var(--muted)">Full year coverage</div>
-                            </div>
-                            <div style="display:flex;align-items:center;gap:14px">
-                                <div style="text-align:right">
-                                    <div style="font-size:11px;margin-bottom:2px">
-                                        <span
-                                            style="background:#10b981;color:white;padding:1px 6px;border-radius:4px;font-weight:700;font-size:10px">20%
-                                            OFF</span>
-                                        <span
-                                            style="color:var(--muted);text-decoration:line-through;margin-left:5px">₹2,599</span>
-                                    </div>
-                                    <div
-                                        style="font-size:26px;font-weight:900;background:linear-gradient(90deg,#10b981,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">
-                                        ₹2,079</div>
-                                </div>
-                                <button onclick="openQR('2079','365 Days - Basic')"
-                                    style="background:linear-gradient(90deg,#10b981,#06b6d4);border:none;color:white;padding:8px 16px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s ease"
-                                    onmouseover="this.style.transform='scale(1.05)'"
-                                    onmouseout="this.style.transform='scale(1)'">
-                                    <i class="fas fa-qrcode"></i> Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- 🖐️ REGULAR PLAN CARDS -->
                     <div id="plan-regular" style="display:none;flex-direction:column;gap:14px">
@@ -3578,13 +3462,12 @@
                     <script>
                         function switchPlan(plan) {
                             // 🖐️ Hide all plan containers
-                            document.getElementById('plan-basic').style.display = 'none';
                             document.getElementById('plan-regular').style.display = 'none';
                             document.getElementById('plan-premium').style.display = 'none';
                             // 🖐️ Show selected plan
                             document.getElementById('plan-' + plan).style.display = 'flex';
                             // 🖐️ Update tab active style
-                            ['basic', 'regular', 'premium'].forEach(function (p) {
+                            ['regular', 'premium'].forEach(function (p) {
                                 var tab = document.getElementById('tab-' + p);
                                 tab.style.opacity = (p === plan) ? '1' : '0.55';
                                 tab.style.transform = (p === plan) ? 'scale(1.07)' : 'scale(1)';
