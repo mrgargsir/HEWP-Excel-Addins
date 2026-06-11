@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorials & Installation Guide — HEWP Tools by MRGARGSIR</title>
-    <meta name="description" content="Video tutorials, installation guide, system requirements and before/after comparison for HEWP Tools by MRGARGSIR. Step-by-step setup for Estimation & Billing Excel Tools.">
+    <meta name="description"
+        content="Video tutorials, installation guide, system requirements and before/after comparison for HEWP Tools by MRGARGSIR. Step-by-step setup for Estimation & Billing Excel Tools.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mrgargsir.github.io/HEWP-Excel-Addins/tutorials.html" />
 
@@ -31,14 +33,20 @@
             --muted: #9aa4b2;
         }
 
-        * { box-sizing: border-box }
-        html, body { height: 100% }
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
 
         body {
             margin: 0;
             font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
-            background: radial-gradient(1000px 500px at 10% 10%, rgba(124,58,237,0.12), transparent),
-                radial-gradient(800px 400px at 90% 80%, rgba(6,182,212,0.08), transparent),
+            background: radial-gradient(1000px 500px at 10% 10%, rgba(124, 58, 237, 0.12), transparent),
+                radial-gradient(800px 400px at 90% 80%, rgba(6, 182, 212, 0.08), transparent),
                 linear-gradient(180deg, #081028 0%, #071021 100%);
             color: #f8fafc;
             -webkit-font-smoothing: antialiased;
@@ -49,20 +57,32 @@
         body::before {
             content: '';
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(124,58,237,0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(6,182,212,0.05) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
             animation: float 20s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0,0) }
-            50% { transform: translate(50px, 50px) }
+
+            0%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            50% {
+                transform: translate(50px, 50px)
+            }
         }
 
-        a { color: inherit }
+        a {
+            color: inherit
+        }
 
         .wrap {
             max-width: 1200px;
@@ -78,42 +98,72 @@
             align-items: center;
             justify-content: space-between;
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(15,23,42,0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 10px 36px;
             transition: all 0.3s ease;
         }
 
         header.scrolled {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background: rgba(11,18,32,0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(11, 18, 32, 0.95);
         }
 
-        .brand { display: flex; align-items: center; gap: 12px }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
 
         .logo {
-            width: 56px; height: 56px;
+            width: 56px;
+            height: 56px;
             border-radius: 12px;
             background: transparent;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 900;
             transition: transform 0.3s ease;
         }
-        .logo:hover { transform: translateY(-3px) rotateY(10deg); }
-        .logo img { position: relative; z-index: 1; border-radius: 8px; }
 
-        .brand h1 { font-size: 18px; margin: 0 }
-        .brand p { margin: 0; font-size: 12px; color: #d5ddea }
+        .logo:hover {
+            transform: translateY(-3px) rotateY(10deg);
+        }
 
-        nav { display: flex; gap: 14px; align-items: center; flex-wrap: wrap }
+        .logo img {
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        .brand h1 {
+            font-size: 18px;
+            margin: 0
+        }
+
+        .brand p {
+            margin: 0;
+            font-size: 12px;
+            color: #d5ddea
+        }
+
+        nav {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap
+        }
 
         .nav-btn {
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             padding: 10px 14px;
             border-radius: 10px;
             color: #d5ddea;
@@ -124,31 +174,35 @@
             position: relative;
             overflow: hidden;
         }
+
         .nav-btn:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             transform: translateY(-2px);
-            border-color: rgba(255,255,255,0.1);
+            border-color: rgba(255, 255, 255, 0.1);
         }
+
         .nav-btn.primary {
             background: linear-gradient(90deg, var(--accent1), var(--accent2));
             color: white;
             border: 0;
-            box-shadow: 0 4px 15px rgba(124,58,237,0.3);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
         }
+
         .nav-btn.primary:hover {
             transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(124,58,237,0.4);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
         }
 
         /* 👇 FINGER: Page hero banner */
         .page-hero {
-            background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.08));
-            border: 1px solid rgba(255,255,255,0.06);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(6, 182, 212, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 16px;
             padding: 40px 36px;
             margin-bottom: 40px;
             text-align: center;
         }
+
         .page-hero h2 {
             font-size: 2rem;
             font-weight: 900;
@@ -157,7 +211,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .page-hero p { color: var(--muted); margin: 0; font-size: 15px }
+
+        .page-hero p {
+            color: var(--muted);
+            margin: 0;
+            font-size: 15px
+        }
 
         /* 👇 FINGER: Quick nav tabs inside the page */
         .page-tabs {
@@ -166,25 +225,33 @@
             flex-wrap: wrap;
             margin-bottom: 36px;
         }
+
         .page-tab {
             padding: 10px 18px;
             border-radius: 10px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             color: #d5ddea;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s ease;
         }
-        .page-tab:hover, .page-tab.active {
-            background: linear-gradient(90deg, rgba(124,58,237,0.2), rgba(6,182,212,0.1));
-            border-color: rgba(124,58,237,0.4);
+
+        .page-tab:hover,
+        .page-tab.active {
+            background: linear-gradient(90deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.1));
+            border-color: rgba(124, 58, 237, 0.4);
             color: #fff;
         }
 
         /* Section headings */
-        section { margin-bottom: 60px; position: relative; z-index: 1; }
+        section {
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
         section h3 {
             font-size: 1.4rem;
             font-weight: 700;
@@ -200,49 +267,69 @@
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
+
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
+
         @media (max-width: 768px) {
-            .two-col { grid-template-columns: 1fr }
-            .comparison { flex-direction: column }
+            .two-col {
+                grid-template-columns: 1fr
+            }
+
+            .comparison {
+                flex-direction: column
+            }
         }
 
         /* Feature / panel card */
         .feature {
-            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-            border: 1px solid rgba(255,255,255,0.06);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 12px;
             padding: 20px;
             transition: all 0.3s ease;
         }
+
         .feature:hover {
             transform: translateY(-4px);
-            border-color: rgba(124,58,237,0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(124, 58, 237, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        .feature h4 { margin: 10px 0 8px; font-size: 15px }
-        .feature p { margin: 0; font-size: 13px; color: #d5ddea }
+
+        .feature h4 {
+            margin: 10px 0 8px;
+            font-size: 15px
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: 13px;
+            color: #d5ddea
+        }
 
         .panel {
-            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-            border: 1px solid rgba(255,255,255,0.07);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 14px;
             padding: 28px;
         }
 
-        .small { font-size: 13px; color: #d5ddea }
+        .small {
+            font-size: 13px;
+            color: #d5ddea
+        }
 
         /* 👇 FINGER: Video section — same as index.html */
         .video-container {
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.05);
-            background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(6,182,212,0.05));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(6, 182, 212, 0.05));
             aspect-ratio: 16/9;
             min-height: 300px;
         }
@@ -254,9 +341,20 @@
             overflow-x: hidden;
             padding-right: 8px;
         }
-        .video-list-container > * { margin-bottom: 12px }
-        .video-list-container::-webkit-scrollbar { width: 6px }
-        .video-list-container::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-radius: 10px }
+
+        .video-list-container>* {
+            margin-bottom: 12px
+        }
+
+        .video-list-container::-webkit-scrollbar {
+            width: 6px
+        }
+
+        .video-list-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px
+        }
+
         .video-list-container::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--accent1), var(--accent2));
             border-radius: 10px;
@@ -264,91 +362,149 @@
 
         .video-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(124,58,237,0.2) !important;
+            border: 1px solid rgba(124, 58, 237, 0.2) !important;
         }
+
         .video-card:hover {
             transform: translateX(8px) scale(1.02);
-            background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(6,182,212,0.05));
-            border-color: rgba(124,58,237,0.5) !important;
-            box-shadow: 0 8px 25px rgba(124,58,237,0.2);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(6, 182, 212, 0.05));
+            border-color: rgba(124, 58, 237, 0.5) !important;
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
         }
-        .video-card:active { transform: translateX(8px) scale(0.98) }
+
+        .video-card:active {
+            transform: translateX(8px) scale(0.98)
+        }
 
         /* 👇 FINGER: Install steps — same as index.html */
-        .install-steps { counter-reset: step-counter }
+        .install-steps {
+            counter-reset: step-counter
+        }
 
         .install-step {
-            background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(6,182,212,0.03));
-            border: 1px solid rgba(255,255,255,0.05);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(6, 182, 212, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             padding: 20px 20px 20px 70px;
             margin-bottom: 20px;
             position: relative;
             transition: all 0.3s ease;
         }
+
         .install-step:hover {
             transform: translateX(5px);
-            border-color: rgba(124,58,237,0.3);
-            box-shadow: 0 5px 20px rgba(124,58,237,0.15);
+            border-color: rgba(124, 58, 237, 0.3);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.15);
         }
+
         .install-step::before {
             counter-increment: step-counter;
             content: counter(step-counter);
             position: absolute;
-            left: 20px; top: 50%;
+            left: 20px;
+            top: 50%;
             transform: translateY(-50%);
-            width: 35px; height: 35px;
+            width: 35px;
+            height: 35px;
             background: linear-gradient(135deg, var(--accent1), var(--accent2));
             border-radius: 50%;
             display: flex;
-            align-items: center; justify-content: center;
-            font-weight: 900; font-size: 16px;
-            box-shadow: 0 4px 15px rgba(124,58,237,0.3);
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
         }
-        .install-step h4 { margin: 0 0 8px; color: var(--accent2) }
-        .install-step p { margin: 0; color: #d5ddea; font-size: 14px }
+
+        .install-step h4 {
+            margin: 0 0 8px;
+            color: var(--accent2)
+        }
+
+        .install-step p {
+            margin: 0;
+            color: #d5ddea;
+            font-size: 14px
+        }
 
         /* 👇 FINGER: Before/After comparison — same as index.html */
-        .comparison { display: flex; gap: 20px; margin-top: 20px }
-        .comparison-item { flex: 1; padding: 25px; border-radius: 12px }
+        .comparison {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px
+        }
+
+        .comparison-item {
+            flex: 1;
+            padding: 25px;
+            border-radius: 12px
+        }
+
         .before {
-            background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(239,68,68,0.02));
-            border: 1px solid rgba(239,68,68,0.1);
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.02));
+            border: 1px solid rgba(239, 68, 68, 0.1);
         }
+
         .after {
-            background: linear-gradient(135deg, rgba(16,185,129,0.05), rgba(16,185,129,0.02));
-            border: 1px solid rgba(16,185,129,0.1);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.1);
         }
+
         .comparison-title {
             font-size: 1.1rem;
             margin: 0 0 15px;
-            display: flex; align-items: center; gap: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
         .comparison-title::before {
-            content: ''; width: 12px; height: 12px; border-radius: 50%;
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
-        .before .comparison-title::before { background: #ef4444 }
-        .after .comparison-title::before { background: #10b981 }
-        .comparison-list { padding-left: 20px }
-        .comparison-list li { margin-bottom: 8px; line-height: 1.4 }
+
+        .before .comparison-title::before {
+            background: #ef4444
+        }
+
+        .after .comparison-title::before {
+            background: #10b981
+        }
+
+        .comparison-list {
+            padding-left: 20px
+        }
+
+        .comparison-list li {
+            margin-bottom: 8px;
+            line-height: 1.4
+        }
 
         /* Animations */
         .fadeInUp {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .fadeInLeft {
             opacity: 0;
             transform: translateX(-30px);
-            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .fadeInRight {
             opacity: 0;
             transform: translateX(30px);
-            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .visible { opacity: 1; transform: none }
+
+        .visible {
+            opacity: 1;
+            transform: none
+        }
 
         /* CTA button */
         .cta {
@@ -364,22 +520,26 @@
             border: none;
             cursor: pointer;
         }
+
         .cta.primary {
             background: linear-gradient(90deg, var(--accent1), var(--accent2));
             color: white;
-            box-shadow: 0 4px 20px rgba(124,58,237,0.3);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
         }
+
         .cta.primary:hover {
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 8px 25px rgba(124,58,237,0.4);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
         }
+
         .cta.secondary {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             color: #d5ddea;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .cta.secondary:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             transform: translateY(-2px);
         }
 
@@ -388,38 +548,96 @@
             padding: 30px 0;
             color: #d5ddea;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 60px;
         }
 
         /* Social links footer */
-        .footer-social { margin-bottom: 20px }
-        .footer-social h3 { font-size: 16px; margin-bottom: 12px; color: var(--muted) }
-        .social-links-footer { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap }
+        .footer-social {
+            margin-bottom: 20px
+        }
+
+        .footer-social h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--muted)
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
         .social-link-footer {
-            width: 40px; height: 40px;
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-decoration: none;
         }
-        .social-link-footer:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.3) }
-        .social-link-footer.youtube { background: linear-gradient(135deg, #FF0000, #cc0000) }
-        .social-link-footer.whatsapp-group { background: linear-gradient(135deg, #25D366, #128C7E) }
-        .social-link-footer.facebook { background: linear-gradient(135deg, #1877F2, #0a5dc2) }
-        .social-link-footer.instagram { background: linear-gradient(135deg, #E1306C, #833AB4) }
-        .social-link-footer.twitter { background: linear-gradient(135deg, #1da1f2, #0d7bc0) }
-        .social-link-footer.whatsapp-channel { background: linear-gradient(135deg, #25D366, #00a651) }
+
+        .social-link-footer:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
+        }
+
+        .social-link-footer.youtube {
+            background: linear-gradient(135deg, #FF0000, #cc0000)
+        }
+
+        .social-link-footer.whatsapp-group {
+            background: linear-gradient(135deg, #25D366, #128C7E)
+        }
+
+        .social-link-footer.facebook {
+            background: linear-gradient(135deg, #1877F2, #0a5dc2)
+        }
+
+        .social-link-footer.instagram {
+            background: linear-gradient(135deg, #E1306C, #833AB4)
+        }
+
+        .social-link-footer.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d7bc0)
+        }
+
+        .social-link-footer.whatsapp-channel {
+            background: linear-gradient(135deg, #25D366, #00a651)
+        }
 
         @media (max-width: 768px) {
-            header { padding: 10px 16px }
-            nav { gap: 8px }
-            .nav-btn { padding: 8px 10px; font-size: 13px }
-            .wrap { padding: 20px 16px }
-            .page-hero h2 { font-size: 1.4rem }
-            .two-col { grid-template-columns: 1fr }
+            header {
+                padding: 10px 16px
+            }
+
+            nav {
+                gap: 8px
+            }
+
+            .nav-btn {
+                padding: 8px 10px;
+                font-size: 13px
+            }
+
+            .wrap {
+                padding: 20px 16px
+            }
+
+            .page-hero h2 {
+                font-size: 1.4rem
+            }
+
+            .two-col {
+                grid-template-columns: 1fr
+            }
         }
     </style>
 </head>
@@ -427,17 +645,20 @@
 <body>
 
     <header id="mainHeader">
-        <div class="brand">
-            <div class="logo">
-                <img src="/favicon-64x64.png" width="48" height="48" alt="MRGARGSIR Logo">
+        <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;">
+            <div class="brand">
+                <div class="logo">
+                    <img src="/favicon-64x64.png" width="48" height="48" alt="MRGARGSIR Logo">
+                </div>
+                <div>
+                    <h1>HEWP Tools</h1>
+                    <p>By MRGARGSIR</p>
+                </div>
             </div>
-            <div>
-                <h1>HEWP Tools</h1>
-                <p>By MRGARGSIR</p>
-            </div>
-        </div>
+        </a>
         <nav>
             <!-- 👇 FINGER: Nav links back to main page sections -->
+            <a class="nav-btn" href="index.html"> Home </a>
             <a class="nav-btn" href="index.html#features">Features</a>
             <a class="nav-btn" href="index.html#extension">Extension</a>
             <a class="nav-btn" href="index.html#faq">FAQ</a>
@@ -451,7 +672,8 @@
         <!-- 👇 FINGER: Page intro banner -->
         <div class="page-hero fadeInUp">
             <h2>📚 Tutorials & Setup Guide</h2>
-            <p>Everything you need to install, configure and master HEWP Tools — videos, step-by-step guide and system requirements.</p>
+            <p>Everything you need to install, configure and master HEWP Tools — videos, step-by-step guide and system
+                requirements.</p>
         </div>
 
         <!-- 👇 FINGER: In-page quick nav -->
@@ -469,8 +691,7 @@
                 <div class="fadeInLeft">
                     <div class="video-container">
                         <iframe id="mainVideoFrame" width="100%" height="100%"
-                            src="https://www.youtube.com/embed/AUGClE_q9IY"
-                            title="E. Tools Promo" frameborder="0"
+                            src="https://www.youtube.com/embed/AUGClE_q9IY" title="E. Tools Promo" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen style="border-radius:12px">
                         </iframe>
@@ -527,7 +748,8 @@
                                 <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
                                 <div style="flex:1">
                                     <h4 style="margin:0">E. Tools Tab Features Part 2</h4>
-                                    <p class="small" style="margin:3px 0 0">Insert Row, Copy Sheet, Round Off, Metric Unit</p>
+                                    <p class="small" style="margin:3px 0 0">Insert Row, Copy Sheet, Round Off, Metric
+                                        Unit</p>
                                 </div>
                                 <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
                             </div>
@@ -537,7 +759,8 @@
                                 <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
                                 <div style="flex:1">
                                     <h4 style="margin:0">E. Tools Tab Features Part 3</h4>
-                                    <p class="small" style="margin:3px 0 0">Steel Function, Custom Function, Steel Summary</p>
+                                    <p class="small" style="margin:3px 0 0">Steel Function, Custom Function, Steel
+                                        Summary</p>
                                 </div>
                                 <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
                             </div>
@@ -567,7 +790,8 @@
                                 <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
                                 <div style="flex:1">
                                     <h4 style="margin:0">Web Tools Tab Features Detailed</h4>
-                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click and Semi auto if Error</p>
+                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click and Semi auto
+                                        if Error</p>
                                 </div>
                                 <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
                             </div>
@@ -617,36 +841,46 @@
                 <div class="install-steps">
                     <div class="install-step fadeInUp">
                         <h4>Download the Installer</h4>
-                        <p>Click the download button to get Installer.exe. The installer includes Excel Tool, Chrome/Edge Extension and dependencies.</p>
+                        <p>Click the download button to get Installer.exe. The installer includes Excel Tool,
+                            Chrome/Edge Extension and dependencies.</p>
                     </div>
                     <div class="install-step fadeInUp">
                         <h4>Run the Installer</h4>
-                        <p>Double-click the downloaded file and follow the on-screen instructions. Accept the default settings for the easiest installation.</p>
+                        <p>Double-click the downloaded file and follow the on-screen instructions. Accept the default
+                            settings for the easiest installation.</p>
                     </div>
                     <div class="install-step fadeInUp">
                         <h4>Enable Excel Tool if required</h4>
-                        <p>Open Excel and check the ribbon. You'll see new tabs: "Auto E. TOOLS", "Templates", "HEWP Auto", "HEWP Manual", "Extra Tools", "Tool Help", "Tool Settings" etc. with all the features ready to use.</p>
+                        <p>Open Excel and check the ribbon. You'll see new tabs: "Auto E. TOOLS", "Templates", "HEWP
+                            Auto", "HEWP Manual", "Extra Tools", "Tool Help", "Tool Settings" etc. with all the features
+                            ready to use.</p>
                     </div>
                     <div class="install-step fadeInUp">
                         <h4>Install Chrome/Edge Extension (Optional)</h4>
-                        <p>During installation, you'll be prompted to add the Chrome/Edge extension. Click "Add to Chrome" when prompted for enhanced portal features. For Edge Extension, search hewp extension in edge store.</p>
+                        <p>During installation, you'll be prompted to add the Chrome/Edge extension. Click "Add to
+                            Chrome" when prompted for enhanced portal features. For Edge Extension, search hewp
+                            extension in edge store.</p>
                     </div>
                     <div class="install-step fadeInUp">
                         <h4>Tool Settings</h4>
-                        <p>Activate the Tool if asked. Then first set the Unit, Browser & District as per your choice and restart Excel.</p>
+                        <p>Activate the Tool if asked. Then first set the Unit, Browser & District as per your choice
+                            and restart Excel.</p>
                     </div>
                     <div class="install-step fadeInUp">
                         <h4>Start Working!</h4>
-                        <p>Open any Bill or Estimate and start using the tools. Auto-updates are enabled by default to keep you current with latest features.</p>
+                        <p>Open any Bill or Estimate and start using the tools. Auto-updates are enabled by default to
+                            keep you current with latest features.</p>
                     </div>
                 </div>
 
-                <div style="margin-top:25px;padding:15px;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
+                <div
+                    style="margin-top:25px;padding:15px;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
                     <strong style="color:#ef4444">⚠️ Before You Install:</strong>
                     <ul class="small" style="margin:10px 0 0 20px;color:#d5ddea">
                         <li>✅ Save & Close all Microsoft Excel windows</li>
                         <li>✅ Have your unique install key ready</li>
-                        <li>✅ During Installation, If Windows shows security warning, click "More info" → "Run anyway"</li>
+                        <li>✅ During Installation, If Windows shows security warning, click "More info" → "Run anyway"
+                        </li>
                     </ul>
                 </div>
 
@@ -757,24 +991,29 @@
                     <a href="https://x.com/HEWPTools" target="_blank" rel="noopener noreferrer"
                         class="social-link-footer twitter" title="X (Twitter)">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-                            <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/>
+                            <path
+                                d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" />
                         </svg>
                     </a>
                     <a href="https://youtube.com/@HEWPTools" target="_blank" rel="noopener noreferrer"
                         class="social-link-footer youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer"
-                        class="social-link-footer whatsapp-group" title="WhatsApp Group"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank" rel="noopener noreferrer"
-                        class="social-link-footer whatsapp-channel" title="WhatsApp Channel"><i class="fas fa-bullhorn"></i></a>
+                        class="social-link-footer whatsapp-group" title="WhatsApp Group"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank"
+                        rel="noopener noreferrer" class="social-link-footer whatsapp-channel"
+                        title="WhatsApp Channel"><i class="fas fa-bullhorn"></i></a>
                 </div>
             </div>
             <div>
                 <strong>Estimation & Billing HEWP Tools</strong> By
                 <a href="https://wa.me/919728532828" target="_blank" rel="noreferrer">MRGARGSIR</a>
                 <div class="small" style="margin-top:6px">© MRGARGSIR 2026 – All rights reserved</div>
-                <div class="small" style="margin-top:6px;padding:10px;background:rgba(239,68,68,0.05);border-radius:8px;max-width:700px;margin:10px auto 0">
+                <div class="small"
+                    style="margin-top:6px;padding:10px;background:rgba(239,68,68,0.05);border-radius:8px;max-width:700px;margin:10px auto 0">
                     <strong style="color:#ef4444">⚠️ IMPORTANT DISCLAIMER:</strong>
-                    This is an independent third-party tool NOT affiliated with, endorsed by, or connected to the HEWP portal or any government department.
+                    This is an independent third-party tool NOT affiliated with, endorsed by, or connected to the HEWP
+                    portal or any government department.
                 </div>
             </div>
         </div>
@@ -824,4 +1063,5 @@
     </script>
 
 </body>
+
 </html>
