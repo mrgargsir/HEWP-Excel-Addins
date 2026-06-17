@@ -80,7 +80,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 - **Blank Format** – Generate Blank Format for manual entry.
 - **Sample Format** – Generate Sample Format with all methods and keywords prefilled data.
-- **Import Bill/Estimates** – Import Downloaded Detailed Estimates, Rough Estimates, MB Bill or Variation Pdf in Excel with Proper BOQ Formating.
+- **Import Bill/Estimates** – Import Downloaded Detailed Estimates, Rough Estimates, MB Bill, Variation or Template Pdf in Excel with Proper BOQ Formating.
 - **Server Templates** – Access pre-built templates
 - **My Templates** – Manage your custom templates
 - **Add Template** – Create new templates
