@@ -1122,7 +1122,7 @@
         .hero {
             display: grid;
             grid-template-columns: 1fr 420px;
-            gap: 40px;
+            gap: 30px;
             align-items: center;
             margin-top: 0;
             padding: 60px 0 40px;
@@ -1172,8 +1172,8 @@
         .hero h2 {
             font-size: clamp(28px, 4vw, 44px);
             font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 18px;
+            line-height: 1.1;
+            margin-bottom: 10px;
             background: linear-gradient(135deg, #fff 0%, #c8d6e5 50%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1182,7 +1182,7 @@
 
         .lead {
             font-size: 15px;
-            line-height: 1.7;
+            line-height: 1.3;
             color: #8ea3be;
             margin-bottom: 30px;
         }
@@ -2487,14 +2487,12 @@
 
         <main>
             <!-- Hero Section -->
-            <section class="hero" style="margin-top: -40px;">
+            <section class="hero" style="margin-top: -60px;">
                 <div class="hero-left fadeInUp">
                     <span class="badge">HEWP • HSR 2023 With amendments • Templates • Materials Quantity •
                         Variations</span>
                     <h2>Speed up BOQ, Estimation, Material Quantity (Consumption), Variation Preparation & Auto Upload
-                        to
-                        HEWP with MRGARGSIR HEWP
-                        Tools</h2>
+                        to HEWP with MRGARGSIR HEWP Tools</h2>
                     <p class="lead">This tool will Prepare new Estimates or Import Pdf Estimates from Portal to Excel,
                         Prepare Variation,
                         Prepare Material Consumption, Prepare Boq, Prepare MB, District wise Materials Rates, one-click
@@ -3235,126 +3233,200 @@
 
 
                 <!-- =============================================
-                 👇 Paytm QR Modal — UPDATED with details form
+                 👇☝️ REDESIGNED: Paytm QR Modal — now a 2-STEP WIZARD
+                 Step 1 = Scan QR only (no form visible, nothing to miss)
+                 Step 2 = Fill form only (QR is gone, full focus on form)
                  ============================================= -->
-                <!-- 👇 Modal backdrop — flex column so inner box scrolls independently -->
                 <div id="qrModal"
-                    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:flex-start;justify-content:center;backdrop-filter:blur(6px);overflow-y:auto;padding:20px 0">
-                    <!-- 👇 Inner box — max-height with its own scroll, always starts at top -->
+                    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:9999;align-items:flex-start;justify-content:center;backdrop-filter:blur(6px);overflow-y:auto;padding:20px 0">
                     <div
-                        style="background:#0b1220;border-radius:20px;padding:32px;text-align:center;max-width:400px;width:90%;border:1px solid rgba(255,255,255,0.1);position:relative;animation:fadeIn 0.3s ease;margin:auto;max-height:90vh;overflow-y:auto;scrollbar-width:none">
+                        style="background:#0b1220;border-radius:20px;padding:0;text-align:center;max-width:420px;width:90%;border:1px solid rgba(255,255,255,0.1);position:relative;animation:fadeIn 0.3s ease;margin:auto;max-height:90vh;overflow:hidden;display:flex;flex-direction:column">
 
                         <!-- 👇 Close button -->
                         <button onclick="closeQR()"
-                            style="position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.08);border:none;color:white;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+                            style="position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.08);border:none;color:white;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5">✕</button>
 
-                        <div style="font-size:13px;color:var(--muted);margin-bottom:4px">Complete your purchase</div>
-                        <div id="qrPlanLabel" style="font-size:20px;font-weight:800;color:white;margin-bottom:16px">
-                        </div>
-
-                        <!-- 👇 QR Code image -->
-                        <img id="qrImage" src="" alt="Paytm QR Code"
-                            style="width:220px;height:auto;border-radius:12px;margin-bottom:16px;border:3px solid rgba(255,255,255,0.1)">
-
-                        <p style="font-size:13px;color:var(--muted);margin:0 0 4px">Scan with <strong
-                                style="color:white">Paytm / BHIM / any UPI app</strong></p>
-                        <p style="font-size:12px;color:var(--muted);margin:0 0 20px">After payment, fill your details
-                            below and send proof on WhatsApp</p>
-
-                        <!-- 👇 Details form — all fields required before sending -->
-                        <div style="text-align:left;display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
-
-                            <div>
-                                <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Full
-                                    Name <span style="color:var(--accent4)">*</span> <span
-                                        style="color:var(--muted);font-size:11px;"> (e.g. Ramesh Kumar)</span></label>
-                                <input id="buyerName" type="text" placeholder=""
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                        <!-- 👇☝️ NEW: Step progress bar -->
+                        <div
+                            style="padding:22px 28px 16px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0">
+                            <div style="font-size:13px;color:var(--muted);margin-bottom:2px">Complete your purchase
+                            </div>
+                            <div id="qrPlanLabel" style="font-size:19px;font-weight:800;color:white;margin-bottom:14px">
                             </div>
 
-                            <div>
-                                <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Mobile
-                                    Number <span style="color:var(--accent4)">*</span><span style="color:var(--muted);font-size:11px;"> (e.g. 9876543210)</span></label>
-                                <input id="buyerMobile" type="tel" placeholder="" maxlength="10"
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
-                            </div>
-
-                            <!-- 👇 Email field added for auto confirmation -->
-                            <div>
-                                <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Email
-                                    Address <span style="color:var(--accent4)">*</span><span style="color:var(--muted);font-size:11px;"> (e.g. yourname@gmail.com)</span></label>
-                                <input id="buyerEmail" type="email" placeholder=""
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
-                            </div>
-
-                            <div>
-                                <label
-                                    style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">District
-                                    <span style="color:var(--accent4)">*</span><span style="color:var(--muted);font-size:11px;"> (e.g. Rohtak)</span></label>
-                                <input id="buyerDistrict" type="text" placeholder=""
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
-                            </div>
-
-                            <!-- 👇 UTR Number field added -->
-                            <div>
-                                <label style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">UTR
-                                    Number <span style="color:var(--accent4)">*</span> <span
-                                        style="color:var(--muted);font-size:11px"> (12-digit UPI transaction
-                                        ID)</span></label>
-                                <input id="buyerUTR" type="tel" placeholder="" maxlength="12"
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
-                            </div>
-
-                            <div>
-                                <label
-                                    style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Referral
-                                    Code <span style="color:var(--muted);font-size:11px">(optional)</span></label>
-                                <input id="buyerRef" type="text" placeholder=""
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
-                            </div>
-
-                            <!-- 🖐️ Device ID field — compulsory for Trial, optional for other plans -->
-                            <div id="deviceIdWrapper">
-                                <label id="deviceIdLabel"
-                                    style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">
-                                    Device ID <span id="deviceIdRequired" style="color:var(--accent4)">*</span>
-                                    <span id="deviceIdOptionalTag"
-                                        style="display:none;color:var(--muted);font-size:11px">(optional)</span>
-                                        <span style="color:var(--muted);font-size:11px;"> (e.g. sOiYgZXrnem2xHm1DnNp...)</span>
-                                </label>
-                                <input id="buyerDeviceId" type="text" placeholder=""
-                                    style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:13px;outline:none;box-sizing:border-box;font-family:monospace">
-                                <!-- 🖐️ Helper hint: where to find Device ID -->
+                            <div style="display:flex;align-items:center;gap:20px">
+                                <div id="stepDot1" style="display:flex;align-items:center;gap:6px;flex:1">
+                                    <div
+                                        style="width:24px;height:24px;border-radius:50%;background:var(--accent2);color:#06121c;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                        1</div>
+                                    <span style="font-size:11px;font-weight:700;color:white">Pay via QR</span>
+                                </div>
                                 <div
-                                    style="margin-top:5px;padding:7px 10px;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:7px;font-size:11px;color:var(--muted)">
-                                    <i class="fas fa-info-circle" style="color:var(--accent2);margin-right:4px"></i>
-                                    Find your Device ID in: <strong style="color:white">Tool Settings → Change License →
-                                        Click Copy ID Button</strong><br> Device id will be long random text. Short id
-                                    text is only for show.
+                                    style="flex:0 0 30px;height:2px;background:rgba(255,255,255,0.12);border-radius:2px;overflow:hidden">
+                                    <div id="stepProgressLine"
+                                        style="height:100%;width:0%;background:var(--accent2);transition:width 0.4s ease">
+                                    </div>
+                                </div>
+                                <div id="stepDot2" style="display:flex;align-items:center;gap:6px;flex:1;opacity:0.45">
+                                    <div id="stepCircle2"
+                                        style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);color:var(--muted);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                        2</div>
+                                    <span style="font-size:11px;font-weight:700;color:var(--muted)">Your Details</span>
                                 </div>
                             </div>
-
                         </div>
 
-                        <!-- 👇 Validation error message -->
-                        <div id="qrFormError"
-                            style="display:none;color:var(--accent4);font-size:12px;margin-bottom:12px">
-                            <i class="fas fa-exclamation-circle"></i> Please fill all required fields before sending.
+                        <!-- 👇☝️ Scrollable body holds whichever step is active -->
+                        <div style="overflow-y:auto;scrollbar-width:none;padding:24px 28px 28px">
+
+                            <!-- STEP 1 — QR CODE ONLY -->
+                            <div id="qrStep1">
+                                <div
+                                    style="background:white;padding:14px;border-radius:16px;display:inline-block;margin-bottom:16px;box-shadow:0 8px 30px rgba(0,0,0,0.35)">
+                                    <img id="qrImage" src="" alt="Paytm QR Code"
+                                        style="width:220px;height:220px;display:block;border-radius:8px">
+                                </div>
+
+                                <p style="font-size:13px;color:var(--muted);margin:0 0 4px">Scan with <strong
+                                        style="color:white">Paytm / BHIM / any UPI app</strong></p>
+                                <p style="font-size:12px;color:var(--muted);margin:0 0 22px">Name : Sumit Garg</p>
+
+                                <button onclick="goToStep2()"
+                                    style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:white;padding:14px 24px;border-radius:12px;font-weight:800;font-size:15px;border:none;cursor:pointer;width:100%;justify-content:center;box-shadow:0 6px 24px rgba(124,58,237,0.4);transition:all 0.3s ease"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                                    <i class="fas fa-check-circle" style="font-size:17px"></i> I've Paid — Continue
+                                </button>
+
+                                <p style="font-size:11px;color:var(--muted);margin-top:14px;margin-bottom:0">
+                                    <i class="fas fa-arrow-down" style="color:var(--accent2)"></i> Next: enter your
+                                    details so we can verify payment & send your license
+                                </p>
+                            </div>
+
+                            <!-- STEP 2 — FORM ONLY -->
+                            <div id="qrStep2" style="display:none;text-align:left">
+
+                                <button onclick="backToStep1()"
+                                    style="background:none;border:none;color:var(--accent2);font-size:12px;font-weight:700;cursor:pointer;padding:0;margin-bottom:14px;display:flex;align-items:center;gap:5px">
+                                    <i class="fas fa-arrow-left"></i> Back to QR Code
+                                </button>
+
+                                <div
+                                    style="display:flex;align-items:center;gap:10px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:10px;padding:10px 12px;margin-bottom:18px">
+                                    <i class="fas fa-check-circle" style="color:#10b981;font-size:16px"></i>
+                                    <span style="font-size:12px;color:#d5ddea">Now enter your payment & contact details
+                                        below</span>
+                                </div>
+
+                                <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+
+                                    <div>
+                                        <label
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Full
+                                            Name <span style="color:var(--accent4)">*</span> <span
+                                                style="color:var(--muted);font-size:11px;"> (e.g. Ramesh
+                                                Kumar)</span></label>
+                                        <input id="buyerName" type="text" placeholder=""
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Mobile
+                                            Number <span style="color:var(--accent4)">*</span><span
+                                                style="color:var(--muted);font-size:11px;"> (e.g.
+                                                9876543210)</span></label>
+                                        <input id="buyerMobile" type="tel" placeholder="" maxlength="10"
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Email
+                                            Address <span style="color:var(--accent4)">*</span><span
+                                                style="color:var(--muted);font-size:11px;"> (e.g.
+                                                yourname@gmail.com)</span></label>
+                                        <input id="buyerEmail" type="email" placeholder=""
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">District
+                                            <span style="color:var(--accent4)">*</span><span
+                                                style="color:var(--muted);font-size:11px;"> (e.g. Rohtak)</span></label>
+                                        <input id="buyerDistrict" type="text" placeholder=""
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">UTR
+                                            Number <span style="color:var(--accent4)">*</span> <span
+                                                style="color:var(--muted);font-size:11px"> (12-digit UPI transaction
+                                                ID)</span></label>
+                                        <input id="buyerUTR" type="tel" placeholder="" maxlength="12"
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">Referral
+                                            Code <span
+                                                style="color:var(--muted);font-size:11px">(optional)</span></label>
+                                        <input id="buyerRef" type="text" placeholder=""
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:14px;outline:none;box-sizing:border-box">
+                                    </div>
+
+                                    <div id="deviceIdWrapper">
+                                        <label id="deviceIdLabel"
+                                            style="font-size:12px;color:var(--muted);margin-bottom:4px;display:block">
+                                            Device ID <span id="deviceIdRequired" style="color:var(--accent4)">*</span>
+                                            <span id="deviceIdOptionalTag"
+                                                style="display:none;color:var(--muted);font-size:11px">(optional)</span>
+                                            <span style="color:var(--muted);font-size:11px;"> (e.g.
+                                                sOiYgZXrnem2xHm1DnNp...)</span>
+                                        </label>
+                                        <input id="buyerDeviceId" type="text" placeholder=""
+                                            style="width:100%;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;font-size:13px;outline:none;box-sizing:border-box;font-family:monospace">
+                                        <div
+                                            style="margin-top:5px;padding:7px 10px;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:7px;font-size:11px;color:var(--muted)">
+                                            <i class="fas fa-info-circle"
+                                                style="color:var(--accent2);margin-right:4px"></i>
+                                            Find your Device ID in: <strong style="color:white">Tool Settings → Change
+                                                License →
+                                                Click Copy ID Button</strong><br> Device id will be long random text.
+                                            Short id
+                                            text is only for show.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div id="qrFormError"
+                                    style="display:none;color:var(--accent4);font-size:12px;margin-bottom:12px">
+                                    <i class="fas fa-exclamation-circle"></i> Please fill all required fields before
+                                    sending.
+                                </div>
+
+                                <button onclick="submitOrder()"
+                                    style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#7c3aed,#06b6d4);color:white;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;border:none;cursor:pointer;width:100%;justify-content:center;transition:all 0.3s ease"
+                                    onmouseover="this.style.transform='scale(1.02)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                                    <i class="fas fa-check-circle" style="font-size:18px"></i> Submit
+                                </button>
+
+                                <p
+                                    style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:0;text-align:center">
+                                    <i class="fas fa-info-circle"></i> Your license key will be sent to your WhatsApp
+                                    after
+                                    verification
+                                </p>
+                            </div>
+
                         </div>
-
-                        <!-- submitOrder() shows confirmation popup first -->
-                        <button onclick="submitOrder()"
-                            style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#7c3aed,#06b6d4);color:white;padding:10px 22px;border-radius:10px;font-weight:700;font-size:14px;border:none;cursor:pointer;width:100%;justify-content:center;transition:all 0.3s ease"
-                            onmouseover="this.style.transform='scale(1.02)'"
-                            onmouseout="this.style.transform='scale(1)'">
-                            <i class="fas fa-check-circle" style="font-size:18px"></i> Submit
-                        </button>
-
-                        <p style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:0">
-                            <i class="fas fa-info-circle"></i> Your license key will be sent to your WhatsApp after
-                            verification
-                        </p>
-
+                        <!-- 👆☝️ end scrollable body -->
                     </div>
                 </div>
 
@@ -3782,14 +3854,13 @@
         const ENTRY_UTR = 'entry.1377540696'; // 👇 UTR Number
         const ENTRY_DEVICE_ID = 'entry.353922635'; // 👈 NEW: Device ID entry 
 
+        // 👇☝️ CHANGED: openQR now always resets the wizard to Step 1 (QR view) when opened
         function openQR(amount, plan) {
             document.getElementById('qrPlanLabel').textContent = plan + ' — ₹' + Number(amount).toLocaleString('en-IN');
             document.getElementById('qrImage').src = 'assets/qr/' + amount + '.PNG';
             document.getElementById('qrModal').dataset.plan = plan;
             document.getElementById('qrModal').dataset.amount = amount;
-            // 👇 Clear all fields including UTR on open
             ['buyerName', 'buyerMobile', 'buyerEmail', 'buyerDistrict', 'buyerUTR', 'buyerDeviceId'].forEach(id => document.getElementById(id).value = '');
-            // 👇 Prefill referral code from URL if available, else clear
             const refInput = document.getElementById('buyerRef');
             if (refInput) {
                 refInput.value = window._autoRefCode || '';
@@ -3801,21 +3872,52 @@
                     refInput.style.background = 'rgba(255,255,255,0.06)';
                 }
             }
-            // 🖐️ Device ID: compulsory for Trial plan, optional for all others
             const isTrial = plan.toLowerCase().includes('trial');
             document.getElementById('deviceIdRequired').style.display = isTrial ? 'inline' : 'none';
             document.getElementById('deviceIdOptionalTag').style.display = isTrial ? 'none' : 'inline';
             document.getElementById('qrFormError').style.display = 'none';
+
+            // 👇☝️ NEW: always start the wizard at Step 1 (QR screen)
+            goToStep1Silent();
+
             const modal = document.getElementById('qrModal');
             modal.scrollTop = 0;
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
+        // 👇☝️ NEW: switches modal view to Step 1 (QR) and resets progress UI
+        function goToStep1Silent() {
+            document.getElementById('qrStep1').style.display = 'block';
+            document.getElementById('qrStep2').style.display = 'none';
+            document.getElementById('stepProgressLine').style.width = '0%';
+            document.getElementById('stepCircle2').style.background = 'rgba(255,255,255,0.1)';
+            document.getElementById('stepCircle2').style.color = 'var(--muted)';
+            document.getElementById('stepDot2').style.opacity = '0.45';
+        }
+
+        // 👇☝️ NEW: moves wizard from Step 1 (QR) to Step 2 (form)
+        function goToStep2() {
+            document.getElementById('qrStep1').style.display = 'none';
+            document.getElementById('qrStep2').style.display = 'block';
+            document.getElementById('stepProgressLine').style.width = '100%';
+            document.getElementById('stepCircle2').style.background = 'var(--accent2)';
+            document.getElementById('stepCircle2').style.color = '#06121c';
+            document.getElementById('stepDot2').style.opacity = '1';
+            const modalInner = document.querySelector('#qrModal > div');
+            if (modalInner) modalInner.scrollTop = 0;
+        }
+
+        // 👇☝️ NEW: lets user go back from form (Step 2) to QR (Step 1)
+        function backToStep1() {
+            goToStep1Silent();
+        }
+
         function closeQR() {
             document.getElementById('qrModal').style.display = 'none';
             document.body.style.overflow = '';
         }
+
 
         // 👇☝️ NEW: clears all purchase form fields
         function clearPurchaseForm() {
