@@ -256,6 +256,266 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
 
+# 🚀 MRGARGSIR HEWP Tool - Complete Engineer Workflow Guide
+
+> **Purpose:**  
+> Follow this workflow to complete work faster, reduce manual effort, minimize errors, and utilize the full potential of the **MRGARGSIR HEWP Tool**.
+
+---
+
+# 📋 Standard Workflow
+
+```text
+Prepare Estimate
+        │
+        ▼
+Upload Estimate
+        │
+        ▼
+Prepare Bill (MB)
+        │
+        ▼
+Upload Bill (e-MB)
+        │
+        ▼
+Bill Match (If Required)
+        │
+        ▼
+Delete Uploaded Data (If Variation Required)
+        │
+        ▼
+Prepare Variation Table
+        │
+        ▼
+Upload Variation
+        │
+        ▼
+Save Variation Statement PDF
+(New DNIT Quantity)
+        │
+        ▼
+Upload Final Bill (e-MB)
+```
+
+---
+
+# Step 1️⃣ Prepare Estimate
+
+## Tool Helps You By
+
+You can prepare an estimate using any of the following:
+
+- Previous Estimate Template
+- Estimate PDF
+- Bill (MB) PDF downloaded from the portal
+
+Simply import the PDF into the **MRGARGSIR HEWP Tool**.
+
+The tool automatically converts the PDF into an editable **Excel** file. Make the required changes and save your estimate.
+
+### 💡 Tip
+
+If a suitable template already exists on the portal and only **minor changes** are required, use the portal template directly.
+
+If **major modifications** are required, import the PDF into the tool and prepare the estimate in Excel.
+
+---
+
+# Step 2️⃣ Upload Estimate
+
+Use the **Upload Estimate** feature.
+
+✅ The tool automatically uploads the estimate to the portal.
+
+---
+
+# Step 3️⃣ Prepare Bill (MB)
+
+## Case 1 – Estimate Already Available in Excel
+
+Simply update the quantities according to the executed work and prepare the Bill (MB).
+
+---
+
+## Case 2 – Estimate Prepared Directly on Portal
+
+No problem.
+
+1. Download the Estimate PDF.
+2. Import it into the tool.
+3. The tool converts it into Excel.
+4. Update quantities.
+5. Prepare the Bill (MB).
+
+---
+
+# Step 4️⃣ Upload Bill (e-MB)
+
+Use the **Upload Bill** feature.
+
+✅ The tool automatically uploads the prepared Bill (MB) to the portal.
+
+---
+
+# Step 5️⃣ Bill Match (If Required)
+
+Perform **Bill Match** whenever:
+
+- Quantities do not match.
+- Items are missing on the portal.
+- Portal data differs from your prepared bill.
+
+## Required Files
+
+| File | Description |
+|-------|-------------|
+| DNIT Quantity | Estimate Quantity |
+| Actual e-MB Quantity | Prepared Bill Quantity |
+
+> **Note:**  
+> Estimate Quantity is treated as **DNIT Quantity**, and the prepared Bill (MB) is treated as the **Actual e-MB Quantity**.
+
+You can also download the latest DNIT Quantity using the **Download Bill Data** feature.
+
+## Bill Match Process
+
+1. Open both files.
+2. Open the Actual Bill file.
+3. Click **Bill Match**.
+
+The tool will automatically:
+
+- Compare every item.
+- Find quantity differences.
+- Detect missing items.
+- Generate a detailed comparison report.
+- Suggest the required corrections.
+
+---
+
+# Step 6️⃣ Delete Uploaded Data (For Variation)
+
+If Variation is required:
+
+Use **Delete All Data**.
+
+The tool automatically removes all uploaded bill quantities from the portal.
+
+This prepares the bill for Variation.
+
+---
+
+# Step 7️⃣ Prepare Variation Table
+
+The Variation Table requires the same two files used in Bill Match.
+
+### Required Files
+
+- DNIT Quantity
+- Actual Bill (MB)
+
+### Process
+
+1. Open both files.
+2. Open the Actual Bill.
+3. Click **Variation Table**.
+
+The tool automatically:
+
+- Compares both files.
+- Calculates quantity variations.
+- Creates the complete Variation Table.
+- Generates all required instructions.
+
+---
+
+# Step 8️⃣ Upload Variation
+
+Use the **Upload Variation** feature.
+
+The tool automatically uploads the Variation Table to the portal.
+
+## After Upload
+
+1. Click **Preview Entered Items**.
+2. Save the **Variation Statement PDF**.
+
+> **Important**
+>
+> This Variation Statement PDF becomes your **new DNIT Quantity**.
+>
+> Use it for all future Bill Matching and Billing work.
+
+---
+
+# Step 9️⃣ Upload Final Bill (e-MB)
+
+Use the same Excel Bill file.
+
+Click **Upload Bill**.
+
+The tool automatically uploads the complete Bill (e-MB) to the portal.
+
+---
+
+# 📌 Important Notes
+
+## 1. Always Save Portal PDFs
+
+After making any changes on the portal, always save the generated PDF files.
+
+These files are useful for:
+
+- Future estimates
+- Bill preparation
+- Variation work
+- Record keeping
+- Reusing data in the tool
+
+---
+
+## 2. Always Download Latest Bill Data Before Variation
+
+Before starting any Variation work:
+
+Use **Download Bill Data**.
+
+This ensures you are working with the latest portal data and prevents quantity mismatches.
+
+---
+
+# ✅ Complete Workflow Summary
+
+| Step | Action |
+|------|--------|
+| 1 | Prepare Estimate |
+| 2 | Upload Estimate |
+| 3 | Prepare Bill (MB) |
+| 4 | Upload Bill (e-MB) |
+| 5 | Perform Bill Match (If Required) |
+| 6 | Delete Uploaded Data (If Variation Required) |
+| 7 | Prepare Variation Table |
+| 8 | Upload Variation |
+| 9 | Save Variation Statement PDF (New DNIT Quantity) |
+| 10 | Upload Final Bill (e-MB) |
+
+---
+
+# 🎯 Best Practices
+
+- ✅ Always keep Excel files organized.
+- ✅ Always save every PDF generated by the portal.
+- ✅ Download the latest Bill Data before starting Variation.
+- ✅ Perform Bill Match whenever quantities differ.
+- ✅ Save the Variation Statement PDF after every Variation.
+- ✅ Use the new DNIT Quantity for all future billing work.
+- ✅ Use Auto Upload features whenever available to reduce manual work and avoid data entry errors.
+
+---
+
+> **Following this workflow ensures faster processing, fewer manual errors, accurate quantity matching, and maximum utilization of the MRGARGSIR HEWP Tool.**
+
+---
 ## 🎥 Video Tutorials
 
 [Tutorials available on our YouTube channel: https://www.youtube.com/@HEWPTools](https://www.youtube.com/@HEWPTools)
