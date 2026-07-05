@@ -458,6 +458,30 @@ The tool automatically uploads the complete Bill (e-MB) to the portal.
 
 ---
 
+# 🔟 Match Uploaded Quantity (Final Verification)
+
+After uploading the Bill, verify the final amount.
+
+If the portal amount does **not** match your calculated amount:
+
+1. Download the uploaded bill data using **Download Bill Data**.
+
+2. Perform the **Bill Match** process again.
+
+The tool will generate a detailed comparison showing exactly where the mismatch exists.
+
+This helps identify:
+
+- Incorrect quantities
+
+- Missing items
+
+- Upload mistakes
+
+- Portal data inconsistencies
+
+---
+
 # 📌 Important Notes
 
 ## 1. Always Save Portal PDFs
