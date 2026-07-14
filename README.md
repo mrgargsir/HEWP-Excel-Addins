@@ -569,7 +569,7 @@ This ensures you are working with the latest portal data and prevents quantity m
 
 ### 🌍 Social Media & Community:
 
-- 📘 **Facebook:** [https://facebook.com/HEWPTool](https://facebook.com/HEWPTool)
+- 📘 **Facebook:** [https://facebook.com/HEWPTools](https://facebook.com/HEWPTools)
 - 📸 **Instagram:** [https://instagram.com/HEWPTools](https://instagram.com/HEWPTools)
 - 🐦 **X (Twitter):** [https://x.com/HEWPTools](https://x.com/HEWPTools)
 - 💬 **WhatsApp Group:** [Join Community](https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd)
