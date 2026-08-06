@@ -189,9 +189,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 ---
 
 
-# 2. **MRGARGSIR Chrome/Edge Extension (Free with Tool - No Extra Charges)**  
-
-🚀 **A small independent productivity extension for HEWP (Haryana Engineering Works Portal)**  
+# 2. **MRGARGSIR Chrome/Edge Extension (Free Utility)**  
 📌 **Developer:** **MRGARGSIR**  
 
 ## **🔧 Main Features of ChromeExtension**  
