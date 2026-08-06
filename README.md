@@ -147,10 +147,11 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ![Tool Help](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/help.png)
 
+0. **Windows Fixer Utility** - A single-script Windows debloat, privacy, and tweak tool with a GUI checkbox menu — run one command, pick what you want, done.
 1. **Feedback** – Quickly provide feedback, suggestions, bug reports, feature requests, enquiries, all in one under a single function.
 2. **Check for Updates** - Check for installer updates from this.
 3. **Request** - Ask for new features.
-4. **Install RustDesk** - for Remote Support, install open source Rust Desk.
+4. **Install RemoteSupport App** - for Remote Support, install listed software.
 5. **Install Metal Weight Calculator** - from Microsoft Store, install app.
 6. **Join WhatsApp Group** - Join the MRGARGSIR Tools community for all official updates on WhatsApp.
 7. **Say Hi on Whatsapp** - Direct Message us on WhatsApp.
@@ -170,8 +171,9 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 1. **Unit System** – Set your unit system, you are working in (Imperial or metric).
 2. **Browser** - Choose your browser for Web Automation (Chrome or Microsoft Edge).
-3. **Details** - See your Filed Detail as Name, District, Mobile Number.
+3. **Upload Method** - Direct, Template or Smart mode.
 4. **Auto Update** - Turn on or off auto install updates.
+3. **Details** - See your Filed Detail as Name, District, Mobile Number.
 5. **Reset Templates** - If Web Auto uploading Templates have any error then reset them with one click. But it will never happen.
 6. **Reset Rates** - Reset Rates if you have done something wrong.
 7. **Activate Licence** - New users can activate their licence from this.
@@ -189,21 +191,21 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 ---
 
 
-# 2. **MRGARGSIR Chrome/Edge Extension (Free Utility)**  
+# 2. **MRGARGSIR Chrome/Edge Extension (Free Aux Utility)**  
 📌 **Developer:** **MRGARGSIR**  
 
 ## **🔧 Main Features of ChromeExtension**  
 
-**🔗 Added Important Bookmarks** – Added Advanced Bookmarks, which will make easy use of the HEWP Portal.
+**🔗 Added Important Bookmarks** – Added Some Advanced Bookmarks.
 
-**🔍 Smart Dropdown Search** – Enhanced dropdown search for tenders.
+**🔍 Smart Dropdown Search** – Enhanced dropdown search for all.
 
-**☑️ Toggle All Checkbox.**  – Select/deselect all items at once
+**☑️ Toggle All Checkbox.**  – Select/deselect all check boxes at once
 
 **🎯 Enter Button Fixes** (Pressing the Enter button will not clear the form on the HEWP portal anymore)  
 
 
-#3. **Other Extension**
+#3. **Other Extension (Free Aux Utility)**
 🚀 **A small independent utilities extension**  
 
 **🆕 Volume Increase** (Volume increase features when low volume media is a problem)  
