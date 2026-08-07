@@ -1,15 +1,15 @@
-# 🚀 Estimation & Billing Tool (MRGARGSIR HEWP Tools) (Excel Tool and Browser Extension) 
+# 🚀 Estimation & Billing Tool (MRGARGSIR HEWP Tool) (Excel Tool and Browser Extension) 
 **by MRGARGSIR**
 
 <div align="center">
 
 [![Website](https://img.shields.io/badge/Website-Visit-blue?style=for-the-badge)](https://mrgargsir.github.io/HEWP-Excel-Addins/)
 [![Documents](https://img.shields.io/badge/Documents-Open-orange?style=for-the-badge)](#-documents)
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HEWPTools)
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@HEWPTool)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Contact-green?style=for-the-badge&logo=whatsapp)](https://wa.me/919728532828)
 
 **Speed up (Estimate/Bill/Variation/Consumption Preparation and Uploading on Portal) by 90%** with built-in templates, import Pdf, automation, and portal-compatible workflows.  
-Designed for **Engineers, Contractors and Department Employees**.
+Designed for **Engineer, Contractor and Department Employees**.
 
 <!-- 👆 Added version info from index.html -->
 > 🟢 **Latest Release:** HSR 2023 Amendments **(22-04-2026)** integrated • Stable Release
@@ -23,13 +23,13 @@ Designed for **Engineers, Contractors and Department Employees**.
 **This is an independent third-party tool NOT affiliated with, endorsed by, or connected to the HEWP portal or any government department. We are not an official HEWP and are not authorized by the Government in any way.**
 
 ---
-## 📋 What is Estimation & Billing Tool (HEWP Tools)?
+## 📋 What is Estimation & Billing Tool (HEWP Tool)?
 
 Estimation & Billing Tool is a comprehensive automation Excel toolkit designed specifically for engineers and Contractor works for Offline Tender and Online **Haryana Engineering Works Portal (HEWP)**. It combines **Excel Tool** and **web automation** to streamline Estimate Preparation, Material Quantity (Consumption) Preparation, BOQ Preparation, Variation Preparation and Online HEWP Upload work.
 
-## 📋 Tools will help you in many ways but the major points are:
+## 📋 Tool will help you in many ways but the major points are:
 
-1. **📊 Preparation of Estimates/Bills** - Create new professional Estimates/Bills or Import Pdf of Estimates/Bills from the Portal to Excel with HSR 2023 rates and latest amendments.
+1. **📊 Preparation of Estimates/Bills** - Create new professional Estimates/Bills or Import Pdf of Estimates/Bills from the Portal to Excel with HSR 2026 rates and latest amendments.
 2. **🧱 Preparation of Material Consumption** - Generate accurate material quantity tables with District wise Material Rates and Labour Cost instantly
 3. **🔄 Do the Variation with Portal Data** - Compare and highlight differences between your data and HEWP portal data
 4. **📤 Upload Estimate/Bill/Variation to HEWP Portal** - One-click upload to HEWP portal.
@@ -37,8 +37,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ## 👷 Who Can Use This Tool
 
-- Civil Engineers  
-- Contractors  
+- Civil Engineer
+- Contractor
 - Estimation & Billing Professionals  
 - Department Employees  
 
@@ -155,7 +155,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 5. **Install Metal Weight Calculator** - from Microsoft Store, install app.
 6. **Join WhatsApp Group** - Join the MRGARGSIR Tools community for all official updates on WhatsApp.
 7. **Say Hi on Whatsapp** - Direct Message us on WhatsApp.
-8. **YouTube Videos** - Watch Tutorial Videos on Official YouTube Channel [@HEWPTools](https://www.youtube.com/@HEWPTools)
+8. **YouTube Videos** - Watch Tutorial Videos on Official YouTube Channel [@HEWPTool](https://www.youtube.com/@HEWPTool)
 9. **Share Referral Code** - Share this tool with your friends and coworkers and get Benefits.
 10. **Buy License** - Buy License from website.
 11. **Get Trial** - Raise a request to get a Free Trial License.
@@ -187,8 +187,6 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ---
    
-
----
 
 
 # 2. **MRGARGSIR Chrome/Edge Extension (Free Aux Utility)**  
@@ -231,6 +229,17 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 - 🌐 Latest Chrome/Edge browser
 - 💾 8GB RAM
 - 📁 1GB free disk space
+
+---
+
+## 💳 Purchase & License Activation Workflow
+
+Follow this simple flow on our website to purchase and activate your license:
+
+1. **Scan & Pay:** Choose your plan on the website and scan the UPI QR code.
+2. **Fill Your Details:** Click **"Continue — i have Paid"** and enter your Name, Mobile Number, Email, District, 12-digit UTR/UPI Transaction ID, and Device ID (required for trials).
+3. **Submit Order:** Click **Submit** to automatically send your details to our server.
+4. **Fast Processing via WhatsApp (Optional):** On the confirmation screen, click the WhatsApp button to send your payment proof for faster key generation.
 
 ---
 
@@ -537,12 +546,12 @@ This ensures you are working with the latest portal data and prevents quantity m
 
 ---
 
-> **Following this workflow ensures faster processing, fewer manual errors, accurate quantity matching, and maximum utilization of the MRGARGSIR HEWP Tool.**
+> **Following this workflow ensures faster processing, fewer manual errors, accurate quantity matching, and maximum utilization of the MRGARGSIR HEWP Tool**
 
 ---
 ## 🎥 Video Tutorials
 
-[Tutorials available on our YouTube channel: https://www.youtube.com/@HEWPTools](https://www.youtube.com/@HEWPTools)
+[Tutorials available on our YouTube channel: https://www.youtube.com/@HEWPTool](https://www.youtube.com/@HEWPTool)
 
 
 ## 📄 Documents
@@ -570,8 +579,8 @@ This ensures you are working with the latest portal data and prevents quantity m
 ### 🌍 Social Media & Community:
 
 - 📘 **Facebook:** [https://facebook.com/HEWPTools](https://facebook.com/HEWPTools)
-- 📸 **Instagram:** [https://instagram.com/HEWPTools](https://instagram.com/HEWPTools)
-- 🐦 **X (Twitter):** [https://x.com/HEWPTools](https://x.com/HEWPTools)
+- 📸 **Instagram:** [https://instagram.com/HEWPTool](https://instagram.com/HEWPTool)
+- 🐦 **X (Twitter):** [https://x.com/HEWPTool](https://x.com/HEWPTool)
 - 💬 **WhatsApp Group:** [Join Community](https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd)
 - 📢 **WhatsApp Channel:** [Follow Updates](https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u)
 
@@ -593,7 +602,7 @@ This ensures you are working with the latest portal data and prevents quantity m
 
 ---
 
-## 🏆 Why Choose HEWP Tools?
+## 🏆 Why Choose HEWP Tool?
 
 ### ✨ Benefits for Engineers:
 - ⚡ Prepare estimates 90% faster
@@ -622,17 +631,15 @@ This ensures you are working with the latest portal data and prevents quantity m
 ---
 
 ## 🔖 SEO Keywords
+Speed up estimate  , #boq Preparation, Material Consumption & #hewp work with #mrgargsir #hewptool. it will build #estimate  , #Variation , Material #Consumption , Bill & Measurement Books and do Auto #hsr search, Auto copy-paste to templates, one-click #upload & More – designed for both #engineer  and #contractor. 
 
-HEWP Excel Addins, HEWP tools, Excel addins, HEWP tutorials, HEWP WhatsApp, HEWP YouTube, Estimate, Estimation, billing, bill, boq, tools, boq tool, boq tools, boq mrgargsir, mrgargsir, tool by mrgargsir, tools by mrgargsir, estimates, excel addins, Add-ins, construction estimation software, building cost estimator, quantity surveyor tools, construction billing software, BOQ preparation tool, material estimation, construction project management, Excel automation tools, estimating software India, construction calculator Excel, rate analysis tool, construction costing software, building estimation tool, contractor billing software, civil engineering Excel tools, construction takeoff software, budget estimation tool, construction management Excel, project costing software, residential estimation, commercial estimation, construction quote generator, measurement sheet tool, cost analysis Excel addin, construction database tools, HSR database, QTY tracking, Excel VSTO addins, third party Excel tools, construction industry software, estimator tools, building quantity surveyor, construction documentation tools, Excel plugins for construction, automated estimation software, mrgargsir tools, hewp tool, hewp tools, hewptools, hewptool, mrgargsir store, billing tools, construction reporting tools, Purchase, Buy, Trial.
-
-Haryana Engineering Works Portal 
-HEWP ESTIMATE, BOQ, MEASUREMENT BOOK TEMPLATE, HSR 2023 WITH LATEST AMENDMENTS, REAL TIME SEARCH ITEM NO., AUTO UNIT CONVERTER, RATE, RATE TYPE, UNIT FETCHER, AUTO DATA COPY PASTE TO TEMPLATE, AUTO INTELLIGENT DATA ARRANGED IN TEMPLATES WITH 0% ERROR CHANCE, TEMPLATE EXCEL UPLOADER TO PORTAL, CHROME BOOKMARKS LINK FOR SHORTCUTS ON WEBSITE - SAVE LOTS OF TIME, SEARCH BAR FOR HSR ITEM NUMBER AND SEARCH BAR FOR TENDER And All DropDown ON HEWP PORTAL via Chrome Extension, ONE CLICK INSTALLER. Available for Both CONTRACTOR AND EMPLOYEE LOGINS.
+#mrgargsirtools #hewptools #automation  #JE #e-MB #hewpupdate #exceladdin  #excelautomation #civilengineeringtools #constructionsoftware  #quantitysurveyor  #buildingcosts #hsr2026 #hewptutorial #civilengineers #estimator #billingengineer
 
 ---
 
 ## 📄 License & Copyright
 
-© **MRGARGSIR 2026** – All rights reserved
+© **MRGARGSIR 2025-2026** – All rights reserved
 
 This software is proprietary and licensed for use only by authorized customers with valid license keys.
 
@@ -640,13 +647,13 @@ This software is proprietary and licensed for use only by authorized customers w
 
 ## 🙏 Thank You
 
-**Thank you for choosing MRGARGSIR HEWP Tools!** 🚀
+**Thank you for choosing MRGARGSIR HEWP Tool!** 🚀
 
 We're committed to making your engineering work faster, easier, and error-free.
 
 For the latest updates, tutorials, and support:
 - 🌐 Visit: [mrgargsir.github.io/HEWP-Excel-Addins](https://mrgargsir.github.io/HEWP-Excel-Addins/)
-- 📺 Subscribe: [YouTube Channel @HEWPTools](https://www.youtube.com/@HEWPTools)
+- 📺 Subscribe: [YouTube Channel @HEWPTool](https://www.youtube.com/@HEWPTool)
 - 💬 Join: [WhatsApp Community](https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd)
 
 ---
