@@ -83,7 +83,7 @@
     var qrModal = document.getElementById('qrModal');
     if (!qrModal) return;
     document.getElementById('qrPlanLabel').textContent = plan + ' — ₹' + Number(amount).toLocaleString('en-IN');
-    document.getElementById('qrImage').src = '/tool/assets/qr/' + amount + '.PNG';
+    document.getElementById('qrImage').src = 'assets/qr/' + amount + '.PNG';
     qrModal.dataset.plan = plan;
     qrModal.dataset.amount = amount;
     ['buyerName', 'buyerMobile', 'buyerEmail', 'buyerDistrict', 'buyerUTR', 'buyerDeviceId'].forEach(function (id) {
