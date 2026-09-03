@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Favicon for all browsers -->
+    <link rel="icon" type="image/x-icon" href="/tool/images/favicon.ico">
+
+    <!-- PNG Favicons for different sizes -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/tool/images/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/tool/images/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/tool/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/tool/images/favicon-16x16.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/tool/images/apple-touch-icon.png">
+
+    <meta name="msapplication-TileImage" content="/tool/images/mstile-144x144.png">
+
+    <link rel="mask-icon" href="/tool/images/safari-pinned-tab.svg" color="#06b6d4">
+
+    <meta name="theme-color" content="#070c17" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/tool/assets/styles.css">
+    <title>Purchase a License — MRGARGSIR HEWP Tool</title>
+    <meta name="description"
+        content="Buy a Regular or Premium license for the HEWP Tool. Scan a UPI QR code, submit your details, and get your license key on WhatsApp.">
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="site-header">
+        <div class="container">
+            <a href="/index.html" class="brand">
+                <div class="brand-mark"><img src="/tool/images/logo.png" alt="MRGARGSIR Tools"></div>
+                <div class="brand-text">
+                    <strong>MRGARGSIR Tools</strong>
+                    <span>HEWP Tool & Extensions</span>
+                </div>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="/index.html" class="">Home</a>
+                <a href="/index.html#extensions" class="">Extensions</a>
+                <a href="/tool/tutorials.html" class="">Tutorials</a>
+                <a href="/tool/download.html" class="">Download</a>
+                <a href="/tool/purchase.html" class="nav-cta is-active">Purchase</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <div class="breadcrumb"><a href="/index.html">Home</a> / Purchase</div>
+                <span class="eyebrow">License plans</span>
+                <h1>Choose a plan and pay by UPI</h1>
+                <p>Scan the QR code, send your payment details, and get your license key on WhatsApp — usually within a
+                    few hours.</p>
+            </div>
+        </section>
+
+        <section class="section-tight">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:30px">
+                    <div class="plan-toggle">
+                        <button data-plan="premium" class="active">Premium</button>
+                        <button data-plan="regular">Regular</button>
+                    </div>
+                </div>
+
+                <!-- PREMIUM PLANS -->
+                <div class="plan-panel" data-panel="premium"
+                    style="display:flex;flex-direction:column;gap:14px;max-width:760px;margin:0 auto">
+                    <div class="card plan-row reveal">
+                        <div>
+                            <div class="name"><i class="fas fa-calendar-day" style="color:var(--violet-h)"></i> 30 Days
+                                — Premium</div>
+                            <div class="desc">Full access · all features included</div>
+                        </div>
+                        <div class="price-side">
+                            <div style="text-align:right">
+                                <div><span class="off-badge">₹50 OFF</span> <span class="strike">₹649</span></div>
+                                <div class="price">₹599</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openQR('599','30 Days - Premium')"><i
+                                    class="fas fa-qrcode"></i> Buy now</button>
+                        </div>
+                    </div>
+                    <div class="card plan-row reveal">
+                        <span class="popular-flag">Popular</span>
+                        <div>
+                            <div class="name"><i class="fas fa-calendar-week" style="color:var(--orange)"></i> 180 Days
+                                — Premium</div>
+                            <div class="desc">Full access · best value</div>
+                        </div>
+                        <div class="price-side">
+                            <div style="text-align:right">
+                                <div><span class="off-badge">₹300 OFF</span> <span class="strike">₹3,599</span></div>
+                                <div class="price">₹3,299</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openQR('3299','180 Days - Premium')"><i
+                                    class="fas fa-qrcode"></i> Buy now</button>
+                        </div>
+                    </div>
+                    <div class="card plan-row reveal">
+                        <div>
+                            <div class="name"><i class="fas fa-calendar-alt" style="color:var(--cyan-h)"></i> 365 Days —
+                                Premium</div>
+                            <div class="desc">Full access · full year coverage</div>
+                        </div>
+                        <div class="price-side">
+                            <div style="text-align:right">
+                                <div><span class="off-badge">₹600 OFF</span> <span class="strike">₹6,599</span></div>
+                                <div class="price">₹5,999</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="openQR('5999','365 Days - Premium')"><i
+                                    class="fas fa-qrcode"></i> Buy now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REGULAR PLANS -->
+                <div class="plan-panel" data-panel="regular"
+                    style="display:none;flex-direction:column;gap:14px;max-width:760px;margin:0 auto">
+                    <div class="card plan-row reveal">
+                        <div>
+                            <div class="name"><i class="fas fa-calendar-day" style="color:var(--orange)"></i> 30 Days —
+                                Regular</div>
+                            <div class="desc">Estimate preparation + analysis features</div>
+                        </div>
+                        <div class="price-side">
+                            <div style="text-align:right">
+                                <div class="price">₹499</div>
+                            </div>
+                            <button class="btn btn-warm btn-sm" onclick="openQR('499','30 Days - Regular')"><i
+                                    class="fas fa-qrcode"></i> Buy now</button>
+                        </div>
+                    </div>
+                    <div class="card plan-row reveal">
+                        <span class="popular-flag">Popular</span>
+                        <div>
+                            <div class="name"><i class="fas fa-calendar-week" style="color:var(--orange)"></i> 180 Days
+                                — Regular</div>
+                            <div class="desc">Best value</div>
+                        </div>
+                        <div class="price-side">
+                            <div style="text-align:right">
+                                <div><span class="off-badge">₹100 OFF</span> <span class="strike">₹2,799</span></div>
+                                <div class="price">₹2,699</div>
+                            </div>
+                            <button class="btn btn-warm btn-sm" onclick="openQR('2699','180 Days - Regular')"><i
+                                    class="fas fa-qrcode"></i> Buy now</button>
+                        </div>
+                    </div>
+                    <div class="card plan-row reveal">
+                        <div>
+                            <div class="name"><i class="fas fa-calendar-alt" style="color:var(--orange)"></i> 365 Days —
+                                Regular</div>
+                            <div class="desc">Full year · full regular access</div>
+                        </div>
+                        <div class="price-side">
+                            <div style="text-align:right">
+                                <div><span class="off-badge">₹400 OFF</span> <span class="strike">₹5,399</span></div>
+                                <div class="price">₹4,999</div>
+                            </div>
+                            <button class="btn btn-warm btn-sm" onclick="openQR('4999','365 Days - Regular')"><i
+                                    class="fas fa-qrcode"></i> Buy now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="small" style="text-align:center;margin-top:24px"><i class="fas fa-heart"
+                        style="color:var(--rose)"></i> Made with dedication for HEWP users</p>
+            </div>
+        </section>
+
+        <section class="section-tight">
+            <div class="container" style="max-width:820px">
+                <div class="section-head center">
+                    <span class="eyebrow">How it works</span>
+                    <h2 style="font-size:26px">Purchase &amp; license activation</h2>
+                </div>
+                <div class="card card-pad reveal">
+                    <div class="steps">
+                        <div class="step-row">
+                            <div class="step-num">1</div>
+                            <div>
+                                <h4>Scan &amp; pay</h4>
+                                <p>Choose your plan above and scan the UPI QR code with any UPI app.</p>
+                            </div>
+                        </div>
+                        <div class="step-row">
+                            <div class="step-num">2</div>
+                            <div>
+                                <h4>Fill your details</h4>
+                                <p>Click "Continue — I have paid" and enter your name, mobile, email, district, 12-digit
+                                    UTR number and device ID (required for trials).</p>
+                            </div>
+                        </div>
+                        <div class="step-row">
+                            <div class="step-num">3</div>
+                            <div>
+                                <h4>Submit order</h4>
+                                <p>Your details are sent to us automatically.</p>
+                            </div>
+                        </div>
+                        <div class="step-row">
+                            <div class="step-num">4</div>
+                            <div>
+                                <h4>Fast processing via WhatsApp</h4>
+                                <p>Optionally send your payment proof on WhatsApp from the confirmation screen for
+                                    faster key generation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- QR / details modal -->
+        <div id="qrModal" class="modal-overlay">
+            <div class="modal-box">
+                <button class="modal-close" onclick="closeQR()">✕</button>
+                <div class="modal-head">
+                    <div class="small" style="margin-bottom:2px">Complete your purchase</div>
+                    <div id="qrPlanLabel" style="font-size:19px;font-weight:800;margin-bottom:14px"></div>
+                    <div style="display:flex;align-items:center;gap:20px">
+                        <div style="display:flex;align-items:center;gap:6px;flex:1">
+                            <div
+                                style="width:24px;height:24px;border-radius:50%;background:var(--cyan);color:#06121c;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                1</div>
+                            <span style="font-size:11px;font-weight:700">Pay via QR</span>
+                        </div>
+                        <div
+                            style="flex:0 0 30px;height:2px;background:var(--ov-0p12);border-radius:2px;overflow:hidden">
+                            <div id="stepProgressLine"
+                                style="height:100%;width:0%;background:var(--cyan);transition:width .4s ease"></div>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:6px;flex:1;opacity:.6">
+                            <div id="stepCircle2"
+                                style="width:24px;height:24px;border-radius:50%;background:var(--ov-0p1);color:var(--muted);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                2</div>
+                            <span style="font-size:11px;font-weight:700;color:var(--muted)">Your details</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <div id="qrStep1" style="text-align:center">
+                        <div
+                            style="background:white;padding:14px;border-radius:16px;display:inline-block;margin-bottom:16px;box-shadow:0 8px 30px rgba(0,0,0,0.35)">
+                            <img id="qrImage" src="" alt="UPI QR Code"
+                                style="width:220px;height:220px;display:block;border-radius:8px">
+                        </div>
+                        <p style="font-size:13px;color:var(--muted);margin:0 0 4px">Scan with <strong
+                                style="color:var(--text)">Paytm / BHIM / any UPI app</strong></p>
+                        <p style="font-size:12px;color:var(--muted);margin:0 0 22px">Name: Sumit Garg</p>
+                        <button class="btn btn-primary btn-block" onclick="goToStep2()"><i
+                                class="fas fa-check-circle"></i> Continue — I have paid</button>
+                        <p style="font-size:11px;color:var(--muted);margin-top:14px;margin-bottom:0"><i
+                                class="fas fa-arrow-down" style="color:var(--cyan-h)"></i> Next: enter your details so
+                            we can verify payment &amp; send your license</p>
+                    </div>
+
+                    <div id="qrStep2" style="display:none;text-align:left">
+                        <button onclick="backToStep1()"
+                            style="background:none;border:none;color:var(--cyan-h);font-size:12px;font-weight:700;cursor:pointer;padding:0;margin-bottom:14px;display:flex;align-items:center;gap:5px"><i
+                                class="fas fa-arrow-left"></i> Back to QR code</button>
+
+                        <div
+                            style="display:flex;align-items:center;gap:10px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:10px;padding:10px 12px;margin-bottom:18px">
+                            <i class="fas fa-check-circle" style="color:var(--green);font-size:16px"></i>
+                            <span style="font-size:12px">Now enter your payment &amp; contact details below</span>
+                        </div>
+
+                        <div class="field">
+                            <label>Full name <span class="req">*</span> <span
+                                    style="color:var(--muted-dim);font-size:11px">(e.g. Ramesh Kumar)</span></label>
+                            <input id="buyerName" type="text">
+                        </div>
+                        <div class="field">
+                            <label>Mobile number <span class="req">*</span> <span
+                                    style="color:var(--muted-dim);font-size:11px">(e.g. 9876543210)</span></label>
+                            <input id="buyerMobile" type="tel" maxlength="10">
+                        </div>
+                        <div class="field">
+                            <label>Email <span class="req">*</span></label>
+                            <input id="buyerEmail" type="email">
+                        </div>
+                        <div class="field">
+                            <label>District <span class="req">*</span></label>
+                            <input id="buyerDistrict" type="text">
+                        </div>
+                        <div class="field">
+                            <label>UTR / UPI transaction number <span class="req">*</span> <span
+                                    style="color:var(--muted-dim);font-size:11px">(exactly 12 digits)</span></label>
+                            <input id="buyerUTR" type="text" maxlength="12">
+                        </div>
+                        <div class="field">
+                            <label>Referral code <span
+                                    style="color:var(--muted-dim);font-size:11px">(optional)</span></label>
+                            <input id="buyerRef" type="text">
+                        </div>
+                        <div class="field" id="deviceIdWrapper">
+                            <label>Device ID <span id="deviceIdRequired" class="req">*</span><span
+                                    id="deviceIdOptionalTag"
+                                    style="display:none;color:var(--muted-dim);font-size:11px">(optional)</span> <span
+                                    style="color:var(--muted-dim);font-size:11px">(e.g.
+                                    sOiYgZXrnem2xHm1DnNp...)</span></label>
+                            <input id="buyerDeviceId" type="text" style="font-family:monospace;font-size:13px">
+                            <div
+                                style="margin-top:6px;padding:8px 10px;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:8px;font-size:11px;color:var(--muted)">
+                                <i class="fas fa-info-circle" style="color:var(--cyan-h);margin-right:4px"></i>
+                                Find your Device ID in: Tool Settings → Change License → Copy ID button.
+                            </div>
+                        </div>
+
+                        <div id="qrFormError" style="display:none;color:var(--rose);font-size:12px;margin-bottom:12px">
+                        </div>
+
+                        <button class="btn btn-primary btn-block" onclick="submitOrder()"><i
+                                class="fas fa-check-circle"></i> Submit</button>
+                        <p style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:0;text-align:center">
+                            <i class="fas fa-info-circle"></i> Your license key will be sent on WhatsApp after
+                            verification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation modal -->
+        <div id="confirmModal" class="modal-overlay" style="align-items:center">
+            <div class="modal-box" style="max-width:400px;border-color:rgba(16,185,129,0.35)">
+                <button class="modal-close" onclick="closeConfirm()">✕</button>
+                <div class="modal-body" style="padding-top:32px">
+                    <div style="text-align:center;margin-bottom:20px">
+                        <div style="font-size:40px;margin-bottom:8px">✅</div>
+                        <div style="font-size:20px;font-weight:800;color:var(--green);margin-bottom:4px">Order
+                            submitted!</div>
+                        <div class="small">Your details have been recorded. Now send your payment proof on WhatsApp to
+                            process your license fast.</div>
+                    </div>
+                    <div id="confirmSummary"
+                        style="background:var(--ov-0p04);border:1px solid var(--ov-0p08);border-radius:12px;padding:14px;font-size:13px;color:var(--text);margin-bottom:20px;line-height:1.8">
+                    </div>
+                    <button class="btn btn-block"
+                        style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;margin-bottom:10px"
+                        onclick="sendWhatsAppFromConfirm()"><i class="fab fa-whatsapp"></i> Send payment proof on
+                        WhatsApp</button>
+                    <p style="font-size:11px;color:var(--muted);text-align:center;margin:0"><i
+                            class="fas fa-info-circle"></i> Close this popup only after sending on WhatsApp. Closing
+                        will clear the form.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/index.html" class="brand">
+                        <div class="brand-mark"><img src="/tool/images/logo.png" alt="MRGARGSIR Tools"></div>
+                        <div class="brand-text">
+                            <strong>MRGARGSIR Tools</strong>
+                            <span>HEWP Tool & Extensions</span>
+                        </div>
+                    </a>
+                    <p>An independent automation toolkit for engineers and contractors working with the Haryana
+                        Engineering Works Portal — built to cut estimation and billing work by 90%.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/hewptool" target="_blank" rel="noopener noreferrer"
+                            title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/hewptool" target="_blank" rel="noopener noreferrer"
+                            title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://youtube.com/@hewptool" target="_blank" rel="noopener noreferrer"
+                            title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank"
+                            rel="noopener noreferrer" title="WhatsApp Group"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <ul>
+                        <li><a href="/index.html#features">HEWP Excel Tool</a></li>
+                        <li><a href="/tool/download.html">Download</a></li>
+                        <li><a href="/tool/purchase.html">Pricing & purchase</a></li>
+                        <li><a href="/tool/tutorials.html">Tutorials & setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Extensions</h5>
+                    <ul>
+                        <li><a href="/tool/extension-chrome.html">Chrome / Edge Extension</a></li>
+                        <li><a href="/tool/extension-whatsapp.html">WhatsApp Sender</a></li>
+                        <li><a href="/tool/extension-macro.html">Web Automation Macro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="mailto:help@mrgargsir.store">help@mrgargsir.store</a></li>
+                        <li><a href="https://wa.me/919728532828" target="_blank" rel="noopener noreferrer">+91 97285
+                                32828</a></li>
+                        <li><a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank"
+                                rel="noopener noreferrer">WhatsApp community</a></li>
+                        <li><a href="/index.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Important disclaimer:</strong> This is an independent third-party tool, not affiliated with,
+                endorsed by, or connected to the HEWP portal or any government department.
+            </div>
+            <div class="footer-bottom">
+                <span>© MRGARGSIR 2026 — All rights reserved</span>
+                <span>Made for Engineers, JEs & Contractors across Haryana</span>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="/tool/assets/site.js"></script>
+</body>
+
+</html>

@@ -54,15 +54,15 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 
 
-### 🌐 Estimate Preparation Features (First Tab: **`Auto E. TOOLS`**)
+### 🌐 Estimate Preparation Features (First Tab: **`E. TOOLS`**)
 
 ![E. Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/etools.png)
 
 - **Blank Format** – Generate Blank Format for manual entry.
-- **Import Bill/Estimates** – Import Downloaded Detailed Estimates, Rough Estimates, MB Bill, Variation, Template OR Tender Notic Pdf in Excel with Proper BOQ Formating.
+- **Import Bill/Estimates Pdf to Excel** – Import Downloaded Detailed Estimates, Rough Estimates, MB Bill, Variation, Template OR Tender Notic Pdf in Excel with Proper BOQ Formating.
 - **Multiply and Get Quantity** – Multiply dimensions (Nos. x length × breadth × depth) with advance formula.
 - **Total Quantity with intelligent Unit Converter** – It will do auto Total of one item number's quantities and put in row below, then auto convert to metric units where required and put in row below of total. Also, auto convert to steel kg if required.
-- **Auto Rate & Description Fetcher** – Automatically pull Unit, Rates, Rate Type, and Descriptions from Latest HSR 2023 (Haryana Schedule of Rates) and Amendments and insert for each item.
+- **Auto Rate & Description Fetcher** – Automatically pull Unit, Rates, Rate Type, and Descriptions from Latest HSR 2023 (Haryana Schedule of Rates) and Amendments with all Premium Dates and insert for each item.
 - **Amount Calculator** – Compute amounts by multiplying rate × quantity. Also auto-calculates GST, contingency, and grand total with full sheet formatting. Apply the SR number to each item. Prepare Bill or Estimate in Good Format.
 - **Steel Summary Generator** – Create a Dia Wise Steel Consumption summary in Kg at the bottom of the Bill/Estimate.
 - **Abstract Bill Summary** - Generate a complete abstract Bill or estimate summary in a new worksheet, next to the active sheet.
@@ -77,7 +77,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 ---
 
 
-### 📑 Template Management (Second Tab: **`Template`**)
+### 📑 Template Management (Second Tab: **`Library`**)
 
 ![Templates](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/templates.png)
 
@@ -96,27 +96,30 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 
 ### 🌐 Web Automation Features (Third Tab: **`HEWP WebAuto`**)
 
-![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtools.png)
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsest.png)
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsbill.png)
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolstemp.png)
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsvar.png)
 
 **📤 With One-Click ease** 
 
+0. **Work Type** - Select any Work Estimate, E-Mb, Template , Variation Upload Type.
 1. **Login to HEWP Portal** – Securely Filled saved credentials and Keep Login details for future fast fillup. Login data is completely saved in your hard drive Excel file. You can verify it anytime.
 2. **Close Chrome & Clean Resources** – Closes browser sessions and frees memory.
 3. **Stop Upload** – Stop any long upload in middle.
 4. **Download e-MB Bill Data** – Download complete bill data from the HEWP portal in Excel Format from HEWP, including a summary sheet.
 5. **Delete any Portal Data** – Remove all previously filled bill data items in one click on the HEWP portal.
-6. **Auto Upload Full Workbook e-Mb/Estimate** – Automatically upload The Whole workbook with all components in the HEWP Portal.
-7. **Auto Upload Full Bill/e-MB/Estimate/Templates** – Automatically upload The Whole Estimate or Template in the HEWP Portal.
-8. **Auto Upload Variation** - Automatically upload Full Variation (Add item, Increase Quantity, Remove item, Decrease quantity) to HEW Portal.
+6. **Add components** – Automatically Add all components from The Whole workbook in Estimate in the HEWP Portal.
+6. **Auto Upload all components** – Automatically upload all components from The Whole workbook in the HEWP Portal.
+7. **Auto Upload single component** – Automatically upload single component in the HEWP Portal.
+8. **Auto Upload single item** – Automatically upload one item at a time in the HEWP Portal.
+9. **Auto Upload Variation** - Automatically upload Full Variation (Add item, Increase Quantity, Remove item, Decrease quantity) to HEW Portal.
 
-![HEWP Web Manual](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsm.png)
-
-1. **Copy Data to HEWP Templates** – Automatically convert unit to Meter if required and transfer data into the HEWP Excel template.
-2. **HSR Item Number Selector** – Select HSR item number and Rate Type on the HEWP Portal for filling and uploading data.
-3. **Upload Template to Portal** – Upload your pre-filled template directly to the HEWP Portal.
-4. **PDF** – it will make a PDF of selected cells, attach and Upload With Manual Entry.
-5. **Direct Data Entry** – Skip the template; Enter data directly into the hewp portal Table.
-6. **Semi Auto Uploader e-MB/Estimate/template** – Auto Upload one item at a time in e-MB/Estimate or Templates in HEW Portal.
+10. **Copy Data to HEWP Templates** – Automatically convert unit to Meter if required and transfer data into the HEWP Excel template.
+11. **HSR Item Number Selector** – Select HSR item number and Rate Type on the HEWP Portal for filling and uploading data.
+12. **Upload Template to Portal** – Upload your pre-filled template directly to the HEWP Portal.
+13. **PDF** – it will make a PDF of selected cells, attach and Upload With Manual Entry.
+14. **Direct Data Entry** – Skip the template; Enter data directly into the hewp portal Table.
 
 ---
 
@@ -178,7 +181,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 4. **Steel Method** - Pdf, Detailed or Concise.
 5. **UI Customization** - Many Advance settings.
 6. **Auto Update** - Turn on or off auto install updates.
-7. **Details** - See your Filed Detail as Name, District, Mobile Number.
+7. **User Info** - See your Filed Detail as Name, District, Mobile Number.
 8. **Activate Licence** - New users can activate their licence from this.
 9. **License info** - Check your active Licence Info.
 10. **Reverify Licence** - if the licence does not sync with the server Auto then use this feature to sync in real time.
@@ -203,12 +206,19 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 **🎯 Enter Button Fixes** (Pressing the Enter button will not clear the form on the HEWP portal anymore)  
 
 
-#3. **Other Extension (Free Aux Utility)**
-🚀 **A small independent utilities extension**  
+#3. **Whatsapp sender (Free Aux Utility)**
+🚀 **A small independent automation extension**  
 
 **🆕 Volume Increase** (Volume increase features when low volume media is a problem)  
 **✅ Dark Mode** (Enable Dark mode on all websites)
 **💬 Whatsapp Message sender** (Auto send message to multiple numbers)
+
+#4. **Web Automation Macro (Free Aux Utility)**
+🚀 **A small independent automation extension**  
+
+**🆕 Record Steps** (Record steps and save as workflow)  
+**✅ Edit mode** (Edit recorded steps and add new steps)
+**🔄️ Reload Support** (No matter how many times you reload, the automation will continue from where it left off)
 
 ---
 
