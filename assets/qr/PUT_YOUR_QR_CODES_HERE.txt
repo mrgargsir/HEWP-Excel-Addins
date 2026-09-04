@@ -1,0 +1,10 @@
+Put your UPI QR code images in this folder, named to match each plan amount used in purchase.html:
+
+  499.PNG
+  599.PNG
+  2699.PNG
+  3299.PNG
+  4999.PNG
+  5999.PNG
+
+Once added, delete this text file.
