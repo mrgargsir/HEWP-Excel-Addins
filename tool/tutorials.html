@@ -1,283 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
+    <title>Tutorials & Installation Guide — HEWP Tool by MRGARGSIR</title>
+    <meta name="description" content="Video tutorials, installation guide, system requirements and before/after comparison for HEWP Tool by MRGARGSIR. Step-by-step setup for Estimation & Billing Excel Tool.">
+    <meta name="keywords"
+        content="HEWP Excel Addins, Estimate, import, pdf to excel, import in excel, HEWP Tool, Excel addin, HEWP tutorials, HEWP WhatsApp, HEWP YouTube, billing, bill, boq tool, mrgargsir, tools by mrgargsir, BOQ preparation tool, building estimation tool, Metal Weight Calculator, contractor billing software, civil engineering Excel tools, third party Excel tools, automated estimation software, mrgargsir tools, hewptool, variation tool, mrgargsir store" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mrgargsir.github.io/HEWP-Excel-Addins/tool/tutorials.html" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
     <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#0f1720">
     <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
     <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#06b6d4">
-    <meta name="theme-color" content="#070c17" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0f1720">
+    <meta name="msapplication-navbutton-color" content="#0f1720">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="assets/styles.css">
-    <title>Tutorials & Setup Guide — MRGARGSIR HEWP Tool</title>
-    <meta name="description" content="Video tutorials, installation guide and system requirements for the HEWP Tool by MRGARGSIR.">
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="brand">
-                <div class="brand-mark"><img src="images/logo.png" alt="MRGARGSIR Tools"></div>
-                <div class="brand-text">
-                    <strong>MRGARGSIR Tools</strong>
-                    <span>HEWP Tool & Extensions</span>
+    <canvas id="threejs-canvas"></canvas>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <div id="scroll-progress"></div>
+
+    <div class="floating-social">
+        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer" class="floating-social-btn facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/hewptool" target="_blank" rel="noopener noreferrer" class="floating-social-btn instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/hewptool" target="_blank" rel="noopener noreferrer" class="floating-social-btn twitter" title="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" /></svg>
+        </a>
+        <a href="https://youtube.com/@hewptool" target="_blank" rel="noopener noreferrer" class="floating-social-btn youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer" class="floating-social-btn whatsapp-group" title="WhatsApp Group"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank" rel="noopener noreferrer" class="floating-social-btn whatsapp-channel" title="WhatsApp Channel"><i class="fas fa-bullhorn"></i></a>
+    </div>
+
+    <div class="wrap">
+        <header>
+            <a href="../index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;">
+                <div class="brand">
+                    <div class="logo pulse">
+                        <img src="images/logo.png" alt="MRGARGSIR Tools" style="width:100%;height:100%;object-fit:contain;padding:0px;">
+                    </div>
+                    <div>
+                        <h1>Estimation & Billing HEWP Tool</h1>
+                        <p>(MRGARGSIR Tool)</p>
+                        <p>By MRGARGSIR</p>
+                    </div>
                 </div>
             </a>
-            <nav class="main-nav" id="mainNav">
-                <a href="../index.html" class="">Home</a>
-                <a href="../index.html#extensions" class="">Extensions</a>
-                <a href="tutorials.html" class="is-active">Tutorials</a>
-                <a href="download.html" class="">Download</a>
-                <a href="purchase.html" class="nav-cta ">Purchase</a>
+            <nav>
+                <a class="nav-btn" href="../index.html">Home</a>
+                <a class="nav-btn" href="../index.html#features">Features</a>
+                <div class="nav-dropdown">
+                    <button class="nav-btn nav-dropdown-trigger"><i class="fas fa-puzzle-piece"></i> Extensions <i class="fas fa-chevron-down" style="font-size:10px"></i></button>
+                    <div class="nav-dropdown-menu">
+                    <a href="extension-chrome.html"><i class="fab fa-chrome"></i> Chrome/Edge Utility</a>
+                    <a href="extension-whatsapp.html"><i class="fab fa-whatsapp"></i> WhatsApp Sender</a>
+                    <a href="extension-macro.html"><i class="fas fa-robot"></i> Web Automation Macro</a>
+                    <a href="metalweightcal.html"><i class="fas fa-weight-scale"></i> Metal Weight Calculator</a>
+                    </div>
+                </div>
+                <a class="nav-btn primary" href="tutorials.html">Tutorials</a>
+                <a class="nav-btn" href="download.html">Download</a>
+                <a class="nav-btn" href="purchase.html">Purchase</a>
+                <button class="nav-btn" id="documentsBtn"><i class="fas fa-book-open"></i> Documents</button>
+                <button class="nav-btn" id="contactBtn"><i class="fas fa-envelope"></i> Contact</button>
+                <button class="theme-toggle" id="themeToggleBtn" title="Toggle light / dark theme" aria-pressed="false">
+                    <span class="knob"><i class="fas fa-moon"></i></span>
+                </button>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+
+            <div class="contact-modal" id="contactModal">
+                <h3><i class="fas fa-headset"></i> Contact Support</h3>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="label">Email</div>
+                        <div class="value">help@mrgargsir.store</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="label">WhatsApp</div>
+                        <div class="value">+91 9728532828</div>
+                    </div>
+                </div>
+
+                <div class="contact-actions">
+                    <button class="contact-btn email" id="emailBtn">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                    <button class="contact-btn whatsapp" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> Message
+                    </button>
+                    <button class="contact-btn whatsapp" id="whatsappgroupBtn">
+                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank"
+                            rel="noopener noreferrer"  title="WhatsApp Group">
+                            <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                        </a>
+                    </button>
+                </div>
+
+                <!-- 👉 Social Media Links -->
+                <div class="social-divider">
+                    <h4><i class="fas fa-share-nodes"></i> Follow Us</h4>
+                    <div class="social-links-modal">
+                        <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer"
+                            class="social-btn facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/hewptool" target="_blank" rel="noopener noreferrer"
+                            class="social-btn instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/hewptool" target="_blank" rel="noopener noreferrer"
+                            class="social-btn twitter" title="X (Twitter)">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path
+                                    d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" />
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@hewptool" target="_blank" rel="noopener noreferrer"
+                            class="social-btn youtube" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank"
+                            rel="noopener noreferrer" class="social-btn whatsapp-group" title="WhatsApp Group">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://whatsapp.com/channel/0029VbBYrvx47XeIXLM2PU3u" target="_blank"
+                            rel="noopener noreferrer" class="social-btn whatsapp-channel" title="WhatsApp Channel">
+                            <i class="fas fa-bullhorn"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        </header>
+
+                <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="documents-modal" id="documentsModal">
+            <button class="close-btn" id="closeDocumentsModal">
+                <i class="fas fa-times"></i>
             </button>
+            <h3><i class="fas fa-file-alt"></i> Documentation</h3>
+            <ul class="document-list">
+                <li class="document-item">
+                    <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc5.pdf"
+                        target="_blank" rel="noopener noreferrer" class="document-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Latest Intro</span>
+                        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/README.md"
+                        target="_blank" rel="noopener noreferrer" class="document-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>2. Intro</span>
+                        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc6.pdf"
+                        target="_blank" rel="noopener noreferrer" class="document-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>3. Intro</span>
+                        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc7.pdf"
+                        target="_blank" rel="noopener noreferrer" class="document-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>4. Intro</span>
+                        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc8.pdf"
+                        target="_blank" rel="noopener noreferrer" class="document-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>5. Intro</span>
+                        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/docs/doc9.pdf"
+                        target="_blank" rel="noopener noreferrer" class="document-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>6. Intro</span>
+                        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--muted);"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </header>
-    <main id="main">
-        <section class="page-hero">
-            <div class="container">
-                <div class="breadcrumb"><a href="../index.html">Home</a> / Tutorials</div>
-                <span class="eyebrow">Learn the tool</span>
-                <h1>Tutorials &amp; setup guide</h1>
-                <p>Everything you need to install, configure and master the HEWP Tool — videos, a step-by-step guide, and system requirements.</p>
-            </div>
-        </section>
 
-        <section class="section-tight" style="padding-top:0">
-            <div class="container">
-                <div style="display:flex;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line-soft);padding-bottom:18px;margin-bottom:8px">
-                    <a href="#videos" class="btn btn-sm btn-ghost">🎥 Video tutorials</a>
-                    <a href="#installation" class="btn btn-sm btn-ghost">📦 Installation guide</a>
-                    <a href="#requirements" class="btn btn-sm btn-ghost">💻 System requirements</a>
-                    <a href="#before-after" class="btn btn-sm btn-ghost">⚖️ Before vs after</a>
-                </div>
+        <main>
+            <div class="crumb-bar"><a href="../index.html">Home</a> <span>/</span> <span>Tutorials & Setup</span></div>
+            <div class="page-hero fadeInUp">
+                <h2>📚 Tutorials & Setup Guide</h2>
+                <p>Everything you need to install, configure and master HEWP Tool — videos, step-by-step guide and system requirements.</p>
             </div>
-        </section>
 
-        <section class="section" id="videos">
-            <div class="container">
-                <div class="section-head">
-                    <span class="eyebrow">🎥 Video tutorials</span>
-                    <h2 style="font-size:28px">Step-by-step walkthroughs</h2>
-                </div>
-                <div class="grid grid-2" style="grid-template-columns:1.1fr 1fr;gap:32px;align-items:start">
-                    <div class="reveal">
-                        <div style="position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;border:1px solid var(--line)">
-                            <iframe id="mainVideoFrame" style="position:absolute;inset:0;width:100%;height:100%" src="https://www.youtube.com/embed/AUGClE_q9IY" title="Estimation & Billing Tool Promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <p class="small" style="margin-top:14px;text-align:center">
-                            <i class="fas fa-youtube" style="color:var(--cyan-h)"></i> All tutorials are on our
-                            <a href="https://www.youtube.com/watch?v=m73zY87xw6s&list=PLCbMlKNK4S80cjerEh8_Fy19SYs13wGXq&index=3" target="_blank" rel="noopener noreferrer" style="color:var(--violet-h);text-decoration:underline">YouTube channel</a>
-                        </p>
-                        <div style="margin-top:16px;text-align:center">
-                            <a href="https://www.youtube.com/@hewptool" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm"><i class="fab fa-youtube"></i> View full playlist on YouTube</a>
-                        </div>
-                    </div>
-
-                    <div class="reveal">
-                        <h4 style="margin-bottom:14px;font-size:15px">Available tutorials</h4>
-                        <div style="display:flex;flex-direction:column;gap:10px;max-height:520px;overflow-y:auto;padding-right:4px">
-                            <div class="card video-card" data-video-id="m73zY87xw6s" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--violet-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Complete installation walkthrough</h4><p class="small" style="margin:2px 0 0">Step-by-step install guide (5 min)</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="KojwX-swQHY" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--violet-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Small setting setup walkthrough</h4><p class="small" style="margin:2px 0 0">Set a few settings first (1 min)</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="XBNpkf5pNf0" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">E. Tool tab features — part 1</h4><p class="small" style="margin:2px 0 0">Auto multiply, sum, HSR rate, amount</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="7wgip7SyUm0" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">E. Tool tab features — part 2</h4><p class="small" style="margin:2px 0 0">Insert row, copy sheet, round off, metric unit</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="3nvFzOGEOMk" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">E. Tool tab features — part 3</h4><p class="small" style="margin:2px 0 0">Steel function, custom function, steel summary</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="AUGClE_q9IY" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">E. Tool tab features — promo</h4><p class="small" style="margin:2px 0 0">Everything with just one click</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="-N_-BZdy3hE" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Web tool tab features — promo</h4><p class="small" style="margin:2px 0 0">Everything with just one click</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="KhV7H-ZgRgg" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Web tool tab features — detailed</h4><p class="small" style="margin:2px 0 0">Everything with just one click, semi-auto on error</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="ChAsdEFmwww" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Bill/estimate compare &amp; portal bill download</h4><p class="small" style="margin:2px 0 0">Everything with just one click</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="saAwyBmC3G0" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Auto upload bill in Contractor ID</h4><p class="small" style="margin:2px 0 0">Everything with just one click</p></div>
-                            </div>
-                            <div class="card video-card" data-video-id="eBoGeBiaTrE" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px">
-                                <i class="fas fa-play-circle" style="color:var(--cyan-h);font-size:22px;flex-shrink:0"></i>
-                                <div style="flex:1"><h4 style="font-size:14px;font-family:'Inter',sans-serif">Auto delete bill in Contractor ID</h4><p class="small" style="margin:2px 0 0">Everything with just one click</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="page-tabs">
+                <a class="page-tab active" href="#videos">🎥 Video Tutorials</a>
+                <a class="page-tab" href="#installation">📦 Installation Guide</a>
+                <a class="page-tab" href="#requirements">💻 System Requirements</a>
+                <a class="page-tab" href="#before-after">⚖️ Before vs After</a>
             </div>
-        </section>
-        <section class="section" id="installation">
-            <div class="container">
-                <div class="section-head">
-                    <span class="eyebrow">📦 Installation guide</span>
-                    <h2 style="font-size:28px">Five minutes, no technical skill required</h2>
+
+        <section id="videos">
+            <h3>🎥 Video Tutorials</h3>
+            <div class="two-col">
+                <div class="fadeInLeft">
+                    <div class="video-container" style="aspect-ratio:16/9; width:100%; background:#000; border-radius:16px; overflow:hidden;">
+                        <iframe id="mainVideoFrame" width="100%" height="100%"
+                            src="https://www.youtube.com/embed/AUGClE_q9IY" title="E. Tool Promo" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen style="width:100%; height:100%; border:0; border-radius:16px;">
+                        </iframe>
+                    </div>
+                    <p class="small" style="margin-top:15px;text-align:center;color:var(--accent2)">
+                        <i class="fas fa-youtube"></i> All tutorials available on our
+                        <a href="https://www.youtube.com/watch?v=m73zY87xw6s&list=PLCbMlKNK4S80cjerEh8_Fy19SYs13wGXq&index=3"
+                            target="_blank" style="color:var(--accent1);text-decoration:underline">YouTube Channel</a>
+                    </p>
+                    <div style="margin-top:16px;text-align:center">
+                        <a href="https://www.youtube.com/@hewptool" target="_blank" class="cta primary"
+                            style="padding:12px 20px;font-size:14px">
+                            <i class="fab fa-youtube"></i> View Full Playlist on YouTube
+                        </a>
+                    </div>
                 </div>
-                <div class="card card-pad reveal">
-                    <div class="steps">
-                        <div class="step-row">
-                            <div class="step-num">1</div>
-                            <div><h4>Download the installer</h4><p>Get Installer.exe — it includes the Excel Tool, Chrome/Edge extension and dependencies.</p></div>
+
+                <div class="fadeInRight">
+                    <h4 style="margin-top:0">📚 Available Tutorials</h4>
+                    <!-- 👇 FINGER: All 10 video cards — click to load in left iframe -->
+                    <div class="video-list-container">
+                        
+                        <div class="feature video-card" data-video-id="AUGClE_q9IY" style="cursor:pointer">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                <div style="flex:1">
+                                    <h4 style="margin:0">E. Tool Tab Features Promo</h4>
+                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click</p>
+                                </div>
+                                <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                            </div>
                         </div>
-                        <div class="step-row">
-                            <div class="step-num">2</div>
-                            <div><h4>Run the installer</h4><p>Double-click the downloaded file and follow the on-screen instructions. Default settings are the easiest.</p></div>
+                        <div class="feature video-card" data-video-id="-N_-BZdy3hE" style="cursor:pointer">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                <div style="flex:1">
+                                    <h4 style="margin:0">Web Tool Tab Features Promo</h4>
+                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click</p>
+                                </div>
+                                <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                            </div>
                         </div>
-                        <div class="step-row">
-                            <div class="step-num">3</div>
-                            <div><h4>Check Excel's ribbon</h4><p>New tabs appear — Auto E. Tool, Templates, HEWP Auto, HEWP Manual, Extra Tool, Tool Help, Tool Settings — all ready to use.</p></div>
+                        <div class="feature video-card" data-video-id="m73zY87xw6s" style="cursor:pointer">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <i class="fas fa-play-circle" style="color:var(--accent1);font-size:24px"></i>
+                                <div style="flex:1">
+                                    <h4 style="margin:0">Complete Installation Walkthrough</h4>
+                                    <p class="small" style="margin:3px 0 0">Step-by-step installation guide (5 min)</p>
+                                </div>
+                                <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                            </div>
                         </div>
-                        <div class="step-row">
-                            <div class="step-num">4</div>
-                            <div><h4>Install the browser extension (optional)</h4><p>You'll be prompted to add it to Chrome or Edge. For Edge, you can also search "HEWP extension" in the Edge store.</p></div>
+                        
+                        <div class="feature video-card" data-video-id="ChAsdEFmwww" style="cursor:pointer">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                <div style="flex:1">
+                                    <h4 style="margin:0">Bill Est Compare & Portal Bill Download</h4>
+                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click</p>
+                                </div>
+                                <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                            </div>
                         </div>
-                        <div class="step-row">
-                            <div class="step-num">5</div>
-                            <div><h4>Set up Tool Settings</h4><p>Activate the tool if asked, then set your unit, browser and district, and restart Excel.</p></div>
+                        <div class="feature video-card" data-video-id="saAwyBmC3G0" style="cursor:pointer">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                <div style="flex:1">
+                                    <h4 style="margin:0">Auto Upload Bill in Contractor ID</h4>
+                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click</p>
+                                </div>
+                                <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                            </div>
                         </div>
-                        <div class="step-row">
-                            <div class="step-num">6</div>
-                            <div><h4>Start working</h4><p>Open any bill or estimate and start using the tool. Auto-updates are on by default.</p></div>
+                        <div class="feature video-card" data-video-id="eBoGeBiaTrE" style="cursor:pointer">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <i class="fas fa-play-circle" style="color:var(--accent2);font-size:24px"></i>
+                                <div style="flex:1">
+                                    <h4 style="margin:0">Auto Delete Bill in Contractor ID</h4>
+                                    <p class="small" style="margin:3px 0 0">Everything with Just One Click</p>
+                                </div>
+                                <i class="fas fa-external-link-alt" style="color:var(--muted);font-size:14px"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div style="margin-top:24px;padding:16px;border-radius:10px;background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2)">
-                        <strong style="color:var(--rose)">Before you install:</strong>
-                        <ul class="small" style="margin:10px 0 0 20px">
-                            <li>Save and close all Microsoft Excel windows</li>
-                            <li>Have your unique install key ready</li>
-                            <li>If Windows shows a security warning, click "More info" → "Run anyway"</li>
-                        </ul>
-                    </div>
-                    <div style="margin-top:20px;text-align:center">
-                        <a href="download.html" class="btn btn-primary"><i class="fas fa-download"></i> Go to download page</a>
                     </div>
                 </div>
             </div>
         </section>
+        <section id="installation">
+            <h3>📦 Easy Installation Guide</h3>
+            <div class="panel fadeInUp">
+                <p class="small" style="margin-bottom:25px">Follow these simple steps to install Estimation &
+                    Billing Tool. The entire process takes approx 5 minutes and requires no technical expertise.</p>
 
-        <section class="section" id="requirements">
-            <div class="container">
-                <div class="section-head">
-                    <span class="eyebrow">💻 System requirements</span>
-                    <h2 style="font-size:28px">What you'll need</h2>
+                <div class="install-steps">
+                    <div class="install-step fadeInUp">
+                        <h4>Download the Installer</h4>
+                        <p>Click the download button to get Installer.exe. The installer includes Excel Tool,
+                            HEWP Edge Extension and dependencies.</p>
+                    </div>
+                    <div class="install-step fadeInUp">
+                        <h4>Run the Installer</h4>
+                        <p>Double-click the downloaded file and follow the on-screen instructions. Accept the default
+                            settings for the easiest installation.</p>
+                    </div>
+                    <div class="install-step fadeInUp">
+                        <h4>Enable Excel Tool if required</h4>
+                        <p>Open Excel and check the ribbon. You'll see new tabs: "Auto E. Tool", "Templates", "HEWP
+                            Auto", "HEWP Manual", "Extra Tool", "Tool Help", "Tool Settings" etc. with all the features
+                            ready to use.</p>
+                    </div>
+                    <div class="install-step fadeInUp">
+                        <h4>Install HEWP Edge Extension (Optional)</h4>
+                        <p>During installation, you'll be prompted to add the HEWP Edge Extension. Click "Add to
+                            Chrome" when prompted for enhanced portal features. For Edge Extension, search hewp
+                            extension in edge store.</p>
+                    </div>
+                    <div class="install-step fadeInUp">
+                        <h4>Tool Settings</h4>
+                        <p>Activate the Tool if asked. Then first set the Unit, Browser & District as per your choice
+                            and restart Excel.</p>
+                    </div>
+                    <div class="install-step fadeInUp">
+                        <h4>Start Working!</h4>
+                        <p>Open any Bill or Estimate and start using the Tool. Auto-updates are enabled by default to
+                            keep you current with latest features.</p>
+                    </div>
                 </div>
-                <div class="compare-grid">
-                    <div class="card compare-col reveal" style="border-color:var(--line)">
-                        <h4 style="color:var(--text)">Minimum</h4>
-                        <ul style="list-style:none;padding:0">
-                            <li style="color:var(--muted);padding:6px 0">Windows 7 / 8 / 10 / 11</li>
-                            <li style="color:var(--muted);padding:6px 0">Microsoft Excel 2016 or later</li>
-                            <li style="color:var(--muted);padding:6px 0">Google Chrome or Microsoft Edge</li>
-                            <li style="color:var(--muted);padding:6px 0">4GB RAM</li>
-                            <li style="color:var(--muted);padding:6px 0">500MB free disk space</li>
-                        </ul>
-                    </div>
-                    <div class="card compare-col after reveal">
-                        <h4>Recommended</h4>
-                        <ul style="list-style:none;padding:0">
-                            <li style="color:var(--muted);padding:6px 0">Windows 10 / 11</li>
-                            <li style="color:var(--muted);padding:6px 0">Microsoft Excel 2019 / <a href="https://github.com/mrgargsir/msofficeLTSC2021/releases/download/26.1/All.in.One.Installation.bat" target="_blank" rel="noopener noreferrer" style="color:var(--cyan-h)">2021</a> / 365</li>
-                            <li style="color:var(--muted);padding:6px 0">Latest Chrome or Edge</li>
-                            <li style="color:var(--muted);padding:6px 0">8GB RAM</li>
-                            <li style="color:var(--muted);padding:6px 0">1GB free disk space</li>
-                        </ul>
-                    </div>
+
+                <div
+                    style="margin-top:25px;padding:15px;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
+                    <strong style="color:#ef4444">⚠️ Before You Install:</strong>
+                    <ul class="small" style="margin:10px 0 0 20px;color:#d5ddea">
+                        <li>✅ Save & Close all Microsoft Excel windows</li>
+                        <li>✅ Have your unique install key ready</li>
+                        <li>✅ During Installation, If Windows shows security warning, click "More info" → "Run anyway"
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="margin-top:20px;text-align:center">
+                    <a href="download.html" class="cta primary">
+                        <i class="fas fa-download"></i> Go to Download Page
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="requirements">
+            <h3>💻 System Requirements</h3>
+            <div class="comparison fadeInUp">
+                <div class="comparison-item before fadeInLeft">
+                    <h4 class="comparison-title">Minimum Requirements</h4>
+                    <ul class="comparison-list small">
+                        <li>Windows 7 / 8 / 10 / 11</li>
+                        <li>Microsoft Excel 2016 or later</li>
+                        <li>Google Chrome browser OR Edge</li>
+                        <li>4GB RAM</li>
+                        <li>500MB free disk space</li>
+                    </ul>
+                </div>
+                <div class="comparison-item after fadeInRight">
+                    <h4 class="comparison-title">Recommended</h4>
+                    <ul class="comparison-list small">
+                        <li>Windows 10 / 11</li>
+                        <li>Microsoft Excel 2019 /
+                            <a href="https://github.com/mrgargsir/msofficeLTSC2021/releases/download/26.1/All.in.One.Installation.bat"
+                                target="_blank" rel="noopener noreferrer">2021</a> / 365
+                        </li>
+                        <li>Latest Chrome/Edge browser</li>
+                        <li>8GB RAM</li>
+                        <li>1GB free disk space</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="before-after">
+            <h3>⚖️ Before vs After</h3>
+            <div class="comparison">
+                <div class="comparison-item before fadeInLeft">
+                    <h4 class="comparison-title">Before Estimation & Billing Tool</h4>
+                    <ul class="comparison-list small">
+                        <li>Manual HSR item numbers search</li>
+                        <li>Manual HSR lookup in bulky PDF documents</li>
+                        <li>Copy-paste errors between Excel and portal</li>
+                        <li>Material Quantity Factors</li>
+                        <li>Look for Material Rates each time</li>
+                        <li>Hours spent on portal navigation and data entry</li>
+                        <li>Manual unit conversions with high error risk</li>
+                        <li>Manual Variation calculations and Uploading</li>
+                        <li>No standardization in estimate formats</li>
+                        <li>Difficulty comparing bills and estimates</li>
+                        <li>Frustration with portal interface limitations</li>
+                        <li>No automated calculations for GST and contingencies</li>
+                        <li>Manual steel weight calculations</li>
+                        <li>Repetitive template preparation for each project</li>
+                    </ul>
+                </div>
+                <div class="comparison-item after fadeInRight">
+                    <h4 class="comparison-title">After Estimation & Billing Tool</h4>
+                    <ul class="comparison-list small">
+                        <li>Instant Import Detailed Estimates Pdf from Portal to Excel</li>
+                        <li>Instant HSR search with auto-fill of details</li>
+                        <li>Smart copy-paste with automatic data arrangement</li>
+                        <li>One-Click Material Quantity Table Preparation</li>
+                        <li>One-Click to get or update Material Rates (District wise)</li>
+                        <li>One-click upload with auto-login to portal</li>
+                        <li>Automatic unit conversions with zero errors</li>
+                        <li>Automatic Variation calculations and Uploading</li>
+                        <li>Standardized templates with HSR 2023 structure</li>
+                        <li>Automatic bill comparison and difference highlighting</li>
+                        <li>Enhanced portal experience with Chrome/Edge extension</li>
+                        <li>Automated calculations for amounts, GST, contingencies</li>
+                        <li>One-click steel weight calculator</li>
+                        <li>Reusable templates with preloaded HSR data</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="before-after">
-            <div class="container">
-                <div class="section-head">
-                    <span class="eyebrow">⚖️ Before vs after</span>
-                    <h2 style="font-size:28px">The difference the tool makes</h2>
-                </div>
-                <div class="compare-grid">
-                    <div class="card compare-col before reveal">
-                        <h4>Before the tool</h4>
-                        <ul>
-                            <li>Manual HSR item number search</li>
-                            <li>Manual HSR lookup in bulky PDF documents</li>
-                            <li>Copy-paste errors between Excel and portal</li>
-                            <li>Material quantity factors calculated by hand</li>
-                            <li>Looking up material rates each time</li>
-                            <li>Hours on portal navigation and data entry</li>
-                            <li>Manual unit conversions with high error risk</li>
-                            <li>Manual variation calculations and uploading</li>
-                            <li>No standardisation in estimate formats</li>
-                            <li>Difficulty comparing bills and estimates</li>
-                            <li>No automated GST and contingency calculations</li>
-                            <li>Manual steel weight calculations</li>
-                            <li>Repetitive template preparation per project</li>
-                        </ul>
-                    </div>
-                    <div class="card compare-col after reveal">
-                        <h4>After the tool</h4>
-                        <ul>
-                            <li>Instant PDF import from portal to Excel</li>
-                            <li>Instant HSR search with auto-filled details</li>
-                            <li>Smart copy-paste with automatic arrangement</li>
-                            <li>One-click material quantity table preparation</li>
-                            <li>One-click material rate updates, district-wise</li>
-                            <li>One-click upload with auto-login to portal</li>
-                            <li>Automatic unit conversions with zero errors</li>
-                            <li>Automatic variation calculation and upload</li>
-                            <li>Standardised templates, HSR 2023 structure</li>
-                            <li>Automatic bill comparison with differences highlighted</li>
-                            <li>Automated GST, contingency and grand totals</li>
-                            <li>One-click steel weight calculator</li>
-                            <li>Reusable templates preloaded with HSR data</li>
-                        </ul>
-                    </div>
-                </div>
+            <div style="text-align:center;margin-bottom:40px">
+                <a href="../index.html" class="cta secondary" style="margin-right:12px">
+                    <i class="fas fa-arrow-left"></i> Back to Main Page
+                </a>
+                <a href="purchase.html" class="cta primary">
+                    <i class="fas fa-tag"></i> View Pricing
+                </a>
             </div>
-        </section>
-
-        <section class="section-tight">
-            <div class="container" style="text-align:center">
-                <a href="../index.html" class="btn btn-outline" style="margin-right:12px"><i class="fas fa-arrow-left"></i> Back to main page</a>
-                <a href="purchase.html" class="btn btn-primary"><i class="fas fa-tag"></i> View pricing</a>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        document.querySelectorAll('.video-card').forEach(function (card) {
-            card.addEventListener('click', function () {
-                var videoId = this.dataset.videoId;
-                document.getElementById('mainVideoFrame').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-                document.getElementById('videos').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-    </script>
+        </main>
+    </div><!-- /.wrap -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -293,7 +488,9 @@
                     <div class="footer-social">
                         <a href="https://facebook.com/HEWPTools" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://instagram.com/hewptool" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/hewptool" target="_blank" rel="noopener noreferrer" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://x.com/hewptool" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/></svg>
+</a>
                         <a href="https://youtube.com/@hewptool" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="https://chat.whatsapp.com/DEXKInfvpBd9cLwyaoq0sd" target="_blank" rel="noopener noreferrer" title="WhatsApp Group"><i class="fab fa-whatsapp"></i></a>
                     </div>
@@ -313,6 +510,7 @@
                         <li><a href="extension-chrome.html">Chrome / Edge Extension</a></li>
                         <li><a href="extension-whatsapp.html">WhatsApp Sender</a></li>
                         <li><a href="extension-macro.html">Web Automation Macro</a></li>
+                        <li><a href="metalweightcal.html">Metal Weight Calculator</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -335,7 +533,9 @@
         </div>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="back-to-top" id="scrollTopBtn" aria-label="Back to top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="assets/site.js"></script>
 </body>
+
 </html>

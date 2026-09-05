@@ -195,7 +195,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
    
 
 
-# 2. **MRGARGSIR Chrome/Edge Extension (Free Aux Utility)**  
+# 2. **MRGARGSIR HEW Portal Edge Extension (Free Aux Utility)**  
 📌 **Developer:** **MRGARGSIR**  
 
 ## **🔧 Main Features of ChromeExtension**  
@@ -204,7 +204,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 **🔍 Smart Dropdown Search** – Enhanced dropdown search for all.
 **☑️ Toggle All Checkbox.**  – Select/deselect all check boxes at once
 **🎯 Enter Button Fixes** (Pressing the Enter button will not clear the form on the HEWP portal anymore)  
-
+[**📌 Click Here to Install HEW Portal Edge Extension**](https://microsoftedge.microsoft.com/addons/detail/hewp-extension-tool-%E2%80%93-thi/gahgpjihjlnfaepifeipedfdnnfhlghn)
 
 #3. **Whatsapp sender (Free Aux Utility)**
 🚀 **A small independent automation extension**  
@@ -212,6 +212,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 **🆕 Volume Increase** (Volume increase features when low volume media is a problem)  
 **✅ Dark Mode** (Enable Dark mode on all websites)
 **💬 Whatsapp Message sender** (Auto send message to multiple numbers)
+[**📌 Click Here to Install Whatsapp sender**](https://microsoftedge.microsoft.com/addons/detail/whatsapp-sender-volume-/mmkcjfjpehdhophifkglodamfhlcnmnp)
 
 #4. **Web Automation Macro (Free Aux Utility)**
 🚀 **A small independent automation extension**  
@@ -219,6 +220,7 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 **🆕 Record Steps** (Record steps and save as workflow)  
 **✅ Edit mode** (Edit recorded steps and add new steps)
 **🔄️ Reload Support** (No matter how many times you reload, the automation will continue from where it left off)
+[**📌 Click Here to Install Web Automation Macro**](https://microsoftedge.microsoft.com/addons/detail/mrgargsir-web-automation-/emippldddpcoafddcnmnahcmmgjillpa)
 
 ---
 
