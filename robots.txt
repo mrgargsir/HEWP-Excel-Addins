@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrgargsir.github.io/HEWP-Excel-Addins/sitemap.xml
