@@ -409,6 +409,24 @@ function spawnParticle(x, y) {
     const lines = new THREE.LineSegments(lineGeo, lineMat);
     scene.add(lines);
 
+    // Store reference and control visibility based on theme, added from here to hide in light mode
+window._threeLines = lines;
+
+function updateLineVisibility() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (window._threeLines) {
+        window._threeLines.visible = (theme !== 'light');
+    }
+}
+updateLineVisibility();
+
+// Watch for theme changes
+const themeObserver = new MutationObserver(() => {
+    updateLineVisibility();
+});
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+// added till here to hide in light mode
+
     let targetRotX = 0, targetRotY = 0;
     document.addEventListener('mousemove', (e) => {
         targetRotY = (e.clientX / window.innerWidth - 0.5) * 0.5;
@@ -1040,12 +1058,12 @@ function submitCallRequest() {
 
     // Prepare data for Google Form
     const name = 'Call Request';
-    const plan = 'Call Request — Demo';
-    const email = '';
+    const plan = 'Demo';
+    const email = 'N/A';
     const district = 'N/A';
     const utr = 'N/A';
     const ref = 'N/A';
-    const deviceId = '';
+    const deviceId = 'N/A';
 
     const params = new URLSearchParams();
     params.append(ENTRY_NAME, name);

@@ -86,24 +86,22 @@
             --glass-border: var(--border-glass);
             --card: var(--bg-card);
             --muted: var(--text-muted);
+
+            
             --text-strong: var(--text-primary);
             --text-soft: var(--text-secondary);
             /* --header-height: 70px; */
             color-scheme: light;
         }
 
-        /* 👆 LIGHT THEME — Clean background with subtle grid */
+        /* 👆 LIGHT THEME — Clean background */
         [data-theme="light"] body {
-            background:
-                /* Subtle grid pattern like technical drawings */
-                linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px),
-                /* Main background */
-                radial-gradient(ellipse at 50% 0%, #ffffff 0%, #f1f5f9 100%);
+            background: #eae8e4;
             background-size: 40px 40px, 40px 40px, 100% 100%;
             background-attachment: fixed, fixed, fixed;
             background-position: center center, center center, center center;
         }
+
 
         /* 👆 LIGHT THEME — Header with glassmorphism */
         [data-theme="light"] header {
