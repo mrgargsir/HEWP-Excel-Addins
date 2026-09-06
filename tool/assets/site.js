@@ -544,7 +544,9 @@ themeObserver.observe(document.documentElement, { attributes: true, attributeFil
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    document.querySelectorAll('.fadeInUp, .fadeInLeft, .fadeInRight').forEach(el => {
+    document.querySelectorAll('.fadeInUp, .fadeInLeft, .fadeInRight').forEach((el, i) => {
+    const siblingIndex = Array.from(el.parentElement.children).indexOf(el);
+    el.style.setProperty('--reveal-delay', Math.min(siblingIndex * 0.08, 0.5) + 's');
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
             el.classList.remove('fadeInUp', 'fadeInLeft', 'fadeInRight');
@@ -1186,3 +1188,4 @@ function updateBodyPadding() {
         document.body.style.paddingTop = headerHeight + 'px';
     }
 }
+

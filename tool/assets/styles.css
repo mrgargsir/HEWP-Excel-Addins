@@ -87,19 +87,30 @@
             --card: var(--bg-card);
             --muted: var(--text-muted);
 
-            
+
             --text-strong: var(--text-primary);
             --text-soft: var(--text-secondary);
+
+            --accent1: var(--accent-1);
+            --accent1h: var(--accent-1h);
+            --accent2: var(--accent-2);
+            --accent2h: var(--accent-2h);
+            --accent3: var(--accent-3);
+            --accent4: var(--accent-4);
+            --accent5: var(--accent-5);
+
             /* --header-height: 70px; */
             color-scheme: light;
         }
 
         /* 👆 LIGHT THEME — Clean background */
         [data-theme="light"] body {
-            background: #eae8e4;
+            background:
+                linear-gradient(rgba(37, 99, 235, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.025) 1px, transparent 1px),
+                radial-gradient(ellipse at 50% 0%, #ffffff 0%, var(--bg-secondary) 100%);
             background-size: 40px 40px, 40px 40px, 100% 100%;
             background-attachment: fixed, fixed, fixed;
-            background-position: center center, center center, center center;
         }
 
 
@@ -156,8 +167,6 @@
         [data-theme="light"] .faq-item,
         [data-theme="light"] .install-step,
         [data-theme="light"] .video-card,
-        [data-theme="light"] .ext-hub-card,
-        [data-theme="light"] .page-tab,
         [data-theme="light"] .contact-item,
         [data-theme="light"] .document-link,
         [data-theme="light"] .social-btn,
@@ -688,6 +697,7 @@
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+
         .fadeInLeft {
             opacity: 0;
             transform: translateX(-40px);
@@ -706,6 +716,10 @@
         .fadeInRight.animate {
             opacity: 1;
             transform: none;
+        }
+
+        .fadeInUp.animate {
+            transition-delay: var(--reveal-delay, 0s);
         }
 
         .fadeInUp:nth-child(1) {
@@ -2336,13 +2350,14 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
-       /* ================================================
+        /* ================================================
         FIX: Video container 16:9 aspect ratio (reliable)
         ================================================ */
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;   /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
             border-radius: 16px;
@@ -3240,4 +3255,58 @@
 
         .floating-social {
             transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+
+        @keyframes floatBob {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        .float-anim {
+            animation: floatBob 4.5s ease-in-out infinite;
+        }
+
+        .hero>* {
+            opacity: 0;
+            animation: heroRise 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero>*:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .hero>*:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .hero>*:nth-child(3) {
+            animation-delay: 0.35s;
+        }
+
+        .hero>*:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .hero>*:nth-child(5) {
+            animation-delay: 1.05s;
+        }
+
+        @keyframes heroRise {
+            from {
+                opacity: 0;
+                transform: translateY(64px); 
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
