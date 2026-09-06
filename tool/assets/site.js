@@ -1059,7 +1059,7 @@ function submitCallRequest() {
     // Prepare data for Google Form
     const name = 'Call Request';
     const plan = 'Demo';
-    const email = 'N/A';
+    const email = '';
     const district = 'N/A';
     const utr = 'N/A';
     const ref = 'N/A';
