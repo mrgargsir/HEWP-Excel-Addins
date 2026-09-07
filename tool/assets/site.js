@@ -1,9 +1,30 @@
-/* ============================================================
-   MRGARGSIR HEWP Tool — Shared Site Behavior (site.js)
-   Used by every page. Every selector is guarded with an
-   existence check so this one file works safely no matter
-   which sections/elements a given page does or doesn't have.
-   ============================================================ */
+   /* ================================================
+   TRIAL BANNER TOGGLE — the only line you need to touch
+   'paid'  -> shows "Get Premium Trial @ ₹99" (opens QR/payment flow)
+   'free'  -> shows "Free for new users" (downloads installer, request trial in-app)
+   ================================================ */
+const PREMIUM_TRIAL_MODE = 'free';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const paidBanner = document.getElementById('trialBannerPaid');
+    const freeBanner = document.getElementById('trialBannerFree');
+    if (paidBanner && freeBanner) {
+        paidBanner.style.display = PREMIUM_TRIAL_MODE === 'paid' ? 'block' : 'none';
+        freeBanner.style.display = PREMIUM_TRIAL_MODE === 'free' ? 'block' : 'none';
+    }
+});
+
+function downloadInstallerOnly(e) {
+    e.preventDefault();
+    const a = document.createElement('a');
+    a.href = primaryURL;
+    a.download = 'HEWP_OnlineInstaller.exe';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
 
 /* ================================================
    0. THEME (Light / Dark) — persisted + synced across pages
@@ -282,7 +303,12 @@ document.addEventListener('DOMContentLoaded', () => {
 (function cursorInit() {
     const cursorDot = document.getElementById('cursor-dot');
     const cursorRing = document.getElementById('cursor-ring');
-    if (!cursorDot || !cursorRing) return;
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (!cursorDot || !cursorRing || isTouch) {
+        if (cursorDot) cursorDot.style.display = 'none';
+        if (cursorRing) cursorRing.style.display = 'none';
+        return;
+    }
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
 
@@ -346,7 +372,11 @@ function spawnParticle(x, y) {
    ================================================ */
 (function initThreeJS() {
     const canvas = document.getElementById('threejs-canvas');
-    if (!canvas || typeof THREE === 'undefined') return;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(pointer: coarse)').matches;
+    if (!canvas || typeof THREE === 'undefined' || isMobile) {
+        if (canvas) canvas.style.display = 'none';
+        return;
+    }
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -410,22 +440,22 @@ function spawnParticle(x, y) {
     scene.add(lines);
 
     // Store reference and control visibility based on theme, added from here to hide in light mode
-window._threeLines = lines;
+    window._threeLines = lines;
 
-function updateLineVisibility() {
-    const theme = document.documentElement.getAttribute('data-theme');
-    if (window._threeLines) {
-        window._threeLines.visible = (theme !== 'light');
+    function updateLineVisibility() {
+        const theme = document.documentElement.getAttribute('data-theme');
+        if (window._threeLines) {
+            window._threeLines.visible = (theme !== 'light');
+        }
     }
-}
-updateLineVisibility();
-
-// Watch for theme changes
-const themeObserver = new MutationObserver(() => {
     updateLineVisibility();
-});
-themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-// added till here to hide in light mode
+
+    // Watch for theme changes
+    const themeObserver = new MutationObserver(() => {
+        updateLineVisibility();
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    // added till here to hide in light mode
 
     let targetRotX = 0, targetRotY = 0;
     document.addEventListener('mousemove', (e) => {
@@ -493,6 +523,7 @@ themeObserver.observe(document.documentElement, { attributes: true, attributeFil
    8. 3D CARD TILT on feature/panel cards
    ================================================ */
 (function initCardTilt() {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
     document.querySelectorAll('.feature, .stat, .testimonial').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -515,6 +546,7 @@ themeObserver.observe(document.documentElement, { attributes: true, attributeFil
    9. MAGNETIC BUTTONS
    ================================================ */
 (function () {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
     document.querySelectorAll('.cta.primary, .nav-btn.primary').forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
             const rect = btn.getBoundingClientRect();
@@ -545,8 +577,8 @@ themeObserver.observe(document.documentElement, { attributes: true, attributeFil
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
     document.querySelectorAll('.fadeInUp, .fadeInLeft, .fadeInRight').forEach((el, i) => {
-    const siblingIndex = Array.from(el.parentElement.children).indexOf(el);
-    el.style.setProperty('--reveal-delay', Math.min(siblingIndex * 0.08, 0.5) + 's');
+        const siblingIndex = Array.from(el.parentElement.children).indexOf(el);
+        el.style.setProperty('--reveal-delay', Math.min(siblingIndex * 0.08, 0.5) + 's');
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
             el.classList.remove('fadeInUp', 'fadeInLeft', 'fadeInRight');
@@ -799,6 +831,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dlStand) dlStand.addEventListener('click', function () { startDownload(this); });
     if (edgeBtn) edgeBtn.addEventListener('click', function () { DownloadedgeExtension(); });
 });
+
+function startDownloadAndRedirect(e) {
+    e.preventDefault();
+    window.open(primaryURL, '_blank');
+    window.location.href = 'tool/download.html';
+}
 
 /* ================================================
    21. VIDEO CARDS (tutorials.html)

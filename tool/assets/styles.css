@@ -3244,6 +3244,28 @@
             }
         }
 
+        @media (max-width: 768px) {
+    header,
+    .contact-modal,
+    .documents-modal,
+    .nav-dropdown-menu,
+    .card-hero,
+    .panel,
+    .feature,
+    .stat,
+    .testimonial,
+    .faq-item,
+    .install-step,
+    .video-card,
+    .ext-hub-card,
+    .page-tab,
+    footer,
+    .site-footer {
+        backdrop-filter: none !important;
+    }
+}
+
+
         /* ================================================
    👆 NEW: Hide floating social dock while a modal is open
    ================================================ */
@@ -3310,3 +3332,15 @@
                 transform: translateY(0);
             }
         }
+
+
+        @media (prefers-reduced-motion: reduce) {
+    .hero > *,
+    .float-anim,
+    .marquee-track,
+    .install-steps::after {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
