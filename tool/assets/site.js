@@ -792,6 +792,7 @@ function animateNumber(element, start, end, duration, suffix) {
    20. DOWNLOAD FUNCTIONALITY (download.html)
    ================================================ */
 const primaryURL = 'https://github.com/mrgargsir/HEWP-Excel-Addins/releases/download/latest/OnlineInstaller.exe';
+const standaloneURL = 'https://github.com/mrgargsir/HEWP-Releases/releases/latest/download/Installer.exe';
 const fallbackURL = 'https://www.dropbox.com/scl/fi/im5wrvw2rbooke9hzf2tp/Installer.exe?rlkey=1gdochm746czv53n38uvfne7l&st=106xolzv&dl=1';
 const secondfallbackURL = 'https://drive.google.com/drive/folders/1piwXbr2Df7CESRsw6ezKuDv_VIoQq7il?usp=sharing';
 let secondURL;
@@ -801,7 +802,7 @@ function startDownload(button) {
     if (!button) return;
     let downloadURL, installerName;
     if (button.id === 'downloadBtnStandalone') {
-        downloadURL = fallbackURL; secondURL = primaryURL; installerName = 'HEWP_StandaloneInstaller.exe';
+        downloadURL = standaloneURL; secondURL = fallbackURL; installerName = 'HEWP_StandaloneInstaller.exe';
     } else {
         downloadURL = primaryURL; secondURL = fallbackURL; installerName = 'HEWP_OnlineInstaller.exe';
     }
