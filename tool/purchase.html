@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>/* apply saved theme before first paint (no dark flash) */(function(){try{var t=localStorage.getItem("hewp-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
     <title>Purchase & Pricing — HEWP Tool by MRGARGSIR</title>
@@ -260,7 +261,7 @@
                                         🎁 1 Month Premium Trial — For All Users!
                                     </div>
                                     <p style="color:var(--muted);margin:0 0 6px;font-size:14px">
-                                        Get full <strong style="color:white">Premium access</strong> for 30 days — All
+                                        Get full <strong style="color:var(--text-strong)">Premium access</strong> for 30 days — All
                                         users.
                                     </p>
                                     <p style="color:var(--muted);margin:0 0 14px;font-size:12px">No hidden charges ·
@@ -273,11 +274,11 @@
                                         <i class="fas fa-crown"></i> Get Premium Trial @ ₹99
                                     </button>
                                     <div
-                                        style="margin-top:14px;padding:10px 14px;background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.35);border-radius:10px;font-size:12px;color:#fda4af;display:inline-flex;align-items:flex-start;gap:8px;max-width:420px;text-align:center">
+                                        style="margin-top:14px;padding:10px 14px;background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.35);border-radius:10px;font-size:12px;color:var(--warn-text);display:inline-flex;align-items:flex-start;gap:8px;max-width:420px;text-align:center">
                                         <i class="fas fa-exclamation-triangle"
-                                            style="color:#f43f5e;margin-top:2px;flex-shrink:0"></i>
+                                            style="color:var(--accent4);margin-top:2px;flex-shrink:0"></i>
                                         <span>
-                                            <strong style="color:#f43f5e">Trial Purchasae is only applicable once per
+                                            <strong style="color:var(--accent4)">Trial Purchasae is only applicable once per
                                                 computer</strong>
                                             <br> Payments once made are non-refundable for this trial. Please confirm
                                             your
@@ -291,7 +292,7 @@
                                         🎁 1 Month Premium Trial — Free For New Users!
                                     </div>
                                     <p style="color:var(--muted);margin:0 0 6px;font-size:14px">
-                                        Get full <strong style="color:white">Premium access</strong> for 30 days —
+                                        Get full <strong style="color:var(--text-strong)">Premium access</strong> for 30 days —
                                         completely free for new users.
                                     </p>
                                     <p style="color:var(--muted);margin:0 0 14px;font-size:12px">Download & install the
@@ -303,11 +304,11 @@
                                         <i class="fas fa-download"></i> Download & Get Trial
                                     </button>
                                     <div
-                                        style="margin-top:14px;padding:10px 14px;background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.35);border-radius:10px;font-size:12px;color:#fda4af;display:inline-flex;align-items:flex-start;gap:8px;max-width:420px;text-align:center">
+                                        style="margin-top:14px;padding:10px 14px;background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.35);border-radius:10px;font-size:12px;color:var(--warn-text);display:inline-flex;align-items:flex-start;gap:8px;max-width:420px;text-align:center">
                                         <i class="fas fa-exclamation-triangle"
-                                            style="color:#f43f5e;margin-top:2px;flex-shrink:0"></i>
+                                            style="color:var(--accent4);margin-top:2px;flex-shrink:0"></i>
                                         <span>
-                                            <strong style="color:#f43f5e">Trial is only applicable once per
+                                            <strong style="color:var(--accent4)">Trial is only applicable once per
                                                 computer</strong>
                                             <br> You will get instant Temporary Key on Email if applicable.</span>
                                     </div>
@@ -320,11 +321,11 @@
                         <div style="display:flex;justify-content:center;gap:10px;margin-bottom:20px;flex-wrap:wrap">
 
                             <button onclick="switchPlan('regular')" id="tab-regular"
-                                style="padding:9px 22px;border-radius:20px;border:1.5px solid rgba(249,115,22,0.5);background:rgba(249,115,22,0.12);color:#f97316;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s">
+                                style="padding:9px 22px;border-radius:20px;border:1.5px solid rgba(249,115,22,0.5);background:rgba(249,115,22,0.12);color:var(--orange-text);font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s">
                                 🔵 Regular
                             </button>
                             <button onclick="switchPlan('premium')" id="tab-premium"
-                                style="padding:9px 22px;border-radius:20px;border:1.5px solid rgba(124,58,237,0.6);background:rgba(124,58,237,0.2);color:#a78bfa;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s">
+                                style="padding:9px 22px;border-radius:20px;border:1.5px solid rgba(124,58,237,0.6);background:rgba(124,58,237,0.2);color:var(--violet-text);font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s">
                                 👑 Premium
                             </button>
                         </div>
@@ -541,7 +542,7 @@
                         <!-- 👆 Plan switcher handled by motion JS -->
 
                         <p class="small" style="margin-top:20px;text-align:center;color:var(--muted)">
-                            <i class="fas fa-heart" style="color:#f43f5e"></i> Made with Dedication for HEWP users
+                            <i class="fas fa-heart" style="color:var(--accent4)"></i> Made with Dedication for HEWP users
                         </p>
                     </section>
 
@@ -571,13 +572,13 @@
                                 <div style="display:flex;align-items:center;gap:20px">
                                     <div id="stepDot1" style="display:flex;align-items:center;gap:6px;flex:1">
                                         <div
-                                            style="width:24px;height:24px;border-radius:50%;background:var(--accent2);color:#06121c;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                            style="width:24px;height:24px;border-radius:50%;background:var(--accent2);color:var(--on-accent2);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                                             1</div>
                                         <span style="font-size:11px;font-weight:700;color:var(--text-strong)">Pay via
                                             QR</span>
                                     </div>
                                     <div
-                                        style="flex:0 0 30px;height:2px;background:rgba(255,255,255,0.12);border-radius:2px;overflow:hidden">
+                                        style="flex:0 0 30px;height:2px;background:var(--track-bg);border-radius:2px;overflow:hidden">
                                         <div id="stepProgressLine"
                                             style="height:100%;width:0%;background:var(--accent2);transition:width 0.4s ease">
                                         </div>
@@ -585,7 +586,7 @@
                                     <div id="stepDot2"
                                         style="display:flex;align-items:center;gap:6px;flex:1;opacity:0.45">
                                         <div id="stepCircle2"
-                                            style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);color:var(--muted);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                            style="width:24px;height:24px;border-radius:50%;background:var(--chip-bg);color:var(--muted);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                                             2</div>
                                         <span style="font-size:11px;font-weight:700;color:var(--muted)">Your
                                             Details</span>
@@ -827,7 +828,7 @@
 
                             <!-- Regular -->
                             <div class="panel fadeInUp" style="border:1px solid rgba(249,115,22,0.35);padding:22px">
-                                <div style="font-size:15px;font-weight:800;color:#f97316;margin-bottom:4px">🔵 Regular
+                                <div style="font-size:15px;font-weight:800;color:var(--orange-text);margin-bottom:4px">🔵 Regular
                                     Plan</div>
                                 <div style="font-size:11px;color:var(--muted);margin-bottom:14px;font-style:italic">
                                     Estimation, Bill Preparation + Analysis Features</div>
@@ -836,40 +837,40 @@
                                     <li><span style="color:#10b981;margin-right:6px">✔</span>Full Sheet Process</li>
                                     <li style="color:var(--muted);font-size:12px;padding-left:18px">Quantity, Sum,
                                         Convert Qty, HSR Rate, Description, Amount Total, Blank Format</li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Steel Summary</li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Abstract Bill / Estimate
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Steel Summary</li>
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Abstract Bill / Estimate
                                     </li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Material Quantity</li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Bill / Estimate Compare
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Material Quantity</li>
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Bill / Estimate Compare
                                     </li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Variation Table</li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Import Bill / Estimate /
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Variation Table</li>
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Import Bill / Estimate /
                                         Template / Variation or Tender notice
                                     </li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Templates & Drawings</li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Download E-MB Bill Data
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Templates & Drawings</li>
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Download E-MB Bill Data
                                     </li>
-                                    <li><span style="color:#f97316;margin-right:6px">✔</span>Delete E-MB Bill</li>
+                                    <li><span style="color:var(--orange-text);margin-right:6px">✔</span>Delete E-MB Bill</li>
                                 </ul>
                             </div>
 
                             <!-- Premium -->
                             <div class="panel fadeInUp"
                                 style="border:1px solid rgba(124,58,237,0.5);padding:22px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(6,182,212,0.04))">
-                                <div style="font-size:15px;font-weight:800;color:#a78bfa;margin-bottom:4px">👑 Premium
+                                <div style="font-size:15px;font-weight:800;color:var(--violet-text);margin-bottom:4px">👑 Premium
                                     Plan</div>
                                 <div style="font-size:11px;color:var(--muted);margin-bottom:14px;font-style:italic">
                                     BOQ Preparation + Analysis + Portal Uploading Features</div>
                                 <ul
                                     style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--text-soft)">
-                                    <li><span style="color:#a78bfa;margin-right:6px">✔</span>All Regular Features</li>
-                                    <li><span style="color:#a78bfa;margin-right:6px">✔</span>Portal Uploading Features
+                                    <li><span style="color:var(--violet-text);margin-right:6px">✔</span>All Regular Features</li>
+                                    <li><span style="color:var(--violet-text);margin-right:6px">✔</span>Portal Uploading Features
                                     </li>
-                                    <li><span style="color:#a78bfa;margin-right:6px">✔</span>No Restrictions</li>
-                                    <li><span style="color:#a78bfa;margin-right:6px">✔</span>Full Access to All features
+                                    <li><span style="color:var(--violet-text);margin-right:6px">✔</span>No Restrictions</li>
+                                    <li><span style="color:var(--violet-text);margin-right:6px">✔</span>Full Access to All features
                                     </li>
                                     <li
-                                        style="margin-top:6px;padding:8px 10px;background:rgba(124,58,237,0.15);border-radius:8px;border:1px solid rgba(124,58,237,0.3);font-size:12px;color:#c4b5fd">
+                                        style="margin-top:6px;padding:8px 10px;background:rgba(124,58,237,0.15);border-radius:8px;border:1px solid rgba(124,58,237,0.3);font-size:12px;color:var(--violet-text-2)">
                                         🌟 Everything unlocked — no feature gates, no limits.
                                     </li>
                                 </ul>

@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>/* apply saved theme before first paint (no dark flash) */(function(){try{var t=localStorage.getItem("hewp-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
     <title>Estimation & Billing HEWP Tool by MRGARGSIR (BOQ Tool)</title>
     <meta name="description"
         content="Official Estimation, BOQ, Billing, Variation preparation & Upload, Complete automation toolkit for HEW Portal.">
     <meta name="keywords"
-        content="HEWP Excel Addins, Estimate, import, pdf to excel, import in excel, HEWP Tool, Excel addin, HEWP tutorials, HEWP WhatsApp, HEWP YouTube, billing, bill, boq tool, mrgargsir, tools by mrgargsir, BOQ preparation tool, building estimation tool, Metal Weight Calculator, contractor billing software, civil engineering Excel tools, third party Excel tools, automated estimation software, mrgargsir tools, hewptool, variation tool, mrgargsir store" />
+        content="HEWP Excel Addins, Estimate, import, pdf to excel, import in excel, HEWP Tool, Excel addin, HEWP tutorials, HEWP WhatsApp, HEWP YouTube, billing, bill, boq tool, mrgargsir, tools by mrgargsir, BOQ preparation tool, building estimation tool, Metal Weight Calculator, contractor billing software, civil engineering Excel tools, third party Excel tools, automated estimation software, mrgargsir tools, hewptool, variation tool, mrgargsir store, dfr form" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://mrgargsir.github.io/HEWP-Excel-Addins/" />
 
@@ -359,8 +360,9 @@
                         to HEWP with MRGARGSIR HEWP Tool</h2>
                     <p class="lead">This tool will Prepare new Estimates or Import Pdf Estimates from Portal to Excel,
                         Prepare Variation,
-                        Prepare Material Consumption, Prepare Boq, Prepare MB, District wise Materials Rates, one-click
-                        HEW Portal uploader – designed for Engineers & Contractors.</p>
+                        Prepare Material Consumption, Prepare Boq, Prepare MB, DFR, District wise Materials Rates, one-click
+                        HEW Portal uploader – designed for Engineers, JEs, Contractors, Consultants, Operators, and Firms
+                        working on Haryana Engineering Works Portal.</p>
 
                     <div class="ctas">
                         <a class="cta primary" href="tool/purchase.html" id="heroPurchase"><i
@@ -388,7 +390,7 @@
 
                             <!-- Referral Code Display -->
                             <div
-                                style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid rgba(124, 58, 237, 0.3);">
+                                style="background: var(--subtle-bg); padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid rgba(124, 58, 237, 0.3);">
                                 <div class="small" style="color: var(--muted); margin-bottom: 8px;">📋 Your Referral
                                     Code:</div>
                                 <div style="font-size: 20px; font-family: 'Courier New', monospace; font-weight: 900; color: var(--accent2); letter-spacing: 1px; margin-bottom: 10px;"
@@ -406,7 +408,7 @@
 
                             <!-- How to Use Instructions -->
                             <div
-                                style="text-align: left; background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 8px; margin-top: 15px;">
+                                style="text-align: left; background: var(--subtle-bg-2); padding: 15px; border-radius: 8px; margin-top: 15px;">
                                 <h4 style="margin: 0 0 10px; font-size: 15px; color: var(--accent2);">
                                     <i class="fas fa-gift"></i> How to Claim Your Benefit:
                                 </h4>
@@ -438,11 +440,11 @@
 
                     <aside class="card-hero float-anim" aria-hidden style="margin-bottom: 25px;">
                         <h3 style="margin:0 0 8px">Quick snapshot</h3>
-                        <p class="small">Preloaded MB Templates, Import Pdf Templates, Estimates, MB, Variation from
+                        <p class="small">Preloaded MB Templates, Import Pdf Templates, Estimates, MB, Variation, Tender Notice from
                             Portal to
-                            Excel, HSR Rate fetcher, Material Quantity Finder, District
+                            Excel, HSR Rate fetcher, DFR, Material Quantity Finder, District
                             wise Materials Rates, Auto Variation, unit
-                            converters, steel calculator, auto uploader to HEWP, and downloader from hewp – everything
+                            converters, steel calculator, auto HEWP uploader and downloader – everything
                             bundled into an easy installer.</p>
 
                         <div style="margin-top:18px">
@@ -486,7 +488,7 @@
 
                 <div class="grid tools-grid" style="margin-top:12px">
                     <div class="feature tool fadeInUp"><i class="fas fa-file-excel" style="color:var(--accent3)"></i>
-                        <h4>Professional Templates & Drawings</h4>
+                        <h4>Professional BOQ Format</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-calculator" style="color:var(--accent3)"></i>
                         <h4>Get Quantity</h4>
@@ -501,7 +503,7 @@
                         <h4>Abstract Bill/Estimate Summary</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-chart-bar" style="color:#60a5fa"></i>
-                        <h4>Steel Weight Dia wise Summary</h4>
+                        <h4>Steel Weight (Dia wise) Summary</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-cubes" style="color:#f59e0b"></i>
                         <h4>Auto Material Quantity Preparation</h4>
@@ -513,10 +515,10 @@
                         <h4>Update Materials Rates</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-balance-scale-right" style="color:#e11d48"></i>
-                        <h4>Auto Bill Variation/Comparison</h4>
+                        <h4>Auto Prepare Variation/Comparison</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-upload" style="color:var(--accent1)"></i>
-                        <h4>Prepare Variation & Auto Upload</h4>
+                        <h4>Auto Upload Variation</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-magic" style="color:#64748b"></i>
                         <h4>Import Templates,Estimates, MB, Variation, Tender Pdf from HEWP to Excel</h4>
@@ -530,7 +532,7 @@
                     <div class="feature tool fadeInUp"><i class="fas fa-upload" style="color:#ef4444"></i>
                         <h4>Auto Uploader e-Mb, Estimate, Template, Variation</h4>
                     </div>
-                    <div class="feature tool fadeInUp"><i class="fas fa-search" style="color:#f97316"></i>
+                    <div class="feature tool fadeInUp"><i class="fas fa-search" style="color:var(--orange-text)"></i>
                         <h4>Easy HSR Search</h4>
                     </div>
                     <div class="feature tool fadeInUp"><i class="fas fa-industry" style="color:#ec4899"></i>
@@ -539,7 +541,10 @@
                     <div class="feature tool fadeInUp"><i class="fas fa-code" style="color:#8b5cf6"></i>
                         <h4>Auto Unit Conversion</h4>
                     </div>
-                    <div class="feature tool fadeInUp"><i class="fas fa-ruler-combined" style="color:#f97316"></i>
+                    <div class="feature tool fadeInUp"><i class="fas fa-industry" style="color:#ec4899"></i>
+                        <h4>DFR FORM</h4>
+                    </div>
+                    <div class="feature tool fadeInUp"><i class="fas fa-ruler-combined" style="color:var(--orange-text)"></i>
                         <h4>Many small features</h4>
                     </div>
 
@@ -557,23 +562,23 @@
                                     class="fas fa-chevron-down"></i></button>
                             <p class="small">
                                 <strong>Powerful Utilities:</strong><br>
-                                1. Metal Weight Calculator • 2. Shape Volume/Area Calculator • 3. Find HSR Item • 4.
-                                Multiply and Get Quantity<br>
-                                5. Total Quantity with Unit Converter • 6. Auto Rate & Description Fetcher<br>
-                                7. Amount Calculator • 8. Steel Summary Generator • 9. Abstract Bill Summary<br>
-                                10. Material Quantity Generator • 11. Bill Comparison<br>
-                                12. Variation Statement Generator
+                                1. Blank Format 2. Import Bill / Estimate / Template / Variation or Tender notice
+                                3. Multiply and Get Quantity 4. Total Quantity with Unit Converter<br> 
+                                • 5. Auto Rate & Description Fetcher 6. Amount Calculator<br> 
+                                7. Material Quantity Generator • 8. Steel Summary Generator<br>
+                                • 9. Abstract itemwise • 10. Abstract Component wise<br>
+                                11. DFR Form   • 12. Bill Comparison<br>
+                                13. Variation Statement Generator 14. Metal Weight Calculator<br> 
+                                • 15. Shape Volume/Area Calculator • 16. Find HSR Item 
                             </p>
                         </div>
 
                         <div class="item">
                             <button type="button">Template Tab <i class="fas fa-chevron-down"></i></button>
                             <p class="small">
-                                1. Blank Format 2. Import Bill / Estimate / Template / Variation or Tender notice 3. Web
-                                Templates • 4. My Templates • 5. Edit
-                                Template<br>
-                                6. Delete Template. • 7. Add Templates 8. Web Drawings 9. My Drawings 10. Delete
-                                Drawings 11. Add Drawings
+                                1. Web Templates • 2. My Templates • 3. Edit Template<br>
+                                4. Delete Template. • 5. Add Templates 6. Web Drawings 7. My Drawings 8. Delete
+                                Drawings 9. Add Drawings
                             </p>
                         </div>
 
@@ -582,8 +587,7 @@
                                     class="fas fa-chevron-down"></i></button>
                             <p class="small">1. Open HEWP, 2. Close Portal Session, 3. Stop Auto Upload, 4.
                                 e-MB Downloader in Excel from Portal,
-                                5. Delete e-MB data, 6. Auto upload full e-MB, 6. Upload Full Estimate 7. Upload Full
-                                Variation.</p>
+                                5. Delete e-MB/Estimate/Template/Variation data, 6. Auto upload full e-MB, 6. Upload Full Estimate 7. Upload Full Variation.</p>
                         </div>
 
                         <div class="item">
@@ -605,7 +609,7 @@
                                 8. Toggle Sign • 9. Formulas To Constant • 10. Steel Weight Calculator • 11. Auto Round
                                 Off<br>
                                 12. Add Prefix or suffix • 13. HSR PDFs • 14. Whole BOQ unit Transformation<br>
-                                15. Portal summary for comparison<br>
+                                15. Portal summary for comparison 16. Aba jba Formate 17. Earth Work Volume Table<br>
                             </p>
                         </div>
 
@@ -616,9 +620,9 @@
                                 1. <a href="https://raw.githubusercontent.com/mrgargsir/winsetup/main/setup.ps1"
                                     target="_blank" rel="noopener noreferrer">Fix windows utility</a> • 2. Feedback • 3.
                                 Check for updates • 4. Update Material Rates • 5. Set unit system<br>
-                                6. Set Browser • 7. Set Upload Settings • 8. Auto Update • 9. Reset Templates • 10.
-                                Reset Rates<br>
-                                11. Check Tool info <br>
+                                6. Set Browser • 7. Set Upload Settings • 8. Set Steel Method • 9. UI Settings<br>
+                                • 10. Auto Update • 11. Reset Templates • 12. Reset Rates<br>
+                                13. Check Tool info <br>
                             </p>
                         </div>
 
@@ -698,7 +702,7 @@
                     <!-- 👉 ADDED SECTION BELOW INTERACTIVE DEMO -->
                     <div class="testimonial fadeInUp">
                         <div class="testimonial-text">"Really Saves my time by 80%. All the features are very useful.
-                            Best for All Engineer,J.E and Contractors"</div>
+                            Best for all Engineers, JEs, Consultants, Contractors, Operators, and Firms."</div>
                         <div class="testimonial-author">- Civil Engineer, Haryana PWD</div>
                     </div>
 
@@ -784,7 +788,7 @@
                                 auto-upload e-MB, EStimates, Variations & Material Quantity preparation
                                 feature alone saves 90% of your work time. Highly recommended for anyone working as
                                 Engineer,
-                                J.E and Contractors with Haryana
+                                J.E, Consultant, Contractor, Operator, or Firm with Haryana
                                 Engineering Works Portal or Direct Tenders. Built for each District. Built for
                                 day-to-day
                                 automation.</p>
@@ -951,7 +955,7 @@
                 <!-- 👇 FINGER: Show More / Less toggle button for FAQ -->
                 <div style="text-align:center;margin-top:16px">
                     <button id="faqToggleBtn" onclick="toggleFaq()"
-                        style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--text-soft);padding:10px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.3s ease">
+                        style="background:var(--subtle-bg);border:1px solid var(--subtle-border);color:var(--text-soft);padding:10px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.3s ease">
                         <i class="fas fa-chevron-down" id="faqToggleIcon"></i> Show More Questions
                     </button>
                 </div>

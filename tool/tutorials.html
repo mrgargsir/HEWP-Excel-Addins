@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>/* apply saved theme before first paint (no dark flash) */(function(){try{var t=localStorage.getItem("hewp-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="hskCY7bZCp36GD07tNlXQ6n-YgK8hw9BRBWIYHOHVQI" />
     <title>Tutorials & Installation Guide — HEWP Tool by MRGARGSIR</title>
@@ -376,7 +377,7 @@
                 <div
                     style="margin-top:25px;padding:15px;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
                     <strong style="color:#ef4444">⚠️ Before You Install:</strong>
-                    <ul class="small" style="margin:10px 0 0 20px;color:#d5ddea">
+                    <ul class="small" style="margin:10px 0 0 20px;color:var(--text-soft)">
                         <li>✅ Save & Close all Microsoft Excel windows</li>
                         <li>✅ Have your unique install key ready</li>
                         <li>✅ During Installation, If Windows shows security warning, click "More info" → "Run anyway"

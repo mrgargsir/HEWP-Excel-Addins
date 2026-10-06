@@ -9,7 +9,7 @@
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Contact-green?style=for-the-badge&logo=whatsapp)](https://wa.me/919728532828)
 
 **Speed up (Estimate/Bill/Variation/Consumption Preparation and Uploading on Portal) by 90%** with built-in templates, import Pdf, automation, and portal-compatible workflows.  
-Designed for **Engineer, Contractor and Department Employees**.
+Designed for **Engineers, JEs, Contractors, Consultants, Operators, Firms, and Department Employees**.
 
 <!-- 👆 Added version info from index.html -->
 > 🟢 **Latest Release:** HSR 2023 Amendments **(22-04-2026)** integrated • Stable Release
@@ -25,7 +25,7 @@ Designed for **Engineer, Contractor and Department Employees**.
 ---
 ## 📋 What is Estimation & Billing Tool (HEWP Tool)?
 
-Estimation & Billing Tool is a comprehensive automation Excel toolkit designed specifically for engineers and Contractor works for Offline Tender and Online **Haryana Engineering Works Portal (HEWP)**. It combines **Excel Tool** and **web automation** to streamline Estimate Preparation, Material Quantity (Consumption) Preparation, BOQ Preparation, Variation Preparation and Online HEWP Upload work.
+Estimation & Billing Tool is a comprehensive automation Excel toolkit designed specifically for engineers, JEs, consultants, contractors, operators, firms, and department users working on Offline Tender and Online **Haryana Engineering Works Portal (HEWP)**. It combines **Excel Tool** and **web automation** to streamline Estimate Preparation, Material Quantity (Consumption) Preparation, BOQ Preparation, Variation Preparation and Online HEWP Upload work.
 
 ## 📋 Tool will help you in many ways but the major points are:
 
@@ -38,7 +38,11 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 ## 👷 Who Can Use This Tool
 
 - Civil Engineer
+- JE / Junior Engineer
 - Contractor
+- Consultant
+- Operator
+- Firm / Company
 - Estimation & Billing Professionals  
 - Department Employees  
 
@@ -59,15 +63,16 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 ![E. Tools](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/etools.png)
 
 - **Blank Format** – Generate Blank Format for manual entry.
-- **Import Bill/Estimates Pdf to Excel** – Import Downloaded Detailed Estimates, Rough Estimates, MB Bill, Variation, Template OR Tender Notic Pdf in Excel with Proper BOQ Formating.
+- **Import Bill/Estimates Pdf to Excel** – Import Downloaded Detailed Estimates, Rough Estimates, MB Bill, Variation, Template, Tender Notice OR DNIT Pdf in Excel with Proper BOQ Formating.
 - **Multiply and Get Quantity** – Multiply dimensions (Nos. x length × breadth × depth) with advance formula.
 - **Total Quantity with intelligent Unit Converter** – It will do auto Total of one item number's quantities and put in row below, then auto convert to metric units where required and put in row below of total. Also, auto convert to steel kg if required.
 - **Auto Rate & Description Fetcher** – Automatically pull Unit, Rates, Rate Type, and Descriptions from Latest HSR 2023 (Haryana Schedule of Rates) and Amendments with all Premium Dates and insert for each item.
 - **Amount Calculator** – Compute amounts by multiplying rate × quantity. Also auto-calculates GST, contingency, and grand total with full sheet formatting. Apply the SR number to each item. Prepare Bill or Estimate in Good Format.
-- **Steel Summary Generator** – Create a Dia Wise Steel Consumption summary in Kg at the bottom of the Bill/Estimate.
-- **Abstract Bill Summary** - Generate a complete abstract Bill or estimate summary in a new worksheet, next to the active sheet.
-- **Abstract Component wise cost Summary** - Generate a complete abstract Bill or estimate componentwise cost summary in a new worksheet, next to the active sheet.
 - **Quantity of Materials Summary** – Generate a complete Material Consumption Summary at the bottom of the Bill/Estimate. A Detailed Material Quantity Table + Labour cost.
+- **Steel Summary Generator** – Create a Dia Wise Steel Consumption summary in Kg at the bottom of the Bill/Estimate.
+- **Abstract Item wise Summary** - Generate a complete abstract Bill or estimate summary in a new worksheet, next to the active sheet.
+- **Abstract Component wise cost Summary** - Generate a complete abstract Bill or estimate componentwise cost summary in a new worksheet, next to the active sheet.
+- **Generate DFR Form** - Make a DFR Form for any Bill or Estimate in a new worksheet, next to the active sheet.
 - **Bill Compare** - Generate a comparison of Portal Bill Data with your Excel Bill and get to know the final verdict of the comparison.
 - **Bill Variation** - Generate a Variation of the Portal Bill Data and previously executed quantity, if any, with your Excel Bill or Final Bill and get the status of the data. also it will be used to upload Variation on the HEW Portal via Web Auto Tools.
 - **Metal Weight Calculator** – Calculate Weight for any shape and any metal.
@@ -100,6 +105,8 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 ![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsbill.png)
 ![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolstemp.png)
 ![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsvar.png)
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsvarf.png)
+![HEWP Web Auto](https://raw.githubusercontent.com/mrgargsir/HEWP-Excel-Addins/main/snaps/webtoolsvarw.png)
 
 **📤 With One-Click ease** 
 
@@ -110,16 +117,16 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 4. **Download e-MB Bill Data** – Download complete bill data from the HEWP portal in Excel Format from HEWP, including a summary sheet.
 5. **Delete any Portal Data** – Remove all previously filled bill data items in one click on the HEWP portal.
 6. **Add components** – Automatically Add all components from The Whole workbook in Estimate in the HEWP Portal.
-6. **Auto Upload all components** – Automatically upload all components from The Whole workbook in the HEWP Portal.
-7. **Auto Upload single component** – Automatically upload single component in the HEWP Portal.
-8. **Auto Upload single item** – Automatically upload one item at a time in the HEWP Portal.
-9. **Auto Upload Variation** - Automatically upload Full Variation (Add item, Increase Quantity, Remove item, Decrease quantity) to HEW Portal.
-
-10. **Copy Data to HEWP Templates** – Automatically convert unit to Meter if required and transfer data into the HEWP Excel template.
-11. **HSR Item Number Selector** – Select HSR item number and Rate Type on the HEWP Portal for filling and uploading data.
-12. **Upload Template to Portal** – Upload your pre-filled template directly to the HEWP Portal.
-13. **PDF** – it will make a PDF of selected cells, attach and Upload With Manual Entry.
-14. **Direct Data Entry** – Skip the template; Enter data directly into the hewp portal Table.
+7. **Auto Upload all components** – Automatically upload all components from The Whole workbook in the HEWP Portal.
+8. **Auto Upload single component** – Automatically upload single component in the HEWP Portal.
+9. **Auto Upload single item** – Automatically upload one item at a time in the HEWP Portal.
+10. **Auto Upload Variation from Table** - Automatically upload Full Variation (Add item, Increase Quantity, Remove item, Decrease quantity) to HEW Portal.
+11. **Auto Upload Variation in Detail and Advance** - Automatically upload Full Variation (Add item, Remove item) to HEW Portal with Advance Options.
+12. **Copy Data to HEWP Templates** – Automatically convert unit to Meter if required and transfer data into the HEWP Excel template.
+13. **HSR Item Number Selector** – Select HSR item number and Rate Type on the HEWP Portal for filling and uploading data.
+14. **Upload Template to Portal** – Upload your pre-filled template directly to the HEWP Portal.
+15. **PDF** – it will make a PDF of selected cells, attach and Upload With Manual Entry.
+16. **Direct Data Entry** – Skip the template; Enter data directly into the hewp portal Table.
 
 ---
 
@@ -137,12 +144,14 @@ Estimation & Billing Tool is a comprehensive automation Excel toolkit designed s
 7. **Formulas To Constant(Value)** – Convert formulas to static values in all selected cells.
 8. **Insert Row** – Insert any number of Entire rows at the selected cell with ease.
 9. **Copy Current Worksheet** – Create duplicates of the active worksheet next to the Original Worksheet and Auto Select the Duplicate sheet quickly.
-10. **Steel Weight Calculator** – Manually convert running meters, Rebar Length to kilograms based on entered diameter and put this value below the selected total row cell.
-11. **Append Prefix/Suffix** – Add a prefix or suffix to all selected cells in one click.
-12. **Auto Round Off** – Dynamically apply the round-off formula to each selected cell. Existing Round off auto-update on apply.
-13. **HSR 2023/2021** - Open the HSR 2023 and 2021 PDF in your system.
-14. **Unit Transformation** - Set and Convert whole bill/Estimate's unit system.
-15. **Create Portal Summary** - Create Portal Summary, which will be used for Bill Compare/ Variations.
+10. **Aba Jba Format** – A Different Boq Format.
+11. **Earth Volume Table** – Make Blank Table and Calculate Earthwork Volume for any shape.
+12. **Steel Weight Calculator** – Manually convert running meters, Rebar Length to kilograms based on entered diameter and put this value below the selected total row cell.
+13. **Append Prefix/Suffix** – Add a prefix or suffix to all selected cells in one click.
+14. **Auto Round Off** – Dynamically apply the round-off formula to each selected cell. Existing Round off auto-update on apply.
+15. **HSR 2023/2021** - Open the HSR 2023 and 2021 PDF in your system.
+16. **Unit Transformation** - Set and Convert whole bill/Estimate's unit system.
+17. **Create Portal Summary** - Create Portal Summary, which will be used for Bill Compare/ Variations.
 
 ---
 
