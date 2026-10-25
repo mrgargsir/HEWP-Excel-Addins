@@ -20,7 +20,7 @@ Designed for **Engineers, JEs, Contractors, Consultants, Operators, Firms, and D
 
 ## ⚠️ Important Disclaimer
 
-**This is an independent third-party tool NOT affiliated with, endorsed by, or connected to the HEWP portal or any government department. We are not an official HEWP and are not authorized by the Government in any way.**
+**This is an independent Tool NOT affiliated with, endorsed by, or connected to the HEWP portal or any government department. We are not an official HEWP and are not authorized by the Government in any way.**
 
 ---
 ## 📋 What is Estimation & Billing Tool (HEWP Tool)?
@@ -658,7 +658,7 @@ Speed up estimate  , #boq Preparation, Material Consumption & #hewp work with #m
 
 ## 📄 License & Copyright
 
-© **MRGARGSIR 2025-2026** – All rights reserved
+© **MRGARGSIR 2025-2027** – All rights reserved
 
 This software is proprietary and licensed for use only by authorized customers with valid license keys.
 
