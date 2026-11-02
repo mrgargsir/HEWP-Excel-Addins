@@ -33,6 +33,8 @@ function downloadInstallerOnly(e) {
     const KEY = 'hewp-theme';
     function apply(theme) {
         document.documentElement.setAttribute('data-theme', theme);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#fafafa' : '#0f1720');
         document.querySelectorAll('.theme-toggle .knob i').forEach(icon => {
             icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
         });
@@ -154,7 +156,7 @@ function goToStep1Silent() {
     if (s1) s1.style.display = 'block';
     if (s2) s2.style.display = 'none';
     if (line) line.style.width = '0%';
-    if (circle2) { circle2.style.background = 'rgba(255,255,255,0.1)'; circle2.style.color = 'var(--muted)'; }
+    if (circle2) { circle2.style.background = 'var(--chip-bg)'; circle2.style.color = 'var(--muted)'; }
     if (dot2) dot2.style.opacity = '0.45';
 }
 
@@ -167,7 +169,7 @@ function goToStep2() {
     if (s1) s1.style.display = 'none';
     if (s2) s2.style.display = 'block';
     if (line) line.style.width = '100%';
-    if (circle2) { circle2.style.background = 'var(--accent2)'; circle2.style.color = '#06121c'; }
+    if (circle2) { circle2.style.background = 'var(--accent2)'; circle2.style.color = 'var(--on-accent2)'; }
     if (dot2) dot2.style.opacity = '1';
     const modalInner = document.querySelector('#qrModal > div');
     if (modalInner) modalInner.scrollTop = 0;
@@ -349,6 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
    ================================================ */
 let lastParticleTime = 0;
 function spawnParticle(x, y) {
+    if (document.documentElement.getAttribute('data-theme') === 'light') return;
     const now = Date.now();
     if (now - lastParticleTime < 40) return;
     lastParticleTime = now;
@@ -439,23 +442,13 @@ function spawnParticle(x, y) {
     const lines = new THREE.LineSegments(lineGeo, lineMat);
     scene.add(lines);
 
-    // Store reference and control visibility based on theme, added from here to hide in light mode
-    window._threeLines = lines;
-
-    function updateLineVisibility() {
-        const theme = document.documentElement.getAttribute('data-theme');
-        if (window._threeLines) {
-            window._threeLines.visible = (theme !== 'light');
-        }
-    }
-    updateLineVisibility();
-
-    // Watch for theme changes
-    const themeObserver = new MutationObserver(() => {
-        updateLineVisibility();
-    });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    // added till here to hide in light mode
+    // Light mode: no dots at all. The canvas is hidden by CSS and the render loop is stopped (saves CPU/GPU).
+    const isLight = () => document.documentElement.getAttribute('data-theme') === 'light';
+    let rafId = null;
+    function startLoop() { if (rafId === null && !isLight()) animate(); }
+    function stopLoop() { if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; } }
+    new MutationObserver(() => { isLight() ? stopLoop() : startLoop(); })
+        .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     let targetRotX = 0, targetRotY = 0;
     document.addEventListener('mousemove', (e) => {
@@ -467,7 +460,7 @@ function spawnParticle(x, y) {
     window.addEventListener('scroll', () => { scrollY = window.scrollY; });
 
     function animate() {
-        requestAnimationFrame(animate);
+        rafId = requestAnimationFrame(animate);
         const t = Date.now() * 0.0003;
 
         particles.rotation.y += (targetRotY - particles.rotation.y) * 0.04;
@@ -484,7 +477,7 @@ function spawnParticle(x, y) {
 
         renderer.render(scene, camera);
     }
-    animate();
+    startLoop();
 
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -816,8 +809,8 @@ function startDownload(button) {
             status.style.display = 'block';
             status.style.background = 'rgba(16,185,129,0.06)';
             status.style.border = '1px solid rgba(16,185,129,0.12)';
-            status.style.color = '#b7f3df';
-            status.innerHTML = `<strong>Download started.</strong> If something went wrong, <a href="${secondURL}" style="color:#fbcfe8;text-decoration:underline" target="_blank" rel="noreferrer">Click here to Download the Other Installer</a>. <a href="${secondfallbackURL}" style="color:#fbcfe8;text-decoration:underline" target="_blank" rel="noreferrer">Or use Google Drive</a>.`;
+            status.style.color = 'var(--status-ok)';
+            status.innerHTML = `<strong>Download started.</strong> If something went wrong, <a href="${secondURL}" style="color:var(--status-link);text-decoration:underline" target="_blank" rel="noreferrer">Click here to Download the Other Installer</a>. <a href="${secondfallbackURL}" style="color:var(--status-link);text-decoration:underline" target="_blank" rel="noreferrer">Or use Google Drive</a>.`;
         }
         button.disabled = false;
         button.innerHTML = '<i class="fas fa-download"></i> Download Again';
@@ -975,7 +968,8 @@ function switchPlan(plan) {
     ['regular', 'premium'].forEach(p => {
         const tab = document.getElementById('tab-' + p);
         if (!tab) return;
-        tab.style.opacity = p === plan ? '1' : '0.5';
+        const dim = document.documentElement.getAttribute('data-theme') === 'light' ? '0.75' : '0.5';
+        tab.style.opacity = p === plan ? '1' : dim;
         tab.style.transform = p === plan ? 'scale(1.06)' : 'scale(1)';
     });
 }
@@ -1133,7 +1127,7 @@ function submitCallRequest() {
             container.innerHTML = `
                 <div style="text-align:center;padding:20px 0;">
                     <div style="font-size:50px;margin-bottom:12px;">✅</div>
-                    <div style="font-size:18px;font-weight:800;color:#10b981;">Request Sent!</div>
+                    <div style="font-size:18px;font-weight:800;color:var(--accent5);">Request Sent!</div>
                     <div style="font-size:13px;color:var(--muted);margin-top:8px;">We'll call you at <strong>${mobile}</strong> within 24 hours.</div>
                     <button onclick="closeCallModal()" 
                             style="margin-top:20px;background:var(--gradient-main);color:white;padding:10px 24px;border-radius:8px;border:none;font-weight:700;cursor:pointer;">

@@ -548,28 +548,18 @@
                     </section>
 
 
-                    <!-- ============================================================
+                                        <!-- ============================================================
      QR MODAL — Step 1: QR Code  |  Step 2: Form
      ============================================================ -->
-                    <div id="qrModal"
-                        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:flex-start;justify-content:center;backdrop-filter:blur(6px);overflow-y:auto;padding:20px 0">
-                        <div
-                            style="background:var(--bg-card);border-radius:20px;padding:0;text-align:center;max-width:420px;width:90%;border:1px solid var(--border-glass);position:relative;animation:fadeIn 0.3s ease;margin:auto;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px var(--shadow-color);">
+                    <div id="qrModal" class="qr-modal" style="display:none">
+                        <div class="qr-dialog">
 
-                            <!-- Close button -->
-                            <button onclick="closeQR()"
-                                style="position:absolute;top:14px;right:14px;background:var(--button-ghost-bg);border:1px solid var(--input-border);color:var(--text-soft);width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:background 0.2s ease"
-                                onmouseover="this.style.background='var(--button-ghost-hover)'"
-                                onmouseout="this.style.background='var(--button-ghost-bg)'">✕</button>
+                            <button class="qr-close" onclick="closeQR()">✕</button>
 
-                            <!-- Progress bar -->
-                            <div
-                                style="padding:22px 28px 16px;border-bottom:1px solid var(--border-glass);flex-shrink:0">
-                                <div style="font-size:13px;color:var(--muted);margin-bottom:2px">Complete your purchase
-                                </div>
-                                <div id="qrPlanLabel"
-                                    style="font-size:19px;font-weight:800;color:var(--text-strong);margin-bottom:14px">
-                                </div>
+                            <!-- Header + progress -->
+                            <div class="qr-header">
+                                <div class="qr-sub">Complete your purchase</div>
+                                <div id="qrPlanLabel" class="qr-plan"></div>
                                 <div style="display:flex;align-items:center;gap:20px">
                                     <div id="stepDot1" style="display:flex;align-items:center;gap:6px;flex:1">
                                         <div
@@ -596,155 +586,100 @@
                             </div>
 
                             <!-- Scrollable body -->
-                            <div style="overflow-y:auto;scrollbar-width:none;padding:24px 28px 28px">
+                            <div class="qr-body">
 
-                                <!-- ========== STEP 1 — QR CODE ========== -->
+                                <!-- ========== STEP 1 — QR CODE (landscape) ========== -->
                                 <div id="qrStep1">
-                                    <div
-                                        style="background:white;padding:14px;border-radius:16px;display:inline-block;margin-bottom:16px;box-shadow:0 8px 30px rgba(0,0,0,0.35)">
-                                        <img id="qrImage" src="" alt="Paytm QR Code"
-                                            style="width:220px;height:220px;display:block;border-radius:8px">
-                                    </div>
-                                    <p style="font-size:13px;color:var(--muted);margin:0 0 4px">Scan with <strong
-                                            style="color:var(--text-strong)">Paytm / BHIM / any UPI app</strong></p>
-                                    <p style="font-size:12px;color:var(--muted);margin:0 0 22px">Name : Sumit Garg</p>
+                                    <div class="qr-step1-layout">
+                                        <div class="qr-left">
+                                            <div class="qr-img-box">
+                                                <img id="qrImage" src="" alt="Paytm QR Code">
+                                            </div>
+                                        </div>
 
-                                    <!-- Primary button – fixed -->
-                                    <button onclick="goToStep2()"
-                                        style="display:inline-flex;align-items:center;gap:8px;background:var(--gradient-main);color:white;padding:14px 24px;border-radius:12px;font-weight:800;font-size:15px;border:2px solid rgba(255,255,255,0.2);cursor:pointer;width:100%;justify-content:center;box-shadow:0 6px 24px var(--glow-color), inset 0 1px 0 rgba(255,255,255,0.15);transition:all 0.3s ease"
-                                        onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 32px var(--glow-color), inset 0 1px 0 rgba(255,255,255,0.2)';"
-                                        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 24px var(--glow-color), inset 0 1px 0 rgba(255,255,255,0.15)';">
-                                        <i class="fas fa-check-circle" style="font-size:17px"></i> Continue — I have
-                                        Paid
-                                    </button>
-                                    <p style="font-size:11px;color:var(--muted);margin-top:14px;margin-bottom:0">
-                                        <i class="fas fa-arrow-down" style="color:var(--accent2)"></i> Next: enter your
-                                        details so we can verify payment & send your license
-                                    </p>
+                                        <div class="qr-right">
+                                            <p style="font-size:13px;color:var(--muted);margin:0 0 4px">Scan with
+                                                <strong style="color:var(--text-strong)">Paytm / BHIM / any UPI
+                                                    app</strong>
+                                            </p>
+                                            <p style="font-size:12px;color:var(--muted);margin:0 0 22px">Name : Sumit
+                                                Garg</p>
+
+                                            <button class="qr-btn" onclick="goToStep2()">
+                                                <i class="fas fa-check-circle" style="font-size:17px"></i> Continue — I
+                                                have Paid
+                                            </button>
+                                            <p style="font-size:11px;color:var(--muted);margin:14px 0 0">
+                                                <i class="fas fa-arrow-right" style="color:var(--accent2)"></i> Next:
+                                                enter your details so we can verify payment &amp; send your license
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <!-- ========== STEP 2 — FORM ========== -->
+                                <!-- ========== STEP 2 — FORM (two columns) ========== -->
                                 <div id="qrStep2" style="display:none;text-align:left">
 
-                                    <!-- Back button – fixed with visible background -->
-                                    <button onclick="backToStep1()"
-                                        style="background:var(--button-ghost-bg);border:1px solid var(--input-border);color:var(--accent2);font-size:12px;font-weight:700;cursor:pointer;padding:6px 14px;border-radius:6px;margin-bottom:14px;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease"
-                                        onmouseover="this.style.background='var(--button-ghost-hover)'"
-                                        onmouseout="this.style.background='var(--button-ghost-bg)'">
-                                        <i class="fas fa-arrow-left"></i> Back to QR Code
-                                    </button>
-
-                                    <div
-                                        style="display:flex;align-items:center;gap:10px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:10px;padding:10px 12px;margin-bottom:18px">
-                                        <i class="fas fa-check-circle" style="color:#10b981;font-size:16px"></i>
-                                        <span style="font-size:12px;color:var(--text-soft)">Now enter your payment &
-                                            contact details below</span>
+                                    <div class="qr-step2-top">
+                                        <button class="qr-back" onclick="backToStep1()">
+                                            <i class="fas fa-arrow-left"></i> Back to QR Code
+                                        </button>
+                                        <div class="qr-notice">
+                                            <i class="fas fa-check-circle" style="color:#10b981;font-size:16px"></i>
+                                            <span style="font-size:12px;color:var(--text-soft)">Now enter your payment
+                                                &amp; contact details below</span>
+                                        </div>
                                     </div>
 
-                                    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+                                    <div class="qr-form-grid">
 
-                                        <!-- Full Name -->
                                         <div>
-                                            <label
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                Full Name <span style="color:var(--accent4)">*</span>
-                                                <span style="color:var(--muted);font-size:11px;font-weight:400;">(e.g.
-                                                    Ramesh Kumar)</span>
-                                            </label>
-                                            <input id="buyerName" type="text" placeholder=""
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:14px;font-weight:700;outline:none;box-sizing:border-box;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
+                                            <label class="qr-label">Full Name <span class="qr-req">*</span>
+                                                <span class="qr-hint">(e.g. Ramesh Kumar)</span></label>
+                                            <input id="buyerName" class="qr-input" type="text">
                                         </div>
 
-                                        <!-- Mobile -->
                                         <div>
-                                            <label
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                Mobile Number <span style="color:var(--accent4)">*</span>
-                                                <span style="color:var(--muted);font-size:11px;font-weight:400;">(e.g.
-                                                    9876543210)</span>
-                                            </label>
-                                            <input id="buyerMobile" type="tel" placeholder="" maxlength="10"
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:14px;font-weight:700;outline:none;box-sizing:border-box;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
+                                            <label class="qr-label">Mobile Number <span class="qr-req">*</span>
+                                                <span class="qr-hint">(e.g. 9876543210)</span></label>
+                                            <input id="buyerMobile" class="qr-input" type="tel" maxlength="10">
                                         </div>
 
-                                        <!-- Email -->
                                         <div>
-                                            <label
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                Email Address <span style="color:var(--accent4)">*</span>
-                                                <span style="color:var(--muted);font-size:11px;font-weight:400;">(You
-                                                    will receive License key on email)</span>
-                                            </label>
-                                            <input id="buyerEmail" type="email" placeholder=""
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:14px;font-weight:700;outline:none;box-sizing:border-box;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
+                                            <label class="qr-label">Email Address <span class="qr-req">*</span>
+                                                <span class="qr-hint">(You will receive License key on
+                                                    email)</span></label>
+                                            <input id="buyerEmail" class="qr-input" type="email">
                                         </div>
 
-                                        <!-- District -->
                                         <div>
-                                            <label
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                District <span style="color:var(--accent4)">*</span>
-                                                <span style="color:var(--muted);font-size:11px;font-weight:400;">(e.g.
-                                                    Rohtak)</span>
-                                            </label>
-                                            <input id="buyerDistrict" type="text" placeholder=""
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:14px;font-weight:700;outline:none;box-sizing:border-box;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
+                                            <label class="qr-label">District <span class="qr-req">*</span>
+                                                <span class="qr-hint">(e.g. Rohtak)</span></label>
+                                            <input id="buyerDistrict" class="qr-input" type="text">
                                         </div>
 
-                                        <!-- UTR -->
                                         <div>
-                                            <label
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                UTR Number <span style="color:var(--accent4)">*</span>
-                                                <span
-                                                    style="color:var(--muted);font-size:11px;font-weight:400;">(12-digit
-                                                    UPI transaction ID)</span>
-                                            </label>
-                                            <input id="buyerUTR" type="tel" placeholder="" maxlength="12"
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:14px;font-weight:700;outline:none;box-sizing:border-box;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
+                                            <label class="qr-label">UTR Number <span class="qr-req">*</span>
+                                                <span class="qr-hint">(12-digit UPI transaction ID)</span></label>
+                                            <input id="buyerUTR" class="qr-input" type="tel" maxlength="12">
                                         </div>
 
-                                        <!-- Referral Code -->
                                         <div>
-                                            <label
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                Referral Code
-                                                <span
-                                                    style="color:var(--muted);font-size:11px;font-weight:400;">(optional)</span>
-                                            </label>
-                                            <input id="buyerRef" type="text" placeholder=""
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:14px;font-weight:700;outline:none;box-sizing:border-box;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
+                                            <label class="qr-label">Referral Code
+                                                <span class="qr-hint">(optional)</span></label>
+                                            <input id="buyerRef" class="qr-input" type="text">
                                         </div>
 
-                                        <!-- Device ID -->
-                                        <div id="deviceIdWrapper">
-                                            <label id="deviceIdLabel"
-                                                style="font-size:12px;color:var(--text-strong);font-weight:700;margin-bottom:4px;display:block">
-                                                Device ID <span id="deviceIdRequired"
-                                                    style="color:var(--accent4)">*</span>
-                                                <span id="deviceIdOptionalTag"
-                                                    style="display:none;color:var(--muted);font-size:11px;font-weight:400;">(optional)</span>
-                                                <span style="color:var(--muted);font-size:11px;font-weight:400;">(e.g.
-                                                    sOiYgZXrnem2xHm1DnNp...)</span>
+                                        <!-- Device ID (full width) -->
+                                        <div id="deviceIdWrapper" class="qr-span-2">
+                                            <label id="deviceIdLabel" class="qr-label">Device ID
+                                                <span id="deviceIdRequired" class="qr-req">*</span>
+                                                <span id="deviceIdOptionalTag" class="qr-hint"
+                                                    style="display:none">(optional)</span>
+                                                <span class="qr-hint">(e.g. sOiYgZXrnem2xHm1DnNp...)</span>
                                             </label>
-                                            <input id="buyerDeviceId" type="text" placeholder=""
-                                                style="width:100%;padding:9px 12px;border-radius:8px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-strong);font-size:13px;font-weight:700;outline:none;box-sizing:border-box;font-family:monospace;transition:border 0.2s"
-                                                onfocus="this.style.borderColor='var(--accent2)'"
-                                                onblur="this.style.borderColor='var(--input-border)'">
-                                            <div
-                                                style="margin-top:5px;padding:7px 10px;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:7px;font-size:11px;color:var(--muted)">
+                                            <input id="buyerDeviceId" class="qr-input qr-input-mono" type="text">
+                                            <div class="qr-info">
                                                 <i class="fas fa-info-circle"
                                                     style="color:var(--accent2);margin-right:4px"></i>
                                                 Find your Device ID in: <strong style="color:var(--text-strong)">Tool
@@ -754,70 +689,62 @@
                                         </div>
                                     </div>
 
-                                    <div id="qrFormError"
-                                        style="display:none;color:var(--accent4);font-size:12px;margin-bottom:12px">
-                                        <i class="fas fa-exclamation-circle"></i> Please fill all required fields before
-                                        sending.
+                                    <!-- Sticky so Submit is always visible -->
+                                    <div class="qr-submit-row">
+                                        <div id="qrFormError"
+                                            style="display:none;color:var(--accent4);font-size:12px;margin-bottom:10px">
+                                            <i class="fas fa-exclamation-circle"></i> Please fill all required fields
+                                            before sending.
+                                        </div>
+                                        <button class="qr-btn qr-btn-sm" onclick="submitOrder()">
+                                            <i class="fas fa-check-circle" style="font-size:18px"></i> Submit
+                                        </button>
+                                        <p style="font-size:11px;color:var(--muted);margin:10px 0 0;text-align:center">
+                                            <i class="fas fa-info-circle"></i> Your license key will be sent to your
+                                            WhatsApp after verification
+                                        </p>
                                     </div>
-
-                                    <!-- Submit button – fixed -->
-                                    <button onclick="submitOrder()"
-                                        style="display:inline-flex;align-items:center;gap:8px;background:var(--gradient-main);color:white;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;border:2px solid rgba(255,255,255,0.2);cursor:pointer;width:100%;justify-content:center;box-shadow:0 6px 24px var(--glow-color), inset 0 1px 0 rgba(255,255,255,0.15);transition:all 0.3s ease"
-                                        onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 32px var(--glow-color), inset 0 1px 0 rgba(255,255,255,0.2)';"
-                                        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 24px var(--glow-color), inset 0 1px 0 rgba(255,255,255,0.15)';">
-                                        <i class="fas fa-check-circle" style="font-size:18px"></i> Submit
-                                    </button>
-
-                                    <p
-                                        style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:0;text-align:center">
-                                        <i class="fas fa-info-circle"></i> Your license key will be sent to your
-                                        WhatsApp after verification
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- ============================================================
-     CONFIRMATION MODAL — Shown after submit
+     CONFIRMATION MODAL — Step 3 (shown after submit)
      ============================================================ -->
-                    <div id="confirmModal"
-                        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;align-items:center;justify-content:center;backdrop-filter:blur(8px)">
-                        <div
-                            style="background:var(--bg-card);border-radius:20px;padding:32px;max-width:400px;width:90%;border:1px solid rgba(16,185,129,0.35);position:relative;animation:fadeIn 0.3s ease;box-shadow:0 0 40px rgba(16,185,129,0.15)">
+                    <div id="confirmModal" class="qr-confirm-modal" style="display:none">
+                        <div class="qr-confirm-dialog">
 
-                            <!-- Close button -->
-                            <button onclick="closeConfirm()"
-                                style="position:absolute;top:14px;right:14px;background:var(--button-ghost-bg);border:1px solid var(--input-border);color:var(--text-soft);width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s ease"
-                                onmouseover="this.style.background='var(--button-ghost-hover)'"
-                                onmouseout="this.style.background='var(--button-ghost-bg)'">✕</button>
+                            <button class="qr-close" onclick="closeConfirm()">✕</button>
 
-                            <div style="text-align:center;margin-bottom:20px">
-                                <div style="font-size:40px;margin-bottom:8px">✅</div>
-                                <div style="font-size:20px;font-weight:800;color:#10b981;margin-bottom:4px">Order
-                                    Submitted!</div>
-                                <div style="font-size:13px;color:var(--muted)">Your details have been recorded. You will
-                                    get a confirmation email soon. <br> Now send your payment proof on WhatsApp to
-                                    Process your license fast.</div>
+                            <div class="qr-confirm-layout">
+                                <!-- LEFT: message -->
+                                <div class="qr-confirm-left">
+                                    <div class="qr-confirm-icon">✅</div>
+                                    <div style="font-size:20px;font-weight:800;color:#10b981;margin-bottom:6px">Order
+                                        Submitted!</div>
+                                    <div style="font-size:13px;color:var(--muted)">Your details have been recorded. You
+                                        will get a confirmation email soon. <br> Now send your payment proof on
+                                        WhatsApp to Process your license fast.</div>
+                                </div>
+
+                                <!-- RIGHT: summary + action -->
+                                <div class="qr-confirm-right">
+                                    <div id="confirmSummary"
+                                        style="background:var(--bg-glass);border:1px solid var(--border-glass);border-radius:12px;padding:14px;font-size:13px;color:var(--text-soft);margin-bottom:14px;line-height:1.8">
+                                    </div>
+
+                                    <button class="qr-btn qr-btn-sm qr-btn-wa" onclick="sendWhatsAppFromConfirm()">
+                                        <i class="fab fa-whatsapp" style="font-size:18px"></i> Send Payment Proof on
+                                        WhatsApp
+                                    </button>
+
+                                    <p style="font-size:11px;color:var(--muted);text-align:center;margin:10px 0 0">
+                                        <i class="fas fa-info-circle"></i> Close this popup only after sending on
+                                        WhatsApp. Closing will clear the form.
+                                    </p>
+                                </div>
                             </div>
-
-                            <!-- Summary -->
-                            <div id="confirmSummary"
-                                style="background:var(--bg-glass);border:1px solid var(--border-glass);border-radius:12px;padding:14px;font-size:13px;color:var(--text-soft);margin-bottom:20px;line-height:1.8">
-                            </div>
-
-                            <!-- WhatsApp button -->
-                            <button onclick="sendWhatsAppFromConfirm()"
-                                style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#25D366,#128C7E);color:white;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;border:2px solid rgba(255,255,255,0.15);cursor:pointer;width:100%;justify-content:center;transition:all 0.3s ease;margin-bottom:10px;box-shadow:0 4px 16px rgba(37,211,102,0.3)"
-                                onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 28px rgba(37,211,102,0.4)'"
-                                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 16px rgba(37,211,102,0.3)'">
-                                <i class="fab fa-whatsapp" style="font-size:18px"></i> Send Payment Proof on WhatsApp
-                            </button>
-
-                            <p style="font-size:11px;color:var(--muted);text-align:center;margin:0">
-                                <i class="fas fa-info-circle"></i> Close this popup only after sending on WhatsApp.
-                                Closing will clear the form.
-                            </p>
                         </div>
                     </div>
                 </div>

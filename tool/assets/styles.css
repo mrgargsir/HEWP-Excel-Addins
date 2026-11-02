@@ -3102,3 +3102,266 @@
 /* ---- inline-styled bits in the HTML (kept readable without editing every tag) ---- */
 [data-theme="light"] i[style*="color:#"] { filter: brightness(0.82) saturate(1.1); }
 [data-theme="light"] span[style*="background:#f97316"] { background: #c2410c !important; }
+
+
+/* =====================================================
+   PURCHASE DIALOG (QR → Details → Confirmation)
+   All three steps use a landscape layout
+   ===================================================== */
+
+/* ---------- Shell ---------- */
+.qr-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    align-items: flex-start;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    overflow-y: auto;
+    padding: 20px 0;
+}
+.qr-dialog {
+    background: var(--bg-card);
+    border-radius: 20px;
+    text-align: center;
+    max-width: 720px;
+    width: 92%;
+    border: 1px solid var(--border-glass);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    margin: auto;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px var(--shadow-color);
+    box-sizing: border-box;
+}
+.qr-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--button-ghost-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-soft);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: background 0.2s ease;
+}
+.qr-close:hover { background: var(--button-ghost-hover); }
+
+.qr-header {
+    padding: 22px 28px 16px;
+    border-bottom: 1px solid var(--border-glass);
+    flex-shrink: 0;
+}
+.qr-sub  { font-size: 13px; color: var(--muted); margin-bottom: 2px; }
+.qr-plan {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--text-strong);
+    margin-bottom: 14px;
+    padding-right: 40px;           /* keep clear of the ✕ button */
+}
+.qr-body {
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 24px 28px 28px;
+}
+
+/* ---------- Buttons ---------- */
+.qr-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: var(--gradient-main);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    box-shadow: 0 6px 24px var(--glow-color), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+.qr-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 32px var(--glow-color), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.qr-btn-sm { padding: 12px 22px; border-radius: 10px; font-size: 14px; font-weight: 700; }
+.qr-btn-wa {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+.qr-btn-wa:hover { box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4); }
+
+/* ---------- Step 1: QR left, text right ---------- */
+.qr-step1-layout {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    text-align: left;
+}
+.qr-left  { flex: 0 0 auto; }
+.qr-right { flex: 1; min-width: 0; }
+.qr-img-box {
+    background: #fff;
+    padding: 14px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+.qr-img-box img {
+    width: 220px;
+    height: 220px;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ---------- Step 2: two-column form ---------- */
+.qr-step2-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.qr-back {
+    background: var(--button-ghost-bg);
+    border: 1px solid var(--input-border);
+    color: var(--accent2);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 6px 14px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.qr-back:hover { background: var(--button-ghost-hover); }
+.qr-notice {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+.qr-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    margin-bottom: 14px;
+}
+.qr-span-2 { grid-column: 1 / -1; }
+
+.qr-label {
+    font-size: 12px;
+    color: var(--text-strong);
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: block;
+}
+.qr-req  { color: var(--accent4); }
+.qr-hint { color: var(--muted); font-size: 11px; font-weight: 400; }
+.qr-input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-strong);
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    box-sizing: border-box;
+    transition: border 0.2s;
+}
+.qr-input:focus { border-color: var(--accent2); }
+.qr-input-mono { font-size: 13px; font-family: monospace; }
+.qr-info {
+    margin-top: 5px;
+    padding: 7px 10px;
+    background: rgba(6, 182, 212, 0.07);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 7px;
+    font-size: 11px;
+    color: var(--muted);
+}
+/* Submit stays visible while the form scrolls */
+.qr-submit-row {
+    position: sticky;
+    bottom: 0;
+    background: var(--bg-card);
+    padding: 10px 0 4px;
+    z-index: 2;
+}
+
+/* ---------- Step 3: confirmation, message left / actions right ---------- */
+.qr-confirm-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+}
+.qr-confirm-dialog {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 28px 32px;
+    max-width: 720px;
+    width: 92%;
+    max-height: 92vh;
+    overflow-y: auto;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+    box-sizing: border-box;
+}
+.qr-confirm-layout { display: flex; align-items: center; gap: 28px; }
+.qr-confirm-left   { flex: 1; text-align: center; }
+.qr-confirm-right  { flex: 1.1; min-width: 0; }
+.qr-confirm-icon   { font-size: 40px; margin-bottom: 8px; }
+
+/* ---------- Short screens (phones held sideways) ---------- */
+@media (max-height: 480px) {
+    .qr-modal { padding: 8px 0; }
+    .qr-header { padding: 10px 20px 8px; }
+    .qr-sub { display: none; }
+    .qr-plan { font-size: 16px; margin-bottom: 8px; }
+    .qr-body { padding: 12px 20px 14px; }
+    .qr-img-box { padding: 8px; }
+    .qr-img-box img { width: 150px; height: 150px; }
+    .qr-step1-layout { gap: 20px; }
+    .qr-form-grid { gap: 8px 14px; }
+    .qr-confirm-dialog { padding: 16px 22px; }
+    .qr-confirm-icon { font-size: 30px; margin-bottom: 2px; }
+}
+
+/* ---------- Narrow portrait phones: stack instead ---------- */
+@media (max-width: 560px) and (orientation: portrait) {
+    .qr-step1-layout { flex-direction: column; text-align: center; gap: 14px; }
+    .qr-img-box img { width: 180px; height: 180px; }
+    .qr-form-grid { grid-template-columns: 1fr; }
+    .qr-step2-top { flex-direction: column; align-items: stretch; }
+    .qr-confirm-layout { flex-direction: column; gap: 16px; }
+    .qr-confirm-dialog { padding: 24px 20px; }
+}
